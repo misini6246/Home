@@ -1,0 +1,271 @@
+.right {
+    background: white;
+    min-height: 190px;
+}
+.right .empty {
+	display: none;
+	width: 100%;
+	margin-top: 76px;
+	font-family: "微软雅黑";
+	color: #999999;
+	font-size: 14px;
+	text-align: center;
+}
+.right .empty img {
+	display: block;
+	margin: 0 auto;
+}
+.right .empty a {
+	display: block;
+	width: 80px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #00A1E9;
+	border-radius:4px;
+	margin: 10px auto 35px;
+}
+.right .empty p {
+	margin-top: 10px;
+}
+.right_top {
+    height: 60px;
+    line-height: 60px;
+    width: 940px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.right_top_title {
+    float: left;
+    width: 130px;
+    margin-left: -10px;
+}
+
+.right_top_title span {
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.right_top_title_nav {
+    height: 100%;
+    float: left;
+}
+
+.right_top_title_nav li {
+    float: left;
+    width: 80px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 14px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.right_top_title_nav li span {
+    color: #f52547;
+    margin-left: 4px;
+    font-size: 14px;
+}
+
+.right_top_title_nav li.active {
+    border-bottom: 2px solid #0090D2;
+    color: #0090D2;
+}
+
+.right_top_search {
+    float: right;
+}
+
+.right_top_search select {
+    border: 1px solid #cccccc;
+    width: 118px;
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    vertical-align: middle;
+    *margin-top: 7px;
+}
+
+.right_top_search label {
+    position: relative;
+    display: inline-block;
+}
+
+.right_top_search #num {
+    width: 147px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #cccccc;
+    padding-left: 5px;
+    border-right: none;
+    /**height: 28px;*/
+}
+
+.right_top_search #btn {
+    width: 48px;
+    height: 30px;
+    border: none;
+    color: #fff;
+    background: #0090D2;
+    cursor: pointer;
+    *height: 32px;
+}
+
+.right table {
+    width: 940px;
+    margin: 10px auto;
+}
+
+.right table th {
+    color: #666;
+    background: #f8f9fb;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.right table tr:hover {
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+.right table td {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px dashed #e5e5e5;
+    font-family: "å®‹ä½“";
+}
+
+.right table .ddbs {
+    width: 71px;
+}
+
+.right table .ddbs_value {
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #0090D2;
+	margin: 0 auto;
+	color: #FFFFFF;
+	font-family: simsun;
+	font-size: 12px;
+}
+
+.right table .ddh {
+    width: 158px;
+}
+
+.right table td.ddh {
+    color: #f52547;
+}
+
+.right table .xdsj {
+    width: 162px;
+}
+
+.right table .shr {
+    width: 108px;
+}
+
+.right table .zje {
+    width: 139px;
+}
+
+.right table th span {
+    vertical-align: middle;
+    color: #666;
+}
+
+.right table th.ddzt {
+    cursor: pointer;
+    text-align: center;
+}
+
+.right table th.ddzt div {
+    display: inline-block;
+    width: 100px;
+    height: 26px;
+    line-height: 23px;
+    *line-height: 26px;
+    position: relative;
+}
+
+.right table th.ddzt div:hover {
+    border: 1px solid #e5e5e5;
+    width: 98px;
+}
+
+.right table th.ddzt div:hover .select_zt {
+    display: block;
+}
+
+.right table th.ddzt img {
+    margin-left: 5px;
+}
+
+.right table th.ddzt .select_zt {
+    position: absolute;
+    left: -1px;
+    width: 98px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    z-index: 2;
+    display: none;
+}
+
+.right table th.ddzt .select_zt li {
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+}
+
+.right table th.ddzt .select_zt li:hover, .right table th.ddzt .select_zt li:hover a {
+    background: #4478ec;
+    color: #fff;
+}
+
+.right table th.zje img {
+    cursor: pointer;
+}
+
+.right table td.zje {
+    font-family: "microsoft yahei";
+}
+
+.right table .ddzt {
+    width: 114px;
+}
+
+.right table .cz {
+    width: 188px;
+}
+
+.right table td span.dfk {
+    color: #e70000;
+}
+
+.right table td span.zhuizong {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #00a1e9;
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.right table td a.cz {
+    color: #e70000;
+}
+
+.right table td a.chakan {
+    margin-left: 15px;
+    color: #666;
+}

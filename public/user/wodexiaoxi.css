@@ -1,0 +1,209 @@
+.right {
+    background: #fff;
+    *height: 720px;
+}
+
+.right .empty {
+	display: block;
+	width: 100%;
+	margin-top: 76px;
+	font-family: "å¾®è½¯é›…é»‘";
+	color: #999999;
+	font-size: 14px;
+	text-align: center;
+}
+.right .empty img {
+	display: block;
+	margin: 0 auto;
+}
+.right .empty p {
+	margin-top: 10px;
+}
+
+.right_title img {
+    margin-top: 26px;
+    float: left;
+}
+
+.right_title ul, .right_title span {
+    float: left;
+}
+
+.right_title span {
+    margin-left: 5px;
+}
+
+.right_title ul {
+    margin-left: 60px;
+}
+
+.right_title ul li {
+    float: left;
+    font-size: 14px;
+    color: #666;
+    padding: 0 8px;
+    margin-right: 20px;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.right_title ul li.active {
+    border-bottom: 2px solid #950028;
+    color: #950028;
+}
+
+.right_title ul li span {
+    float: none;
+    color: #ff2424;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.right_top {
+    height: 40px;
+    line-height: 40px;
+    background: #f8f9fb;
+    width: 940px;
+    margin: 10px auto 0 auto;
+    color: #666;
+    font-family: "å®‹ä½“";
+}
+
+.right_top label, .right_top input {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.right_top span {
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.xiaoxi {
+    width: 940px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.xiaoxi div.time {
+	position: absolute;
+	right: 7px;
+	top: 15px;
+}
+.xiaoxi div.txt {
+	line-height: 20px;
+}
+
+.xiaoxi li {
+    padding: 15px 0;
+    border-bottom: 1px dashed #e5e5e5;
+    position: relative;
+}
+
+.xiaoxi li div input {
+    margin: 0px 15px 0 10px;
+    vertical-align: middle;
+}
+
+.xiaoxi li div span {
+    font-size: 14px;
+    color: #666;
+    vertical-align: middle;
+}
+
+.xiaoxi li div span.weidu {
+    color: #00a1e9;
+    font-weight: bold;
+}
+
+.xiaoxi li div span.biaoti {
+    color: #333;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.xiaoxi li div.neirong {
+    margin: 10px 0 0 93px;
+    *margin-left: 100px;
+}
+
+.xiaoxi .neirong a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.xiaoxi li div.neirong .chakan {
+    width: 84px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #1880fb;
+    font-family: "å®‹ä½“";
+    border: 1px dashed #1880fb;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.xiaoxi_page {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.xiaoxi_page label {
+    margin: 0 5px 0 10px;
+}
+
+.xiaoxi_page span {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.xiaoxi_page ul {
+    float: right;
+}
+
+.xiaoxi_page ul .zg {
+    float: left;
+    cursor: initial;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+}
+
+.xiaoxi_page ul .zg span {
+    vertical-align: baseline;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.xiaoxi_page ul li {
+    float: left;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    background: #efefef;
+    border: 1px solid #cccccc;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.xiaoxi_page ul li.next, .xiaoxi_page ul li.prev {
+    width: 44px;
+}
+
+.xiaoxi_page ul li.active {
+    color: #00a1e9;
+    border: none;
+    background: none;
+}
+
+.xiaoxi_none {
+    text-align: center;
+    margin-top: 50px;
+    display: none;
+}

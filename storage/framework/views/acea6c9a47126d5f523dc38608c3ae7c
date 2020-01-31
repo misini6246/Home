@@ -1,0 +1,28 @@
+<?php if(count($result)>0): ?>
+    <div class="right_top">
+        <input type="checkbox" name="quanxuan" value="" class="quanxuan"
+               onclick="quanxuan($(this),$('.danxuan'))"/><label for="quanxuan" class="quanxuan"
+                                                                 onclick="quanxuan($(this),$('.danxuan'))">全选</label>
+        <span class="shanchu" onclick="plsc($('#plsc'))">删除</span>
+    </div>
+    <ul class="xiaoxi">
+        <?php foreach($result as $v): ?>
+            <?php if($v->status==1): ?>
+                <?php echo $__env->make('user.wdxxyd', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php elseif($v->status==0): ?>
+                <?php echo $__env->make('user.wdxxwd', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+    <div class="xiaoxi_page">
+        <input type="checkbox" name="quanxuan" value="" class="quanxuan" style="margin-left: 10px;"
+               onclick="quanxuan($(this),$('.danxuan'))"/><label for="quanxuan" class="quanxuan"
+                                                                 onclick="quanxuan($(this),$('.danxuan'))">全选</label>|
+        <span class="shanchu" onclick="plsc($(this))" id="plsc"
+              data-config='{"url":"<?php echo e(route('member.wodexiaoxi.destroy',['id'=>'','type'=>$type])); ?>","msg":"确定删除该条消息?",
+                          "method":"delete","dataType":"json","box":"xxbox"}'>删除</span>
+    </div>
+    <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php else: ?>
+    <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'暂无消息'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>

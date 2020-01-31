@@ -1,0 +1,122 @@
+.top {
+    width: 100%;
+    height: 1080px;
+    background: url(http://images.hezongyy.com/adimages1/201805/jifen/jfdhjb.jpg) no-repeat scroll top center;
+    overflow: hidden;
+}
+
+.sm,
+.main {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.main {
+    height: 360px;
+    border: 2px solid #b30b00;
+    margin-top: 450px;
+    background: #541774;
+    border-radius: 10px;
+}
+
+.main_title {
+    font-size: 18px;
+    color: #fff;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 30px;
+}
+
+.main_title span {
+    font-size: 30px;
+    color: #fff600;
+    position: relative;
+    top: 5px;
+}
+
+.jf {
+    padding: 0 28px;
+    margin-top: 20px;
+}
+
+.jf li {
+    float: left;
+    width: 208px;
+    text-align: center;
+}
+
+.img_bg {
+    width: 145px;
+    height: 125px;
+    background: url(http://images.hezongyy.com/adimages1/201805/jifen/jb_bg_03.png) no-repeat;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.img_bg p,
+.jifen,
+.tj {
+    padding-right: 10px;
+    color: #541774;
+}
+
+.img_bg p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+    padding-right: 10px;
+}
+
+.img_bg p:first-child + p {
+    font-size: 14px;
+}
+
+.jifen {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.tj {
+    color: #999;
+    font-size: 14px;
+}
+
+.jf li input[type=button] {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #ed2929;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    margin: 15px 10px 0 0;
+}
+
+.sm {
+    height: 240px;
+    background: rgba(0, 0, 0, .3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000, endColorstr=#4C000000);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.sm_title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sm_list {
+    margin-top: 15px;
+}
+
+.sm_list li {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 190px;
+}

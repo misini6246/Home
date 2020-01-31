@@ -1,0 +1,19 @@
+<div class="header_reg_log">
+    <div class="left">
+        <a href="<?php echo e(route('index')); ?>"><img src="/index/img/logo.jpg" /></a>
+        <div class="line"></div>
+        会员注册
+    </div>
+    <div class="right">
+        <div class="text_box">
+            <p style="line-height: 13px;"><i class="my_icon icon_44"></i>&nbsp;客服电话：</p>
+            <p class="tel">400-8888-888</p>
+            <a href="<?php echo e(route('index')); ?>">返回首页</a>
+            <a href="/article?id=3">查看帮助中心</a>
+        </div>
+        <div class="code_box">
+            <img width="90" height="90" src="/index/img/footer_01.jpg" />
+            <p>扫一扫活动早知道</p>
+        </div>
+    </div>
+</div>

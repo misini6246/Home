@@ -1,0 +1,76 @@
+<div class="genzong">
+    <img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>" class="sanjiao"/>
+    <div class="wuliu">
+        <?php if($info->ddgz->get('end')): ?>
+            <div class="end"
+                 <?php if(count($info->ddgz)==1): ?> style="border-left: none;" <?php endif; ?>>
+                <?php if(count($info->ddgz)==1): ?>
+                    <img src="/user/img/wl_green.png"
+                         class="icon"/>
+                <?php elseif($info->ddgz->get('end')['step']==2): ?>
+                    <img src="/user/img/wl_qx.png"
+                         class="icon"/>
+                <?php else: ?>
+                    <img src="/user/img/zhuizong_2.png"
+                         class="icon"/>
+                <?php endif; ?>
+                <div class="xx"
+                     <?php if(count($info->ddgz)==1): ?> style="border-bottom: none;" <?php endif; ?>>
+                    <div class="time"><?php echo e($info->ddgz->get('end')['time']); ?></div>
+                    <div class="xiangqing">
+                        <div class="zhuangtai">【<?php echo e($info->ddgz->get('end')['title']); ?>
+
+                            】
+                        </div>
+                        <?php echo e($info->ddgz->get('end')['content']); ?>
+
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if(count($info->ddgz)>=3): ?>
+            <ul>
+                <?php if(count($info->ddgz)>=5): ?>
+                    <div class="gengduo">
+                        <img src="/user/img/zhuizong_dian.png"
+                             class="icon"/>
+                        查看全部……
+                    </div>
+                <?php endif; ?>
+                <?php foreach($info->ddgz as $key=>$ddgz): ?>
+                    <?php if(!in_array((string)$key,['start','end'])): ?>
+                        <li <?php if(count($info->ddgz)<5): ?> style="display: block !important;" <?php endif; ?>>
+                            <img src="/user/img/zhuizong_dian.png"
+                                 class="icon"/>
+                            <div class="xx">
+                                <div class="time"><?php echo e($ddgz['time']); ?></div>
+                                <div class="xiangqing">
+                                    <div class="zhuangtai">【<?php echo e($ddgz['title']); ?>】</div>
+                                    <?php echo e($ddgz['content']); ?>
+
+                                </div>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+        <?php if($info->ddgz->get('start')): ?>
+            <div class="start">
+                <img src="/user/img/zhuizong_2.png"
+                     class="icon"/>
+                <div class="xx">
+                    <div class="time"><?php echo e($info->ddgz->get('start')['time']); ?></div>
+                    <div class="xiangqing">
+                        <div class="zhuangtai">【<?php echo e($info->ddgz->get('start')['title']); ?>
+
+                            】
+                        </div>
+                        <?php echo e($info->ddgz->get('start')['content']); ?>
+
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

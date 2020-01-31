@@ -1,0 +1,41 @@
+
+/*主体部分样式开始*/
+
+
+
+
+
+
+table{margin-top: 10px;border: 1px solid #e5e5e5;width: 982px; color:#666666;}
+table tr td,table tr th{border:1px solid #e5e5e5;text-align: center;height: 38px;line-height: 38px; }
+table tr th{background-color: #f5f5f5;}
+table tr td .num{color: #cf0000;padding: 0 5px;}
+table tr td select{color: #999999;}
+
+
+table tr td.tb1_td1{width: 120px;}
+table tr td.tb1_td2{width: 95px;}
+table tr td.tb1_td3{width: 120px;}
+table tr td.tb1_td4{width: 130px;}
+table tr td.tb1_td5{width: 150px;}
+table tr td.tb1_td6{width: 200px;}
+.al_right{text-align: right;padding-right: 10px;}
+
+
+
+.content_box{border: 1px solid #e5e5e5;margin-top: 10px;padding-bottom: 20px;position: relative;*padding-top: 20px;}
+.content_box table{width: 460px;margin-left: 300px ;border: 0;*margin: 0 auto;}
+.content_box table tr td{border: 0;text-align: left;position: relative;}
+.content_box table tr td.title{width: 80px;text-align: right;}
+.content_box table tr td input{height: 18px;line-height: 18px;padding: 3px 0;text-indent: 5px;border: 1px solid #c3c3c3;width: 194px;}
+.content_box table tr td textarea{width: 290px;height: 90px;resize: vertical;padding: 10px;margin-top: 10px;}
+.content_box table tr td .ico{color: #FF6102;}
+.content_box table tr td .msg{position: absolute;width: 80px;height: 22px;top: 7px;right: 0;line-height: 22px;}
+.content_box table tr td.submit{height: 48px;line-height: 48px;}
+.content_box table tr td .btn{cursor: pointer;width: 100px;height: 25px;color: #fff;text-align: center;background:url("../images/bt_bg.jpg");margin-left: 80px;border: 0;}
+
+
+/*主体部分样式结束*/
+
+.collaboration_unit{margin-top: 0px;}
+.more{margin-top: 5px;}

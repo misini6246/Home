@@ -1,0 +1,25 @@
+<?php /*<div class="subNavBox">*/ ?>
+    <?php /*<?php foreach($artCat as $v): ?>*/ ?>
+        <?php /*<div class="subNav <?php if(isset($article)&&$article->articleCat->cat_id==$v->cat_id): ?> currentDd currentDt <?php endif; ?>"><?php echo e($v->cat_name); ?> </div>*/ ?>
+        <?php /*<ul <?php if(isset($article)&&$article->articleCat->cat_id==$v->cat_id): ?> style="display: block" <?php else: ?> style="display: none;"  <?php endif; ?> class="navContent">*/ ?>
+            <?php /*<?php foreach($v->article as $val): ?>*/ ?>
+            <?php /*<li><a target="_blank" href="<?php echo e(route('articleInfo',['id'=>$val->article_id])); ?>" title="免费注册"><?php echo e($val->title); ?></a></li>*/ ?>
+            <?php /*<?php endforeach; ?>*/ ?>
+        <?php /*</ul>*/ ?>
+    <?php /*<?php endforeach; ?>*/ ?>
+        <?php /*<div class="subNav"><a class="subNav_a" href="<?php echo e(route('article.index',['id'=>4])); ?>" title="公司动态">公司动态</a></div>*/ ?>
+        <?php /*<div class="subNav"><a class="subNav_a" href="<?php echo e(route('article.index',['id'=>12])); ?>" title="公司动态">医药信息</a></div>*/ ?>
+<?php /*</div>*/ ?>
+<div class="title"><img src="<?php echo e(path('images/help1.png')); ?>"></div>
+<div class="subNavBox">
+    <?php foreach($artCat as $v): ?>
+        <div class="subNav <?php if(isset($cat_id)&&$cat_id==$v->cat_id): ?> currentDd currentDt <?php endif; ?>"><?php echo e($v->cat_name); ?> </div>
+        <ul style="display: block" class="navContent">
+            <?php foreach($v->article as $val): ?>
+                <li><a <?php if(isset($id)&&$id==$val->article_id): ?> class="a_checked" <?php endif; ?> href="<?php echo e(route('articleInfo',['id'=>$val->article_id])); ?>" title="<?php echo e($val->title); ?>"><?php echo e($val->title); ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endforeach; ?>
+    <?php /*<a href="<?php echo e(route('article.index',['id'=>4])); ?>" title="公司动态"><div class="subNav">公司动态</div></a>*/ ?>
+    <?php /*<a href="<?php echo e(route('article.index',['id'=>12])); ?>" title="医药信息"><div class="subNav">医药信息</div></a>*/ ?>
+</div>

@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form, img, p {
+    border: medium none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/*9-10*/
+.ls_header{height:165px; width: 100%;background: url(../images/body_bg.jpg) repeat;}
+
+/*8-22*/
+.ls_header_t{ background:url(../images/hz_tb.jpg); width:100%;min-width:1200px;}
+
+.ls_header_t_n{ width:1200px; height:30px; margin:auto;}
+
+.ls_header_t_n_l{ float:left; width:50%; font-size:12px; color:#fff;line-height: 30px;height: 30px}
+
+.ls_header_t_n_l a{ color:#f9f402; font-size:12px; text-decoration:none;}
+
+.ls_header_t_n_r{ float:right; width:50%; font-size:12px; color:#fff; text-align:right;}
+
+.ls_header_t_n_r ul{float: right}
+.ls_header_t_n_r li{float: left;height: 30px;line-height: 30px;vertical-align: middle;padding: 0 5px}
+/*.ls_header_t_n_r img{float: left}*/
+.ls_header_t_n_r a{ color:#fff; font-size:12px; text-decoration:none;}
+.ls_header_t_n_r .attention{display: inline;position: relative;z-index: 600000;padding: 0 15px}
+/*9-3 height*/
+.ls_header_t_n_r .attention:hover{background-color: #f9f7fa;height: 29px;border: 1px solid #ccc;border-bottom: 0;padding-left: 14px;padding-right: 14px}
+/*end*/
+.ls_header_t_n_r .attention:hover .attention_img{top: -1px;position: relative;}
+.ls_header_t_n_r .attention:hover a{color: #333}
+.ls_header_t_n_r .attention:hover i{background: url("../images/up_down.png") 0 -50px no-repeat;top: 11px}
+/*9-3 两个都是top*/
+.ls_header_t_n_r .attention .px1{display: none;height: 1px;top: 29px;width: 100%;background-color: #f9f7fa;border: 0;z-index: 600000}
+
+.ls_header_t_n_r .attention div{display: none;position: absolute;z-index: 500000;left: -1px;top: 29px;border: 1px solid #ccc}
+/*end*/
+.ls_header_t_n_r .attention .px1{left: 0}
+.attention i{background: url("../images/up_down_white.png") 0 -30px no-repeat;width: 8px;height: 6px;float: right;position: absolute;top: 13px;right: 10px}
+.ls_header_t_n_r .attention:hover div{display: block}
+/*end*/
+
+.ls_header_c{ width:1200px; height:90px; margin:auto;}
+.ls_header_c_l{ height:90px; width:343px; float:left;}
+.ls_header_c_c{ margin-left:139px; height:70px; width:520px; float:left; margin-top:20px;}
+.ls_header_c_c_t{ width:501px; height:37px; background:url(../images/hz_ss.png);}
+.search_k_ls {background: none repeat scroll 0 0 transparent;border: medium none;color: #666666;height: 25px;line-height: 25px;margin-left: 5px;margin-top: 3px;padding-left: 10px;width: 378px;}
+.search_key_ls { background: none repeat scroll 0 0 transparent;border: medium none;color: #046C33; height: 30px;text-indent: -9999px;width: 100px;cursor:pointer;}
+.ls_header_c_c_b{ width:501px; height:31px; line-height:31px; color:#606060; font-size:12px;}
+.ls_header_c_c_b a{ color:#606060; text-decoration:none;}
+.ls_header_c_r{ float:right; width:225px; height:65px; margin-top:10px;}
+
+.ls_header_b_wrap{ background: url("../images/hz_dh_wrap.png") repeat-x 0 0 rgba(0, 0, 0, 0);height: 39px;line-height: 39px;width: 100%;}
+.ls_header_b{ width:1200px; background:url(../images/hz_dh.jpg); height:39px; margin:auto;}
+.ls_header_b ul{ margin:0; padding:0; float:left;}
+.ls_header_b li{ width:121px; height:39px; color:#fff; background:url(../images/hz_dh_bj.png); float:left; font-size:14px; text-align:center; line-height:39px;}
+.ls_header_b .li_bj{ background:url(../images/hz_dh_f_bj.png);}
+.ls_header_b li a{ color:#fff; width:121px; height:39px; text-decoration:none; display:block;}
+
+.ls_gw{ float:right; width:191px; height:30px; margin-right:10px; margin-top:5px;}
+.ls_gw_t{   background: url(../images/gw_sl.png) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 13px;
+    height: 21px;
+    line-height: 15px;
+    margin-left: 168px;
+    margin-top: -15px;
+    position: absolute;
+    text-align: center;
+    width: 19px;}
+.ls_gw_t a{ color:#fff; text-decoration:none;}
+.ls_gw_i{ width:191px; height:30px; background:url(../images/ls_gw.png)}
+.ls_gw_i a{ width:191px; height:30px; display:block;}

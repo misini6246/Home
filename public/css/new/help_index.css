@@ -1,0 +1,87 @@
+#xrzd .container_box,#zzfw .container_box,#rgfw .container_box,#gghz .container_box{
+	background: #fff;
+}
+#xrzd,#zzfw,#rgfw{
+	margin-bottom: 10px;
+}
+/*资助服务*/
+#zzfw .help_content{
+	height: 200px;
+}
+#zzfw .help_content li{
+	width: 193px;
+	float: left;
+	text-align: center;
+}
+#zzfw .help_content li img{
+	vertical-align: top;
+	margin-top: 60px;
+}
+#zzfw .help_content li p{
+	color: #000;
+	font-family: "宋体";
+	margin-top: 10px;
+}
+/*人工服务*/
+#rgfw .help_content{
+	height: 140px;
+}
+#rgfw .help_content li{
+	float: left;
+	width: 360px;
+	height: 100px;
+	border: 1px solid #cccccc;
+	margin: 20px 0 0 39px;
+	*margin: 18px 0 0 36px;
+}
+#rgfw .help_content li:first-child{
+	margin-left: 0;
+}
+#rgfw .help_content li .img_box{
+	float: left;
+	width: 98px;
+	height: 98px;
+	line-height: 98px;
+	text-align: center;
+}
+#rgfw .help_content li .text{
+	float: left;
+	width: 250px;
+}
+#rgfw .help_content li .text p {
+	overflow: hidden;
+	width: 100%;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#rgfw .help_content li .text p.rgfw_title{
+	font-size: 18px;
+	margin-top: 15px;
+}
+#rgfw .help_content li .text p.rgfw_sm{
+	font-size: 14px;
+	margin-top: 2px;
+}
+#rgfw .help_content li .text p.rgfw_sm span{
+	font-size: 14px;
+	margin-left: 20px;
+}
+#rgfw .help_content li .text a{
+	width: 76px;
+	height: 21px;
+	line-height: 21px;
+	display: inline-block;
+	text-align: center;
+	color: #fff;
+	background: #3dbb2b;
+	font-size: 12px;
+	font-family: "宋体";
+	border-radius: 3px;
+	margin-top: 5px;
+}
+/*广告合作*/
+#gghz .help_content{
+	font-size: 16px;
+	line-height: 30px;
+	padding: 20px 0;
+}

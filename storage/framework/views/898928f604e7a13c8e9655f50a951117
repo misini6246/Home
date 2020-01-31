@@ -1,0 +1,150 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('css/jifen/common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/jifen/index.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/jifen/add_to_cart.js')); ?>" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('jifen.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('jifen.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--我的积分以及信息-->
+    <div class="my content">
+        <div class="content_box">
+            <div class="my_left">
+                <div class="my_left_top">
+                    <div class="my_left_top_title">
+                        <div class="img_box">
+                            <img src="<?php echo e(get_img_path('images/jf/jifen_red_03.png')); ?>"/>
+                        </div>
+                        <span>我的积分</span>
+                    </div>
+                    <?php if(!$user): ?>
+                        <div class="login_before">
+                            <a href="/auth/login">请登录</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="login_after">
+                            <div class="login_after_title">
+                                您好！<span><?php echo e($user->msn); ?></span>
+                            </div>
+                            <div class="login_after_content">
+                                可用积分：<span><?php echo e($user->pay_points); ?></span>
+                            </div>
+                            <div class="login_after_bottom">
+                                <a href="<?php echo e(route('jifen.order.index')); ?>">[积分订单]</a>
+                                <a href="<?php echo e(route('jifen.address.index')); ?>">[查看收货地址]</a>
+                                <a href="<?php echo e(route('index')); ?>">[去赚取积分]</a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="my_left_bottom">
+                    <div class="my_left_top_title">
+                        <div class="img_box">
+                            <img src="<?php echo e(get_img_path('images/jf/lipin_1_03.png')); ?>"/>
+                        </div>
+                        <span>礼品分类</span>
+                    </div>
+                    <div class="my_left_bottom_content">
+                        <a href="#rmdh">热门兑换</a>
+                        <a href="#jydq">家用电器</a>
+                        <a href="#jjbb">移动电器</a>
+                        <a href="#bgyp">办公用品</a>
+                        <?php /*<a href="#jjth">季节特惠</a>*/ ?>
+                    </div>
+                </div>
+            </div>
+            <div id="ban2">
+                <div class="banner">
+                    <ul class="img">
+                        <?php /*<?php foreach($focus as $v): ?>*/ ?>
+                        <?php /*<li>*/ ?>
+                        <?php /*<a href="<?php echo e($v->url); ?>"><img src="<?php echo e(get_img_path('jf/'.substr($v->img,1))); ?>"/></a>*/ ?>
+                        <?php /*</li>*/ ?>
+                        <?php /*<?php endforeach; ?>*/ ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e(route('jifen.jf_money.index')); ?>"><img
+                                        src="<?php echo e(get_img_path('adimages1/sy_banner.jpg')); ?>"/></a>
+                        </li>
+                    </ul>
+                    <ul class="num">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--我的积分以及信息-->
+    <!--热门兑换-->
+    <?php /*<?php echo $__env->make('jifen.layouts.hot', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+    <div class="common content" id="rmdh">
+        <div class="content_box">
+            <div class="content_title">
+                <div class="img_box">
+                    <img src="<?php echo e(get_img_path('images/jf/hot_03.png')); ?>"/>
+                </div>
+                <span>热门兑换</span>
+            </div>
+            <?php echo $__env->make('jifen.layouts.cat',['cat'=>$cat5], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <!--热门兑换-->
+    <!--家用电器-->
+    <div class="common content" id="jydq">
+        <div class="content_box">
+            <div class="content_title">
+                <div class="img_box">
+                    <img src="<?php echo e(get_img_path('images/jf/jiadian_03.png')); ?>"/>
+                </div>
+                <span>家用电器</span>
+            </div>
+            <?php echo $__env->make('jifen.layouts.cat',['cat'=>$cat1], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <!--家用电器-->
+    <!--居家必备-->
+    <div class="common content" id="jjbb">
+        <div class="content_box">
+            <div class="content_title">
+                <div class="img_box">
+                    <img src="<?php echo e(get_img_path('images/jf/jujia_03.png')); ?>"/>
+                </div>
+                <span>移动电器</span>
+            </div>
+            <?php echo $__env->make('jifen.layouts.cat',['cat'=>$cat6], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <!--居家必备-->
+    <!--办公用品-->
+    <div class="common content" id="bgyp">
+        <div class="content_box">
+            <div class="content_title">
+                <div class="img_box">
+                    <img src="<?php echo e(get_img_path('images/jf/bangong_03.png')); ?>"/>
+                </div>
+                <span>办公用品</span>
+            </div>
+            <?php echo $__env->make('jifen.layouts.cat',['cat'=>$cat3], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+    <!--办公用品-->
+    <!--季节特惠-->
+    <?php /*<div class="common content" id="jjth">*/ ?>
+    <?php /*<div class="content_box">*/ ?>
+    <?php /*<div class="content_title">*/ ?>
+    <?php /*<div class="img_box">*/ ?>
+    <?php /*<img src="<?php echo e(get_img_path('images/jf/jijie_03.png')); ?>"/>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<span>季节特惠</span>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<?php echo $__env->make('jifen.layouts.cat',['cat'=>$cat4], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <!--季节特惠-->
+    <?php echo $__env->make('jifen.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script>
+        $('.my_left_bottom_content').singlePageNav({
+            offset: 0
+        });
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('jifen.layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

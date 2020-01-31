@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>积分商城-个人中心-我的积分</title>
+    <script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/jfen/jfsc-js/jquery.singlePageNav.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/jfen/jfsc-css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/jfen/jfsc-css/jifendingdan.css"/>
+    <script src="/jfen/jfsc-js/lb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<?php echo $__env->make('jifen.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('jifen.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!--container-->
+<div class="container content">
+    <div class="content_box">
+        <div class="top_title">
+            <img src="http://images.hezongyy.com/images/jf/address_03.png?1" />
+            <span>当前位置：<a href="https://www.hezongyy.com/jifen">积分首页</a> > <a
+                        href="https://www.hezongyy.com/jifen/user">个人中心</a>> 我的积分</span>
+        </div>
+        <div class="vip">
+            <?php echo $__env->make('jifen.layouts.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="vip_right">
+                <div class="vip_right_title">
+                    <img src="http://images.hezongyy.com/images/jf/dian_03.png?1"/>
+                    <span>积分订单</span>
+                </div>
+                <div class="vip_right_container">
+                    <?php if(count($result)>0): ?>
+                        <ul class="dingdan_title">
+                            <li class="lpxx">礼品信息</li>
+                            <li class="ze">总额</li>
+                            <li class="ddzt">订单状态</li>
+                            <li class="cz">操作</li>
+                        </ul>
+                        <ul class="dingdan_list" style="margin-bottom: 20px;">
+                            <?php foreach($result as $v): ?>
+                                <li>
+                                    <div class="dingdan_list_title">
+										<span class="dd_num">
+											订单编号：<?php echo e($v->order_sn); ?>
+
+										</span>
+                                        <span class="dd_time">
+											下单时间：<?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?>
+
+										</span>
+                                        <span class="dd_user">
+											收货人：<?php echo e(isset($v->address->name) ? $v->address->name : ''); ?><img
+                                                    src="http://images.hezongyy.com/images/jf/zhankai.png?1" alt=""/>
+											<div class="dd_user_box">
+												<img src="http://images.hezongyy.com/images/jf/alert_box_sanjiao.png?1"
+                                                     class="sanjiao_icon"/>
+												<p class="name">
+													<img src="http://images.hezongyy.com/images/jf/zhuizong_dian.png?1"/>
+													<span class="left">收货人：</span>
+													<span class="right"><?php echo e(isset($v->address->name) ? $v->address->name : ''); ?></span>
+												</p>
+												<p class="name">
+													<img src="http://images.hezongyy.com/images/jf/zhuizong_dian.png?1"/>
+													<span class="left">
+														联系电话：
+													</span>
+													<span class="right"><?php echo e(isset($v->address->mob_phone) ? $v->address->mob_phone : ''); ?></span>
+												</p>
+												<p class="name">
+													<img src="http://images.hezongyy.com/images/jf/zhuizong_dian.png?1"/>
+													<span class="left">
+														收货地址：
+													</span>
+													<span class="right"><?php echo e(isset($v->address->address) ? $v->address->address : ''); ?></span>
+												</p>
+											</div>
+										</span>
+                                    </div>
+                                    <div class="dingdan_content">
+                                        <div class="dingdan_content_left">
+                                            <?php foreach($v->goods as $goods): ?>
+                                                <div class="ct">
+                                                    <div class="img_box">
+                                                        <a href="<?php echo e(route('jifen.goods.show',['id'=>$goods->goods_id])); ?>"><img
+                                                                    style="width: 100%;height: 100%;"
+                                                                    src="http://jf.jyeyw.com.<?php echo e(substr($goods->goods_image,1)); ?>"/></a>
+                                                    </div>
+                                                    <div class="text">
+                                                        <p class="name"><?php echo e($goods->goods_name); ?></p>
+                                                        <p class="jifen">
+                                                            <span class="fr">数量：<span><?php echo e($goods->goods_num); ?></span></span>
+                                                            积分：<?php echo e($goods->jf); ?>
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="dingdan_content_right">
+                                            <div class="ze"><?php echo e($v->goods_amount); ?></div>
+                                            <div class="ddzt"><?php echo $v->order_state; ?></div>
+                                            <div class="cz">
+                                                <a href="<?php echo e(route('jifen.order.show',['id'=>$v->id])); ?>">订单详情</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php else: ?>
+                        <?php echo $__env->make('user.empty',['type'=>4], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php echo $__env->make('jifen.layouts.wntj', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+</div>
+<!--container-->
+<?php echo $__env->make('jifen.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+
+</html>

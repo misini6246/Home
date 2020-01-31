@@ -1,0 +1,160 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/user_message2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="main fn_clear">
+        <div class="top"><span class="title">我的药易购</span> <a>>　<span>我的账户</span> </a> <a
+                    href="<?php echo e(route('user.profile')); ?>" class="end">>　<span> 用户信息</span></a></div>
+        <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="main_right1">
+            <div class="top_title">
+                <h3>用户信息</h3>
+                <span class="ico"></span>
+            </div>
+            <div class="content_box">
+                <h4>用户信息</h4>
+                <div class="content">
+                    <form name="formEdit" action="<?php echo e(route('user.infoUpdate')); ?>" method="post"
+                          enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+
+                        <table>
+                            <tr>
+                                <td class="title">出生日期：</td>
+                                <td>
+                                    <select name="year">
+                                        <?php echo $year; ?>
+
+                                    </select>&nbsp;
+                                    <select name="month">
+                                        <?php echo $month; ?>
+
+                                    </select>&nbsp;
+                                    <select name="day">
+                                        <?php echo $day; ?>
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">性别：</td>
+                                <td>
+                                    <input type="radio" name="sex" value="0"
+                                           <?php if($user->sex==0): ?>checked="checked"<?php endif; ?> />保密
+                                    <input type="radio" name="sex" value="1"
+                                           <?php if($user->sex==1): ?>checked="checked"<?php endif; ?> />男
+                                    <input type="radio" name="sex" value="2"
+                                           <?php if($user->sex==2): ?>checked="checked"<?php endif; ?> />女
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="title">电子邮件地址：</td>
+                                <td><input name="email" type="text" value="<?php echo e($user->email); ?>" size="25"
+                                           class="com email"/> <span class="xinghao">*</span></td>
+                            </tr>
+                            <tr>
+                                <td class="title">上传头像：</td>
+                                <td style="line-height: initial;"><p><input type="file" name="ls_file"/><input
+                                                type="hidden" name="ls_file1"
+                                                value="<?php echo e($user->ls_file); ?>"/></p> <span
+                                            class="file_ico"><img
+                                                src="<?php if($user->ls_file): ?> <?php echo e(path('images/yes.gif')); ?> <?php else: ?> <?php echo e(path('images/no.gif')); ?> <?php endif; ?>"/></span>
+                                </td>
+                            </tr>
+
+                            <?php /*{foreach from=$extend_info_list item=field}*/ ?>
+                            <?php /*<!-- {if $field.id eq 6} -->*/ ?>
+                            <?php /*<tr>*/ ?>
+                            <?php /*<td class="title">{$lang.passwd_question}：</td>*/ ?>
+                            <?php /*<td >*/ ?>
+                            <?php /*<select name='sel_question'>*/ ?>
+                            <?php /*<option value='0'>{$lang.sel_question}</option>*/ ?>
+                            <?php /*{html_options options=$passwd_questions selected=$profile.passwd_question}*/ ?>
+                            <?php /*</select>*/ ?>
+                            <?php /*</td>*/ ?>
+                            <?php /*</tr>*/ ?>
+                            <?php /*<tr>*/ ?>
+                            <?php /*<td class="title">{$lang.passwd_answer}：</td>*/ ?>
+                            <?php /*<td ><input name="passwd_answer" type="text" class="com" maxlengt='20' value="{$profile.passwd_answer}"/><!-- {if $field.is_need} --><span class="tip_ico2">*</span><!-- {/if} --></td>*/ ?>
+                            <?php /*</tr>*/ ?>
+                            <?php /*<!-- {else} -->*/ ?>
+                            <?php /*{if $field.id eq 1}*/ ?>
+                            <tr>
+                                <td class="title">企业名称：</td>
+                                <td><input name="msn" type="text" class="com" readonly value="<?php echo e($user->msn); ?>"/><span
+                                            class="txt">如需更改请联系客服人员！</span></td>
+                            </tr>
+                            <tr>
+                                <td class="title">QQ：</td>
+                                <td><input name="qq" type="text" class="com" value="<?php echo e($user->qq); ?>"/></td>
+                            </tr>
+                            <tr>
+                                <td class="title">联系电话：</td>
+                                <td><input name="mobile_phone" type="text" class="com" value="<?php echo e($user->mobile_phone); ?>"/>
+                                </td>
+                            </tr>
+                            <?php /*{else}*/ ?>
+                            <?php /*<tr>*/ ?>
+                            <?php /*<td class="title">{$field.reg_field_name}：</td>*/ ?>
+                            <?php /*<td ><input name="extend_field{$field.id}" type="text" class="com" value="{$field.content}"/> <!-- {if $field.is_need} --><span class="tip_ico2">*</span><!-- {/if} --></td>*/ ?>
+                            <?php /*</tr>*/ ?>
+                            <?php /*{/if}*/ ?>
+                            <?php /*<!-- {/if} -->*/ ?>
+                            <?php /*{/foreach}*/ ?>
+                            <tr>
+                                <td colspan="2" class="btn1">
+                                    <input name="submit" type="submit" value="确认修改" class="revise"/>
+                                    <input name="act" type="hidden" value="act_edit_profile"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <form name="formPassword" action="<?php echo e(route('user.setPwd')); ?>" method="post">
+                        <?php echo csrf_field(); ?>
+
+                        <table class="table2">
+                            <tr>
+                                <td class="title">原密码：</td>
+                                <td><input name="old_password" type="password"
+                                           class="com ypsw"/>&nbsp;<?php echo $errors->first('old_password','<span style="color: red">:message</span>'); ?>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">新密码：</td>
+                                <td><input name="password" type="password"
+                                           class="com npsw"/>&nbsp;<?php echo $errors->first('password','<span style="color: red">:message</span>'); ?>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="title">确认密码：</td>
+                                <td><input name="password_confirmation" type="password" class="com cpsw"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="btn1 btn2">
+                                    <input name="submit" type="submit" class="revise revise2" value="确认修改"/>
+                                    <input name="act" type="hidden" value="act_edit_password"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

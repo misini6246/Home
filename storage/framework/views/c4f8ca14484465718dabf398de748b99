@@ -1,0 +1,85 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_gy.css')); ?>"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('article.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('article.help_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div id="help_title" class="container">
+        <div class="container_box">
+            <ul class="help_title_list">
+                <?php foreach($articles as $k=>$v): ?>
+                    <li <?php if($k==$article_id): ?>class="active"<?php endif; ?>><a
+                                href="<?php echo e(route('xin.help',['cat_id'=>$cat_id,'article_id'=>$k])); ?>"><?php echo e($v); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class="container_box">
+            <div class="help_title">安全购药</div>
+            <div class="step">
+                <div class="content_step">
+                    1，合法的售药平台
+                </div>
+                <div class="gy_content">
+                    <p>这是内容</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content_step">
+                    2，如何判断是否正规合法
+                </div>
+                <div class="gy_content">
+                    <p>这是内容</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content_step">
+                    3、药易购网站具备的证书查看
+                </div>
+                <div class="gy_content">
+                    <ul class="gy_title_list">
+                        <li class="ml0 active">《互联网药品交易服务机构资格证书》</li>
+                        <li>《互联网药品信息服务资格证书》</li>
+                        <li>《电信与信息服务业务经营许可证》</li>
+                        <li>《药品经营许可证》</li>
+                        <li class="ml0">《医疗器械经营企业许可证》</li>
+                        <li>《药品经营质量管理规范认证证书》</li>
+                        <li class="w175">《食品卫生许可证》</li>
+                        <li class="w175">《营业执照》</li>
+                        <li class="w180">《卫生许可证》</li>
+                    </ul>
+                    <ul class="gy_content_list">
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('article.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript">
+        $(function(){
+            $('.gy_title_list li').click(function(){
+
+                var index = $(this).index();
+
+                $(this).addClass('active').siblings('li').removeClass('active');
+
+                $('.gy_content_list li').eq(index).addClass('active').siblings('li').removeClass('active');
+
+            })
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

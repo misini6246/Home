@@ -1,0 +1,329 @@
+.zhongyyp-list-right {
+    width: 980px;
+    float: left;
+    margin-left: 10px;
+}
+
+.zhongyyp-list-right .r_top {
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.zhongyyp-list-right .r_top img {
+    margin-top: 10px;
+}
+
+.content-right .r_top .filter_ico, .dosage-selection .ul_list1 .up_ico, .table1 tr td .list, .table1 tr td .big_pic {
+    background: url("../images/com_sprites.png") no-repeat;
+}
+
+.g_csize {
+    height: 32px;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 12px;
+    line-height: 32px;
+    position: relative;
+}
+
+.g_hdiv {
+    float: left;
+    text-align: right;
+    width: 57px;
+}
+
+.g_listdiv {
+    float: left;
+    width: 890px;
+    _margin-top: 4px;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+a.g_select_cate h5 {
+    color: #808080;
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+a.g_select_cate {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999;
+    color: #E4393C;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    line-height: 16px;
+    padding: 0 20px 0 3px;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+a.g_select_cate .g_close_icon {
+    background: url("../images/close_0.gif") no-repeat scroll 0 0 transparent;
+    height: 13px;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 14px;
+}
+
+.dosage-selection {
+}
+
+.dosage-selection .ul_list1 {
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.dosage-selection .ul_list1 .title_name {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 32px;
+}
+
+.dosage-selection .ul_list1 ul {
+    width: 780px;
+    float: left;
+    padding: 4px 0;
+}
+
+.dosage-selection .ul_list1 ul li {
+    white-space: nowrap;
+    padding: 0 15px;
+    float: left;
+    height: 22px;
+    line-height: 22px;
+}
+
+.dosage-selection .ul_list1 ul li a {
+    color: #0bbe97;
+}
+
+.dosage-selection .ul_list1 ul li.on_click {
+    color: #e70000;
+}
+
+.dosage-selection .ul_list1 ul li.on_click a {
+    color: #e70000;
+}
+
+.dosage-selection .ul_list1 ul li a:hover {
+    color: #e70000;
+    text-decoration: none;
+}
+
+.shopping-list .table2 tr:hover {
+    backgroundr: #e70000;
+}
+
+.dosage-selection .ul_list1 span.close, .dosage-selection .ul_list1 span.open {
+    position: relative;
+    width: 46px;
+    height: 18px;
+    border: 1px solid #b5b5b5;
+    line-height: 18px;
+    font-weight: normal;
+    text-indent: 5px;
+    display: block;
+    float: right;
+    margin: 6px 35px 0 0;
+    cursor: pointer;
+}
+
+.dosage-selection .ul_list1 .up_ico {
+    width: 12px;
+    height: 6px;
+    overflow: hidden;
+    position: absolute;
+    right: 2px;
+    top: 6px;
+    background-position: -50px 0;
+}
+
+.dosage-selection .ul_list2 {
+    height: auto;
+}
+
+.initial-a {
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.initial-a .title_name {
+    padding-right: 45px
+}
+
+.initial-a a {
+    padding: 2px 8px;
+    color: #0bbe97;
+}
+
+.initial-a a:hover, .initial-a a.checked_a {
+    color: #e70000;
+}
+
+.initial-a a:hover, .initial-a a:hover {
+    color: #e70000;
+    text-decoration: none;
+}
+
+.zhongyyp-goods-list ul {
+    width: 1000px;
+    margin-top: 13px
+}
+
+.zhongyyp-goods-list ul li {
+    width: 235px;
+    height: 450px;
+    border: 1px solid #eeeeee;
+    float: left;
+    margin: 0 13px 13px 0;
+    position: relative
+}
+
+.zhongyyp-goods-list ul li a img {
+    width: 235px;
+    height: 235px;
+}
+
+.zhongyyp-goods-list ul li .title {
+    font-size: 14px;
+    color: #0bbe97;
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.zhongyyp-goods-list ul li p {
+    height: 25px;
+    line-height: 25px;
+    color: #7f7f79;
+    padding-left: 16px;
+    overflow: hidden;
+}
+
+.zhongyyp-goods-list ul li p .chandi {
+    padding-right: 5px;
+}
+
+.zhongyyp-goods-list ul li p em {
+    color: #f20000;
+}
+
+.zhongyyp-goods-list ul li .hot {
+    position: absolute;
+    width: 82px;
+    height: 33px;
+    top: -5px;
+    left: 0;
+}
+
+.zhongyyp-goods-list ul li .shoucang {
+    position: absolute;
+    width: 68px;
+    height: 25px;
+    top: 145px;
+    left: 8px;
+    display: none
+}
+
+.zhongyyp-goods-list ul li .shoucang img {
+    width: 68px;
+    height: 25px;
+}
+
+.zhongyyp-goods-list ul li.zhongyy-list-hover {
+    border: 1px solid #0bbe97;
+}
+
+.zhongyyp-goods-list ul li.zhongyy-list-hover .shoucang {
+    display: block;
+}
+
+.zhongyyp-goods-list .btn {
+    margin-top: 5px;
+}
+
+.zhongyyp-goods-list .btn .num {
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+    border: 1px solid #dbdbdb;
+    float: left;
+    margin: 0 0px 0 17px;
+    border-right: 0;
+}
+
+.zhongyyp-goods-list .btn p {
+    width: 16px;
+    height: 28px;
+    float: left;
+    padding-left: 0;
+}
+
+.zhongyyp-goods-list .btn span {
+    display: block;
+    width: 16px;
+    height: 14px;
+    float: left;
+    background: url("../images/sprite.png") no-repeat;
+    cursor: pointer;
+}
+
+.zhongyyp-goods-list .btn span.add {
+    background-position: -182px 0
+}
+
+.zhongyyp-goods-list .btn span.reduce {
+    background-position: -182px -14px
+}
+
+.zhongyyp-goods-list .btn a {
+    display: block;
+    float: left;
+    width: 112px;
+    height: 26px;
+    border: 1px solid #dbdbdb;
+    margin-left: 10px;
+    line-height: 26px;
+    text-indent: 38px;
+    background-color: #fff;
+    color: #e70000;
+    position: relative;
+}
+
+.zhongyyp-goods-list .btn a em {
+    width: 23px;
+    height: 26px;
+    float: left;
+    background: url("../images/com_sprites.png") -71px -1px no-repeat;
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.open_zy, .close_zy {
+    position: relative;
+    width: 46px;
+    height: 18px;
+    border: 1px solid #b5b5b5;
+    line-height: 18px;
+    font-weight: normal;
+    text-indent: 5px;
+    display: block;
+    float: right;
+    margin: 6px 35px 0 0;
+    cursor: pointer;
+}

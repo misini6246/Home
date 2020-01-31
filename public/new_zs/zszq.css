@@ -1,0 +1,532 @@
+img {
+    border: none;
+    vertical-align: middle;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.big-container {
+	background-color: #fff;
+}
+/*内容*/
+.container {
+    width: 100%;
+}
+
+.container .container_box {
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*nav*/
+#nav {
+    height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    z-index: 61;
+}
+
+#nav .fenlei {
+    width: 210px;
+    background: #3dbb2b;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    cursor: pointer;
+}
+
+#nav .fenlei img {
+    position: relative;
+    top: -2px;
+    *top: -1px;
+}
+
+#nav .fenlei span {
+    font-size: 16px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.nav_list, .nav_list li, #nav .fenlei {
+    float: left;
+}
+
+.nav_list li {
+    height: 40px;
+    line-height: 40px;
+    margin-left: 35px;
+}
+
+.nav_list li a {
+    font-size: 16px;
+}
+
+.nav_list li.active a {
+    color: #3dbb2b;
+    font-weight: bold;
+}
+
+.gif_phone {
+    float: right;
+    height: 39px;
+    line-height: 39px;
+    overflow: hidden;
+}
+
+.gif_phone img {
+    vertical-align: baseline;
+}
+
+/*.site_content {
+    height: 400px;
+    *height: 401px;
+    background: #3e8b63;
+    width: 210px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: block;
+}*/
+
+.menu_list {
+    height: 401px;
+}
+
+.menu_list li {
+    height: 80px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu_list li .child {
+    position: absolute;
+    left: 190px;
+    background: #fff;
+    width: 780px;
+    min-height: 400px;
+    top: 0;
+    display: none;
+    padding: 10px 30px;
+    border: 1px solid #3dbb2b;
+}
+
+.menu_list li.active .child {
+    display: block;
+}
+
+.menu_list li.active .text {
+    border-bottom: 1px solid #3dbb2b !important;
+}
+
+.menu_list li.active .text {
+    background: #fff;
+    position: relative;
+    z-index: 9999;
+}
+
+.menu_list li.active .text_top {
+    color: #3dbb2b;
+}
+
+.menu_list li.active .text_bottom span {
+    color: #666;
+}
+
+.site_content li .text {
+    margin: 2px 0 0 2.5%;
+    height: 77px;
+    text-indent: 15px;
+    overflow: hidden;
+    border-bottom: 1px dashed #b2d1c1;
+    *margin-top: 2.5px;
+}
+
+.site_content li .text .text_top img:first-child + img, .site_content li.active .text .text_top img:first-child {
+    display: none;
+}
+
+.site_content li.active .text .text_top img:first-child + img {
+    display: block;
+}
+
+.site_content li:first-child .text {
+    margin-top: 1px !important;
+    height: 79px !important;
+    *height: 78px !important;
+}
+
+.menu_list li:last-child .text {
+    border-bottom: none;
+    height: 78px;
+}
+
+.site_content li p {
+    font-family: "宋体";
+}
+
+.text_top {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.text_top img {
+    margin-right: 20px;
+}
+
+.text_bottom {
+    margin-top: 15px;
+}
+
+.text_bottom span {
+    color: #d8e8e0;
+    margin-left: 5px;
+}
+
+.text_bottom span:first-child {
+    margin-left: 0;
+}
+
+/*nav*/
+
+/*link*/
+#links {
+    padding: 20px 0;
+}
+
+#links ul {
+    height: 120px;
+    line-height: 120px;
+}
+
+#links ul li {
+    width: 223px;
+    margin-left: 18.333333333px;
+    float: left;
+}
+
+#links ul li:first-child {
+    margin-left: 0px;
+}
+
+/*link*/
+/*精选好药*/
+#jxhy {
+    background: #f5f5f5;
+    padding-bottom: 20px;
+}
+
+.jxhy_title {
+    height: 92px;
+    line-height: 92px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.jxhy_list {
+    height: 300px;
+}
+
+.jxhy_list li {
+    float: left;
+    width: 230px;
+    height: 300px;
+    margin-left: 8px;
+    background: #fff;
+}
+
+.jxhy_list li .img_box {
+    width: 230px;
+    height: 230px;
+    line-height: 230px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.jxhy_list li .text {
+    width: 200px;
+    height: 70px;
+    margin: 0 auto;
+    background: #d59b48;
+    overflow: hidden;
+}
+
+.jxhy_list li .text p, .xpsj_list li .text p {
+    text-align: center;
+    color: #fff;
+    font-family: "宋体";
+}
+
+.xpsj_list li .text p {
+    color: #333;
+}
+
+.jxhy_list li .text p.name, .xpsj_list li .text p.name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.jxhy_list li .text p.gg, .jxhy_list li .text p.company, .xpsj_list li .text p.gg, .xpsj_list li .text p.company {
+    margin-top: 5px;
+}
+
+/*精选好药*/
+
+/*新品上架*/
+#xpsj {
+    padding-top: 20px;
+    overflow: hidden;
+    height: 950px;
+}
+
+/*销量开始*/
+.content-left {
+    width: 200px;
+    border: 1px solid #e5e5e5;
+    float: left;
+}
+
+.content-left-title {
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    background: #f8f8f8;
+}
+
+.content-left-title div {
+    width: 4px;
+    height: 12px;
+    background: #3dbb2b;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+}
+
+.content-left-title span {
+    margin-left: 22px;
+    color: #808080;
+}
+
+.paihang {
+    width: 100%;
+    height: 210px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.paihang-title {
+    height: 32px;
+    line-height: 32px;
+    margin-top: 7px;
+}
+
+.paihang-title img:first-child {
+    margin-left: 8px;
+    *float: left;
+}
+
+.paihang-img img {
+    margin-left: 0px !important;
+}
+
+.chengjiaoliang {
+    display: inline-block;
+    /* width: 98px; */
+    height: 18px;
+    line-height: 18px !important;
+    text-align: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    color: #666666;
+    margin-left: 14px;
+    *float: left;
+    *margin-top: 5px;
+}
+
+.paihang-img {
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.paihang-name div {
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    color: #999999;
+}
+
+.paihang-name div:first-child {
+    color: #333333 !important;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+
+.paihang-bottom ul {
+    width: 185px;
+    margin: 0 auto;
+}
+
+.paihang-bottom ul li {
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px dashed #ccc;
+    position: relative;
+}
+
+.paihang-bottom ul li:first-child + li + li + li + li + li + li {
+    border: none;
+}
+
+.paihang-bottom ul li span {
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #666666;
+    display: inline-block;
+}
+
+.paihang-bottom ul li span:first-child {
+    width: 20px;
+    border: 1px solid #bbbbbb;
+    border-radius: 50%;
+    float: left;
+    margin-top: 5px;
+}
+
+.paihang-bottom ul li a {
+    margin-left: 10px;
+    width: 80px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-top: -4px;
+    display: inline-block;
+    color: #666666;
+}
+
+.hover-before, .hover-after {
+    float: left;
+}
+
+.hover-after {
+    display: none;
+}
+
+.hover-after img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0 0 5px;
+    float: left;
+}
+
+.hover-name, .hover-guige {
+    width: 80px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 22px;
+    position: absolute;
+    right: 5px;
+}
+
+.hover-name {
+    top: 10px;
+}
+
+.hover-guige {
+    bottom: 10px;
+}
+
+.paihang-bottom ul li .ke {
+    margin-left: 13px;
+    width: 51px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+/*销量结束*/
+
+.content-right {
+    width: 980px;
+    float: right;
+}
+
+.content-right-title {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.xpsj_list {
+    width: 100%;
+    height: 280px;
+    border: 1px solid #e5e5e5;
+}
+
+.xpsj_list li {
+    float: left;
+    width: 244.5px;
+    border-left: 1px solid #e5e5e5;
+    height: 280px;
+}
+.xpsj_list li:first-child{
+    border-left: none;
+}
+
+.xpsj_list li .text p.name {
+    margin-top: 15px;
+}
+
+.xpsj_list li .img_box {
+    height: 210px;
+    line-height: 210px;
+    text-align: center;
+}
+
+.right_img {
+    margin: 10px 0 20px 0;
+}
+
+/*新品上架*/
+
+.menu_list .child .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.menu_list .child .cat_name {
+    display: inline-block;
+    width: 110px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.menu_list .child .cat_name a:hover {
+    color: #3dbb2b;
+}

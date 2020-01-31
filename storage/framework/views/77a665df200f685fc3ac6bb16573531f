@@ -1,0 +1,110 @@
+<div class="zhongyyp-left-box">
+    <div class="left-zyypzq">
+        <h3>中药饮片专区</h3>
+        <ul class="zyypzq-list">
+            <?php foreach(cate_tree(445) as $k=>$v): ?>
+                <?php if($k<4): ?>
+                    <li><a href="<?php echo e(route('category.zyyp',['pid'=>$v->cat_id])); ?>"> <?php echo e($v->cat_name); ?>  </a></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="left-tjcj">
+        <h3>推荐厂家</h3>
+        <ul class="tjcj-list">
+            <?php foreach(ads(98) as $k=>$v): ?>
+                <?php if($k<2): ?>
+                    <li>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img src="<?php echo e($v->ad_code); ?>" alt=""/>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+
+    </div>
+    <div class="list_next">
+        <h3>一周销量排行榜</h3>
+        <ul>
+            <?php /*<?php foreach($top1 as $k=>$v): ?>*/ ?>
+                <?php /*<li <?php if($k==0): ?>class="first"<?php endif; ?>>*/ ?>
+                    <?php /*<a href="<?php echo e($v->goods_url); ?>" class="list">*/ ?>
+                        <?php /*<span class="com_num red"><?php echo e($k+1); ?></span>*/ ?>
+                        <?php /*<span class="name" alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                              <?php /*title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,12)); ?></span>*/ ?>
+                        <?php /*<span class="norms" alt="" title="<?php echo e($v->spgg); ?>"><?php echo e(str_limit($v->spgg,6)); ?></span>*/ ?>
+                    <?php /*</a>*/ ?>
+                    <?php /*<span class="span_hide">*/ ?>
+                                <?php /*<span class="com_num red"><?php echo e($k+1); ?></span>*/ ?>
+                                <?php /*<a href="<?php echo e($v->goods_url); ?>"><img src="<?php echo e($v->goods_thumb); ?>" alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                                                                 <?php /*title="<?php echo e($v->goods_name); ?>"/></a>*/ ?>
+                                <?php /*<span class="title" style="margin: 0;*/ ?>
+                                                           <?php /*padding: 0;*/ ?>
+                                                           <?php /*border: 0;*/ ?>
+                                                           <?php /*font-size: 12px;*/ ?>
+                                                           <?php /*font-family: '微软雅黑';*/ ?>
+                                                           <?php /*vertical-align: baseline;margin-top:11px;color:#5b5a5a;"*/ ?>
+                                      <?php /*alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                                      <?php /*title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,12)); ?></span>*/ ?>
+                                <?php /*<span class="norms" alt="" title="<?php echo e($v->spgg); ?>"><?php echo e(str_limit($v->spgg,6)); ?></span>*/ ?>
+                            <?php /*</span>*/ ?>
+                <?php /*</li>*/ ?>
+            <?php /*<?php endforeach; ?>*/ ?>
+        </ul>
+    </div>
+
+    <div class="list_next">
+        <h3>一月销量排行榜</h3>
+        <ul>
+            <?php /*<?php foreach($top2 as $k=>$v): ?>*/ ?>
+                <?php /*<li <?php if($k==0): ?>class="first"<?php endif; ?>>*/ ?>
+                    <?php /*<a href="<?php echo e($v->goods_url); ?>" class="list">*/ ?>
+                        <?php /*<span class="com_num red"><?php echo e($k+1); ?></span>*/ ?>
+                        <?php /*<span class="name" alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                              <?php /*title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,12)); ?></span>*/ ?>
+                        <?php /*<span class="norms" alt="" title="<?php echo e($v->spgg); ?>"><?php echo e(str_limit($v->spgg,6)); ?></span>*/ ?>
+                    <?php /*</a>*/ ?>
+                    <?php /*<span class="span_hide">*/ ?>
+                                <?php /*<span class="com_num red"><?php echo e($k+1); ?></span>*/ ?>
+                                <?php /*<a href="<?php echo e($v->goods_url); ?>"><img src="<?php echo e($v->goods_thumb); ?>" alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                                                                 <?php /*title="<?php echo e($v->goods_name); ?>"/></a>*/ ?>
+                                <?php /*<span class="title" style="margin: 0;*/ ?>
+                                                           <?php /*padding: 0;*/ ?>
+                                                           <?php /*border: 0;*/ ?>
+                                                           <?php /*font-size: 12px;*/ ?>
+                                                           <?php /*font-family: '微软雅黑';*/ ?>
+                                                           <?php /*vertical-align: baseline;margin-top:11px;color:#5b5a5a;"*/ ?>
+                                      <?php /*alt="<?php echo e($v->goods_name); ?>"*/ ?>
+                                      <?php /*title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,12)); ?></span>*/ ?>
+                                <?php /*<span class="norms" alt="" title="<?php echo e($v->spgg); ?>"><?php echo e(str_limit($v->spgg,6)); ?></span>*/ ?>
+                            <?php /*</span>*/ ?>
+                <?php /*</li>*/ ?>
+            <?php /*<?php endforeach; ?>*/ ?>
+        </ul>
+
+    </div>
+
+    <div class="zhongdiantuijian">
+        <h3>重点推荐品类</h3>
+        <ul class="zhongdiantj-list">
+            <?php foreach($zdtj as $v): ?>
+                <li>
+                    <div style="text-align:center">
+                        <a href="<?php echo e($v->goods_url); ?>"><img src="<?php echo e($v->goods_thumb); ?>" alt=""/></a>
+                        <p><a href="<?php echo e($v->goods_url); ?>"><?php echo e(str_limit($v->goods_name,13)); ?></a></p>
+                        <p><a><?php echo e($v->spgg); ?></a></p>
+                        <p class="price"><span class="linshoujia">
+                            <?php echo e($v->real_price_format); ?>
+
+                            </span>
+                            <?php /*<span class="yuanjia"><?php echo e(formated_price($v->market_price)); ?></span>*/ ?>
+                        </p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <p class="huanyipi"><a href="javascript:;"><img src="<?php echo e(path('images/zyyp/zhyp053.jpg')); ?>" alt=""
+                                                        onclick="get_other()"/></a></p>
+    </div>
+</div>

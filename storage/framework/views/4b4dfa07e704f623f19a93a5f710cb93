@@ -1,0 +1,69 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('jfen/css/css_reset.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/my_page_common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/my_account.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/pagination.css')); ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/jquery-1.7.2.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/my_page.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/wait.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/table_click.js')); ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('layout.jf_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="content_main">
+    <p class="road_nav">您当前的位置： <span>首页</span> >> <span class="goods_name">我的账户</span></p>
+    <div class="content_main_all clear_float">
+        <p><span class="vip_center">会员中心</span><span class="address_manage">积分查询</span></p>
+        <?php echo $__env->make('layout.jfMenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="manage_all_address">
+            <div id="J_my_order" class="all_address clear_float">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>操作时间</td>
+                        <td>积分</td>
+                        <td>备注</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($pages as $v): ?>
+                        <tr>
+                            <td class="orderid"><?php echo e(date('Y-m-d H:i:s',$v->change_time)); ?></td>
+                            <td class="color_f9"><?php echo e(0-$v->pay_points); ?></td>
+                            <td class="status"><?php echo e($v->change_desc); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <tr>
+                        <td colspan=4 style="text-align:right;">您当前的可用积分为：<?php echo e($user->pay_points); ?> 分&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <?php if($pages->lastPage()>1): ?>
+                    <div class='order_pagination'>
+                        <div class='pagination'>
+                            <?php echo $__env->make('layout.jfPages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <?php echo $__env->make('layout.tj8', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(function(){//已兑换变蓝色
+        $(".status").each(function(n,e){
+            if($(e).text()=="已兑换"){
+                $(e).css({"color": "#089aca"});
+            }
+        });
+    })
+</script>
+<?php echo $__env->make('layout.jf_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.jf_body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

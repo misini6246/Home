@@ -1,0 +1,166 @@
+body,
+ul,
+li,
+ol {
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+}
+
+ul li {
+	list-style: none;
+}
+.container-box {
+	width: 1200px;
+	height: 3000px;
+	margin: 0 auto;
+	position: relative;
+	/*border: 1px solid red;*/
+}
+.tg-nav{
+	display: inline-block;
+	position: absolute;
+	top: 280px;
+	left: 360px;
+	*left: 0;
+}
+.tg-nav-box{
+	width: 426px;
+	height: 60px;
+	margin:0 auto;
+}
+.fixnav{
+	position: fixed;
+	top: 0;
+	left: 0;	
+	right: 0;
+	z-index: 2;
+}
+.nav-zq,
+.nav-mn,
+.nav-drt {
+	/*font-family: "microsoft yahei";*/
+	width: 105px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	background: white;
+	font-size: 18px;
+	color: #333333;
+	margin-left: 37px;
+	position: relative;
+	display: inline;
+	float: left;
+	cursor: pointer;
+	text-decoration:none;
+}
+
+.nav-before {
+	border-bottom: 60px solid #fff;
+	border-left: 35px solid transparent;
+	position: absolute;
+	left: -35px;
+	top: 0;
+	*top: -60px;
+}
+
+.nav-after {
+	border-top: 60px solid #fff;
+	border-right: 35px solid transparent;
+	position: absolute;
+	left: 105px;
+	top: 0;
+}
+
+.zq-content ul,
+.dr-content ul,
+.mn-content ul {
+	margin-top: 20px;
+}
+
+.zq-content ul li,
+.dr-content ul li,
+.mn-content ul li {
+	float: left;
+	width: 600px;
+	height: 280px;
+	overflow: hidden;
+	position: relative;
+}
+
+.zg-top img,
+.mn-top img,
+.dr-top img {
+	vertical-align: middle;
+}
+
+
+
+#zq,#mn,#dr{
+	width: 1200px;
+	height: 825px;
+	zoom: 1;
+}
+/*正清内容开始*/
+
+
+#zq {
+	display: inline-block;
+	
+	padding-top: 430px;
+	
+}
+
+
+/*正清内容结束*/
+
+
+
+/*购买按钮*/
+
+.tg-btn-left,
+.tg-btn-right {
+	width: 189px;
+	height: 39px;
+	position: absolute;
+	bottom: 60px;
+}
+
+
+.tg-btn-left {
+	right: 35px;
+}
+
+.tg-btn-right {
+	left: 36px;
+}
+.on{
+	background: #ee4848;
+	color: white;
+}
+
+.img-btn-left,.img-btn-right{
+	width: 340px;
+	height: 240px;
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+}
+.img-btn-left{
+	left: 20px;
+}
+.img-btn-right{
+	right: 20px;
+}
+.dr-top{
+	position: relative;
+}
+.dr-top a{
+	position: absolute;
+	bottom:20px;
+	left: 39px;
+	width: 140px;
+	height: 30px;
+}
+
+/*购买结束*/

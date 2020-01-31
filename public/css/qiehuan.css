@@ -1,0 +1,181 @@
+.main_right1 {
+
+    height: auto;
+}
+
+.main_right1 .content {
+    margin-top: 20px;
+    border: 1px solid #e4e4e4;
+    padding-bottom: 170px;
+}
+
+.main_right1 .content .qiehuan, .main_right1 .content .bangding {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/*切换会员*/
+.main_right1 .content .qiehuan .user {
+    margin-top: 40px;
+    font-size: 18px;
+    color: black;
+}
+
+.main_right1 .content .qiehuan .user span {
+    color: #ec2b2b;
+    font-size: 18px;
+}
+
+.main_right1 .content .qiehuan ul {
+    margin: 20px 0 0 -40px;
+    overflow: hidden;
+}
+
+.main_right1 .content .qiehuan ul li {
+    width: 428px;
+    height: 128px;
+    border: 1px solid #e5e5e5;
+    margin: 20px 0 0 40px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.main_right1 .content .qiehuan ul li div, .main_right1 .content .bangding div {
+    margin: 15px 0 0 20px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.main_right1 .content .qiehuan ul li img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.main_right1 .content .qiehuan ul li:first-child img {
+    display: block;
+}
+
+.main_right1 .content .qiehuan ul li div span, .main_right1 .content .bangding div span {
+    font-size: 14px;
+    color: #ff8601;
+}
+
+.main_right1 .content .qiehuan ul li .input_box {
+    text-align: center;
+}
+
+.main_right1 .content .qiehuan ul li .input_box input, .btn-bg {
+    width: 93px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: white;
+    color: #666;
+    font-size: 14px;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main_right1 .content .qiehuan ul li:hover {
+    border: 1px solid #3dbb2b;
+}
+
+.main_right1 .content .qiehuan ul li:hover .input_box input {
+    border: 1px solid #1e900e;
+    background: #3dbb2b;
+    color: white;
+}
+
+.main_right1 .content .qiehuan ul .on {
+    border: 1px solid #3dbb2b;
+}
+
+.main_right1 .content .qiehuan ul .on .input_box input, .btn-bg {
+    border: 1px solid #1e900e;
+    background: #3dbb2b;
+    color: white;
+}
+
+/*绑定手机*/
+.main_right1 .content .bangding div {
+    margin-left: 200px;
+}
+
+.main_right1 .content .bangding div, .main_right1 .content .bangding div span {
+    font-size: 16px;
+
+}
+
+.main_right1 .content .bangding div span {
+    margin-left: 12px;
+}
+
+.main_right1 .content .bangding .user {
+    margin-top: 50px;
+}
+
+.main_right1 .content .bangding .phone_num input {
+    width: 248px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #afc8ff;
+    border-radius: 5px;
+    color: #999;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.main_right1 .content .bangding .phone_num #submit {
+    width: 106px;
+    height: 48px;
+    border: 1px solid #1d54d0;
+    background: #4478ec;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.main_right1 .content .bangding .Code_num input {
+    width: 159px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #afc8ff;
+    border-radius: 5px;
+    color: #999;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.main_right1 .content .bangding .qr input {
+    width: 171px;
+    height: 48px;
+    line-height: 48px;
+    background: #f15050;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 76px;
+}
+
+.qiehuan .on img {
+    display: block;
+}
+
+.btn-bg {
+    display: inline-block;
+}
+
+.main_right1 input {
+
+    margin: 0 5px 0 12px;
+}
+

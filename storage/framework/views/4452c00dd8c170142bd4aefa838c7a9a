@@ -1,0 +1,44 @@
+<?php if($id==5): ?>
+    <div class="choujiang_result">
+        <div class="close" onclick="$('.choujiang_box').remove()"></div>
+        <p class="name">IphoneX</p>
+        <p class="zj">中奖了!!</p>
+        <p class="num">中奖编号：<span><?php echo e($bm); ?></span></p>
+        <p class="t1">恭喜！获得iPhone X一台，再也不用担心我的肾了！</p>
+        <p class="t2">*关于Iphone X的领取相关事宜请联系客服</p>
+    </div>
+<?php elseif($id==2): ?>
+    <div class="choujiang_result">
+        <div class="close" onclick="$('.choujiang_box').remove()"></div>
+        <p class="name">11.9元</p>
+        <p class="zj">中奖了!!</p>
+        <p class="num">中奖编号：<span><?php echo e($bm); ?></span></p>
+        <p class="t1">恭喜！人品爆发！中得现金11.9元！</p>
+        <p class="t2">*此金额将充入您的账号余额</p>
+    </div>
+<?php elseif($id==3): ?>
+    <div class="choujiang_result">
+        <div class="close" onclick="$('.choujiang_box').remove()"></div>
+        <p class="name">五折</p>
+        <p class="zj">中奖了!!</p>
+        <p class="num">中奖编号：<span><?php echo e($bm); ?></span></p>
+        <p class="t1">恭喜！运气爆棚！此单五折，后悔没有多买呀！</p>
+        <p class="t2">*此订单享受五折优惠</p>
+    </div>
+<?php elseif($id==4): ?>
+    <div class="choujiang_result">
+        <div class="close" onclick="$('.choujiang_box').remove()"></div>
+        <p class="name">免单</p>
+        <p class="zj">中奖了!!</p>
+        <p class="num">中奖编号：<span><?php echo e($bm); ?></span></p>
+        <p class="t1">恭喜！获得霸王单！全部拿走，我买单！</p>
+        <p class="t2">*此订单将享受免单优惠</p>
+    </div>
+<?php else: ?>
+    <div class="choujiang_result">
+        <div class="close" onclick="$('.choujiang_box').remove()"></div>
+        <p class="gxzz" style="top: 65px;"><img src="<?php echo e(get_img_path('images/hd/gxzz.jpg')); ?>"/></p>
+        <p class="wzj" style="font-size: 36px;color: #fefc6c;top: 220px;">没中奖</p>
+        <p class="t2">*哎呀！您与大奖只差0.001公分</p>
+    </div>
+<?php endif; ?>

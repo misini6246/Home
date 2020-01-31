@@ -1,0 +1,148 @@
+<?php $__env->startSection('links'); ?>
+	<link rel="stylesheet" type="text/css" href="/pyzq/pyzq-css/pyzq.css" />
+	<link rel="stylesheet" type="text/css" href="/hgzq/hgzq.css" />
+	<!--layer-->
+	<link rel="stylesheet" type="text/css" href="common/layer/layer.css" />
+
+	<script src="/pyzq/pyzq.js" type="text/javascript" charset="utf-8"></script>
+	<!--layer-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+	<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<!--banner-->
+	<div class="banner_box" style="width: 100%;min-width: 1190px;height: 300px;">
+		<?php /*<img width="100%" height="100%" src="/images/换购专区_01.jpg"/>*/ ?>
+		<?php if(isset($link)): ?>
+			<a target="_blank" href="<?php echo e($link); ?>">
+				<img style="width: 100%;height: 100%;display: block" src="<?php echo e($img_url); ?>" alt=""/>
+			</a>
+		<?php else: ?>
+			<img style="width: 100%;height: 100%;display: block" src="<?php echo e($img_url); ?>" alt=""/>
+		<?php endif; ?>
+	</div>
+	<!--/banner-->
+
+	<!--商品列表-->
+	<div style="background-color: #F8F8F8;">
+		<div class="goods-box">
+			<div class="content">
+				<div id="datu" class="container">
+					<div class="container_box">
+						<ul class="datu">
+							<?php foreach($mz as $v): ?>
+							<li>
+								<div class="datu-chanpin-img">
+									<a <?php if(!empty($v->url)): ?> href="<?php echo e($v->url); ?>"
+									   <?php else: ?> href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>" <?php endif; ?> target="_blank">
+										<img
+												src="<?php echo e(get_img_path($v->goods_img)); ?>" alt=""/></a>
+									<div class="datu_bs">
+									</div>
+								</div>
+								<div class="datu-mingzi">
+									<?php echo e($v->goods_name); ?>
+
+								</div>
+								<div style="height: 1px;background-color: #E5E5E5;margin-top: 10px;"></div>
+								<div class="datu-guige">
+									<span><?php echo e($v->ypgg); ?></span>
+								</div>
+								<div class="datu-compamy">
+									<?php echo e($v->product_name); ?>
+
+								</div>
+								<div style="height: 1px;background-color: #E5E5E5;margin-top: 10px;"></div>
+								<div class="huodong">
+									<span class="left">活动</span>
+									<p></p>
+								</div>
+								<div class="btn_box">
+									<div class="datu-jrgwc fly_to_cart16942" data-img="http://47.106.142.169:8103/image/goods/thumb_img/5f5cf42a5a887ee42b665d5e6d197f64.jpg?110112" onclick="tocart('16942')">
+										立即购买
+									</div>
+								</div>
+							</li>
+							<?php endforeach; ?>
+						</ul>
+
+						<!--<div class="listPageDiv">
+                        <div class="pageList">
+                            <span class="p1 p_ok">1</span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=2">2</a></span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=3">3</a></span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=4">4</a></span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=5">5</a></span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=6">6</a></span> <span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=7">7</a></span><span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=2">下一页</a></span><span class="p1"><a href="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=158">最末页</a></span>
+                        </div>
+                        <form action="http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=1" type="get" class="submit_input" onsubmit="return last_page('http://www.mingheyaoye.com/category?style=g&dis=1&py=1&sort=sort_order&order=desc&page_num=40&page=1',158)">
+                            <span>共158页</span>
+                            <span>到第<input name="page" class="page_inout" value="1" type="text" id="currentPage">页</span>
+                            <input value="确定" class="submit" type="submit">
+                            <input value="g" name="style" type="hidden"><input value="1" name="dis" type="hidden"><input value="1" name="py" type="hidden"><input value="sort_order" name="sort" type="hidden"><input value="desc" name="order" type="hidden"><input value="40" name="page_num" type="hidden"><input value="" name="step" type="hidden">
+                        </form>
+                    </div>-->
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商品列表结束-->
+
+		<!--footer开始-->
+		<div class="footer_line"></div>
+
+	</div>
+	<!--/商品列表-->
+
+	<?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<script type="text/javascript">
+        /**
+         * searchEvent 初始化搜索功能
+         * 参数1 获取数据方法
+         * 参数2 回调方法
+         * 参数3 按钮元素(执行搜索)(可选)
+         * 参数4 搜索结果列表显示或隐藏的回调  返回true/false(可选)
+         */
+        $('.search').searchEvent(
+            function(_target, _val) { //获取数据方法 val:搜索框内输入的值
+                var data = [{
+                    id: 1,
+                    value: "产品1"
+                },
+                    {
+                        id: 2,
+                        value: "产品2"
+                    },
+                    {
+                        id: 3,
+                        value: "产品3"
+                    },
+                    {
+                        id: 4,
+                        value: "产品4"
+                    },
+                    {
+                        id: 5,
+                        value: "产品5"
+                    },
+                    {
+                        id: 6,
+                        value: "产品6"
+                    }
+                ]
+                /**
+                 * searchDataShow 将数据渲染至页面
+                 * 参数1:数据数组
+                 * 参数2:数据数组内下标名
+                 */
+                _target.searchDataShow(data, 'value')
+            },
+            function(val) { //回调方法 val:返回选中的值
+                alert('搜索关键词"' + val + '"...');
+            },
+            $('.search-btn')
+        );
+	</script>
+	<?php $__env->stopSection(); ?>
+
+
+
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,488 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/cart/jiesuan_common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/cart/gwc_2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/cart/gwc_2.js')); ?>3"></script>
+    <style>
+        body {
+            background: #f0f6fc !important;
+        }
+
+        .readmore_box img {
+            max-width: none;
+            max-height: none;
+        }
+
+        .spqd, .lplb, .address, .fapiao, .youhuijuan, .fangshi, .beizhu, .heji, .tuijianma {
+            background: #fff;
+            margin-top: 10px;
+            padding-bottom: 20px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('cart.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <form action="/cart/order" method="post" onsubmit="return check_sub()">
+        <?php echo csrf_field(); ?>
+
+        <div class="jiesuan">
+            <div class="jiesuan_nav">
+                <div class="jiesuan_box">
+                    <a href="<?php echo e(route('index')); ?>">
+                        <img src="<?php echo e(asset('images/gwc-logo.png')); ?>"/>
+                    </a>
+                    <div class="jiesuan_nav_title">
+                        购物流程
+                    </div>
+                    <div class="jiesuan_nav_step">
+                        <img src="<?php echo e(get_img_path('images/cart/step_2.jpg')); ?>"/>
+                    </div>
+                </div>
+            </div>
+            <div class="jiesuan_box container">
+                <div class="container_title">
+                    填写核对订单信息
+                    <a href="<?php echo e(route('cart.index')); ?>" style="float: right;">返回购物车</a>
+                </div>
+                <div class="spqd">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">商品清单</span><span
+                                class="txt">(四川满<span>800</span>元即可免运费)</span>
+                    </div>
+                    <div class="spqd_thead">
+                        <div class="spmc">商品名称</div>
+                        <div class="sccj">生产厂家</div>
+                        <div class="gg">规格</div>
+                        <div class="xq">效期</div>
+                        <div class="gyzz">国药准字</div>
+                        <div class="dj">单价</div>
+                        <div class="sl">数量</div>
+                        <div class="xj">小计</div>
+                    </div>
+                    <ul class="spqd_tbody">
+                        <?php echo $__env->make('cart.goods',['result'=>$goods_list], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </ul>
+                    <?php if(count($goods_list)>5): ?>
+                        <div class="readmore" onclick="check_all()" id="zhankai">
+                            <div class="readmore_box">
+                                <span>查看完整清单</span>
+                                <img src="<?php echo e(get_img_path('images/cart/zhankai.png')); ?>"/>
+                            </div>
+                        </div>
+                        <div class="readmore" onclick="shouqi()" id="shouqi" style="display: none;">
+                            <div class="readmore_box">
+                                <span>收起清单</span>
+                                <img src="<?php echo e(get_img_path('images/cart/shouqi.png')); ?>"/>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <?php if(count($gifts)>0): ?>
+                    <div class="lplb">
+                        <div class="spqd_title">
+                            <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">礼品列表</span>
+                        </div>
+                        <div class="lplb_box">
+                            <div class="spqd_warning">
+                                <img src="<?php echo e(get_img_path('images/cart/!.png')); ?>"/><span>您的订单已达到精品专区买赠金额，可点击换取以下任意一款礼品，也可选择最后一个累积积分换取大礼。</span>
+                            </div>
+                            <ul class="dh_list">
+                                <?php foreach($gifts as $v): ?>
+                                    <li data-name="<?php echo e($v->gift_name); ?>">
+                                        <div class="img_box">
+                                            <img src="<?php echo e(get_img_path($v->img)); ?>" style="width: 130px;height: 130px;"/>
+                                        </div>
+                                        <div class="choose">
+									<span>
+										<img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+									</span><?php echo e($v->gift_name); ?>
+
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                                <li data-name="累计积分" class="active">
+                                    <div class="img_box">
+                                        <img src="<?php echo e(path('images/lj_points.jpg')); ?>"/>
+                                    </div>
+                                    <div class="choose">
+									<span>
+										<img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+									</span>累计本次精品积分
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <input type="hidden" name="gift_status" id="gift_staus" value="<?php if(count($gifts)>0): ?> 1 <?php endif; ?>"/>
+                <input type="hidden" name="gift_lj_jf" value="<?php echo e($jp_amount); ?>"/> <!-- 累计积分 -->
+                <input type="hidden" name="gift" value="累计积分"/> <!-- 累计积分 -->
+                <div class="address">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">收货地址与物流配送</span>
+                    </div>
+                    <div class="lplb_box">
+                        <div class="spqd_warning">
+                            <img src="<?php echo e(get_img_path('images/cart/!.png')); ?>"/><span>收货信息与配送方式只能让客服修改，所有货物请在送货员在场时开箱验货再签收，如有破损及时联系客服人员，如未当面开箱验货，破损不予赔付，自行承担。</span>
+                        </div>
+                        <?php if($address->address_id>0): ?>
+                            <ul class="shdz">
+                                <li>
+                                    <div class="shdz_title">
+                                        收货地址
+                                    </div>
+                                    <div class="shdz_box">
+                                        <p class="name">
+                                            <span class="fr"><?php echo e(isset($address->tel) ? $address->tel : $address->mobile); ?></span>
+                                            <?php echo e($address->consignee); ?>
+
+                                        </p>
+                                        <p class="dizhi">
+                                            <?php echo e(isset($province->region_name) ? $province->region_name : ''); ?> <?php echo e(isset($city->region_name) ? $city->region_name : ''); ?> <?php echo e(isset($district->region_name) ? $district->region_name : ''); ?> <?php echo e($address->address); ?>
+
+                                        </p>
+                                    </div>
+                                </li>
+                                <?php if($user->shipping_id!=0): ?>
+                                    <li>
+                                        <div class="shdz_title">
+                                            物流配送
+                                        </div>
+                                        <div class="shdz_box">
+                                            <p class="express">
+                                                配送物流：<span><?php echo e($user->shipping_name); ?></span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <?php /*<?php else: ?>*/ ?>
+                                    <?php /*<li class="add_wuliu">*/ ?>
+                                    <?php /*<img src="<?php echo e(get_img_path('images/cart/add_wuliu.png')); ?>"/>*/ ?>
+                                    <?php /*<span>选择物流</span>*/ ?>
+                                    <?php /*</li>*/ ?>
+                                <?php endif; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <input type="hidden" name="shipping" value="<?php echo e($user->shipping_id); ?>">
+                <div class="fapiao">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">发票类型</span>
+                    </div>
+                    <div class="fapiao_box">
+                        <div class="spqd_warning">
+                            <img src="<?php echo e(get_img_path('images/cart/!.png')); ?>"/><span>发票选择后只能由客服人员修改，如需修改请联系客服。<?php if($order_num==0): ?>
+                                    选择增值税专用发票，请先下载开增值税专票需要信息，填好信息后打印盖上公章截图给客服人员<?php endif; ?></span>
+                        </div>
+                        <?php if($order_num==0): ?>
+                            <ul class="fapiao_choose">
+                                <li>
+                                    <input <?php if($user->dzfp==0): ?> checked <?php endif; ?> type="radio" name="dzfp" id="a" value="0">
+                                    <label for="a">增值税普通发票</label>
+                                </li>
+                                <li>
+                                    <input <?php if($user->dzfp==2): ?> checked <?php endif; ?> type="radio" name="dzfp" id="ab"
+                                           value="2"/>
+                                    <label for="ab">增值税专用发票</label><a href="/uploads/开增值税专票需要信息.doc">下载表单</a>
+                                </li>
+
+                            </ul>
+                        <?php else: ?>
+                            <ul class="fapiao_choose">
+                                <li>
+                                    <label for="a"><?php if($user->dzfp==2): ?>增值税专用发票<?php elseif($user->dzfp==1): ?>纸制发票<?php else: ?>
+                                            增值税普通发票<?php endif; ?></label>
+                                </li>
+                            </ul>
+                            <input name="dzfp" value="<?php echo e($user->dzfp); ?>" type="hidden">
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php if(count($yhq_list)>0||$pack_fee>0): ?>
+                    <div class="youhuijuan">
+                        <div class="spqd_title">
+                            <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">优惠券</span>
+                        </div>
+                        <div class="fapiao_box">
+                            <div class="fapiao_box_title">
+                                使用优惠券<span
+                                        id="yhq_count"><?php echo e(isset($yhq_count) ? $yhq_count : 1); ?></span>张&nbsp;&nbsp;&nbsp;&nbsp;抵扣金额<span><?php echo e($pack_fee); ?></span>元
+                            </div>
+                            <?php echo $__env->make('cart.youhuiq',['result'=>$yhq_list], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="fangshi">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">选择支付方式</span>
+                    </div>
+                    <div class="fangshi_box">
+                        <div class="spzje">
+                            商品总金额：<span><?php echo e(formated_price($goods_amount)); ?></span>
+                            <?php /*折扣金额：<span>￥1160.00</span>*/ ?>
+                            优惠金额：<span><?php echo e(formated_price($zyzk)); ?></span>
+                            <?php if(count($yhq_list)>0||$pack_fee>0): ?>
+                                可参与<?php echo e(trans('common.pack_fee')); ?>金额：<span><?php echo e(formated_price($ty_amount)); ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <?php if($surplus>0): ?>
+                            <div class="ye">
+                                <img src="<?php echo e(get_img_path('images/cart/ye.png')); ?>"/>
+                                <span class="f">
+								<span class="txt">
+									使用余额：
+								</span>
+								<span class="ye_money">
+									<?php echo e(formated_price($surplus)); ?>
+
+								</span>
+								<span class="keyong">
+									（可用余额：<span><?php echo e(formated_price($user->user_money)); ?></span>）
+								</span>
+							</span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(isset($cz_money)&&$cz_money>0): ?>
+                            <div class="ye">
+                                <img src="<?php echo e(get_img_path('images/cart/ye.png')); ?>"/>
+                                <span class="f">
+								<span class="txt">
+									使用<?php echo e(trans('common.cz_money')); ?>：
+								</span>
+								<span class="ye_money">
+									<?php echo e(formated_price($cz_money)); ?>
+
+								</span>
+								<span class="keyong">
+									（当前<?php echo e(trans('common.cz_money')); ?>
+
+                                    ：<span><?php echo e(formated_price($user->cz_money->money)); ?></span>）
+								</span>
+							</span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(isset($jnmj)&&$jnmj>0): ?>
+                            <div class="ye">
+                                <img src="<?php echo e(get_img_path('images/cart/ye.png')); ?>"/>
+                                <span class="f">
+								<span class="txt">
+									使用易诊云充值余额：
+								</span>
+								<span class="ye_money">
+									<?php echo e(formated_price($jnmj)); ?>
+
+								</span>
+								<span class="keyong">
+									（当前易诊云充值余额：<span><?php echo e(formated_price($user_jnmj->jnmj_amount)); ?></span>）
+								</span>
+							</span>
+                            </div>
+                        <?php endif; ?>
+                        <?php if($order_amount>=0): ?>
+                            <div class="zhifufangshi">
+                                <div class="zhifufangshi_title">
+                                    选择剩余款项的支付方式
+                                </div>
+                                <ul class="zhifufangshi_list">
+                                    <?php foreach($payment as $v): ?>
+                                        <?php if($v->pay_id==7): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>" class="active">
+                                                <div class="img_box">
+                                                    <img src="<?php echo e(get_img_path('images/cart/weixin_03.jpg')); ?>"/>
+                                                    <span>微信支付</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">微信扫码支付</p>
+                                                <p class="js_tishi">无手续费，支持储蓄卡，信用卡。</p>
+                                                <a target="_blank"
+                                                   href="https://kf.qq.com/touch/sappfaq/151210EJfUZZ151210qq2yUn.html?scene_id=kf1&platform=14">查看支付限额></a>
+                                            </li>
+                                        <?php elseif($v->pay_id==6): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>">
+                                                <div class="img_box">
+                                                    <img src="<?php echo e(get_img_path('images/cart/kuaijie_03.jpg')); ?>"/>
+                                                    <span>快捷支付</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">兴业银行快捷支付</p>
+                                                <p class="js_tishi">无手续费，支持储蓄卡，信用卡。</p>
+                                                <a target="_blank" href="/uploads/快捷支付支持银行列表.xlsx">查看支付方式及开通方式></a>
+                                            </li>
+                                        <?php elseif($v->pay_id==8): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>">
+                                                <div class="img_box">
+                                                    <img src="<?php echo e(get_img_path('images/cart/zhifubao_03.jpg')); ?>"/>
+                                                    <span>支付宝支付</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">支付宝转账</p>
+                                                <p class="js_tishi">转账成功后请及时联系客服人员确认。</p>
+                                                <?php /*<a href="#">查看支付限额></a>*/ ?>
+                                            </li>
+                                        <?php elseif($v->pay_id==12): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>">
+                                                <div class="img_box">
+                                                    <img src="<?php echo e(get_img_path('images/cart/zhifubao_03.jpg')); ?>"/>
+                                                    <span>支付宝支付</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">支付宝扫码支付</p>
+                                                <p class="js_tishi">使用支付宝app扫描网页二维码或者登录支付宝账户支付。</p>
+                                                <?php /*<a href="#">查看支付限额></a>*/ ?>
+                                            </li>
+                                        <?php elseif($v->pay_id==4): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>">
+                                                <div class="img_box">
+                                                    <img src="<?php echo e(get_img_path('images/cart/yinlian_03.jpg')); ?>"/>
+                                                    <span>银联在线</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">银联在线支付</p>
+                                                <p class="js_tishi">无手续费，支持储蓄卡，信用卡, 单笔小于2万，单日限额5万。</p>
+                                            </li>
+                                        <?php elseif($v->pay_id==2): ?>
+                                            <li data-id="<?php echo e($v->pay_id); ?>">
+                                                <div class="img_box">
+                                                    <span>银行转账/汇款</span>
+                                                    <div class="choose_box">
+                                                        <img src="<?php echo e(get_img_path('images/cart/choose.png')); ?>"/>
+                                                    </div>
+                                                </div>
+                                                <p class="name">银行转账/汇款</p>
+                                                <a target="_blank" href="/articleInfo?id=49">查看账户></a>
+                                            </li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <input type="hidden" name="payment" value="7">
+                <div class="beizhu">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">订单备注</span>
+                    </div>
+                    <div class="beizhu_box">
+                        <textarea name="postscript"></textarea>
+                    </div>
+                </div>
+                <?php if($order_num==0&&$user->is_zhongduan==1): ?>
+                    <div class="tuijianma" style="padding-bottom: 0;height: 60px;line-height: 60px;">
+                        <div class="spqd_title" style="width: 128px;margin: 0;margin-left: 20px;float: left;">
+                            <img src="http://images.hezongyy.com/images/cart/dian.png?110112"/><span class="weight">填写邀请码</span>
+                        </div>
+                        <input style="display: inline-block;width: 200px;height: 38px;border:1px solid #CCCCCC;padding: 10px;font-size: 14px;color: #999999;"
+                               type="text" name="tjm" id="tjm" value="" placeholder="填写8位数邀请码"/>
+                    </div>
+                <?php endif; ?>
+                <div class="heji">
+                    <div class="spqd_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/><span class="weight">费用总计</span>
+                    </div>
+                    <div class="heji_box">
+                        <div class="feiyong">
+                            <ul class="fr">
+                                <li>
+                                    <span class="left">商品总金额：</span>
+                                    <span class="right"><?php echo e(formated_price($goods_amount)); ?></span>
+                                </li>
+                                <li>
+                                    <span class="left">运费：</span>
+                                    <span class="right">+ <?php echo e(formated_price($shipping_fee)); ?></span>
+                                </li>
+                                <?php /*<li>*/ ?>
+                                <?php /*<span class="left">折扣金额：</span>*/ ?>
+                                <?php /*<span class="right"> - ￥0.00</span>*/ ?>
+                                <?php /*</li>*/ ?>
+                                <li>
+                                    <span class="left">优惠金额：</span>
+                                    <span class="right">- <?php echo e(formated_price($zyzk)); ?></span>
+                                </li>
+                                <?php if($surplus>0): ?>
+                                    <li>
+                                        <span class="left">使用余额：</span>
+                                        <span class="right">- <?php echo e(formated_price($surplus)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if($jnmj>0): ?>
+                                    <li>
+                                        <span class="left">使用易诊云充值余额：</span>
+                                        <span class="right">- <?php echo e(formated_price($jnmj)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if(isset($cz_money)&&$cz_money>0): ?>
+                                    <li>
+                                        <span class="left">使用<?php echo e(trans('common.cz_money')); ?>：</span>
+                                        <span class="right">- <?php echo e(formated_price($cz_money)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if(isset($jf_money)&&$jf_money>0): ?>
+                                    <li>
+                                        <span class="left">使用<?php echo e(trans('common.jf_money')); ?>：</span>
+                                        <span class="right">- <?php echo e(formated_price($jf_money)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if(isset($hongbao_money)&&$hongbao_money>0): ?>
+                                    <li>
+                                        <span class="left">使用<?php echo e(trans('common.hongbao_money')); ?>：</span>
+                                        <span class="right">- <?php echo e(formated_price($hongbao_money)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if($pack_fee>0||count($yhq_list)>0): ?>
+                                    <li>
+                                        <span class="left"><?php echo e(trans('common.pack_fee')); ?>：</span>
+                                        <span class="right">- <?php echo e(formated_price($pack_fee)); ?></span>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <div class="manage fixed_manage">
+                            <div class="manage_box">
+                                <div class="fr">
+                                    <span class="text">应付款金额：</span><span
+                                            class="money"><?php echo e(formated_price($order_amount)); ?></span><input
+                                            type="submit"
+                                            name=""
+                                            id="btn"
+                                            value="提交订单" style="cursor: pointer;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <?php echo $__env->make('layouts.old_footer',['hide_yc'=>1], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php if($user->shipping_id==0): ?>
+        <?php echo $__env->make('cart.shipping', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+    <script>
+        var next_tip = '<?php echo e(isset($next_tip) ? $next_tip : ''); ?>';
+        if (next_tip != '') {
+            layer.alert('<span style="color: red;">' + next_tip + '</span>', {
+                btn: ['返回购物车', '关闭'], //按钮
+                icon: 0
+            }, function (index) {
+                location.href = '/cart';
+            }, function () {
+                layer.close(index);
+            });
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

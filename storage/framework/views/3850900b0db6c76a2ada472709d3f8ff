@@ -1,0 +1,492 @@
+<?php $__env->startSection('title'); ?>
+    <title>首页</title>
+    <?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script>
+        $('.all').removeClass('all-hover');
+    </script>
+    <?php /*轮播图*/ ?>
+    <div class="banner-box" style="background-color: #930003;">
+        <div class="box-container">
+            <!--轮播-->
+            <div id="carousel" class="carousel">
+                <ul class="carousel-list">
+                    <?php foreach($ad121 as $k=>$ad): ?>
+                        <li <?php if($k==0): ?> class="cur" <?php endif; ?> style="background-color:#<?php echo e($ad->ad_bgc); ?>" >
+                            <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+                                <img src="<?php echo e('http://47.107.103.86/'.$ad->ad_code); ?>"/></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <ul class="carousel-nav">
+                    <?php foreach($ad198 as $k=>$ad): ?>
+                        <li  <?php if($k==0): ?> class="cur" <?php endif; ?>></li>
+                    <?php endforeach; ?>
+                </ul>
+                <ul class="carousel-page">
+                    <li><img src="/images/cq/banner_prev.png"/></li>
+                    <li><img src="/images/cq/banner_next.png"/></li>
+                </ul>
+            </div>
+            <!--/轮播-->
+
+            <!--广告-->
+            <div class="yg-box">
+
+                    <?php foreach($ad123 as $k=>$ad): ?>
+                    <div class="img-box">
+                            <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+                                <img src="<?php echo e($ad->ad_code); ?>"/></a>
+                    </div>
+                    <?php endforeach; ?>
+
+                <div class="img-box"><img src="/index/img/banner_广告_01.jpg" /></div>
+
+                <!--资讯-->
+                <div class="message-box">
+                    <ul class="title">
+                        <li class="cur">公司动态</li>
+                        <li>行业资讯</li>
+                    </ul>
+                    <ul class="list">
+                        <li>
+                            <?php foreach($art1 as $article): ?>
+                            <a href="#"><?php echo e($article); ?></a>
+                                <?php endforeach; ?>
+                        </li>
+                        <li>
+                            <?php foreach($art2 as $artic): ?>
+                                <a href="#"><?php echo e($artic); ?></a>
+                            <?php endforeach; ?>
+                        </li>
+                    </ul>
+                </div>
+                <!--/资讯-->
+            </div>
+            <!--/广告-->
+        </div>
+    </div>
+    <?php /*每周精选*/ ?>
+    <div class="mzjx-box">
+        <div class="box-container">
+            <div class="djs-box" data-end_time="<?php echo e($ad124->first()->end_time-time()); ?>">
+                <div class="sfm"><span class="d">--</span><span class="h">--</span><span class="m">--</span><span class="s">--</span></div>
+            </div>
+            <ul class="item-box">
+                <?php foreach($ad124 as $k=>$ad): ?>
+                    <?php if($k<5): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e($ad->ad_link); ?>">
+                                    <img src="<?php echo e(get_img_path($ad->ad_code)); ?>"/>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php /*<li><img src="img/首页-02.jpg" /></li>*/ ?>
+                <?php /*<li><img src="img/首页-02.jpg" /></li>*/ ?>
+                <?php /*<li><img src="img/首页-02.jpg" /></li>*/ ?>
+                <?php /*<li><img src="img/首页-02.jpg" /></li>*/ ?>
+                <?php /*<li><img src="img/首页-02.jpg" /></li>*/ ?>
+            </ul>
+        </div>
+    </div>
+    <?php /*每周精选end*/ ?>
+    <?php /*新品上架*/ ?>
+    <div class="xpsj-box">
+        <div class="box-container">
+            <div class="xpsj_content xpsj_left">
+                <div class="title">
+                    <span>新品上架</span>
+                    <span class="en">New shelves</span>
+                </div>
+                <div class="goods">
+                    <!--轮播-->
+                    <div id="carousel-1" class="carousel">
+                        <ul class="carousel-list">
+                            <?php foreach($ad126 as $k=>$v): ?>
+                                <li>
+                                    <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                                <img src="<?php echo e($v->ad_code); ?>" />
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <ul class="carousel-nav">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!--/轮播-->
+                    <div class="goods_item">
+                        <?php foreach($cx_goods[7] as $k=>$v): ?>
+                            <?php if($k<3): ?>
+                                <div class="item">
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                    <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                    <p class="name"><?php echo e($v->goods_name); ?></p>
+                                    <p class="money login"><?php echo e($v->format_price); ?></p>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="xpsj_content xpsj_right">
+                <div class="title">
+                    <span>热门推荐</span>
+                    <span class="en">Popular recommendation</span>
+                </div>
+                <div class="goods">
+                    <!--轮播-->
+                    <div id="carousel-2" class="carousel">
+                        <ul class="carousel-list">
+                            <?php foreach($ad129 as $k=>$v): ?>
+                                <li>
+                                    <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                                        <img src="<?php echo e($v->ad_code); ?>" />
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <ul class="carousel-nav">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!--/轮播-->
+                    <div class="goods_item">
+                        <?php foreach($cx_goods[9] as $k=>$v): ?>
+                            <?php if($k<3): ?>
+                                <div class="item">
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                        <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                        <p class="name"><?php echo e($v->goods_name); ?></p>
+                                        <p class="money login"><?php echo e($v->format_price); ?></p>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php /*新品上架end*/ ?>
+    <?php /*中西成药*/ ?>
+    <div class="content-box zxcy-box">
+        <div class="box-container">
+            <div class="content_title" style="border-bottom-color: #1b6fd5;">
+                <img class="title-img" src="/index/img/首页-03.png"/>
+            </div>
+            <div class="content_item">
+                <div class="item_img">
+                    <img src="/index/img/首页-07.jpg">
+                </div>
+                <div class="item_box">
+                    <?php foreach($ad140 as $k=>$v): ?>
+                    <div class="box" style="border-left: none;">
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img src="<?php echo e($v->goods_thumb); ?>">
+                            <p class="name"><?php echo e($v->goods_name); ?><?php echo e($v->ypgg); ?></p>
+                            <p class="price">￥<?php echo e($v->format_price); ?></p>
+                        </a>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php /*中西成药end*/ ?>
+    <?php /*广告位*/ ?>
+    <?php foreach($ad207 as $k=>$ad): ?>
+        <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+            <img class="gg_x" src="<?php echo e($ad->ad_code); ?>" style="display: block;margin: 10px auto"/>
+        </a>
+    <?php endforeach; ?>
+    <?php /*当季热销*/ ?>
+    <div class="content-box djrx-box">
+        <div class="box-container">
+            <div class="content_title" style="border-bottom-color: #FF2A3E;">
+                <img class="title-img" src="/index/img/首页-04.png"/>
+            </div>
+            <div class="content_item">
+                <div class="item_img">
+                    <?php foreach($ad133 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img src="<?php echo e($v->ad_code); ?>">
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="item_box">
+
+                    <?php if(isset($cx_goods[11])): ?>
+                        <?php foreach($cx_goods[11] as $k=>$v): ?>
+                            <?php if($k<6): ?>
+                                <div class="box" style="border-left: none;">
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                    <img src="<?php echo e($v->goods_thumb); ?>">
+                                    <p class="name"><?php echo e($v->goods_name); ?><?php echo e($v->ypgg); ?></p>
+                                    <p class="price">￥<?php echo e($v->format_price); ?></p>
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php /*当季热销end*/ ?>
+    <?php /*广告位二*/ ?>
+    <?php foreach($ad207 as $k=>$ad): ?>
+        <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+            <img class="gg_x" src="<?php echo e($ad->ad_code); ?>" style="display: block;margin: 10px auto"/>
+        </a>
+    <?php endforeach; ?>
+    <?php /*中药饮品*/ ?>
+    <div class="content-box zyyp-box">
+        <div class="box-container">
+            <div class="content_title" style="border-bottom-color: #e5a04c;">
+                <img class="title-img" src="/index/img/首页-05.png"/>
+            </div>
+            <div class="content_item">
+                <div class="item_img">
+                    <?php foreach($ad140 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img src="<?php echo e($v->ad_code); ?>">
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="item_box">
+                    <?php if(isset($cx_goods[13])): ?>
+                        <?php foreach($cx_goods[13] as $v): ?>
+                            <?php if($k<6): ?>
+                                <div class="box" style="border-left: none;">
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                        <img src="<?php echo e($v->goods_thumb); ?>">
+                                        <p class="name"><?php echo e($v->goods_name); ?><?php echo e($v->ypgg); ?></p>
+                                        <p class="price">￥<?php echo e($v->format_price); ?></p>
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php /*中药饮品end*/ ?>
+    <?php /*广告位三*/ ?>
+    <?php foreach($ad207 as $k=>$ad): ?>
+        <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+            <img class="gg_x" src="<?php echo e($ad->ad_code); ?>" style="display: block;margin: 10px auto"/>
+        </a>
+    <?php endforeach; ?>
+    <?php /*家庭保健*/ ?>
+    <div class="content-box jtbj-box">
+        <div class="box-container">
+            <div class="content_title" style="border-bottom-color: #11c3d1;">
+                <img class="title-img" src="/index/img/首页-06.png"/>
+            </div>
+            <div class="content_item">
+                <div class="item_img">
+                    <?php foreach($ad137 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img src="<?php echo e($v->ad_code); ?>">
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="item_box">
+                    <?php if(isset($cx_goods[12])): ?>
+                        <?php foreach($cx_goods[12] as $k=>$v): ?>
+                            <?php if($k<6): ?>
+                                <div class="box" style="border-left: none;">
+                                <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                    <img src="<?php echo e($v->goods_thumb); ?>">
+                                    <p class="name"><?php echo e($v->goods_name); ?><?php echo e($v->ypgg); ?></p>
+                                    <p class="price">￥<?php echo e($v->format_price); ?></p>
+                                </a>
+                                </div>
+                                <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php /*电梯导航*/ ?>
+    <div class="lift" data-start="0">
+        <div class="lift-item cur" data-area=".mzjx-box">每 周 精 选</div>
+        <div class="lift-item" data-area=".xpsj-box">新 品 上 架</div>
+        <div class="lift-item" data-area=".zxcy-box">中 西 成 药</div>
+        <div class="lift-item" data-area=".djrx-box">当 季 热 销</div>
+        <div class="lift-item" data-area=".zyyp-box">中 药 饮 片</div>
+        <div class="lift-item" data-area=".jtbj-box">家 庭 保 健</div>
+        <div class="lift-item btn-top"><img src="/index/img/首页-13.jpg"/></div>
+    </div>
+    <?php /*侧边栏*/ ?>
+    <?php echo $__env->make('layouts.youce', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript">
+        var num_cur_time = get_cur_time();
+        var num_end_time = $('.djs-box').attr('data-end_time');
+        var bl_fixed_right = false;
+        var obj_fixed_click;
+
+        //返回顶部
+        $('.btn-top').click(function(){
+            $('html,body').animate({
+                'scrollTop':0
+            })
+        });
+
+        //电梯导航
+        $('.lift').css({
+            top:'25%',
+            left:$('.nav-box .box-container').offset().left - 40 + 'px'
+        });
+        $(window).resize(function(){
+            $('.lift').css({
+                top:'25%',
+                left:$('.nav-box .box-container').offset().left - 40 + 'px'
+            });
+        })
+        $(window).scroll(function(){
+            var scroll = $('html,body').scrollTop();
+            var idx = -1;
+            if(scroll>290 && scroll<$('body').height()-800) {
+                $('.lift').fadeIn(500);
+            }else {
+                $('.lift').fadeOut(500);
+            }
+
+            if(scroll >= $(".mzjx-box").offset().top-120 && scroll < $(".xpsj-box").offset().top) {
+                idx = 0;
+            }
+            if(scroll >= $(".xpsj-box").offset().top-120&& scroll < $(".zxcy-box").offset().top) {
+                idx = 1;
+            }
+            if(scroll >= $(".zxcy-box").offset().top-120&& scroll < $(".djrx-box").offset().top) {
+                idx = 2;
+            }
+            if(scroll >= $(".djrx-box").offset().top-120&& scroll < $(".zyyp-box").offset().top) {
+                idx = 3;
+            }
+            if(scroll >= $(".zyyp-box").offset().top-120&& scroll < $(".jtbj-box").offset().top) {
+                idx = 4;
+            }
+            if(scroll >= $(".jtbj-box").offset().top-120) {
+                idx = 5;
+            }
+            $('.lift .lift-item').eq(idx < 0 ? 0 : idx).addClass('cur').siblings().removeClass('cur')
+        });
+
+        /**
+         * searchEvent 初始化搜索功能
+         * 参数1 获取数据方法
+         * 参数2 回调方法
+         * 参数3 按钮元素(执行搜索)(可选)
+         * 参数4 搜索结果列表显示或隐藏的回调  返回true/false(可选)
+         */
+        $('.search').searchEvent(
+            function(_target, _val) { //获取数据方法 val:搜索框内输入的值
+                var data = [{
+                    id: 1,
+                    value: "产品11111"
+                },
+                    {
+                        id: 2,
+                        value: "产品2"
+                    },
+                    {
+                        id: 3,
+                        value: "产品3"
+                    },
+                    {
+                        id: 4,
+                        value: "产品4"
+                    },
+                    {
+                        id: 5,
+                        value: "产品5"
+                    },
+                    {
+                        id: 6,
+                        value: "产品6"
+                    }
+                ]
+                /**
+                 * searchDataShow 将数据渲染至页面
+                 * 参数1:数据数组
+                 * 参数2:数据数组内下标名
+                 */
+                _target.searchDataShow(data, 'value')
+            },
+            function(val) { //回调方法 val:返回选中的值
+                alert('搜索关键词"' + val + '"...');
+            },
+            $('.search-btn')
+        );
+
+        //	轮播
+        $('#carousel').carouselEvent({
+            auto: true,
+            time: 4000
+        });
+        $('#carousel-1').carouselEvent({
+            auto: true,
+            time: 4000
+        });
+        $('#carousel-2').carouselEvent({
+            auto: true,
+            time: 4000
+        });
+
+        //	资讯
+        $('.message-box .list li').eq($('.message-box .title li.cur').index()).show();
+        $('.message-box .title li').hover(function() {
+            $(this).addClass('cur').siblings().removeClass('cur');
+            $('.message-box .list li').eq($(this).index()).show().siblings().hide();
+        })
+
+        //倒计时
+        if((num_end_time - num_cur_time) > 0) start_djs(num_end_time - num_cur_time, $('.djs-box .sfm'), function() {
+            $('.djs-box .sfm span').html('--');
+        });
+
+        //获取当前时间
+        function get_cur_time() {
+            var t;
+            var myDate = new Date();
+            var timestamp = myDate.getTime();
+            //		t = timestamp/1000;
+            t = 0;
+            return Math.floor(t);
+        }
+
+        //开始倒计时
+        function start_djs(_time, _e, _fun) {
+            var t = $.leftTime(_time, function(d) {
+                if(d.status) {
+                    var $dateShow = _e;
+                    $dateShow.find(".d").html(d.d);
+                    $dateShow.find(".h").html(d.h);
+                    $dateShow.find(".m").html(d.m);
+                    $dateShow.find(".s").html(d.s);
+                } else { //倒计时结束
+                    if(typeof _fun == 'function') _fun();
+                }
+            }, false);
+            return t;
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,52 @@
+<?php $__env->startSection('links'); ?>
+    <meta http-equiv="refresh" content="3;URL=<?php echo e(isset($link) ? $link : route('index')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+    <style type="text/css">
+        .ts_page {
+            height: 240px;
+            border: 1px solid #b2cdff;
+            width: 1200px;
+            margin: 10px auto 40px auto;
+            box-shadow: 0 8px 16px rgba(61, 121, 254, 0.2);
+            text-align: center;
+        }
+
+        .ts_page p {
+            color: #ff1919;
+            font-size: 20px;
+            margin-top: 65px;
+        }
+
+        .ts_page a {
+            font-size: 16px;
+            color: #fff;
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 5px;
+            background: #3dbb2b;
+            margin-top: 20px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="ts_page">
+        <p>没有权限进行该操作！</p>
+        <a href="<?php echo e(route('index')); ?>">回到首页</a>
+    </div>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

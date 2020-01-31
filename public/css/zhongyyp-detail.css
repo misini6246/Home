@@ -1,0 +1,564 @@
+.mianbaoxue {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.mianbaoxue span {
+    color: #fd1e03;
+    font-size: 16px;
+}
+
+.mianbaoxue a {
+    color: #2f1c01;
+    font-size: 16px;
+}
+
+.site-detail-box {
+    height: 635px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+}
+
+.site-detail-box .detail-left {
+    width: 330px;
+    float: left;
+    z-index: 999;
+    border-right: 1px solid #eaeaea;
+    height: 635px;
+}
+
+.zoom {
+    width: 330px;
+    height: auto;
+    overflow: hidden;
+    float: left;
+}
+
+.jqzoom {
+    float: left;
+    border: none;
+    position: relative;
+    padding: 0px;
+    cursor: pointer;
+    margin: 0px;
+    display: block;
+}
+
+.jqzoom img {
+    width: 330px;
+    height: 360px;
+}
+
+.zoomdiv {
+    z-index: 99;
+    position: absolute;
+    top: 0px;
+    width: 330px;
+    height: 360px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    display: none;
+    text-align: center;
+    overflow: hidden;
+}
+
+.jqZoomPup {
+    z-index: 10;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #aaa;
+    background: #ffffff;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.spec-preview {
+    width: 330px;
+    height: 360px;
+    border-right: 1px solid #eaeaea;
+    overflow: hidden;
+    border-bottom: 0;
+}
+
+.spec-scroll {
+    clear: both;
+    width: 330px;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    height: 86px;
+    border-top: 0;
+    padding-bottom: 30px
+}
+
+.spec-scroll .prev2, .spec-scroll .next2 {
+    display: block;
+    width: 16px;
+    height: 26px;
+    background: url("../images/com_sprites2.png") no-repeat;
+}
+
+.spec-scroll .prev2 {
+    float: left;
+    margin: 30px 0 0 10px;
+    background-position: -20px -45px;
+    _margin-left: 10px;
+}
+
+.spec-scroll .next2 {
+    float: right;
+    margin: 30px 10px 0 0;
+    background-position: -38px -45px;
+    _margin-right: 10px;
+}
+
+.spec-scroll .items {
+    float: left;
+    position: relative;
+    width: 275px;
+    height: 84px;
+    overflow: hidden;
+}
+
+.spec-scroll .items ul {
+    position: absolute;
+    width: 999999px;
+    height: 84px;
+}
+
+.spec-scroll .items ul li {
+    float: left;
+    width: 70px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.spec-scroll .items ul li img {
+    border: 1px solid #CCC;
+    padding: 2px;
+    width: 50px;
+    height: 50px;
+}
+
+.spec-scroll .items ul li img:hover {
+    border: 2px solid #FF6600;
+    padding: 1px;
+}
+
+.share {
+    width: 330px;
+    height: 56px;
+    position: relative;
+    border-right: 0;
+}
+
+.xianshith {
+    position: absolute;
+    left: 10px;
+    top: -465px;
+}
+
+.detail-bg {
+    position: absolute;
+    left: 0;
+    height: 60px;
+    top: -185px;
+    width: 330px;
+    background-color: #fff;
+    opacity: 0.5;
+    filter: alpha(opacity=50)
+}
+
+.detail-txt {
+    position: absolute;
+    left: 0;
+    height: 60px;
+    top: -185px;
+    width: 330px;
+}
+
+.detail-txt p {
+    color: #ff4933;
+    font-size: 18px;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.detail-right {
+    width: 218px;
+    float: left;
+}
+
+.chengluo {
+    padding: 10px 15px
+}
+
+.chengluo p, .chengluo div {
+    font-size: 16px;
+    color: #0bbe97;
+    height: 24px;
+    line-height: 24px;
+}
+
+.chengluo p {
+    padding-left: 30px;
+}
+
+.bdsharebuttonbox {
+    width: 240px;
+    float: left;
+    padding-left: 10px;
+}
+
+.share .collect-shopping {
+    width: 64px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.share .collect-shopping span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: -6px;
+    top: 8px;
+    background: url("../images/com_sprites2.png") -42px -74px no-repeat;
+}
+
+.share .collect-shopping a {
+    color: #333333;
+}
+
+.detail-mid {
+    float: left;
+    border-right: 1px solid #eaeaea;
+    width: 640px;
+    height: 635px;
+}
+
+.detail-mid .mid-txt h3 {
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #272625;
+    margin-left: 10px;
+}
+
+.detail-mid .mid-txt P {
+    font-size: 16px;
+    color: #545352;
+    line-height: 32px;
+    padding-left: 10px;
+}
+
+.cuxiao-box {
+    width: 640px;
+    border: 1px solid #f88274;
+    background-color: #feccb6;
+}
+
+.cuxiao-box tr td {
+    height: 32px;
+    line-height: 32px;
+}
+
+.cuxiao-box tr td .leibie {
+    width: 57px;
+    height: 28px;
+    display: block;
+    float: left;
+    background: url("../images/zyyp/zhyp067.jpg") no-repeat;
+    margin: 3px 5px 0 0;
+    font-size: 16px;
+    color: #ff4933;
+    text-align: center;
+    line-height: 28px;
+}
+
+.cuxiao-box tr td.title {
+    width: 165px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cuxiao-box tr td .txt {
+    font-size: 16px;
+    color: #434242;
+}
+
+.goods-xinxi {
+    width: 640px;
+    margin-top: 5px
+}
+
+.goods-xinxi tr td {
+    height: 32px;
+    line-height: 32px;
+    margin-top: 10px;
+    text-indent: 10px;
+    color: #545352;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.goods-xinxi tr td.xinxi-td1 {
+    width: 245px;
+}
+
+.goods-xinxi tr td.xinxi-td2 {
+    width: 185px;
+}
+
+.detail-mid .num {
+    height: 32px;
+    line-height: 32px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    padding: 8px 12px;
+    overflow: hidden;
+    color: #333333;
+}
+
+.detail-mid .num .shuliang {
+    width: 75px;
+    display: block;
+    height: 58px;
+    float: left;
+    font-weight: normal;
+}
+
+.detail-mid .num a.reduce, .detail-mid .num a.add {
+    display: block;
+    width: 15px;
+    height: 32px;
+    border: 1px solid #b2b2b2;
+    line-height: 32px;
+    float: left;
+    color: #333333;
+    text-align: center;
+}
+
+.detail-mid .num .num_txt {
+    width: 50px;
+    height: 32px;
+    border: 1px solid #b2b2b2;
+    float: left;
+    text-align: center;
+    line-height: 32px;
+    border-right: 0;
+    border-left: 0;
+}
+
+.detail-mid .num .tip {
+    padding-left: 10px;
+}
+
+.detail-mid .payment {
+    padding: 10px 12px;
+}
+
+.detail-mid .payment p {
+    height: 28px;
+    line-height: 28px;
+}
+
+.detail-mid .payment p .box {
+    position: relative;
+}
+
+.detail-mid .payment p .ico {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    background: url("../images/zyyp/com_sprites2.png") no-repeat;
+}
+
+.detail-mid .payment p .ico1 {
+    background-position: -58px -45px;
+}
+
+.detail-mid .payment p .ico2 {
+    background-position: -77px -45px;
+}
+
+.detail-mid .payment p .ico3 {
+    background-position: -94px -45px;
+}
+
+.detail-mid .payment p .way {
+    padding-right: 20px;
+}
+
+.detail-mid .payment p a {
+    color: #333333;
+    padding-left: 30px;
+}
+
+.detail-mid .payment p .txt {
+    color: #e70000;
+}
+
+.detail-mid .num .num-txt-box {
+    width: 365px;
+    float: left;
+}
+
+.detail-mid .add_btn {
+    width: 166px;
+    height: 48px;
+    display: block;
+    float: left;
+    background: url("../images/zyyp/zhyp073.jpg") no-repeat;
+    margin-top: -3px;
+}
+
+.detail-mid .add_btn.no_shopping {
+    background: url("../images/zyyp/zhyp074.png") no-repeat;
+}
+
+.bottom-right-box {
+    width: 984px;
+    float: right;
+}
+
+.renqidp {
+    width: 984px;
+    height: 260px;
+    border: 1px solid #eaeaea;
+    border-top: 2px solid #969696;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.renqidp h2 {
+    height: 28px;
+    line-height: 28px;
+    background-color: #f7f7f7;
+    text-indent: 25px;
+    font-size: 14px;
+    color: #6c6b6b;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.renqidp .renqidp-list {
+    width: 1000px;
+}
+
+.renqidp ul li {
+    width: 196px;
+    height: 260px;
+    float: left;
+    text-align: center;
+}
+
+.renqidp ul li .img-p {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.renqidp ul li .img-p img {
+    width: 150px;
+    height: 150px;
+}
+
+.renqidp ul li .name {
+    line-height: 24px;
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.renqidp ul li .name a {
+    color: #545352;
+}
+
+.renqidp ul li .price span {
+    color: #f20000;
+    font-weight: bold;
+}
+
+.bottom-right-tab {
+    border: 1px solid #eaeaea;
+}
+
+.bottom-right-tab .title_list {
+    height: 44px;
+    background-color: #fafafa;
+    line-height: 44px;
+    overflow: hidden;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.bottom-right-tab .title_list ul li {
+    width: 104px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid #eaeaea;
+    cursor: pointer
+}
+
+.bottom-right-tab .title_list ul li.on {
+    background-color: #04ab87;
+    color: #fff;
+}
+
+.bottom-right-tab .f_right {
+    width: 220px;
+    float: right;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+}
+
+.bottom-right-tab .f_right .text {
+    display: block;
+    float: left;
+}
+
+.bottom-right-tab .f_right img {
+    margin: 5px;
+}
+
+.bottom-right-tab .f_right .ico {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 12px;
+    height: 7px;
+    background: url("../images/com_sprites2.png") -71px -32px;
+    overflow: hidden;
+}
+
+.bottom-right-tab .ul-list {
+    display: none;
+    width: 984px;
+    overflow: hidden;
+}
+
+.bottom-right-tab .ul-list img {
+    width: 983px;
+}
+
+.bottom-right-tab .ul-list li {
+    line-height: 36px;
+}

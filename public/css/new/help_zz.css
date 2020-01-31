@@ -1,0 +1,107 @@
+.step_3,.down{
+	overflow: hidden;
+}
+.step_3 li{
+	width: 360px;
+	float: left;
+	margin-left: 40px;
+	*margin-left: 36px;
+}
+.step_3 li:first-child{
+	margin-left: 0;
+}
+.step_3 li .step_3_box{
+	min-height: 480px;
+	border: 1px solid #3ebb2b;
+	border-radius: 5px;
+	padding-bottom: 15px;
+}
+.step_3_box_title{
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	background: #3ebb2b;
+	color: #fff;
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+.step_3_list{
+	margin-top: 10px;
+	overflow: hidden;
+}
+.step_3_list .icon{
+	height: 26px;
+	width: 30px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+.step_3_text{
+	float: left;
+	width: 320px;
+	line-height:30px;
+	font-size: 18px;
+}
+.step_3_text span{
+	color: #ff1919;
+	font-size: 18px;
+}
+.step_3_p{
+	margin: 20px 0;
+	padding: 0 10px;
+	font-size: 14px;
+}
+.help_address{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+.help_address_title{
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.help_address_box{
+	background: #f8f9fb;
+	height: 120px;
+	overflow: hidden;
+}
+.help_addres_imgbox{
+	width: 100px;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+	float: left;
+}
+.help_address_text{
+	float: left;
+}
+.help_address_text p{
+	margin: 15px 0 0 20px;
+}
+.help_address_text span{
+	font-size: 16px;
+	vertical-align: middle;
+	display: inline-block;
+}
+.img_span {
+    width: 20px;
+    text-align: center;
+}
+.down li{
+	width: 50%;
+	float: left;
+	font-size: 16px;
+	text-indent: 20px;
+	margin: 20px 0;
+}
+.down li a{
+	text-indent: 0;
+	color: #fff;
+	display: inline-block;
+	width: 124px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	background: #3285fa;
+	font-size: 16px;
+	margin-left: 20px;
+}

@@ -1,0 +1,115 @@
+<?php echo $__env->make('common.topad', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div id="header" class="container">
+    <div class="container_box">
+        <span class="appyyg">
+            <img src="<?php echo e(get_img_path('images/index/bgerweima_05.png')); ?>" alt="" class="yyg_erweima"/>手机药易购
+            <span class="icon">
+                    <i class="myicon down_icon"></i>
+            </span>
+            <div class="hover_box">
+                <img src="<?php echo e(get_img_path('images/index/yaoyigou.png')); ?>"/>
+            </div>
+        </span>
+        <?php if(!$user): ?>
+            <div class="login_before">
+                <a href="/auth/login" class="login">登录</a>
+                <a href="/auth/register" class="reg">注册</a>
+                <?php if(isset($show_change_province)): ?>
+                    <span class="Province">
+						<img src="<?php echo e(get_img_path('images/index/header_add.png')); ?>" class="header_add"/>
+                        <?php if(isset($show_area)&&$show_area==26): ?>
+                            四川
+                        <?php else: ?>
+                            新疆
+                        <?php endif; ?>
+                        <span class="icon">
+							<i class="myicon down_icon"></i>
+						</span>
+					<span class="add_choose">
+							<a href="/?show_area=26">四川</a>
+							<a href="/?show_area=29">新疆</a>
+						</span>
+					</span>
+                <?php endif; ?>
+            </div>
+        <?php else: ?>
+            <div class="login_after">
+                <a href="<?php echo e(route('member.index')); ?>">
+					<span class="userid">
+						<?php echo e(str_limit($user->msn,40)); ?>
+
+					</span>
+                </a>
+                <a href="/auth/logout" class="out">[退出]</a>
+            </div>
+        <?php endif; ?>
+        <ul class="right_list">
+            <li class="hover app_yyg help">
+                <a href="<?php echo e(route('member.index')); ?>" class="app_yyg_box">
+                    会员中心
+                    <span class="icon">
+                        <i class="myicon yyg_down_icon"></i>
+                    </span>
+                </a>
+                <ul class="hover_box">
+                    <li>
+                        <a href="<?php echo e(route('member.order.index')); ?>">我的订单</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('member.money')); ?>">我的余额</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('jifen.user.index')); ?>">我的积分</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('member.collection.index')); ?>">我的收藏</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('member.youhuiq')); ?>">我的优惠券</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('member.buy')); ?>">我的求购</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a target="_blank" href="/dzfp" class="color">电子发票查询</a>
+            </li>
+            <li>
+                <a target="_blank" href="/zhijian">质检报告查询</a>
+            </li>
+            <?php /*<li class="guanggao">*/ ?>
+                <?php /*<a target="_blank" href="/tg/zx" class="color">装修定制</a>*/ ?>
+            <?php /*</li>*/ ?>
+            <?php /*<li>*/ ?>
+                <?php /*<a target="_blank" href="/requirement">求购专区</a>*/ ?>
+            <?php /*</li>*/ ?>
+            <?php /*<li class="hover help">*/ ?>
+                <?php /*客户服务*/ ?>
+                <?php /*<span class="icon">*/ ?>
+							<?php /*<i class="myicon down_icon"></i>*/ ?>
+						<?php /*</span>*/ ?>
+                <?php /*<ul class="hover_box">*/ ?>
+                    <?php /*<li>*/ ?>
+                        <?php /*<a target="_blank" href="/article?id=3">帮助中心</a>*/ ?>
+                    <?php /*</li>*/ ?>
+                    <?php /*<li>*/ ?>
+                        <?php /*<a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=2&uin=4006028262&site=qq&menu=yes">在线客服</a>*/ ?>
+                    <?php /*</li>*/ ?>
+                    <?php /*<li>*/ ?>
+                        <?php /*<a target="_blank" href="/feedback">意见建议</a>*/ ?>
+                    <?php /*</li>*/ ?>
+                <?php /*</ul>*/ ?>
+            <?php /*</li>*/ ?>
+            <?php /*<li class="hover tel">*/ ?>
+                <?php /*投诉*/ ?>
+                <?php /*<span class="icon">*/ ?>
+							<?php /*<i class="myicon down_icon"></i>*/ ?>
+						<?php /*</span>*/ ?>
+                <?php /*<div class="hover_box">*/ ?>
+                    <?php /*投诉电话：13881863513*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*</li>*/ ?>
+        </ul>
+    </div>
+</div>

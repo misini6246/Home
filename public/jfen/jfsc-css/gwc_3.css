@@ -1,0 +1,90 @@
+.jiesuan_box{
+	padding-bottom: 20px;
+	background: #fff;
+}
+.jiesuan_content{
+	width: 1160px;
+	margin: 0 auto;
+	background: #f8f9fb;
+	overflow: hidden;
+	padding: 30px 0 60px 0;
+}
+.jiesuan_content .fl{
+	width: 260px;
+	text-align: center;
+}
+.jiesuan_content .fr{
+	width: 880px;
+	margin-right: 20px;
+}
+.success_title{
+	height: 24px;
+	line-height: 24px;
+	color: #3dbb2b;
+	font-size: 24px;
+	font-weight: bold;
+}
+p.txt{
+	height: 16px;
+	line-height: 16px;
+	color: #666;
+	font-size: 16px;
+	margin-top: 15px;
+}
+.dingdan{
+	margin-top: 40px;
+	border-top: 1px dashed #cccccc;
+	padding-top: 40px;
+}
+
+.dingdan .ddbh{
+	font-size: 14px;
+}
+.dingdan .ddbh span{
+	font-size: 14px;
+	color: #ff4700;
+	margin-left: 5px;
+}
+.lpqd{
+	margin-top: 15px;
+}
+.lpqd_left,.lpqd_right{
+	float: left;
+	font-size: 14px;
+}
+.lpqd_right li{
+	font-size: 14px;
+	margin-left: 5px;
+}
+.link{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 80px;
+	float: left;
+}
+.link a{
+	font-size: 16px;
+}
+.link a.go_index{
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	color: #fff;
+	background: #ff4700;
+	border-radius: 5px;
+	width: 140px;
+	text-align: center;
+	margin-right: 35px;
+}
+#wntj{
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+

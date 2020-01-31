@@ -1,0 +1,32 @@
+.goods_container {
+  width: 100%;
+  background: url("/nwjd/img/nwjd_bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 730px;
+  padding-bottom: 400px;
+}
+
+.goods_container .nwjd_goods_list ul {
+  margin: 0 auto;
+  width: 1080px;
+  height: 1777px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.goods_container .nwjd_goods_list .nwjd_goods_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.goods_container .nwjd_goods_list .nwjd_goods_item a {
+  width: 530px;
+}
+
+.goods_container .nwjd_goods_list .nwjd_goods_item a img {
+  width: 100%;
+}

@@ -1,0 +1,487 @@
+<?php $__env->startSection('links'); ?>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+    <link rel="stylesheet" type="text/css" href="/user/huiyuancommon.css" />
+    <link rel="stylesheet" type="text/css" href="/user/huiyuanzhongxin.css" />
+    <link rel="stylesheet" type="text/css" href="/user/wodedingdan.css"/>
+    <!--layer-->
+    <link rel="stylesheet" type="text/css" href="/user/layer/layer.css" />
+
+    <script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/index/common/js/com-js.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/common_hyzx.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/huiyuancommon.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/placeholderfriend.js" type="text/javascript" charset="utf-8"></script>
+    <!--layer-->
+    <script src="/user/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/layer/lazyload.js" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.youce', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="/user/img/详情页_01.png"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="/user/img/right_03.png"
+                                                        class="right_icon"/><span>我的今瑜e药网</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="user">
+                    <div class="l">
+                        <div class="img_box">
+                            <img alt="<?php echo e($user->msn); ?>" title="<?php echo e($user->msn); ?>"
+                                 style="border-radius: 50%;width: 80px;height: 80px;display: block;"
+                                 src="<?php if($user->ls_file!=''): ?><?php echo e(get_img_path('data/feedbackimg/'.$user->ls_file)); ?><?php else: ?><?php echo e(get_img_path('images/user/user_03.jpg')); ?><?php endif; ?>"/>
+                            <div class="shenhe wei yi">
+                                <?php if($user->ls_review==1): ?>
+                                    已审核
+                                <?php else: ?>
+                                    未审核
+                                <?php endif; ?>
+                            </div>
+                            <a href="<?php echo e(route('user.mobile_login')); ?>">
+                                <div class="qiehuan">
+                                    切换会员
+                                </div>
+                            </a>
+                        </div>
+                        <div class="xinxi">
+                            <p class="username"><?php echo e($user->user_name); ?></p>
+                            <p class="name"><?php echo e($user->msn); ?></p>
+                            <p class="leibie">会员等级：<span><?php echo e($rank_name); ?></span></p>
+                            <?php if($user->ls_zpgly!='admin'): ?>
+                                <?php echo isset($gly_html) ? $gly_html : ''; ?>
+
+                            <?php endif; ?>
+                            <?php if(!$mobile_phone): ?>
+                                <a href="<?php echo e(route('user.mobile_login')); ?>" class="bangding">
+                                    <img src="/user/img/shouji_03.png"/>
+                                    <span>去绑定手机号</span>
+                                </a>
+                            <?php else: ?>
+                                <a href="<?php echo e(route('user.mobile_login')); ?>" class="bangding">
+                                    <img src="/user/img/bind.png"/>
+                                    <span>已绑定(<?php echo e($mobile_phone); ?>)</span>
+                                </a>
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                    <div class="r">
+                        <ul class="img_box">
+                            <a href="<?php echo e(route('member.order.index',['status'=>1])); ?>">
+                                <li>
+                                    <img src="/user/img/组 1.png"/>
+                                    <p>待付款订单</p>
+                                    <div class="xiaoxi"><?php echo e($dfk); ?></div>
+                                </li>
+                            </a>
+                            <a href="<?php echo e(route('member.order.index',['status'=>2])); ?>">
+                                <li>
+                                    <img src="/user/img/组 2.png"/>
+                                    <p>待收货订单</p>
+                                    <div class="xiaoxi"><?php echo e($dsh); ?></div>
+                                </li>
+                            </a>
+                            <a href="<?php echo e(route('user.znx_list')); ?>">
+                                <li>
+                                    <img src="/user/img/组 3.png"/>
+                                    <p>未读消息</p>
+                                    <div class="xiaoxi"><?php echo e(msg_count()); ?></div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li>
+                                    <img src="/user/img/组 4.png"/>
+                                    <p>可用含麻委托书</p>
+                                    <div class="xiaoxi"><?php echo e($user->mhj_number); ?></div>
+                                </li>
+                            </a>
+                        </ul>
+                        <div class="zizhi">
+                            <p class="weituo">
+                                <?php if(empty($user->cgwts_time)): ?>
+                                    <span>已审核通过</span>
+                                <?php elseif($cgwts_time==2): ?>
+                                    <span>有效期至：<?php echo e($user->cgwts_time); ?></span>
+                                <?php elseif($cgwts_time==1): ?>
+                                    <span class="jijiang">即将过期(<?php echo e($user->cgwts_time); ?>)</span>
+                                <?php else: ?>
+                                    <span class="yiguoqi">已过期(<?php echo e($user->cgwts_time); ?>)</span>
+                                <?php endif; ?>
+                                采购委托书
+                            </p>
+                            <p class="zhizhao">
+                                <?php if(empty($user->yyzz_time)): ?>
+                                    <span>已审核通过</span>
+                                <?php elseif($yyzz_time==2): ?>
+                                    <span>有效期至：<?php echo e($user->yyzz_time); ?></span>
+                                <?php elseif($yyzz_time==1): ?>
+                                    <span class="jijiang">即将过期(<?php echo e($user->yyzz_time); ?>)</span>
+                                <?php else: ?>
+                                    <span class="yiguoqi">已过期(<?php echo e($user->yyzz_time); ?>)</span>
+                                <?php endif; ?>
+                                营业执照
+                            </p>
+                            <?php if($user->user_rank==5): ?>
+                                <p class="xuke">
+                                    <?php if(empty($user->yljg_time)): ?>
+                                        <span>已审核通过</span>
+                                    <?php elseif($yljg_time==2): ?>
+                                        <span>有效期至：<?php echo e($user->yljg_time); ?></span>
+                                    <?php elseif($yljg_time==1): ?>
+                                        <span class="jijiang">即将过期(<?php echo e($user->yljg_time); ?>)</span>
+                                    <?php else: ?>
+                                        <span class="yiguoqi">已过期(<?php echo e($user->yljg_time); ?>)</span>
+                                    <?php endif; ?>
+                                    医疗机构执业许可证
+                                </p>
+                            <?php else: ?>
+                                <p class="xuke">
+                                    <?php if(empty($user->xkz_time)): ?>
+                                        <span>已审核通过</span>
+                                    <?php elseif($xkz_time==2): ?>
+                                        <span>有效期至：<?php echo e($user->xkz_time); ?></span>
+                                    <?php elseif($xkz_time==1): ?>
+                                        <span class="jijiang">即将过期(<?php echo e($user->xkz_time); ?>)</span>
+                                    <?php else: ?>
+                                        <span class="yiguoqi">已过期(<?php echo e($user->xkz_time); ?>)</span>
+                                    <?php endif; ?>
+                                    药品经营许可证
+                                </p>
+                            <?php endif; ?>
+                            <p class="GSP">
+                                <?php if(empty($user->zs_time)): ?>
+                                    <span>已审核通过</span>
+                                <?php elseif($zs_time==2): ?>
+                                    <span>有效期至：<?php echo e($user->zs_time); ?></span>
+                                <?php elseif($zs_time==1): ?>
+                                    <span class="jijiang">即将过期(<?php echo e($user->zs_time); ?>)</span>
+                                <?php else: ?>
+                                    <span class="yiguoqi">已过期(<?php echo e($user->zs_time); ?>)</span>
+                                <?php endif; ?>
+                                GSP证书
+                            </p>
+                            <p class="GSP">
+                                <?php if(empty($user->org_cert_validity)): ?>
+                                    <span>已审核通过</span>
+                                <?php elseif($org_cert_validity==2): ?>
+                                    <span>有效期至：<?php echo e($user->org_cert_validity); ?></span>
+                                <?php elseif($org_cert_validity==1): ?>
+                                    <span class="jijiang">即将过期(<?php echo e($user->org_cert_validity); ?>)</span>
+                                <?php else: ?>
+                                    <span class="yiguoqi">已过期(<?php echo e($user->org_cert_validity); ?>)</span>
+                                <?php endif; ?>
+                                组织机构代码证
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <img src="/user/img/shu.png" class="shu"/>
+                <ul class="zhanghu">
+                    <li>
+                        <a href="<?php echo e(route('user.accountInfo')); ?>">
+                            <div class="img_box">
+                                <img src="/user/img/zichan_1.png"/>
+                            </div>
+                            <div class="txt">
+                                <p class="wenzi">账户余额</p>
+                                <p class="xq"><?php echo e(formated_price($user->user_money)); ?></p>
+                            </div>
+                        </a>
+                    </li>
+                    <?php if($user->is_zhongduan==1&&$user->province==26): ?>
+                        <?php /*<li>*/ ?>
+                            <?php /*<a href="<?php echo e(route('member.hongbao_money_log')); ?>">*/ ?>
+                                <?php /*<div class="img_box">*/ ?>
+                                    <?php /*<img src="<?php echo e(get_img_path('images/user/zichan_1.png')); ?>"/>*/ ?>
+                                <?php /*</div>*/ ?>
+                                <?php /*<div class="txt">*/ ?>
+                                    <?php /*<p class="wenzi">红包</p>*/ ?>
+                                    <?php /*<p class="xq"><?php echo e(formated_price(collect($user->hongbao_money)->get('money',0))); ?></p>*/ ?>
+                                <?php /*</div>*/ ?>
+                            <?php /*</a>*/ ?>
+                        <?php /*</li>*/ ?>
+                    <?php endif; ?>
+                    <?php if($user->jf_money): ?>
+                        <li>
+                            <a href="<?php echo e(route('member.jf_money_log')); ?>">
+                                <div class="img_box">
+                                    <img src="<?php echo e(get_img_path('images/user/zichan_1.png')); ?>"/>
+                                </div>
+                                <div class="txt">
+                                    <p class="wenzi">积分金币</p>
+                                    <p class="xq"><?php echo e(formated_price($user->jf_money->money)); ?></p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if($user_jnmj&&$user_jnmj->jnmj_amount>0): ?>
+                        <li>
+                            <a href="<?php echo e(route('member.money',['type'=>1])); ?>">
+                                <div class="img_box">
+                                    <img src="<?php echo e(get_img_path('images/user/zichan_1.png')); ?>"/>
+                                </div>
+                                <div class="txt">
+                                    <p class="wenzi"><?php echo e(trans('common.jnmj')); ?></p>
+                                    <p class="xq"><?php echo e(formated_price($user_jnmj->jnmj_amount)); ?></p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if($cz_money&&$cz_money->money>0): ?>
+                        <li>
+                            <a href="<?php echo e(route('member.money',['type'=>2])); ?>">
+                                <div class="img_box">
+                                    <img src="<?php echo e(get_img_path('images/user/zichan_1.png')); ?>"/>
+                                </div>
+                                <div class="txt">
+                                    <p class="wenzi"><?php echo e(trans('common.cz_money')); ?></p>
+                                    <p class="xq"><?php echo e(formated_price($cz_money->money)); ?></p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php /*<li>*/ ?>
+                        <?php /*<div class="img_box">*/ ?>
+                            <?php /*<a href="<?php echo e(route('jifen.user.index')); ?>">*/ ?>
+                                <?php /*<img src="<?php echo e(get_img_path('images/user/zichan_2.png')); ?>"/>*/ ?>
+                            <?php /*</a>*/ ?>
+                        <?php /*</div>*/ ?>
+                        <?php /*<div class="txt">*/ ?>
+                            <?php /*<p class="wenzi">可兑换积分</p>*/ ?>
+                            <?php /*<p class="xq"><?php echo e(intval($user->pay_points)); ?>分</p>*/ ?>
+                        <?php /*</div>*/ ?>
+                    <?php /*</li>*/ ?>
+                    <?php /*<li>*/ ?>
+                        <?php /*<div class="img_box">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/zichan_3.png')); ?>"/>*/ ?>
+                        <?php /*</div>*/ ?>
+                        <?php /*<div class="txt">*/ ?>
+                            <?php /*<p class="wenzi">精品专区积分</p>*/ ?>
+                            <?php /*<p class="xq"><?php echo e(intval($user->jp_points)); ?>分</p>*/ ?>
+                        <?php /*</div>*/ ?>
+                    <?php /*</li>*/ ?>
+                    <li>
+                        <div class="img_box">
+                            <a href="<?php echo e(route('user.youhuiq')); ?>"><img
+                                        src="/user/img/zichan_1.png"/></a>
+                        </div>
+                        <div class="txt">
+                            <p class="wenzi">可用优惠券</p>
+                            <p class="xq"><?php echo e($yhq_count); ?>张
+                                <?php /*<a href="#">去领券</a>*/ ?>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <?php if($user->is_zq>0&&isset($zq_info)): ?>
+                    <div class="zhangqi">
+                        <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                        <span class="title">账期信息</span>
+                        <span class="xfed">
+							账期消费额度
+							<span><?php echo e(formated_price($zq_info->zq_amount)); ?></span>
+						</span>
+                        <span class="zqed">
+							账期额度
+							<span><?php echo e(formated_price($zq_info->zq_je)); ?></span>
+						</span>
+                        <span class="hkrq">
+							账期还款日
+							<span>每月<span><?php echo e($zq_info->zq_rq); ?></span>日</span>
+						</span>
+                        <span class="jq">
+							上月账期是否已结清
+                            <?php if($zq_info->zq_has==0): ?>
+                                <span>已结清</span>
+                            <?php else: ?>
+                                <span>未结清</span>
+                            <?php endif; ?>
+						</span>
+                    </div>
+                <?php endif; ?>
+                <?php if($user->is_zhongduan==1): ?>
+                    <?php /*<div class="sctjm-box" style="height: 60px;line-height: 50px;padding-bottom: 0;">*/ ?>
+                        <?php /*<?php if($can_see_tjm): ?>*/ ?>
+                            <?php /*<?php echo $__env->make('user.tjm', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+                        <?php /*<?php endif; ?>*/ ?>
+                        <?php /*<?php if($user->province==26): ?>*/ ?>
+                            <?php /*<div class="title" style="display: inline-block;">*/ ?>
+                                <?php /*<img src="http://images.hezongyy.com/images/user/dian_03.png?110112"/>*/ ?>
+                                <?php /*<span class="bt">*/ ?>
+								<?php /*您当月已采购金额*/ ?>
+								    <?php /*<span style="font-size: 18px;margin-left: 33px;color: #FF1919;font-weight: bold;"><?php echo e(formated_price($user_level?$user_level->month_amount:0)); ?></span>*/ ?>
+							    <?php /*</span>*/ ?>
+                            <?php /*</div>*/ ?>
+                        <?php /*<?php endif; ?>*/ ?>
+                    <?php /*</div>*/ ?>
+                <?php endif; ?>
+                <div class="near_order">
+                    <div class="title">
+                        <a href="<?php echo e(route('member.order.index')); ?>" class="readmore">查看全部订单</a>
+                        <img src="/new_gwc/jiesuan_img/椭圆.png"/>
+                        <span class="bt">近期订单</span>
+                        <a href="<?php echo e(route('member.order.index',['status'=>1])); ?>"
+                           class="dfk">待付款（<span><?php echo e($dfk); ?></span>）</a>
+                        <a href="<?php echo e(route('member.order.index',['status'=>2])); ?>"
+                           class="dsh">待收货（<span><?php echo e($dsh); ?></span>）</a>
+                    </div>
+                    <?php if(count($near_order)>0): ?>
+                        <table>
+                            <tr>
+                                <th class="ddbs">
+                                    订单标识
+                                </th>
+                                <th class="ddh">
+                                    订单号
+                                </th>
+                                <th class="xdsj">
+                                    下单时间
+                                </th>
+                                <th class="shr">
+                                    收货人
+                                </th>
+                                <th class="zje">
+                                    <span>订单总金额</span>
+                                    <?php /*<img src="<?php echo e(get_img_path('images/user/tishi_03.png')); ?>" title="这是提示信息">*/ ?>
+                                </th>
+                                <th class="zz" style="width: 250px;">
+                                    订单状态
+                                </th>
+                                <th class="cz">
+                                    操作
+                                </th>
+                            </tr>
+                            <?php foreach($near_order as $v): ?>
+                                <tr>
+                                    <td>
+                                        <?php if($v->is_zq>0): ?>
+                                            <span class="fan">账</span>
+                                        <?php elseif($v->is_separate==1): ?>
+                                            <span class="fan">货</span>
+                                        <?php elseif($v->jnmj>0): ?>
+                                            <span class="fan">返</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td><a style="display: block;" class="order_sn"
+                                           href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"><?php echo e($v->order_sn); ?></a>
+                                    </td>
+                                    <td><?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?></td>
+                                    <td><?php echo e($v->consignee); ?></td>
+                                    <td><?php echo e(formated_price($v->goods_amount+$v->shipping_fee)); ?></td>
+                                    <td>
+                                        <?php if($v->order_status==2): ?>
+                                            <span>已取消</span>
+                                        <?php elseif($v->pay_status==0): ?>
+                                            <span class="dfk">待付款</span>
+                                        <?php else: ?>
+                                            <span>已付款</span>
+                                        <?php endif; ?>
+                                        <span class="zhuizong">
+										订单跟踪
+                                            <?php echo $__env->make('user.genzong',['info'=>$v], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+									</span>
+                                        <?php if(strpos($v->shipping_name,'合纵直配')!==false&&$v->shipping_status>=3&&$v->add_time>=strtotime(20180401)): ?>
+                                            &nbsp;<a style="color: #FF6102" target="_blank"
+                                                     href="<?php echo e(route('member.order.wlxx',['id'=>$v->order_id])); ?>">物流跟踪</a>
+                                        <?php elseif(strpos($v->shipping_name,'成都万联国通物流有限公司')!==false&&$v->add_time>=strtotime(20180719)&&!empty($v->invoice_no)): ?>
+                                            &nbsp;<a style="color: #FF6102" target="_blank"
+                                                     href="<?php echo e(route('member.order.guotong',['id'=>$v->order_id])); ?>">物流跟踪</a>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <?php if($v->pay_status==0&&$v->pay_xz==1&&$v->order_status=1): ?>
+                                            <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"
+                                               class="fukuan">去付款</a>
+                                        <?php elseif($v->pay_status==2&&$v->shipping_status==4&&$v->order_status==1): ?>
+                                            <form style="display: inline-block" id="<?php echo e($v->order_id); ?>form"
+                                                  action="<?php echo e(route('member.order.update',['id'=>$v->order_id])); ?>"
+                                                  method="post">
+                                                <?php echo csrf_field(); ?>
+
+                                                <input type="hidden" name="_method" value="put">
+                                                <input type="hidden" name="act" value="qrsh">
+                                                <a class="fukuan"
+                                                   onclick="$('#<?php echo e($v->order_id); ?>form').submit();">确认收货</a>
+                                            </form>
+                                        <?php else: ?>
+                                            <a class="fukuan"
+                                               href="<?php echo e(route('user.orderBuy',['id'=>$v->order_id])); ?>">再次购买</a>
+                                        <?php endif; ?>
+                                        <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"
+                                           class="read">查看详情</a>
+                                           <?php if($v->is_sync==1 && $v->fanli==1 && $v->is_mhj !=1&&$v->goods_amount>=500): ?>
+                                           <a style="color:#00a1e9;display:block;" class="confirm" data-id="<?php echo e($v->order_id); ?>">确认收货</a>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    <?php else: ?>
+                        <?php echo $__env->make('user.empty',['type'=>0,'emsg'=>'您近期没有下过单，这里是空的'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php endif; ?>
+                </div>
+                <?php /*<div class="shoucang" id="sc">*/ ?>
+                    <?php /*<?php echo $__env->make('user.sc',['result'=>$collection], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+                <?php /*</div>*/ ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+     // 订单返利
+     $('.confirm').click(function(){
+            var order_id=$(this).attr('data-id');
+            $.ajax({
+                url:'/user/rebate',
+                data:{id:order_id},
+                dataType:'JSON',
+                success: function(res) {
+                    console.log(res)
+                    if(res.jine!=undefined){
+                        layer.alert('已确认收货，该笔订单返利'+res.jine+'元')
+                    }else{
+                        layer.alert('已确认收货，未返利')
+                    }
+                    $(this).remove();
+                }
+            })
+        })
+        //返回顶部
+        $('.btn-top').click(function() {
+            $('html,body').animate({
+                'scrollTop': 0
+            })
+        });
+        $(function () {
+            var sn = '<?php echo isset($sn) ? $sn : ''; ?>';
+            var gqts = '<?php echo e(isset($gqts) ? $gqts : 1); ?>';
+            if (sn != '' && gqts == 0) {
+                layer.alert(sn, {icon: 0, time: 5000});
+            }
+        });
+        if ($('.zhanghu li').length == 5) {
+            $('.zhanghu li').css('width', '188px');
+        } else {
+            $('.zhanghu li').css('width', '235px');
+        }
+        $('.chakan').hover(function () {
+            $('.lxfs').show();
+        }, function () {
+            $('.lxfs').hide();
+        })
+
+    </script>
+    <?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

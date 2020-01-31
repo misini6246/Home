@@ -1,0 +1,36 @@
+<?php if($pages->hasPages()): ?>
+    <style>
+        #fenye a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            color: #777;
+        }
+    </style>
+    <div class="page" id="fenye">
+        <ul>
+            <?php if($pages->currentPage()>1): ?>
+                <li class="prev"><a href="<?php echo e($pages->previousPageUrl()); ?>">上一页</a></li>
+            <?php endif; ?>
+            <?php for($i=$pages->currentPage()-2;$i<$pages->currentPage();$i++): ?>
+                <?php if($i>0): ?>
+                    <li><a href="<?php echo e($pages->url($i)); ?>"><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+            <li class="active"><?php echo e($pages->currentPage()); ?></li>
+            <?php for($i=$pages->currentPage()+1;$i<=$pages->currentPage()+2;$i++): ?>
+                <?php if($i<=$pages->lastPage()): ?>
+                    <li><a href="<?php echo e($pages->url($i)); ?>"><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+            <?php if($pages->currentPage()<$pages->lastPage()): ?>
+                <li class="next"><a href="<?php echo e($pages->nextPageUrl()); ?>">下一页</a></li>
+            <?php endif; ?>
+        </ul>
+        <span>共<?php echo e($pages->lastPage()); ?>页</span>
+        <span>到第</span>
+        <input name="page" type="text" form="search_form" class="val" value="<?php echo e($pages->currentPage()); ?>"/>
+        <span>页</span>
+        <input type="submit" form="search_form" id="page_btn" value="确定"/>
+    </div>
+<?php endif; ?>

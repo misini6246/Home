@@ -1,0 +1,2 @@
+<link href="<?php echo e(path('css/base.css')); ?>" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo e(path('js/tanchuc.js')); ?>"></script>

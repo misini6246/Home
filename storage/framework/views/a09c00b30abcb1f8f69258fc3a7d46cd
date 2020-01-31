@@ -1,0 +1,186 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/my_order2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/my_order.js')); ?>"></script>
+    <style type="text/css">
+
+        .listPageDiv {
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            margin-top: 10px;
+            float: right;
+            width: 82%;
+            color: #333333;
+            font-family: "Microsoft YaHei"
+        }
+
+        .pageList {
+            width: 600px;
+            float: left;
+        }
+
+        .listPageDiv .p1 {
+            border: 1px #CCC solid;
+            padding: 4px 9px;
+            margin: 3px;
+            background-color: #efefef;
+        }
+
+        .listPageDiv .p_ok {
+            color: #39a817;
+            border: 0;
+            background-color: #fff;
+        }
+
+        .listPageDiv a {
+            color: #666;
+        }
+
+        .listPageDiv a:hover {
+            text-decoration: underline;
+            color: #39a817;
+        }
+
+        .listPageDiv .no {
+            background-color: #fff;
+        }
+
+        .listPageDiv .no a {
+            color: #cccccc;
+        }
+
+        .listPageDiv .page_inout {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .listPageDiv .submit {
+            cursor: pointer;
+            width: 45px;
+            height: 24px;
+            line-height: 20px;
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .listPageDiv .submit_input {
+            padding-left: 10px;
+            width: 180px;
+            float: right;
+            _margin-top: 10px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="main fn_clear">
+
+        <div class="main fn_clear">
+            <div class="top">
+                <span class="title">我的药易购</span> <a>>　<span>交易管理</span> </a> <a href="<?php echo e(route('user.orderList')); ?>"
+                                                                                class="end">>　<span>我的订单</span></a>
+            </div>
+            <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="main_right1">
+                <div class="top_title">
+                    <h3>我的订单</h3>
+                    <span class="ico"></span>
+                    <div class="right_box">
+                        <form action="<?php echo e(route('user.orderList')); ?>" enctype="multipart/form-data" method="get">
+                            <div class="search_box" id="search_box" style="margin-top: 0">
+                                <input type="text" name="keys" class="keys" value="<?php echo e($keys); ?>" placeholder="订单编号"/>
+                                <input type="submit" class="search" value="查询"><span class="ico"></span>
+                            </div>
+                            <select name="dates">
+                                <?php /*<option value="0">今天</option>*/ ?>
+                                <option value="1" <?php if($dates==1): ?> selected <?php endif; ?>>最近三个月</option>
+                                <option value="2" <?php if($dates==2): ?> selected <?php endif; ?>>今年内</option>
+                                <?php /*<option value="<?php echo e(date('Y',strtotime('-1 year'))); ?>" <?php if($dates==date('Y',strtotime('-1 year'))): ?> selected <?php endif; ?>><?php echo e(date('Y',strtotime('-1 year'))); ?>年</option>*/ ?>
+                                <option value="3" <?php if($dates==3): ?> selected <?php endif; ?>>往年订单</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
+                <table id="se">
+                    <tr>
+                        <th>订单标识</th>
+                        <th>订单号</th>
+                        <th>下单时间</th>
+                        <th>收货人</th>
+                        <th>订单总金额</th>
+                        <th>订单状态</th>
+                        <th> 操作</th>
+                    </tr>
+                    <?php if(count($pages)>0): ?>
+                        <?php foreach($pages as $v): ?>
+                            <tr>
+                                <td>
+                                    <?php if($v->jnmj>0): ?>
+                                        <a>返</a>
+                                    <?php elseif($v->is_zq>0): ?>
+                                        <a>账</a>
+                                    <?php elseif($v->is_separate==1): ?>
+                                        <a>货</a>
+                                    <?php endif; ?></td>
+                                <td class="nub tb1_td1" data-id="<?php echo e($v->order_id); ?>"><a
+                                            href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id,'is_zq'=>$v->is_zq,'is_separate'=>$v->is_separate])); ?>"><?php echo e($v->order_sn); ?></a>
+                                </td>
+                                <td class="date tb1_td2"><?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?></td>
+                                <td class="name tb1_td3"><?php echo e($v->consignee); ?></td>
+                                <td class="score tb1_td4"><?php echo e(formated_price($v->goods_amount)); ?></td>
+                                <td class="data tb1_td5">
+                                    <span class="no_pay" style="color: #e70000;"><?php if($v->pay_status==2): ?> 已付款 <?php else: ?>
+                                            未付款 <?php endif; ?></span>
+                                    <span class="stat"
+                                          style="color:#339900;cursor:pointer;position: relative;padding:0 5px;"
+                                          id="ddgz" dd-url="<?php echo e(route('user.ddgz')); ?>">订单跟踪</span>
+                                    <?php if(strpos($v->fhwl_m,'宅急送')!==false&&$v->shipping_status>=4): ?>
+                                        <a target="_blank"
+                                           href="<?php echo e(route('zjs',['id'=>$v->order_id,'is_zq'=>$v->is_zq,'is_separate'=>$v->is_separate])); ?>">物流跟踪</a>
+                                    <?php endif; ?>
+                                </td>
+                                <td class="result tb1_td6">
+                                    <?php echo ddzt($v); ?>&nbsp;&nbsp;
+                                    <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id,'is_zq'=>$v->is_zq,'is_separate'=>$v->is_separate])); ?>"
+                                       class="f6">查看订单</a>
+                                    <?php if($v->mobile_pay<=1): ?>
+                                        <a href="<?php echo e(route('user.orderBuy',['id'=>$v->order_id,'is_zq'=>$v->is_zq,'is_separate'=>$v->is_separate])); ?>"
+                                           class="f6">再次购买</a>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="7">暂无任何订单！</td>
+                        </tr>
+                    <?php endif; ?>
+
+                </table>
+                <?php if($pages->lastPage()>0): ?>
+                    <?php echo pagesView($pages->currentPage(),$pages->lastPage(),3,3,[
+                        'dates'=>$dates,
+                        'url'=>'user.orderList',
+                        ]); ?>
+
+                <?php endif; ?>
+            </div>
+        </div>
+
+    </div>
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

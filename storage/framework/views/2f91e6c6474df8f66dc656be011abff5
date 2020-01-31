@@ -1,0 +1,74 @@
+<ul class="youhuijuan_list">
+    <?php if(isset($type)&&$type==0): ?>
+        <?php foreach($result as $k=>$v): ?>
+            <?php if($k==0): ?>
+                <li class="use active">
+                    <div class="use_box">
+                        <div class="ct_left">
+                            <p class="money">￥<?php echo e(intval($v->je)); ?></p>
+                            <p class="tj"><?php echo e($v->category->title); ?></p>
+                            <p class="data"><?php if($v->end-$v->start>3600*24): ?>
+                                    <?php echo e(date('Y.m.d',$v->start)); ?>-<?php echo e(date('Y.m.d',$v->end - 1)); ?><?php else: ?>
+                                    仅限<?php echo e(date('Y.m.d',$v->start)); ?><?php endif; ?>可用</p>
+                        </div>
+                        <div class="ct_right">
+                            感恩券
+                        </div>
+                        <img style="position: absolute;right: 0;bottom: 0;"
+                             src="/index/img/youhuijuan_choose.png">
+                    </div>
+                </li>
+                <input class="yhq_id_use" type="hidden" name="yhq_id[]" value="-1">
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <?php foreach($result as $v): ?>
+            <?php if($v->is_used==1): ?>
+                <li class="use <?php if($v->is_used==1): ?> active <?php endif; ?>">
+                    <div class="use_box">
+                        <div class="ct_left">
+                            <p class="money">￥<?php echo e(intval($v->je)); ?></p>
+                            <p class="tj"><?php echo e($v->category->title); ?></p>
+                            <p class="data"><?php if($v->end-$v->start>3600*24): ?>
+                                    <?php echo e(date('Y.m.d',$v->start)); ?>-<?php echo e(date('Y.m.d',$v->end - 1)); ?><?php else: ?>
+                                    仅限<?php echo e(date('Y.m.d',$v->start)); ?><?php endif; ?>可用</p>
+                        </div>
+                        <div class="ct_right">
+                            优惠券
+                        </div>
+                        <?php if($v->is_used==1): ?>
+                            <img style="position: absolute;right: 0;bottom: 0;"
+                                 src="/index/img/youhuijuan_choose.png">
+                        <?php endif; ?>
+                    </div>
+                </li>
+                <?php if($v->is_used==1): ?>
+                    <input class="yhq_id_use" type="hidden" name="yhq_id[]" value="<?php echo e($v->yhq_id); ?>">
+                <?php endif; ?>
+            <?php else: ?>
+                <li class="none">
+                    <div class="none_box">
+                        <div class="ct_left">
+                            <p class="money">￥<?php echo e(intval($v->je)); ?></p>
+                            <p class="tj"><?php echo e($v->category->title); ?></p>
+                            <p class="data"><?php if($v->end-$v->start>3600*24): ?>
+                                    <?php echo e(date('Y.m.d',$v->start)); ?>-<?php echo e(date('Y.m.d',$v->end - 1)); ?><?php else: ?>
+                                    仅限<?php echo e(date('Y.m.d',$v->start)); ?><?php endif; ?>可用</p>
+                        </div>
+                        <div class="ct_right">
+                            优惠券
+                        </div>
+                    </div>
+                    <div class="tj_text">
+                        <?php /*<img src="/index/img/juan_bg_none.png"/>*/ ?>
+                        <span>订单金额不满足此券使用条件</span>
+                    </div>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>
+<script>
+    var len = $('.yhq_id_use').length;
+    $('#yhq_count').text(len);
+</script>

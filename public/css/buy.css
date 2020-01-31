@@ -1,0 +1,49 @@
+/*主体部分样式开始*/
+
+.main{width: 1200px;margin: 10px auto;overflow: hidden;}
+.banner{margin-bottom: 10px;width: 1200px;height: 395px;}
+.banner img{width: 1200px;height: 395px;}
+
+.main_left{width: 890px;float: left;}
+
+
+.main_left .nav_list{height: 46px;line-height: 46px;margin-bottom: 15px;border-bottom: 2px solid #e4e3e1;}
+
+.main_left .nav_list li{width: 260px;float: left;height: 46px;line-height: 46px;text-align: center;font-size: 16px;}
+.main_left .nav_list li a{color: #666666;display: block;width: 260px;height: 46px;}
+.main_left .nav_list li.on{border-bottom: 2px solid #2ab200;}
+
+.main_left table{width: 890px;border: 1px solid #e7e7e7;margin-bottom: 15px;}
+.main_left table tr th{background-color: #f5f5f5;border-bottom:1px solid #e7e7e7; height: 36px;line-height: 36px;text-align: left;text-indent: 25px;}
+.main_left table tr th .txt{font-weight: normal;color: #666666;}
+.main_left table tr td{padding-left: 25px;}
+.main_left table tr td p{height: 28px;line-height: 28px;color: #666;}
+.main_left table tr td .text{width: 162px;height: 22px;border: 1px solid #e7e7e7;text-indent: 5px;}
+.main_left table tr td .ico{color: #e70000;}
+.main_left table tr td textarea{width: 824px;height: 82px;border: 1px solid #e7e7e7;resize: vertical;}
+.main_left table tr td .submit{width: 98px;height: 25px;line-height: 25px;color: #fff;text-align: center;background-color: #39a817;margin: 10px 30px 12px 0;}
+.main_left table tr td.end{text-align: right;}
+
+.main_left ul.msg_content{width: 890px;border-left: 1px solid #e7e7e7;border-top: 2px solid #39a817;color: #e70000;border-right: 1px solid #e7e7e7;}
+.main_left ul.msg_content li{padding: 12px 16px;border-bottom: 1px solid #e7e7e7;}
+.main_left ul.msg_content li {line-height: 28px;}
+.main_left ul.msg_content li p.title{color: #999999;}
+.main_left ul.msg_content li p.title .date{padding-left: 25px;}
+.main_left ul.msg_content li .msg_title{color: #656565;}
+.main_left ul.msg_content li .msg_text{padding-right: 10px;}
+
+
+.main_right{width: 298px;float: right;margin-top: 48px;}
+.main_right ul li{width: 298px;height: 330px;margin-bottom: 10px;}
+.main_right ul li a{width: 298px;height: 330px;display: block;}
+.main_right ul li a img{width: 298px;height: 330px;}
+
+/*主体部分样式结束*/
+
+.pagebar {padding-top:10px;text-align:center;float:right;padding-right:15px;padding-bottom:14px;}
+.pagebar a, .pagebar span {border: 1px solid #ccc;float: left;font-family: arial;font-size: 14px;height: 20px;line-height: 20px;margin-left: 2px;overflow: hidden;padding: 3px 10px;text-decoration:none;color:#005aa0;}
+.pagebar a:hover {background:#005aa0;color:#fff;}
+.pagebar .page_now {border: 0 none;padding: 4px 11px;color: #f60;font-weight: 700;}
+.pagebar .pager_info {border:none;height:22px;line-height:22px;}
+
+

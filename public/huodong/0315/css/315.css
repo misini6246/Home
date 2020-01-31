@@ -1,0 +1,26 @@
+body {
+  background: url("/huodong/0315/img/bg.jpg") no-repeat;
+  background-color: #000;
+  background-size: 100%;
+}
+
+.list {
+  margin: 610px auto 0 auto;
+  width: 1200px;
+  padding-bottom: 114px;
+}
+
+ul::after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+ul li {
+  width: 380px;
+  margin-left: 20px;
+  float: left;
+}

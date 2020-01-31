@@ -1,0 +1,13 @@
+<li id="msg<?php echo e($v->msg_id); ?>">
+    <div>
+        <input type="checkbox" class="danxuan" value="<?php echo e($v->msg_id); ?>" onclick="danxuan($('.danxuan'),$('.quanxuan'))"/>
+        <span>已读</span>
+        <span class="biaoti"><?php echo e($v->title); ?></span>
+    </div>
+    <div class="neirong">
+        <div class="txt">
+            <?php echo $v->text; ?>
+
+        </div>
+    </div>
+</li>

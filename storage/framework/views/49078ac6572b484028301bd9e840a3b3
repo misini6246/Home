@@ -1,0 +1,8 @@
+
+<ul>
+    <?php foreach($status as $k=>$v): ?>
+    <li class="fn_clear <?php if($k==0): ?> on_hover <?php endif; ?>">
+        <span class="date_txt"><?php echo e($v['times']); ?></span> <span class="data_txt"><?php echo $v['con']; ?></span>
+    </li>
+    <?php endforeach; ?>
+</ul>

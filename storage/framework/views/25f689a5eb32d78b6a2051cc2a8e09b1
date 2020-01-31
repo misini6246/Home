@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Keywords" content="<?php echo e(config('services.web.keywords')); ?>"/>
+    <meta name="Description" content="<?php echo e(config('services.web.description')); ?>"/>
+    <meta name="_token" content="<?php echo e(csrf_token()); ?>"/>
+    <title>登录-<?php echo e(config('services.web.title')); ?></title>
+    <link rel="shortcut icon" href="<?php echo e(path('images/favicon.ico')); ?>"/>
+    <link rel="icon" href="<?php echo e(path('images/animated_favicon.gif')); ?>" type="image/gif"/>
+    <link href="<?php echo e(path('css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/login.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/log_reg_com.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/confirm_psw.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/login.js')); ?>"></script>
+</head>
+<body>
+<?php if(time()<strtotime('20161112')): ?>
+    <?php echo $__env->make('shuang11.auth_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php else: ?>
+    <?php echo $__env->make('layout.auth_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>
+<form action="<?php echo e(url('auth/login')); ?>" method="post" id="form">
+    <?php echo csrf_field(); ?>
+
+    <div class="site-content"
+         style='background: url("<?php echo e(asset('images/tx_log_03.jpg')); ?>") no-repeat scroll center top;'>
+        <div class="content-box">
+            <?php if(isset($ad157)&&!empty($ad157->ad_link)): ?><a target="_blank" href="<?php echo e($ad157->ad_link); ?>"
+                                                          style="display: block;width: 100%;height: 546px;position: absolute;right: 400px;"></a><?php endif; ?>
+            <div class="right">
+                <div class="right-title fn_clear">
+                    <h2>欢迎登录</h2>
+                    <div class="wangji">
+                        <span>还没有账号？<a href="<?php echo e(url('/xin/register/old')); ?>">快速注册</a> </span>
+                    </div>
+                </div>
+
+                <p class="input-box">
+                    <span class="ico"></span><label for="username"> <span class="codes2"
+                                                                          style="display: block;">用户名或手机号</span>
+                        <input class="username txt" id="username" name="user_name" type="text"
+                               style="color: rgb(51, 51, 51);"></label>
+                    <span class="prompt2">请输入用户名或手机号</span>
+                </p>
+                <p class="input-box"><span class="ico pas"></span> <label for="password"> <span class="codes"
+                                                                                                style="display: block;">密　码</span>
+                        <input class="password txt" id="password" name="password" type="password"
+                               style="color: rgb(51, 51, 51);"></label>
+                    <span class="prompt2">请输入密码</span>
+                </p>
+
+                <a href="javascript:void(0)" class="login">登　录</a>
+                <input type="hidden" name="act" class="act" value="ajax_act_login">
+                <input type="hidden" name="back_act" class="back_act" value="/index.php">
+
+                <div class="box"><span><input type="checkbox" value="1" name="remember"
+                                              id="remember">&nbsp;&nbsp;记住账号</span>
+                    <a href="<?php echo e(url('password/email')); ?>">忘记密码</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</form>
+<?php echo $__env->make('layout.auth_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<?php /**/ ?>
+<div class="footer-box">
+    <div class="box-container">
+        <div class="footer_top">
+            <div class="footer_top_content">
+                <img width="80" height="80" src="/index/img/首页-08.png">
+                <div class="text_box">
+                    <p class="bold">药监认证</p>
+                    <p class="">国家资质、合法经营、诚信保证</p>
+                </div>
+            </div>
+            <div class="footer_top_content">
+                <img width="80" height="80" src="/index/img/首页-09.png">
+                <div class="text_box">
+                    <p class="bold">100%正品</p>
+                    <p class="">所售商品均来自正规厂家采购</p>
+                </div>
+            </div>
+            <div class="footer_top_content">
+                <img width="80" height="80" src="/index/img/首页-10.png">
+                <div class="text_box">
+                    <p class="bold">规范包装</p>
+                    <p class="">包装规范，符合药品GSP和物流运 输要求。</p>
+                </div>
+            </div>
+            <div class="footer_top_content">
+                <img width="80" height="80" src="/index/img/首页-11.png">
+                <div class="text_box">
+                    <p class="bold">实付满200免邮</p>
+                    <p class="">订单金额满实付满200即享受包邮</p>
+                </div>
+            </div>
+        </div>
+        <div class="about_us">
+            <ul>
+                <span>新人指南</span>
+                <li>免费注册</li>
+                <li>安全购药</li>
+                <li>所需资质</li>
+                <li>常见问题</li>
+                <li>找回密码</li>
+            </ul>
+            <ul>
+                <span>配送方式</span>
+                <li>物流配送</li>
+                <li>包装流程</li>
+            </ul>
+            <ul>
+                <span>支付方式</span>
+                <li>在线支付</li>
+                <li>银行转账</li>
+            </ul>
+            <ul>
+                <span>售后服务</span>
+                <li>退换货保障</li>
+                <li>发票制度</li>
+                <li>退款说明</li>
+                <li>质量保障</li>
+                <li>投诉与建议</li>
+            </ul>
+            <ul>
+                <span>关于我们</span>
+                <li>公司简介</li>
+                <li>用户协议</li>
+                <li>联系我们</li>
+            </ul>
+            <ul>
+                <span>商务合作</span>
+                <li>广告合作</li>
+            </ul>
+
+            <div class="code_box">
+                <p>微信官方公众号</p>
+                <div class="img_box">
+                    <img src="/index/img/jy_gzh.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom" style="margin-bottom: 20px;">
+            <p>©2018  重庆今瑜医药股份有限公司 版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ICP备案证书号：
+                <a href="#" style="color: #000000;">渝ICP备13004090号</a>
+            </p>
+            <p>本网站未发布毒性药品、麻醉药品、精神药品、放射性药品、戒毒药品和医疗机构制剂的产品信息</p>
+            <div class="img-box">
+                <img width="100" height="40" src="/index/img/footer_link_1.png">
+                <img width="100" height="40" src="/index/img/footer_link_2.png">
+                <img width="100" height="40" src="/index/img/footer_link_3.png">
+                <img width="100" height="40" src="/index/img/footer_link_4.png">
+                <img width="100" height="40" src="/index/img/footer_link_5.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

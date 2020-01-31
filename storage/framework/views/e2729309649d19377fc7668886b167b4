@@ -1,0 +1,60 @@
+<div id="nav" class="container">
+    <div class="container_box">
+        <div class="fenlei">
+            <img src="<?php echo e(path('new/images/fenlei.jpg')); ?>"/>
+            <span>诊所用药分类</span>
+        </div>
+        <ul class="nav_list">
+            <?php foreach($middle_nav as $k=>$v): ?>
+                <li>
+                    <a <?php if($v->name=='诊所专区'): ?> style="color: #3ebb2b;font-weight: bold;" <?php endif; ?> href="<?php echo e($v->url); ?>"
+                       <?php if($v->opennew==1): ?>target="_blank" <?php endif; ?> ><?php echo e($v->name); ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <div class="gif_phone">
+            <img src="<?php echo e(path('new/images/dianhua.gif')); ?>"/>
+        </div>
+        <div class="site_content">
+            <ul class="menu_list">
+                <?php foreach($category as $k=>$v): ?>
+                    <?php if($k<5): ?>
+                        <li>
+                            <div class="text">
+                                <p class="text_top">
+                                    <img src="<?php echo e(get_img_path('images/zs/menu_right.png')); ?>" class="fr"/>
+                                    <img src="<?php echo e(get_img_path('images/zs/menu_right_hove.png')); ?>" class="fr"/>
+                                    <?php echo e($v->cat_name); ?>
+
+                                </p>
+                                <p class="text_bottom">
+                                    <?php foreach($v->cate as $key=>$val): ?>
+                                        <?php if($key<3): ?>
+                                            <span><?php echo e($val->cat_name); ?></span>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </p>
+                            </div>
+                            <ul class="child">
+                                <?php foreach($v->cate as $val): ?>
+                                    <?php if(count($val->cate)>0): ?>
+                                        <li style="height: auto;">
+                                            <p class="title"><?php echo e($val->cat_name); ?></p>
+                                            <ul>
+                                                <?php foreach($val->cate as $value): ?>
+                                                    <li class="cat_name"><a
+                                                                href="<?php echo e(route('category.index',['ylfl'=>'n','ylfl1'=>$v->cat_id,'ylfl2'=>$value->cat_id])); ?>"><?php echo e($value->cat_name); ?></a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>

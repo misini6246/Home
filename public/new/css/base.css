@@ -1,0 +1,18 @@
+/*样式初始化*/
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, b, u, i,dl, dt, dd, ol, ul, li,form, label ,input{ margin: 0; padding: 0;  border: 0;   font-size: 12px;  font-family: "Microsoft YaHei"; vertical-align: baseline;}
+a{color:black;}
+body{font-size: 12px;}
+button,input,select {font-size:100%; vertical-align:middle;outline: none;border: 0;}
+textarea {overflow:auto;vertical-align:top;}
+img {-ms-interpolation-mode:bicubic}
+a{text-decoration: none;cursor: pointer;outline: none;}
+ol li, ul li{ list-style: none;}
+li{list-style: none;}
+table { border-collapse: collapse;border-spacing: 0;}
+em{font-style: normal;}
+
+.fn_clear:before,.fn_clear:after{content: ""; display: table;}
+.fn_clear:after{clear: both;}
+.fn_clear{zoom:1;}
+
+

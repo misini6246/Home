@@ -1,0 +1,28 @@
+/*主体部分样式开始*/
+.main{width: 1200px;margin: 0 auto;}
+.main .top{height: 50px;line-height: 50px;}
+.main .top .title{display: block;float: left;}
+.main .top a{color:#333;display: block;float: left;height: 50px;margin-left: 10px;}
+.main .top a.end span{color: #39a817;}
+.main .title_ico{margin-bottom: 20px ;}
+.main .title_ico img{width: 320px;height: 45px;}
+.main  ,.main .box  a,.main  .box img{width: 1200px;}
+.main  .li_1{height: 420px;}
+.main  .li_1 a{height: 420px;display: block;}
+.main  .li_1 img{height: 420px;}
+.main  .li_2{height: 470px;}
+.main  .li_2 a{height: 470px;display: block;}
+.main  .li_2 img{height: 470px;}
+.main  .li_3{height: 488px;}
+.main  .li_3 a{height: 488px;display: block;}
+.main  .li_3 img{height: 488px;}
+.main  .li_4{height: 488px;}
+.main  .li_4 a{height: 488px;display: block;}
+.main  .li_4 img{height: 488px;}
+
+.main_ul{width: 1200px;margin:0 auto;}
+.main_ul li{width: 1200px;height: 325px;margin-bottom: 20px;}
+.main_ul li img{width: 1200px;height: 325px;}
+
+/*主体部分样式结束*/
+

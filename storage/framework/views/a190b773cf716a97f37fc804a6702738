@@ -1,0 +1,173 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            height: 950px;
+            background: url('<?php echo e(get_img_path('images/yhq/lingjuan.jpg')); ?>') no-repeat scroll top center;
+            min-width: 1140px;
+        }
+
+        .center {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .center ul {
+            overflow: hidden;
+            width: 100%;
+            margin-top: 400px;
+        }
+
+        .center ul li {
+            float: left;
+            margin-left: 12px;
+        }
+
+        .center ul li:first-child {
+            margin-left: 0;
+        }
+
+        .center .btn {
+            text-align: center;
+            margin-top: 65px;
+        }
+
+        .center .btn img {
+            cursor: pointer;
+        }
+
+        .center .text {
+            text-align: center;
+            font-family: "微软雅黑";
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        #alert_box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            display: none;
+        }
+
+        #alert_box .tcc {
+            text-align: center;
+            position: relative;
+            width: 600px;
+            height: 361px;
+            margin: 240px auto;
+            background: url('<?php echo e(get_img_path('images/yhq/tcc.png')); ?>');
+        }
+
+        #alert_box .tcc a {
+            display: inline-block;
+            width: 175px;
+            height: 46px;
+            margin-top: 286px;
+        }
+
+        #alert_box .tcc #read {
+            margin-left: 34px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('miaosha.daohang', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="container">
+        <div class="center">
+            <ul>
+                <li>
+                    <img src="<?php echo e(get_img_path('images/yhq/pcjuan_1.png')); ?>"/>
+                </li>
+                <li>
+                    <img src="<?php echo e(get_img_path('images/yhq/pcjuan_2.png')); ?>"/>
+                </li>
+                <li>
+                    <img src="<?php echo e(get_img_path('images/yhq/pcjuan_3.png')); ?>"/>
+                </li>
+                <li>
+                    <img src="<?php echo e(get_img_path('images/yhq/pcjuan_4.png')); ?>"/>
+                </li>
+                <li>
+                    <img src="<?php echo e(get_img_path('images/yhq/pcjuan_5.png')); ?>"/>
+                </li>
+            </ul>
+            <div class="btn">
+                <img src="<?php echo e(get_img_path('images/yhq/btn.png')); ?>" id="lingqu" onclick="lq_yhq()"/>
+                <img class="hide" src="<?php echo e(get_img_path('images/yhq/btn_1.png')); ?>" id="yilingqu"/>
+            </div>
+            <p class="text">*注：优惠券可用于除含麻品种、秒杀品种、血液制品、预售品种外所有品种；并可叠加使用。</p>
+        </div>
+        <div id="alert_box">
+            <div class="tcc">
+                <a href="javascript:;" id="qr" onclick="closebox()"></a>
+                <a href="/user/youhuiq" id="read" target="_blank"></a>
+            </div>
+        </div>
+        <input type="hidden" id="type" value="0">
+    </div>
+    <script type="text/javascript">
+        function closebox() {
+            $('#alert_box').hide();
+        }
+        function lq_yhq() {
+            var type = $('#type').val();
+            if (type == 0) {
+                $.ajax({
+                    url: '/yhq',
+                    data: {id: 1},
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.error == 2) {
+                            layer.confirm(data.msg, {
+                                btn: ['注册', '登录'], //按钮
+                                icon: 2
+                            }, function () {
+                                location.href = '/auth/register';
+                            }, function () {
+                                location.href = '/auth/login';
+                                return false;
+                            });
+                        } else {
+                            if (data.error == 0 || data.error == 3) {
+                                $('#lingqu').hide();
+                                $('#yilingqu').show();
+                                if (data.error == 3) {
+                                    data.error = 1;
+                                    layer.msg(data.msg, {icon: data.error + 1});
+                                } else {
+                                    $('#alert_box').show();
+                                }
+                                $('#type').val(1)
+                            } else {
+                                layer.msg(data.msg, {icon: data.error + 1});
+                            }
+                        }
+                    }
+                })
+            } else {
+                layer.msg('您已领取过该优惠券', {icon: 2});
+            }
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('common.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

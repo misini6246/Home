@@ -1,0 +1,3 @@
+<a href="javascript:;"  @if($now_check1==0&&$now_check>=$type) style="display:block" @elseif($now_check1==1||$now_check<$type) style="display:none" @endif><img src="{{path('images/shuang11-miaosha07.jpg')}}" alt="" /></a>
+{{--<a href="javascript:;" style="display:none"><img src="{{path('images/shuang11-miaosha08.jpg')}}" alt="" /></a>--}}
+<a href="javascript:;" @if($now_check1==0&&$now_check>=$type) style="display:none" @elseif($now_check1==1|| $now_chekc<$type) style="display:block" @endif><img src="{{path('images/shuang11-miaosha09.jpg')}}" alt="" /></a>

@@ -1,0 +1,57 @@
+.all_address{padding-bottom: 10px;border: 1px solid #c7c7c7}
+.all_address tr{height: 40px;text-align: center}
+.all_address table{width: 100%;}
+.all_address thead tr{border-bottom: 1px solid #c7c7c7;background-color: #efeeef;font-weight: bold;color: #323232}
+.all_address tbody tr{border-bottom: 1px solid #f0f0f0;background-color: #f9f9f9;color: #4b4b4b}
+.operate{font-size: 12px;}
+.operate a{padding: 0 5px;color: #089aca;vertical-align: middle}
+.operate a:hover{color: #ec0000}
+
+.maa_o{background-color: #f8f8f8;padding: 0 10px 20px 10px}
+.manage_all_address .order_status p{ background: none;color: #323232}
+.os_head{font-size: 16px;font-weight: bold;padding-left: 10px;line-height: 40px}
+.order_status table{width: 100%;background-color: #fff;border: 1px solid #dcddde}
+.order_status table tr{border-bottom: 1px solid #dcddde;line-height: 40px}
+.order_status table tr td{*border-bottom: 1px solid #dcddde}
+.order_status_tip{width: 140px;height: 40px;border-right: 1px solid #dcdcdc;text-align: right;padding-right: 10px}
+.order_status_c{padding-left: 10px}
+.os_status{color: #ff9100}
+.order_status .os_status span{font-size: 12px}
+.os_status button{float: right;height: 42px;padding: 0 15px;background-color: #ff9100;color: #fff;font-size: 18px;font-weight: bold;*vertical-align: top}
+.os_status button img{vertical-align: middle;margin-right: 15px}
+
+.manage_all_address .goods_list p{margin-top: 20px;background: none;color: #323232}
+.goods_list table tr{text-align: center}
+.goods_list table td{border-right: 1px solid #dcddde}
+.goods_list button{color: #089aca}
+
+/*添加地址*/
+.fill_msg{padding: 28px 0 20px 75px;border: 1px solid #dedede;margin-top: 28px;font-size: 12px;position: relative}
+.manage_all_address .fill_msg span{font-size: 12px;height: 23px}
+
+.fill_msg .ca_tip{float: left;width: 83px;line-height: 25px;text-align: right;margin-right: 5px;color: #4a4a4a}
+.fill_msg label{display: block;margin-top: 10px;width: 400px}
+.fill_msg label textarea{padding: 5px;vertical-align: top}
+.fill_msg label input{line-height: 19px;border: 1px solid #d9d9d9;width: 145px;text-indent: 5px;padding: 2px 0}
+.fill_msg .alert{color: #f95706;margin-left: 10px;vertical-align: middle;float: none}
+.fill_msg label textarea .alert{color: #f95706;margin-left: 10px;vertical-align: top;float: none}
+.name{margin-bottom: 10px}
+
+/*下拉框*/
+.choose_address{margin-top: 10px}
+.fill_msg .choose_select{border: 1px solid #d9d9d9;float: left;height: 23px;line-height: 23px;margin-right: 5px;width: 145px;}
+.choose_select ul{width: 146px}
+.choose_address .ca_tip{_margin-right: 8px}
+.choose_select .select_choose{height: 23px;line-height: 23px;color: #474747;width: 145px;}
+.choose_select .select_choose span{line-height: 23px;font-weight: normal}
+.choose_select .select_choose i{height: 23px;width: 20px;background-color: #f7f7f7;margin-right: 0;
+    border-left: 1px solid #dadada}
+.choose_address .alert{line-height: 25px}
+.fill_msg .to_default{width: 14px;margin-top: 3px;border: 0}
+
+.submit{margin: 15px 0 0 90px}
+.submit button{line-height: 26px;padding: 0 14px;*padding: 0 8px;font-weight: bold}
+.save{margin-right: 30px;color: #4f4f4f;background: url("../images/save.gif") no-repeat;}
+.reset{background: url("../images/save.gif") no-repeat;color: #4f4f4f}
+
+/**/

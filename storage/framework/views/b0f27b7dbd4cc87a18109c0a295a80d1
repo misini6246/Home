@@ -1,0 +1,105 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/cart/jiesuan_common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/cart/gwc_4.css')); ?>12" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/cart/lb.js')); ?>" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="jiesuan">
+        <div class="jiesuan_nav">
+            <div class="jiesuan_box">
+                <a href="/">
+                    <img src="<?php echo e(asset('images/logo-new.png')); ?>"  style="margin: 30px;"/>
+                </a>
+                <div class="jiesuan_nav_title">
+                    购物流程
+                </div>
+                <div class="jiesuan_nav_step">
+                    <img src="<?php echo e(get_img_path('images/cart/step_4.jpg')); ?>"/>
+                </div>
+            </div>
+        </div>
+        <div class="jiesuan_box container">
+            <div class="zhuangtai">
+                <div class="img_box">
+                    <img src="<?php echo e(get_img_path('images/cart/success.png')); ?>"/>
+                </div>
+                <div class="text">
+                    <div class="text_title">
+                        恭喜您已成功完成付款
+                    </div>
+                    <div class="gwc4_tishi">
+                        我们将及时处理您的订单，请耐心等待；所有货物请在送货员在场时开箱验货再签收，如有破损及时联系客服人员，如未当面开箱验货，破损不予赔付，自行承担。
+                    </div>
+                    <p>
+                        订单编号：<a href="<?php echo e(route('member.order.show',['id'=>$info->order_id])); ?>"><span><?php echo e($info->order_sn); ?></span></a>
+                    </p>
+                    <p>
+                        实付金额：<span class="red"><?php echo e(formated_price($info->o_paid)); ?></span>
+                    </p>
+                    <p>
+                        支付方式：<span class="red"><?php echo e($info->pay_name); ?></span>
+                    </p>
+                    <p class="link">
+                        您可以<a href="<?php echo e(route('index')); ?>">返回首页</a><a
+                                href="<?php echo e(route('member.collection.index')); ?>">查看我的收藏</a><a
+                                href="<?php echo e(route('member.order.index')); ?>">查看我的订单</a>
+                    </p>
+                </div>
+
+            </div>
+            <div id="ban2">
+                <div class="banner">
+                    <div class="banner_title">
+                        <img src="<?php echo e(get_img_path('images/cart/dian.png')); ?>"/>
+                        <span>为您推荐</span>
+                    </div>
+                    <ul class="img">
+                        <li>
+                            <?php foreach($wntj as $k=>$v): ?>
+                                <?php if($k<5): ?>
+                                    <div class="wntj-cp first-wntj-cp">
+                                        <div class="wntj-img-box">
+                                            <a href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>"><img
+                                                        src="<?php echo e($v->goods_thumb); ?>"/></a>
+                                        </div>
+                                        <p class="name"><?php echo e($v->goods_name); ?></p>
+                                        <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                        <p class="wntj-cp-jiage"><?php echo e(formated_price($v->real_price)); ?></p>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </li>
+                        <li>
+                            <?php foreach($wntj as $k=>$v): ?>
+                                <?php if($k>=5&&$k<10): ?>
+                                    <div class="wntj-cp first-wntj-cp">
+                                        <div class="wntj-img-box">
+                                            <a href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>"><img
+                                                        src="<?php echo e($v->goods_thumb); ?>"/></a>
+                                        </div>
+                                        <p class="name"><?php echo e($v->goods_name); ?></p>
+                                        <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                        <p class="wntj-cp-jiage"><?php echo e(formated_price($v->real_price)); ?></p>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </li>
+                    </ul>
+
+                    <div class="btn btn_l">
+                        <img src="<?php echo e(get_img_path('images/cart/tj_prev_03.png')); ?>"/>
+                    </div>
+                    <div class="btn btn_r">
+                        <img src="<?php echo e(get_img_path('images/cart/tj_next_03.png')); ?>"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

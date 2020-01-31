@@ -1,0 +1,85 @@
+<div id="header" class="container">
+    <div class="container_box">
+        <?php if(!$user): ?>
+            <div class="login_before">
+                <a href="/auth/login" class="login">登录</a>
+                <a href="/auth/register" class="reg">注册</a>
+                <span class="Province">
+						<img src="<?php echo e(get_img_path('images/zs/header_add.png')); ?>" class="header_add"/>
+                    <?php if($show_area==26): ?>四川<?php else: ?>新疆<?php endif; ?>
+                    <span class="icon">
+                        <img src="<?php echo e(get_img_path('images/zs/header_add_s.png')); ?>"/>
+                        <img src="<?php echo e(get_img_path('images/zs/header_add_x.png')); ?>"/>
+                    </span>
+                    <span class="add_choose">
+                        <?php if($show_area==29): ?>
+                            <a href="/zs/?show_area=26">四川</a>
+                        <?php else: ?>
+                            <a href="/zs/?show_area=29">新疆</a>
+                        <?php endif; ?>
+                    </span>
+                </span>
+            </div>
+        <?php else: ?>
+            <div class="login_after">
+					<span class="userid">
+						<?php echo e($user->msn); ?>
+
+                        <div class="user_box">
+							<div class="user_top">
+								<div class="img_box" style="border: 0">
+                                     <img src="<?php echo e(path('new/images/gerentouxiang.png')); ?>"/>
+                                </div>
+								<div class="text">
+									<p class="p1"><?php echo e($user->msn); ?></p>
+									<p class="p2"><?php echo e(isset($user_province) ? $user_province : ''); ?>-<?php echo e(isset($user_rank_name) ? $user_rank_name : ''); ?></p>
+								</div>
+							</div>
+							<ul>
+								<li>
+									<a href="<?php echo e(route('member.order.index')); ?>">我的订单</a>
+								</li>
+								<li>
+									<a href="/jf/member">我的积分</a>
+								</li>
+								<li>
+									<a href="<?php echo e(route('member.zncg')); ?>">智能采购</a>
+								</li>
+							</ul>
+						</div>
+					</span>
+                <a href="/auth/logout" class="out">[退出]</a>
+                <a href="<?php echo e(route('member.index')); ?>" class="myyyg">我的药易购</a>
+            </div>
+        <?php endif; ?>
+
+        <ul class="right_list">
+            <li><a target="_blank" href="/dzfp">电子发票查询</a></li>
+            <li><a target="_blank" href="/zhijian">质检报告查询</a></li>
+            <li><a target="_blank" href="/requirement">求购专区</a></li>
+            <li class="hover app_yyg">
+                <img src="<?php echo e(path('new/images/bgerweima_05.png')); ?>" class="header_erweima"/>
+                手机药易购
+                <span class="icon">
+							<img src="<?php echo e(get_img_path('images/zs/header_add_s.png')); ?>"/>
+							<img src="<?php echo e(get_img_path('images/zs/header_add_x.png')); ?>"/>
+						</span>
+                <div class="hover_box">
+                    <img src="<?php echo e(path('new/images//yaoyigou.png')); ?>"/>
+                </div>
+            </li>
+            <li><a target="_blank" href="/article?id=3">帮助中心</a></li>
+            <li class="hover tel">
+                投诉
+                <span class="icon">
+							<img src="<?php echo e(get_img_path('images/zs/header_add_s.png')); ?>"/>
+							<img src="<?php echo e(get_img_path('images/zs/header_add_x.png')); ?>"/>
+						</span>
+                <div class="hover_box">
+                    15208485597
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<script type="text/javascript" src="<?php echo e(path('js/keywordsSearch.js')); ?>"></script>
+<style>
+    .search_box div input {
+        width: 421px;
+        height: 40px;
+        border: 1px solid #3dbb2b;
+        line-height: 40px;
+        padding-left: 10px;
+        color: #777777;
+        display: inline;
+        margin-top: -87px;
+        float: left;
+        margin-left: 330px;
+    }
+
+    .search_show {
+        display: none;
+        width: 410px;
+        padding: 2px 3px;
+        border: 1px solid #3DAC14;
+        position: absolute;
+        z-index: 65;
+        background: #FFF;
+    }
+
+    .search_list {
+        font-size: 14px;
+        border-top: 1px solid #F3F3F3;
+    }
+
+    .search-hot a {
+        color: #5E5E5E;
+        padding-right: 12px;
+    }
+
+    .search-hot a:hover {
+        color: #e70000;
+    }
+
+    .search_list li {
+        color: #333;
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 1px solid #F3F3F3;
+        padding: 0 5px 0 5px;
+    }
+
+    .search_list li.active {
+        background: #C4FFAA;
+    }
+
+    .search_list li a {
+        float: left;
+        color: #8F8F8F;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .search_list li span {
+        float: right;
+        font-size: 12px;
+        color: #8F8F8F;
+    }
+
+</style>
+<div id="search" class="container">
+    <div class="container_box">
+        <div class="search_top">
+            <div class="img_box" style="width: auto;">
+                <a href="<?php echo e(route('index')); ?>"><img src="<?php echo e(asset('images/logo.png')); ?>"/></a>
+            </div>
+            <div class="input_box">
+                <input id="suggest" name="userSearch" type="text"
+                       value="<?php if(!isset($keywords)||empty($keywords)): ?>药品名称(拼音缩写)或厂家名称<?php else: ?><?php echo e($keywords); ?><?php endif; ?>"
+                       class="search_input suggest"/><input
+                        type="button" id="search_btn" value="搜 索"
+                        class="search_btn"/>
+                <div id="suggestions_wrap" class="search_show list_box suggestions_wrap"
+                     style="margin-top: -1px;border-top: 0;">
+                    <ul class="search_list suggestions" id="suggestions">
+                        <li>*复方福尔可定口服溶液(澳特斯)</li>
+                        <li>*氨酚伪麻美芬片Ⅱ/氨麻苯美片(白加黑)</li>
+                        <li>*氨酚伪麻胶囊(II)</li>
+                        <li>*氨酚待因片(Ⅰ)</li>
+                        <li>AD钙清清宝</li>
+                        <li>AD钙铁锌葡萄糖</li>
+                        <li>DHA牛磺酸蛋白质粉</li>
+                        <li>DHA藻油牛磺酸营养强化蛋白质粉</li>
+                        <li>L-谷氨酰胺呱仑酸钠颗粒(麦滋林)</li>
+                        <li>一叶子诺丽果青春晚安冻膜</li>
+                    </ul>
+                </div>
+                <div class="hot">
+                    <span>热门搜索：</span>
+                    <?php foreach($ad159 as $v): ?>
+                        <a target="_blank" href="<?php echo e($v->ad_link); ?>"><?php echo e($v->ad_name); ?></a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="gwc_box fr">
+                <div class="dd fl">
+                    <a href="<?php echo e(route('member.order.index')); ?>">
+                        <i class="myicon user_icon"></i>
+                        <span>订单查询</span>
+                    </a>
+                </div>
+                <div class="gwc fl">
+                    <a href="<?php echo e(route('cart.index')); ?>">
+                        <i class="myicon gwc_icon"></i>
+                        <span>购物车</span><span class="sl"><span class="cart_number"><?php echo e(cart_info()); ?></span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

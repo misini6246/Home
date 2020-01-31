@@ -1,0 +1,209 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/user/huiyuancommon.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/wodedingdan.css')); ?>1" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/user/huiyuancommon.js')); ?>"></script>
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        .genzong {
+            border: 1px solid #e5e5e5;
+        }
+
+
+    </style>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style type="text/css">
+        .right_top_search select {
+            padding: 5px 0;
+        }
+    </style>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/user/weizhi.png')); ?>"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的药易购</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><span>我的订单</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_top">
+                    <div class="right_top_title">
+                        <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                        <span>我的订单</span>
+                    </div>
+                    <ul class="right_top_title_nav">
+                        <li <?php if($status==0): ?> class="active" <?php endif; ?>>
+                            <a style="display: inline-block;width: 100%;height: 100%;"
+                               href="<?php echo e(route('member.order.index',['dates'=>$dates])); ?>">全部订单</a>
+                        </li>
+                        <li <?php if($status==1): ?> class="active" <?php endif; ?>>
+                            <a style="display: inline-block;width: 100%;height: 100%;"
+                               href="<?php echo e(route('member.order.index',['status'=>1,'dates'=>$dates])); ?>">待付款
+                                <span><?php echo e($dfk); ?></span>
+                            </a>
+                        </li>
+                        <li <?php if($status==2): ?> class="active" <?php endif; ?>>
+                            <a style="display: inline-block;width: 100%;height: 100%;"
+                               href="<?php echo e(route('member.order.index',['status'=>2,'dates'=>$dates])); ?>">待收货
+                                <span><?php echo e($dsh); ?></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form id="search_form" name="search_form" action="<?php echo e(route('member.order.index')); ?>">
+                        <div class="right_top_search">
+                            <select name="dates">
+                                <option <?php if($dates==1): ?> selected <?php endif; ?> value="1">最近三个月</option>
+                                <option <?php if($dates==2): ?> selected <?php endif; ?>  value="2">今年内</option>
+                                <option <?php if($dates==3): ?> selected <?php endif; ?>  value="3">往年订单</option>
+                            </select>
+                            <input type="text" placeholder="订单编号" name="keys" class="num" id="num"
+                                   value="<?php echo e($keys); ?>"/><input type="submit"
+                                                             id="btn"
+                                                             value="查询" onclick="$('input[name=page]').val(1)"/>
+                        </div>
+                    </form>
+                </div>
+                <?php if(count($result)>0): ?>
+                    <table>
+                        <tr>
+                            <th class="ddbs">订单标识</th>
+                            <th class="ddh">订单号</th>
+                            <th class="xdsj">下单时间</th>
+                            <th class="shr">收货人</th>
+                            <th class="zje">
+                                <span>订单总金额</span>
+                                <?php /*<img src="<?php echo e(get_img_path('images/user/tishi_03.png')); ?>" title="这是提示信息"/>*/ ?>
+                            </th>
+                            <th class="ddzt" style="width: 250px;">
+                                <div>
+                                    <span><?php echo e(isset($status_value) ? $status_value : '订单状态'); ?></span>
+                                    <img src="<?php echo e(get_img_path('images/user/xia.png')); ?>"/>
+                                    <ul class="select_zt">
+                                        <li>
+                                            <a href="<?php echo e(route('member.order.index',['dates'=>$dates,'status'=>1])); ?>">待付款</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('member.order.index',['dates'=>$dates,'status'=>2])); ?>">待收货</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('member.order.index',['dates'=>$dates,'status'=>3])); ?>">待发货</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('member.order.index',['dates'=>$dates,'status'=>4])); ?>">已完成</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo e(route('member.order.index',['dates'=>$dates,'status'=>5])); ?>">已取消</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th class="cz">操作</th>
+                        </tr>
+                        <?php foreach($result as $v): ?>
+                            <tr>
+                                <td>
+                                    <?php if($v->is_zq>0): ?>
+                                        <span class="fan">账</span>
+                                    <?php elseif($v->is_separate==1): ?>
+                                        <span class="fan">货</span>
+                                    <?php elseif($v->jnmj>0): ?>
+                                        <span class="fan">返</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td class="ddh"><a style="display: block;color: #e70000"
+                                                   href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"><?php echo e($v->order_sn); ?></a>
+                                </td>
+                                <td><?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?></td>
+                                <td><?php echo e($v->consignee); ?></td>
+                                <td class="zje"><?php echo e(formated_price($v->goods_amount+$v->shipping_fee)); ?></td>
+                                <td>
+                                    <?php if($v->order_status==2): ?>
+                                        <span>已取消</span>
+                                    <?php elseif($v->pay_status==0): ?>
+                                        <span class="dfk">待付款</span>
+                                    <?php else: ?>
+                                        <span>已付款</span>
+                                    <?php endif; ?>
+                                    <span class="zhuizong">
+										订单跟踪
+                                        <?php echo $__env->make('user.genzong',['info'=>$v], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                </span>
+                                    <?php if(strpos($v->shipping_name,'合纵直配')!==false&&$v->shipping_status>=3&&$v->add_time>=strtotime(20180401)): ?>
+                                        &nbsp;<a style="color: #FF6102" target="_blank"
+                                                 href="<?php echo e(route('member.order.wlxx',['id'=>$v->order_id])); ?>">物流跟踪</a>
+                                    <?php elseif(strpos($v->shipping_name,'成都万联国通物流有限公司')!==false&&$v->add_time>=strtotime(20180719)&&!empty($v->invoice_no)): ?>
+                                        &nbsp;<a style="color: #FF6102" target="_blank"
+                                                 href="<?php echo e(route('member.order.guotong',['id'=>$v->order_id])); ?>">物流跟踪</a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <?php if($v->pay_status==0&&$v->pay_xz==1&&$v->order_status=1): ?>
+                                        <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"
+                                           class="cz">去付款</a>
+                                    <?php elseif($v->pay_status==2&&$v->shipping_status==4&&$v->order_status==1): ?>
+                                        <form style="display: inline-block" id="<?php echo e($v->order_id); ?>form"
+                                              action="<?php echo e(route('member.order.update',['id'=>$v->order_id])); ?>"
+                                              method="post">
+                                            <?php echo csrf_field(); ?>
+
+                                            <input type="hidden" name="_method" value="put">
+                                            <input type="hidden" name="act" value="qrsh">
+                                            <a class="cz" onclick="$('#<?php echo e($v->order_id); ?>form').submit();">确认收货</a>
+                                        </form>
+                                    <?php else: ?>
+                                        <a class="cz"
+                                           href="<?php echo e(route('user.orderBuy',['id'=>$v->order_id])); ?>">再次购买</a>
+                                    <?php endif; ?>
+                                    <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>"
+                                       class="chakan">查看详情</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <?php echo $__env->make('user.empty',['type'=>0,'emsg'=>'没有查询到订单，这里是空的'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#num').focus(function () {
+                $('.placeholder').hide();
+            });
+            $('#num').blur(function () {
+                if ($(this).val() != "") {
+                    $('.placeholder').hide();
+                } else {
+                    $('.placeholder').show();
+                }
+            });
+        })
+    </script>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

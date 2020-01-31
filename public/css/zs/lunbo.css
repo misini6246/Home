@@ -1,0 +1,141 @@
+@charset "utf-8";
+.slide_box { width:100%; overflow: hidden;height:400px;min-width: 1200px;display: inline-block;position: relative;}
+
+.banner2{ position:relative; z-index:50; width:100%; height:400px; overflow:hidden; }
+.banner_bg{width: 386px;height:400px;position: absolute;top: 0px;z-index: 999;overflow: hidden;}
+.banner_left{left:50%;margin-left:-991px;}
+.banner_right{right:50%;margin-right:-991px;}
+.banner-btn{position:absolute; top: 50%; width: 34px; height: 68px; margin-top: -34px;opacity: 0.7;filter:alpha(opacity=70);z-index: 99999;display:block}
+.banner-prev,.banner-next{
+	width: 34px;
+	height: 68px;
+	display: none;
+}
+#banner:hover .banner-btn{
+	display: block;
+}
+.banner-prev{
+    background: url(http://images.hezongyy.com/images/zs/banner_prev.png);
+    left:50%;
+    margin-left:-375px;
+}
+.banner-next{
+	background-position:-37px -275px;right:50%;margin-right:-375px;
+	 background: url(http://images.hezongyy.com/images/zs/banner_next.png);
+}
+.banner-prev:hover,.banner-next:hover{opacity:1;filter:alpha(opacity=100);}
+.banner-pic li{
+	display:none;width:100%;
+	height:400px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 60;
+}
+
+.banner-pic li a{width:780px; height:400px;margin:0 auto;display: block;position: relative;}
+.banner-pic li img{ display:inline; width:780px; height:400px;}
+.banner-pic li span img{ display:block; width:24px; height:14px; }
+.banner-ctrl{
+	position: relative;
+	z-index:80;
+	margin: 0 auto;
+	margin-top:360px;
+	height:35px;
+}
+.banner-ctrl li{
+ position:relative; float:left; width:60px; height:35px; margin-left:1px;line-height:35px;
+}
+.banner-ctrl li.first{ margin-left:0; }
+.banner-ctrl li .bg{ position:absolute; z-index:5; top:0; width:100%; height:35px; background:#000; opacity:.3; filter:alpha(opacity=30); -webkit-transition:all .3s; transition:all .3s; }
+.banner-ctrl li.current .bg{height:35px; opacity:.65; filter:alpha(opacity=65); }
+.banner-ctrl li .ctrl-dot{
+    display:block;
+    position:absolute;
+    z-index:7;
+    top:4px;
+    width:100%;
+    height:4px;
+    text-align:center;
+}
+.banner-ctrl li .ctrl-dot i{ display:inline-block; width:8px; height:4px; *margin-right:3px; background:#fff; vertical-align:top; overflow:hidden;background: #969696; }
+.banner-ctrl li .ctrl-dot i.on{ background:#3cba2b;}
+.banner-ctrl li .title-item{ display:none; position:absolute; z-index:8; bottom:35px; left:0;_bottom:34px; width:70px; height:12px; overflow:hidden;}
+.banner-ctrl li .title-item .title-bg{
+    position:absolute;
+    z-index:1;
+    width:223px;
+    height:250px;
+    background:#000;
+    opacity:.65;
+    filter:alpha(opacity=65);
+   display: none;
+
+}
+.banner-ctrl li .title-item .title-list{
+    position:relative;
+    z-index:2;
+    padding:8px 10px 2px 13px;
+    height: 10px;
+    display: none;
+}
+.banner-ctrl li .title-item p{ height:1px; margin-bottom:6px;line-height: 18px}
+.banner-ctrl li .title-item p i{
+    display:inline-block;
+    width:8px;
+    height:4px;
+    background:#fff;
+    vertical-align:middle;
+    overflow:hidden;
+    position: absolute;
+    top:8px;
+    left:31px;
+}
+.banner-ctrl li .title-item p.now i{ background:#fff; }
+.banner-ctrl li .title-item p a{ width:180px; height:18px; color:#ddd; vertical-align:middle; overflow:hidden; }
+.banner-ctrl li h4{
+    position:absolute;
+    z-index:6;
+    top:0;
+    width:100%;
+    height:35px;
+    color:#fff;
+    line-height:35px;
+    text-align:center;
+    font-size:12px;
+    overflow:hidden;
+    cursor: pointer
+}
+.banner-ctrl li.mouse-hover .bg{
+    top:0;
+    height:35px;
+}
+.slide_right{
+	width: 210px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 62;
+	margin-left: 390px;
+}
+.slide_right li{
+	background: #fff;
+	height: 195px;
+	margin-top: 3px;
+}
+.slide_right_img{
+	width: 100%;
+	height: 140px;
+	text-align: center;
+}
+.slide_right li p{
+	text-align: center;
+	font-family: "宋体";
+}
+.slide_right li p.name{
+	font-size: 14px;	
+}
+.slide_right li p.gg,.slide_right li p.company{
+	margin-top: 3px;
+}

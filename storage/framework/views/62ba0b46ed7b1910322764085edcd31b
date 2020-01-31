@@ -1,0 +1,175 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/buy.css')); ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo e(path('/js/goods_list.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="main fn_clear">
+    <p class="banner">
+        <?php foreach($imgList as $k=>$v): ?>
+        <?php if($k==0): ?>
+        <a href="<?php echo e($v->ad_link); ?>" target="_blank"><img src="<?php echo e($v->ad_code); ?>" alt="<?php echo e($v->ad_name); ?>"/></a>
+        <?php endif; ?>
+        <?php endforeach; ?>
+    </p>
+    <div class="main_left">
+        <ul class="nav_list">
+            <?php /*<li><a href="javascript:;">投票专区</a></li>*/ ?>
+            <li class="on"><a href="requirement.php" >求购专区</a></li>
+        </ul>
+        <form id="contactForm"  enctype="multipart/form-data" method="post" action="<?php echo e(route('requirement.store')); ?>">
+            <?php echo csrf_field(); ?>
+
+            <table>
+                <tr>
+                    <th colspan="4">发布求购信息 <span class="txt">(会员登录后才能发布)</span></th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>联系人： <?php echo $errors->first('buy_name',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" name="buy_name" value="<?php echo e(old('buy_name')); ?>" class="text contact" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>联系电话： <?php echo $errors->first('buy_tel',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text phone" name="buy_tel" value="<?php echo e(old('buy_tel')); ?>" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>求购药品：    <?php echo $errors->first('buy_goods',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text drug" name="buy_goods" value="<?php echo e(old('buy_goods')); ?>" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>生产厂家：<?php echo $errors->first('product_name',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text factory" name="product_name" value="<?php echo e(old('product_name')); ?>" /> <span class="ico">*</span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p>药品规格：   <?php echo $errors->first('buy_spec',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text norms" name="buy_spec" value="<?php echo e(old('buy_spec')); ?>" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>求购数量： <?php echo $errors->first('buy_number',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text number" name="buy_number" value="<?php echo e(old('buy_number')); ?>" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>求购价格：    <?php echo $errors->first('buy_price',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text price" name="buy_price" value="<?php echo e(old('buy_price')); ?>" /> <span class="ico">*</span>
+                    </td>
+                    <td>
+                        <p>求购有效期：<?php echo $errors->first('buy_time',"<span class='ico'>:message</span>"); ?></p>
+                        <input type="text" class="text time" name="buy_time" value="<?php echo e(old('buy_time')); ?>" /> <span class="ico">*</span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p>留言：</p>
+                        <textarea name="message" id="message" class="message"><?php echo e(old('message')); ?></textarea> <span class="ico">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="end">
+                        <input type="submit" id="J_submit" value="提   交" class="submit"/>
+                        <input type="hidden" name="act" value="add_requirement" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+        <ul class="msg_content">
+            <?php foreach($pages as $v): ?>
+            <li>
+                <p class="title">
+                    <span class="title">会员：</span>
+                    <span class="name"><?php echo e($v->buy_username); ?></span>
+                    <span class="date"><?php echo e(date('Y-m-d H:i:s',$v->buy_addtime)); ?></span>
+                </p>
+                <p class="msg">[求购药品信息]</p>
+                <div class="list">
+                    <span class="msg_title">药品名称：</span><span class="msg_text"><?php echo e($v->buy_goods); ?></span>
+                    <span class="msg_title">生产厂家：</span><span class="msg_text"><?php echo e($v->product_name); ?></span>
+                    <span class="msg_title">规格：</span><span class="msg_text"><?php echo e($v->buy_spec); ?></span>
+                    <span class="msg_title">有效期：</span><span class="msg_text"><?php echo e($v->buy_time); ?></span>
+                    <span class="msg_title">数量：</span><span class="msg_text"><?php echo e($v->buy_number); ?></span>
+                    <span class="msg_title">价格：</span><span class="msg_text"><?php echo e(formated_price($v->buy_price)); ?></span>
+                </div>
+                <p>
+                    <span class="msg_title">求购留言：</span><span class="msg_text"><?php echo e($v->message); ?></span>
+
+                </p>
+                <?php if($v->replay!=''): ?>
+                <p class="reply"> <span class="msg_name">药易购回复：</span><?php echo e($v->replay); ?></p>
+                <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+            <div style="float: right">
+            <?php echo $__env->make('layout.pagesUser', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </ul>
+
+
+    </div>
+    <div class="main_right">
+        <ul>
+            <?php if($imgOne): ?>
+            <li>
+                <a href="<?php echo e(isset($imgOne->ad_linke) ? $imgOne->ad_linke : ''); ?>">
+                    <img src="<?php echo e(isset($imgOne->ad_code) ? $imgOne->ad_code : ''); ?>"/>
+                </a>
+            </li>
+            <?php endif; ?>
+            <?php if($imgTwo): ?>
+            <li>
+                <a href="<?php echo e(isset($imgTwo->ad_linke) ? $imgTwo->ad_linke : ''); ?>">
+                    <img src="<?php echo e(isset($imgTwo->ad_code) ? $imgTwo->ad_code : ''); ?>"/>
+                </a>
+            </li>
+            <?php endif; ?>
+            <?php if($imgThree): ?>
+            <li>
+                <a href="<?php echo e(isset($imgThree->ad_linke) ? $imgThree->ad_linke : ''); ?>">
+                    <img src="<?php echo e(isset($imgThree->ad_code) ? $imgThree->ad_code : ''); ?>"/>
+                </a>
+            </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+//    $(function() {
+//        $('#J_submit').click(function(event) {
+//            event.preventDefault() ;
+//            var submiturl = "requirement.php" ;
+//            var formdata = $(this).parents('form').serialize() ;
+//            $.ajax({
+//                type: "POST" ,
+//                dataType: 'json' ,
+//                url: submiturl ,
+//                data: formdata ,
+//                success: function(data) {
+//                    if(data.error != undefined) {
+//                        ui.box.error(data.error, 2000) ;
+//                        return ;
+//                    }
+//                    ui.box.success(data.msg, 2000) ;
+//                    $('#contactForm input[type=text]').val('') ;
+//                    $('#message').val('') ;
+//                    return ;
+//                }
+//            }) ;
+//        }) ;
+//    }) ;
+</script>
+
+<?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

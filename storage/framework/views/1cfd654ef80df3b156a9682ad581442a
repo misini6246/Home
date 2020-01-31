@@ -1,0 +1,573 @@
+
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/zyzq/index.css')); ?>4" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('js/keywordsSearch.js')); ?>"></script>
+    <link href="<?php echo e(path('/css/goods_list.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/zhongyyp.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/zhongyyp-list.css')); ?>" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/goods_list.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/wntj-zy.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+    <style type="text/css">
+        .listPageDiv {
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            margin-top: 10px;
+            float: right;
+            width: 82%;
+            color: #333333;
+            font-family: "Microsoft YaHei"
+        }
+
+        .pageList {
+            width: 600px;
+            float: left;
+        }
+
+        .listPageDiv .p1 {
+            border: 1px #CCC solid;
+            padding: 4px 9px;
+            margin: 3px;
+            background-color: #efefef;
+        }
+
+        .listPageDiv .p_ok {
+            color: #39a817;
+            border: 0;
+            background-color: #fff;
+        }
+
+        .listPageDiv a {
+            color: #666;
+        }
+
+        .listPageDiv a:hover {
+            text-decoration: underline;
+            color: #39a817;
+        }
+
+        .listPageDiv .no {
+            background-color: #fff;
+        }
+
+        .listPageDiv .no a {
+            color: #cccccc;
+        }
+
+        .listPageDiv .page_inout {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .listPageDiv .submit {
+            cursor: pointer;
+            width: 45px;
+            height: 24px;
+            line-height: 20px;
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .listPageDiv .submit_input {
+            padding-left: 10px;
+            width: 180px;
+            float: right;
+            _margin-top: 10px;
+        }
+
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('zyzq.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="site-content-box ">
+        <div class="zhongyyp-box fn_clear">
+            <?php echo $__env->make('zyzq.layouts.zy_zs', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+            <div class="zhongyyp-list-right ">
+                <div class="shuaixuan-box">
+                    <div class="r_top">
+                        <img src="<?php echo e(path('images/zyyp/zhyp054.jpg')); ?>" alt=""/>
+                    </div>
+                    <?php if($select_arr): ?>
+                        <div class="g_csize fn_clear">
+                            <div class="g_hdiv">所选分类 :</div>
+                            <div class="g_listdiv g_fsdiv">
+                                <?php foreach($select_arr as $v): ?>
+                                    <a class="g_select_cate" href="<?php echo e($v['url']); ?>"><h5><?php echo e($v['tip']); ?>
+
+                                            :</h5>&nbsp;<?php echo e($v['text']); ?><span class="g_close_icon"></span></a>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="dosage-selection fn_clear">
+                        <div class="ul_list1" style="display: block;">
+                            <span class="title_name">中药饮片分类：</span>
+                            <ul>
+                                <?php foreach(cate_tree(445) as $k=>$v): ?>
+                                    <?php if($k<4): ?>
+                                        <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                    href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                        </li><?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                            <span class="open_zy">更多<em class="up_ico"></em></span>
+                        </div>
+                        <div class="ul_list1 ul_list2 fn_clear" style="display: none;">
+                            <span class="title_name">中药饮片分类： </span>
+                            <ul class="fn_clear">
+                                <?php foreach(cate_tree(445) as $k=>$v): ?>
+                                    <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <span class="close_zy">收起 <em class="up_ico"></em></span>
+                        </div>
+
+                        <div class="ul_list1" style="display: block;">
+                            <span class="title_name">中药功能分类：</span>
+                            <ul>
+                                <?php foreach(cate_tree(446) as $k=>$v): ?>
+                                    <?php if($k<10): ?>
+                                        <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                    href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                        </li><?php endif; ?>
+                                <?php endforeach; ?>
+
+                            </ul>
+                            <span class="open_zy">更多<em class="up_ico"></em></span>
+                        </div>
+                        <div class="ul_list1 ul_list2 fn_clear" style="display: none;">
+                            <span class="title_name">中药功能分类： </span>
+                            <ul class="fn_clear">
+                                <?php foreach(cate_tree(446) as $k=>$v): ?>
+                                    <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+
+                            </ul>
+                            <span class="close_zy">收起 <em class="up_ico"></em></span>
+                        </div>
+
+                        <div class="ul_list1" style="display: block;">
+                            <span class="title_name">中药来源属性： </span>
+                            <ul>
+                                <?php foreach(cate_tree(447) as $k=>$v): ?>
+                                    <?php if($k<13): ?>
+                                        <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                    href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                        </li><?php endif; ?>
+                                <?php endforeach; ?>
+
+                            </ul>
+                            <span class="open_zy">更多<em class="up_ico"></em></span>
+                        </div>
+                        <div class="ul_list1 ul_list2 fn_clear" style="display: none;">
+                            <span class="title_name">中药来源属性：  </span>
+                            <ul class="fn_clear">
+                                <?php foreach(cate_tree(447) as $k=>$v): ?>
+                                    <li <?php if($phaid==$v->cat_id): ?>class="on_click"<?php endif; ?> ><a
+                                                href="<?php echo e(build_url('zyzq.category',['pid'=>$v->cat_id,'product_name'=>$product_name_here,'zm'=>$zmhere])); ?>"><?php echo e($v->cat_name); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+
+                            </ul>
+                            <span class="close_zy">收起 <em class="up_ico"></em></span>
+                        </div>
+
+                        <div class="ul_list1" style="display: block;">
+                            <span class="title_name">生产厂家： </span>
+                            <ul>
+                                <?php foreach($sccj as $k=>$v): ?>
+                                    <?php if($k<4): ?>
+                                        <li <?php if($product_name_here==$v): ?>class="on_click"<?php endif; ?> ><a
+                                                    href="<?php echo e(build_url('zyzq.category',['pid'=>$phaid,'product_name'=>$v,'zm'=>$zmhere])); ?>"><?php echo e($v); ?></a>
+                                        </li><?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                            <span class="open_zy">更多<em class="up_ico"></em></span>
+                        </div>
+                        <div class="ul_list1 ul_list2 fn_clear" style="display: none;">
+                            <span class="title_name">生产厂家： </span>
+                            <ul class="fn_clear">
+                                <?php foreach($sccj as $k=>$v): ?>
+                                    <li <?php if($product_name_here==$v): ?>class="on_click"<?php endif; ?> ><a
+                                                href="<?php echo e(build_url('zyzq.category',['pid'=>$phaid,'product_name'=>$v,'zm'=>$zmhere])); ?>"><?php echo e($v); ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <span class="close_zy">收起 <em class="up_ico"></em></span>
+                        </div>
+
+                        <div class="initial-a">
+                            <span class="title_name">首字母： </span>
+                            <?php foreach($zm as $v): ?>
+                                <a <?php if($zmhere==$v): ?>class="checked_a"
+                                   <?php endif; ?> href="<?php echo e(build_url('zyzq.category',['pid'=>$phaid,'product_name'=>$product_name_here,'zm'=>$v])); ?>"><?php echo e($v); ?></a>
+                            <?php endforeach; ?>
+                        </div>
+
+                    </div>
+
+                </div>
+                <?php if(count($result)>0): ?>
+                    <div class="zhongyyp-goods-list">
+                        <ul class="fn_clear">
+                            <?php foreach($result as $v): ?>
+                                <li>
+                                    <div class="shoucang">
+                                        <a href="javascript:collect(<?php echo e($v->goods_id); ?>)"><img
+                                                    src="<?php echo e(path('images/zyyp/zhyp063.png')); ?>" alt=""/></a>
+                                    </div>
+                                    <?php if($v->is_hot==1): ?>
+                                        <div class="hot">
+                                            <img src="<?php echo e(path('images/zyyp/zhyp062.png')); ?>" alt=""/>
+                                        </div>
+                                    <?php endif; ?>
+                                    <a href="<?php echo e($v->goods_url); ?>">
+                                        <img class="fly_img<?php echo e($v->goods_id); ?>" src="<?php echo e($v->goods_thumb); ?>" alt=""/>
+                                    </a>
+                                    <div class="title"><?php echo e(str_limit($v->goods_name,13)); ?></div>
+                                    <p><?php echo e(str_limit($v->sccj,25)); ?></p>
+                                    <p>规格：<?php echo e($v->spgg); ?></p>
+                                    <p><span class="chandi">产地：<?php echo e($v->jzl); ?>&nbsp;&nbsp;</span></p>
+                                    <p>库存：<?php if($v->goods_number>800): ?>充裕<?php elseif($v->goods_number==0): ?>
+                                            缺货<?php else: ?><?php echo e($v->goods_number); ?><?php endif; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                                    <p>包装规格：<?php echo e($v->zf); ?> </p>
+                                    <p>价格： <em><?php echo e($v->real_price_format); ?></em></p>
+                                    <div class="btn">
+                                        <input id="J_dgoods_num_<?php echo e($v->goods_id); ?>" class="num ls_num" name="number"
+                                               type="text"
+                                               value="<?php if($v->ls_gg>0): ?><?php echo e($v->ls_gg); ?><?php else: ?><?php echo e(isset($v->zbz) ? $v->zbz : 1); ?><?php endif; ?>"
+                                               defaultnumber="<?php if($v->ls_gg>0): ?><?php echo e($v->ls_gg); ?><?php else: ?><?php echo e(isset($v->zbz) ? $v->zbz : 1); ?><?php endif; ?>"
+                                               onblur="changePrice(<?php echo e($v->goods_id); ?>)" data-gn="<?php echo e($v->goods_number); ?>"
+                                               data-zbz="<?php echo e(isset($v->zbz) ? $v->zbz : 1); ?>" data-lsgg="<?php echo e($v->ls_gg); ?>"
+                                               data-lsggg="<?php echo e($v->ls_ggg); ?>" data-xgtype="<?php echo e($v->xg_type); ?>"
+                                               data-xgtypeflag="<?php echo e($v->xg_type_flag); ?>" dd-id="<?php echo e($k); ?>"/>
+                                        <p>
+                                            <span class="add" onclick="add_num(<?php echo e($v->goods_id); ?>)"></span>
+                                            <span class="reduce" onclick="reduce_num(<?php echo e($v->goods_id); ?>)"></span>
+                                        </p>
+                                        <input type="hidden" value="<?php echo e($v->goods_id); ?>" id="goods_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e($v->ls_gg); ?>" id="lsgg_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e($v->yl['yl']); ?>" id="yl_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e($v->yl['isYl']); ?>" id="isYl_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e($v->goods_number); ?>" id="gn_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e(isset($v->zbz) ? $v->zbz : 1); ?>" id="zbz_<?php echo e($v->goods_id); ?>"/>
+                                        <input type="hidden" value="<?php echo e(isset($v->jzl) ? $v->jzl : 0); ?>" id="jzl_<?php echo e($v->goods_id); ?>"/>
+                                        <a <?php if($v->is_can_see==1): ?>href="javascript:tocart(<?php echo e($v->goods_id); ?>)"
+                                           <?php else: ?> href="javascript:addToCart2(<?php echo e($v->goods_id); ?>)"
+                                           <?php endif; ?> id="dsssss_<?php echo e($v->goods_id); ?>"
+                                           class="fly_to_cart<?php echo e($v->goods_id); ?>"><em></em>加入购物车</a>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                            <?php if(in_array($keywords,['燕窝','石斛','冬虫夏草'])): ?>
+                                <li>
+                                    <?php if($keywords=='燕窝'): ?>
+                                        <a href="javascript:;">
+                                            <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/yanwo.jpg')); ?>" alt=""/>
+                                        </a>
+                                    <?php elseif($keywords=='石斛'): ?>
+                                        <a href="javascript:;">
+                                            <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/shihu.jpg')); ?>" alt=""/>
+                                        </a>
+                                    <?php elseif($keywords=='冬虫夏草'): ?>
+                                        <a href="javascript:;">
+                                            <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/dongchongxiacao.jpg')); ?>"
+                                                 alt=""/>
+                                        </a>
+                                    <?php endif; ?>
+                                    <div class="title"><?php echo e($keywords); ?></div>
+                                    <p></p>
+                                    <p>更多规格</p>
+                                    <p></p>
+                                    <p>联系：028-69569952</p>
+                                    <p></p>
+                                    <p>QQ：3297685353</p>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+
+
+                    </div>
+                    <?php if($result->lastPage()>0): ?>
+                        <?php echo pagesView($result->currentPage(),$result->lastPage(),3,3,[
+                        'url'=>'zyzq.category',
+                        'pid'=>$phaid,
+                        'keywords'=>$keywords,
+                        'zm'=>$zmhere,
+                        'product_name'=>$product_name_here,
+                        'order'=>$order,
+                        'step'=>$step,
+                        ]); ?>
+
+                    <?php endif; ?>
+            </div>
+            <?php elseif(in_array($keywords,['燕窝','石斛','冬虫夏草','鹿鞭'])): ?>
+                <div class="zhongyyp-goods-list">
+                    <ul class="fn_clear">
+                        <?php if(in_array($keywords,['燕窝','石斛','冬虫夏草','鹿鞭'])): ?>
+                            <li>
+                                <?php if($keywords=='燕窝'): ?>
+                                    <a href="javascript:;">
+                                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/yanwo.jpg')); ?>" alt=""/>
+                                    </a>
+                                <?php elseif($keywords=='石斛'): ?>
+                                    <a href="javascript:;">
+                                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/shihu.jpg')); ?>" alt=""/>
+                                    </a>
+                                <?php elseif($keywords=='冬虫夏草'): ?>
+                                    <a href="javascript:;">
+                                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/dongchongxiacao.jpg')); ?>"
+                                             alt=""/>
+                                    </a>
+                                <?php elseif($keywords=='鹿鞭'): ?>
+                                    <a href="javascript:;">
+                                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/lubian.jpg')); ?>"
+                                             alt=""/>
+                                    </a>
+                                <?php endif; ?>
+                                <div class="title"><?php echo e($keywords); ?></div>
+                                <p></p>
+                                <p>更多规格</p>
+                                <p></p>
+                                <p>联系：028-69569952</p>
+                                <p></p>
+                                <p>QQ：3297685353</p>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <div class="g_right_bottom">
+                    <p>抱歉, 没有找到相关的药品,</p>
+                    <p><a href="/requirement" target="_blank">点击这里提交求购意向，<?php echo e(config('services.web.name')); ?>网会尽快补货！</a></p>
+                </div>
+                <div class="g_right_bottom_bottom">
+                    <p>没有找到你想要的药品？ <a href="/requirement" target="_blank">点击这里提交求购意向，<?php echo e(config('services.web.name')); ?>
+
+                            网会尽快补货！</a></p>
+                </div>
+            <?php endif; ?>
+        </div>
+
+    </div>
+    <?php if(!auth()->check()): ?>
+        <!-- 加入购物车弹出层begin -->
+        <div class="comfirm_buy" style="display:none;" id="shopping_box">
+            <div class="content_buy"><a href="#" class="success"></a>
+                <h4>&nbsp;</h4>
+                <p class="tip_txt" alt="" title="">&nbsp;</p>
+
+                <p class="login_p tab_p1" style="display: none;">
+                    <a class="login_a again">继续购物</a> <a href="/cart">去结算 ></a>
+                </p>
+
+                <p class="login_p tab_p2" style="display: none;">
+                    <a href="/auth/login" class="login_a">登录</a> <a href="/auth/register">注册</a>
+                </p>
+
+                <p class="login_p tab_p3" style="display: none;">
+                    <a href="requirement.php" class="login_a">去登记</a> <a class="login_a again">取消</a>
+                </p>
+
+                <p class="login_p tab_p4" style="display: none;">
+                    <a class="login_a confirm again">确认</a>
+                </p>
+
+                <p class="login_p tab_p5" style="display: none;">
+                    <a href="#" class="login_a confirm">确认</a>
+                </p>
+
+                <span class="close2"></span>
+            </div>
+        </div>
+        <!-- 加入购物车弹出层end -->
+    <?php else: ?>
+        <!-- 收藏弹出层部分begin -->
+        <div class="comfirm_buy" style="display:none;" id="collect_box">
+            <div class="content_buy"><a href="#" class="success"></a>
+                <h4>&nbsp;</h4>
+                <p class="collect_p">
+                    <span class="collect_text"> 共收藏 <span class="num">0</span>  件商品</span>
+                    <a href="<?php echo e(route('user.collectList')); ?>" class="click_me">查看我的收藏 &gt;</a>
+                </p>
+
+                <p class="login_p login_p2" style="display:none;">
+                    <a href="/auth/login" class="login_a">登录</a> <a href="/auth/register">注册</a>
+                </p>
+                <span class="close2"></span>
+            </div>
+        </div>
+        <!-- 弹出层部分end -->
+    <?php endif; ?>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript">
+        $(function () {
+            $(".open_zy").click(function () {
+
+                $(this).parents(".ul_list1").hide();
+
+                $(this).parents(".ul_list1").next(".ul_list2").show();
+
+                $(this).parents(".ul_list1").next(".ul_list2").find(".up_ico").css("background-position", "-75px -31px")
+
+
+            });
+
+            $(".close_zy").click(function () {
+
+                $(this).parents(".ul_list2").hide();
+
+                $(this).parents(".ul_list2").prev(".ul_list1").show();
+
+                $(this).parents(".ul_list2").prev(".ul_list1").find(".up_ico").css("background-position", "-50px 0")
+
+            })
+
+            $(".zhongyyp-goods-list ul li").hover(function () {
+                $(this).addClass("zhongyy-list-hover");
+            }, function () {
+                $(this).removeClass("zhongyy-list-hover");
+            })
+
+
+        })
+
+
+    </script>
+    <script type="text/javascript">
+        function add_num(id) {
+            var gn = parseInt($('#gn_' + id).val());
+            var yl = parseInt($('#yl_' + id).val());
+            var isYl = parseInt($('#isYl_' + id).val());
+            var lsgg = parseInt($('#lsgg_' + id).val());
+            var zbz = parseInt($('#zbz_' + id).val());
+            var jzl = parseInt($('#jzl_' + id).val());
+            var num = parseInt($('#J_dgoods_num_' + id).val());
+            //console.log(gn,yl,isYl,lsgg,zbz,jzl,num);
+            num = num + zbz;
+            if (jzl) {//件装量存在
+                if ((num % jzl) / jzl >= 0.8) {//购买数量达到件装量80%
+                    alert('温馨提示：你所选择的数量已接近件装量，为避免拆零引起的运输破损，系统自动调为整件。')
+                    num = Math.ceil(num / jzl) * jzl;
+                }
+            }
+
+            if (num % zbz != 0) {//不为中包装整数倍
+                num = num - num % zbz + zbz;
+            }
+
+            if (isYl > 0 && num > isYl && yl == 1) {//商品限购
+                num = isYl;
+            }
+
+            if (num > gn) {
+                alert('库存不足');
+                return false;
+            }
+            $('#J_dgoods_num_' + id).val(num);
+        }
+
+        function reduce_num(id) {
+            var gn = parseInt($('#gn_' + id).val());
+            var yl = parseInt($('#yl_' + id).val());
+            var isYl = parseInt($('#isYl_' + id).val());
+            var lsgg = parseInt($('#lsgg_' + id).val());
+            var zbz = parseInt($('#zbz_' + id).val());
+            var jzl = parseInt($('#jzl_' + id).val());
+            var num = parseInt($('#J_dgoods_num_' + id).val());
+            num = num - zbz;
+            if (jzl) {//件装量存在
+                if ((num % jzl) / jzl >= 0.8 && (num % jzl) / jzl <= 1) {//购买数量达到件装量80%
+                    num = num - num % jzl + parseInt(jzl * 0.8);
+                }
+            }
+
+            if (num % zbz != 0) {//不为中包装整数倍
+                num = num - num % zbz;
+            }
+
+            if (isYl > 0 && num > isYl && yl == 1) {//商品限购
+                num = isYl;
+            }
+
+            if (num < 1) {
+                num = zbz;
+            }
+            $('#J_dgoods_num_' + id).val(num);
+        }
+
+        function changePrice(id) {
+            var gn = parseInt($('#gn_' + id).val());
+            var yl = parseInt($('#yl_' + id).val());
+            var isYl = parseInt($('#isYl_' + id).val());
+            var lsgg = parseInt($('#lsgg_' + id).val());
+            var zbz = parseInt($('#zbz_' + id).val());
+            var jzl = parseInt($('#jzl_' + id).val());
+            var num = parseInt($('#J_dgoods_num_' + id).val());
+            if (num < 0) {
+                alert('请输入正确的数量');
+                $('#J_dgoods_num_' + id).val(0 - zbz);
+                return false;
+            }
+            var old = num;
+
+            if (num % zbz != 0) {//不为中包装整数倍
+                num = num - num % zbz + zbz;
+            }
+
+            if (jzl) {//件装量存在
+                if ((num % jzl) / jzl >= 0.8 && (num % jzl) / jzl <= 1) {//购买数量达到件装量80%
+                    alert('温馨提示：你所选择的数量已接近件装量，为避免拆零引起的运输破损，系统自动调为整件。')
+                    num = Math.ceil(num / jzl) * jzl;
+//                if(num>gn){
+//                    alert('库存不足');
+//                    num = old - old%jzl + parseInt(jzl*0.8) - zbz;
+//                }
+                }
+            }
+
+            if (isYl > 0 && num > isYl && yl == 1) {//商品限购
+                num = isYl;
+            }
+
+            if (num > gn) {
+                alert('库存不足');
+                $('#J_dgoods_num_' + id).val(zbz);
+                return false;
+            }
+            $('#J_dgoods_num_' + id).val(num);
+        }
+
+        function tocart(id) {
+            var num = $('#J_dgoods_num_' + id).val();
+            addToCart1(id, num);
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

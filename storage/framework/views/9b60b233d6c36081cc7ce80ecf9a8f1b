@@ -1,0 +1,23 @@
+<div class="vip_manage">
+    <div class="accordion_list">
+        <div class="accordion_list_out <?php if($action=='index'): ?> open <?php endif; ?>">
+            <p>交易中心<i></i></p>
+            <ul>
+                <li><a href="<?php echo e(route('jf.member')); ?>">我的首页</a></li>
+                <li><a href="<?php echo e(route('jf.order')); ?>">我的订单</a></li>
+            </ul>
+        </div>
+        <div class="accordion_list_out <?php if($action=='payPoints'): ?> open <?php endif; ?>">
+            <p>服务中心<i></i></p>
+            <ul>
+                <li><a href="<?php echo e(route('jf.payPoints')); ?>">积分查询</a></li>
+            </ul>
+        </div>
+        <div class="accordion_list_out <?php if($action=='address'): ?> open <?php endif; ?>" >
+            <p>个人设置<i></i></p>
+            <ul>
+                <li><a href="<?php echo e(route('jf.address')); ?>">收货地址</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

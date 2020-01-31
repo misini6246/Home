@@ -1,0 +1,62 @@
+
+.site-content{background: url("../images/login_02.jpg") no-repeat scroll center top;height: 563px;min-width: 1200px;overflow: hidden;width: 100%;margin-bottom: 30px;}
+.content-box{width: 1200px;margin: 0 auto;position: relative;}
+
+/*登陆主体部分样式*/
+
+
+
+.content-box .right{float: right;padding: 115px 40px;width: 308px;height: 316px;position: relative;}
+h2{font-size: 24px;color: #39a817;margin-bottom: 15px;font-weight: normal;width: 110px;float: left;}
+.wangji{width: 135px;float: right;height: 32px;line-height: 32px;font-size: 12px;}
+.wangji a{color: #fc6601;font-size: 14px;}
+.wangji a:hover{text-decoration: underline;}
+
+.content-box .right p{width: 260px;height: 24px;border: 1px solid #dcdcdc;line-height: 24px;color: #cccccc;font-size: 16px;margin: 8px 0 30px 0;padding:10px 0 10px 45px ;_padding:16px 0 4px 44px;position: relative;}
+.content-box .right p .ico{width: 45px;height: 38px;position: absolute;left: 0px;top:2px;background: url("../images/sprite.png") -104px -101px no-repeat;*top:4px;}
+.content-box .right p .pas{background-position: -153px -101px;}
+
+
+.content-box .right p .prompt2{position: absolute;left: 0;bottom: -28px;display: none;color: #fa5403;padding-left: 24px;background: url("../images/tip2.jpg") 2px 4px no-repeat;}
+
+.right input.txt{color: #ccc;line-height:24px;height: 24px;font-size: 16px;width: 220px;}
+.codes,.codes2{position: absolute;left: 50px;top:10px;color: #ccc;font-size: 14px;line-height:24px;}
+
+.right a.login {
+    display: block;
+    width: 306px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 5px;
+    background-color: #55d75b;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin: 36px 0 25px 0;
+}
+
+.box{color: #999999;width: 306px;}
+.box a{display: block;float: right;color: #999999;margin: 0 3px;}
+.box a.register{color: #0066cc;}
+.box a:hover{text-decoration: underline;}
+.box span{display: block;float: left;width: 90px;}
+
+
+
+.border-color-blue{border: 1px solid #9ece7b !important;}
+.border-color-red{border: 1px solid #fa5403 !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

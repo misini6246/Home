@@ -1,0 +1,284 @@
+
+.picScroll-left {
+    width: 1200px;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.picScroll-left .hd .prev {
+    isplay: block;
+    float: left;
+    margin-left: 5px;
+    margin-top: 120px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.picScroll-left .hd .next {
+    display: block;
+    float: right;
+    margin-right: 5px;
+    margin-top: 120px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.picScroll-left .bd {
+    /*padding-top:20px;*/
+    margin-left: 25px;
+}
+
+.picScroll-left .bd ul {
+    overflow: hidden;
+}
+
+.picScroll-left .bd ul li {
+    margin: 30px 15px;
+    width: 198px;
+    /*height: 270px;*/
+    float: left;
+    display: inline;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+.picScroll-left .bd ul li .pic1 {
+    text-align: center;
+    height: 200px;
+    width: 194px;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+
+.picScroll-left .bd ul li .pic1 img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.picScroll-left .bd ul li .title {
+    line-height: 22px;
+}
+
+.picScroll-left .bd ul li .title .title-first-one {
+    font-weight: bold;
+    color: #333333;
+}
+
+.picScroll-left .bd ul li .title .title-first-two, .picScroll-left .bd ul li .title .title-first-second {
+
+    color: #555555;
+}
+
+/*絨��丈��莉���*/
+.wrapper1 {
+    float: left;
+    width: 299px;
+    height: 535px;
+    overflow: hidden;
+    /*border: 1px solid red;*/
+}
+
+.wrapper1 img {
+    border: 1px solid #e5e5e5;
+    height:518px;  /*第一个改动*/
+    *height: 517px; /*第一个改动*/
+
+}
+
+/* focus */
+.focus {
+    width: 301px;
+    height: 529px;
+    overflow: hidden;
+    position: relative;
+    *height: 523px;
+}
+
+.focus ul {
+    height: 535px;
+    position: absolute;
+    /*border: 1px solid red;*/
+   *height: 525px;
+}
+
+.focus ul li {
+    float: left;
+    width: 300px;
+    height: 530px;
+    overflow: hidden;
+    position: relative;
+    /*border: 1px solid red;*/
+   *height: 520px;
+}
+
+.focus ul li div {
+    position: absolute;
+    overflow: hidden;
+}
+
+
+
+/*篋у���ｨ��*/
+.wrapper2 {
+    float: left;
+    width: 299px;
+    height: 535px;
+    overflow: hidden;
+    *height: 525px;
+}
+
+/* focus */
+.focus1 {
+    width: 301px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.focus1 ul {
+    height: 400px;
+    position: absolute;
+    /*border: 1px solid red;*/
+}
+
+.focus1 ul li {
+    float: left;
+    width: 299px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    /*border: 1px solid red;*/
+}
+
+.focus1 ul li div {
+    position: absolute;
+    overflow: hidden;
+}
+
+.focus1 .btn,.focus .btn {
+    position: absolute;
+    display: inline-block;
+    left: 40%;
+    height: 25px;
+    bottom: 15px;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+    background: rgba(0, 0, 0, .5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+
+}
+
+.focus .btn span:nth-of-type(1),.focus1 .btn span:nth-of-type(1)
+{
+    display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 2px 11px 10px;
+    float: left;
+}
+.focus .btn span:first-child,.focus1 .btn span:first-child,.focus2 .btn span:first-child,.focus3 .btn span:first-child,.focus4 .btn span:first-child{
+	display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 2px 11px 10px;
+    float: left;
+}
+.focus .btn span:nth-of-type(2),.focus1 .btn span:nth-of-type(2),.focus2 .btn span:nth-of-type(2),.focus3 .btn span:nth-of-type(2),.focus4 .btn span:nth-of-type(2){
+    display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    margin-left:5px;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 11px 11px 2px;
+    float: left;
+}
+.focus .btn span:first-child+span,.focus1 .btn span:first-child+span,.focus2 .btn span:first-child+span,.focus3 .btn span:first-child+span,.focus4 .btn span:first-child+span{
+	display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    margin-left:5px;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 11px 11px 2px;
+    float: left;
+}
+.focus .btn span:nth-of-type(3),.focus2 .btn span:nth-of-type(3),.focus3 .btn span:nth-of-type(3),.focus1 .btn span:nth-of-type(3),.focus4 .btn span:nth-of-type(3){
+    display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    margin-left:5px;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 11px 11px -8px;
+    float: left;
+
+}
+.focus .btn span:first-child+span+span,.focus1 .btn span:first-child+span+span,.focus2 .btn span:first-child+span+span,.focus3 .btn span:first-child+span+span,.focus4 .btn span:first-child+span+span{
+	display:block;
+    _display:inline;
+    _zoom:1;
+    width:20px;
+    height:3px;
+    _font-size:0;
+    margin-left:5px;
+    cursor:pointer;
+    background:#fff;
+    margin: 11px 11px 11px -8px;
+    float: left;
+}
+
+
+/*篋у���ｨ����膠紫瓜����･*/
+.fenleiid {
+    /*	width:300px;*/
+    height: 127px;
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    /*border: 1px solid red;*/
+    *height: 117px;/*第二个更改的地方*/
+}
+
+.fenleiid li:hover a {
+    color: #3dbb2b;
+}
+
+.fenleiid li {
+    float: left;
+    padding-top: 20px;
+    /*border: 1px solid red;*/
+    width:130px;
+    text-align: left;
+}
+
+.fenleili1{
+    margin-left:20px;
+}
+
+.fenleili2 {
+    margin-left: 40px;
+}

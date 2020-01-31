@@ -1,0 +1,53 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_pwd.css')); ?>"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('article.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('article.help_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div id="help_title" class="container">
+        <div class="container_box">
+            <ul class="help_title_list">
+                <?php foreach($articles as $k=>$v): ?>
+                    <li <?php if($k==$article_id): ?>class="active"<?php endif; ?>><a
+                                href="<?php echo e(route('xin.help',['cat_id'=>$cat_id,'article_id'=>$k])); ?>"><?php echo e($v); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class="container_box">
+            <div class="help_title">安全购药</div>
+            <div class="step">
+                <div class="content_step">
+                    第一步，进入找回密码功能页
+                </div>
+                <div class="pwd_content">
+                    <div class="pwd_content_left">
+                        <p>如果忘记密码，在登录页（点击顶部登录按钮可进入）点击右下角“忘记密码” 进入找回密码功能页。如右图所示。</p>
+                    </div>
+                    <div class="pwd_content_right">
+                        <img src="<?php echo e(get_img_path('images/help/pwd_03.jpg')); ?>"/>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content_step">
+                    第二步，按步骤找回密码
+                </div>
+                <div class="pwd_content">
+                    <p>填写绑定的手机号，验证通过后，即可进入修改登录密码。</p>
+                    <div class="img_box">
+                        <img src="<?php echo e(get_img_path('images/help/pwd_04.jpg')); ?>"/>
+                    </div>
+                    <p class="red">*注：为了安全考虑，找回密码功能仅适用于绑定了手机号的客户使用，未绑定的客户，请联系客服人员。也请尽早绑定手机号。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('article.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

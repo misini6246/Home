@@ -1,0 +1,228 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline-style: none;
+    /*FF*/
+}
+
+body {
+    line-height: 1;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline-style: none;
+    /*FF*/
+}
+
+ul li {
+    list-style-type: none;
+}
+
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+.self_adaption {
+    width: 100% !important;
+    min-width: 100%;
+}
+
+.animation_x li {
+    float: left;
+}
+
+.animation_d li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.animation_d li:first-child {
+    display: block;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.carousel_img {
+    width: 3000px !important;
+}
+
+.carousel_img li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel_page {
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.carousel_page li {
+    background-color: #888888;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+    position: absolute;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    top: 15%;
+}
+
+.carousel_page li:hover {
+    background-color: #000000;
+}
+
+.carousel_page li:first-child {
+    left: 5px;
+}
+
+.carousel_page li:first-child + li {
+    right: 5px;
+}
+
+.carousel_nav {
+    position: absolute;
+    bottom: 27px;
+    display: block;
+    height: 12px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.carousel_nav li {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    background: url(http://images.hezongyy.com/adimages1/201807/ppzq2.png) no-repeat center;
+    padding: 0 5px;
+}
+
+/*.carousel_nav li:first-child + li {*/
+/*margin: 0 10px;*/
+/*}*/
+
+.carousel_nav .cur {
+    box-sizing: border-box;
+    border: 1px solid #c9c9c9;
+    background: #FFFFFF;
+    color: #666666;
+}

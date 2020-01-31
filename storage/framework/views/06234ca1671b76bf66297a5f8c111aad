@@ -1,0 +1,57 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/balance2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/index2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/new-common.css')); ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layout.page_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layout.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="main fn_clear">
+        <div class="top"><span class="title">我的药易购</span> <a>>　<span>我的账户</span> </a> <a href="<?php echo e(route('user.account')); ?>" class="end">>　<span><?php echo e($pages_top); ?></span></a> </div>
+        <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="main_right1">
+            <div class="top_title">
+                <h3 style="width: 140px;"><?php echo e($pages_top); ?></h3>
+                <span class="ico" style="left:70px;"></span>
+            </div>
+            <table class="table2">
+                <tr>
+                    <th class="case1">操作时间</th>
+                    <th>类型</th>
+                    <th>金额</th>
+                    <th>操作备注</th>
+
+                </tr>
+                <?php foreach($pages as $v): ?>
+                <tr>
+                    <td class="tb2_td1"><?php echo e(date('Y-m-d',$v->change_time)); ?></td>
+                    <td class="tb2_td2"><?php if($v->change_amount>0): ?>增加<?php else: ?>减少<?php endif; ?></td>
+                    <td class="tb2_td3"><?php echo e(formated_price(abs($v->change_amount))); ?></td>
+                    <td class="tb2_td4" title="{$item.change_desc}"><?php echo $v->change_desc; ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <?php echo $pages_text; ?>
+
+            </table>
+            <?php if($pages->lastPage()>0): ?>
+                <?php echo pagesView($pages->currentPage(),$pages->lastPage(),3,3,['url'=>$pages_url]); ?>
+
+            <?php endif; ?>
+            <div id="Searchresult"> <!--分页初始化完成后这里的内容会被替换。--></div>
+            <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+            <div id="hiddenresult" style="display:none;">
+                <!-- 列表元素 -->
+            </div>
+
+        </div>
+    </div>
+    <?php echo $__env->make('layout.page_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

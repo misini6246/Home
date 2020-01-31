@@ -1,0 +1,86 @@
+<div class="left">
+    <a href="#">
+        <div class="myyyg">
+            <span>会员中心</span>
+        </div>
+    </a>
+    <ul class="f_ul">
+        <p class="biaoti">
+            <img src="/user/img/交易管理图标.png" />
+            <span>交易管理</span>
+        </p>
+        <li class="cur">
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>我的订单</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="f_ul">
+        <p class="biaoti">
+            <img src="/user/img/资产管理图标.png" />
+            <span>资产管理</span>
+        </p>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>余额管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>优惠劵管理</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="f_ul last_ul">
+        <p class="biaoti">
+            <img src="/user/img/个人中心图标.png" />
+            <span>个人中心</span>
+        </p>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>基本信息</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>我的收藏</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>多会员管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>我的消息</span>
+                <span class="num">9</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>我的求购</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>收货地址</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="/user/img/right_03.png" />
+                <span>配送物流</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,76 @@
+<div class="main_left fn_clear">
+    <div style="background-color: #f2ffd5;">
+        <h2><p><?php echo e(str_limit($user->user_name,18)); ?></p></h2>
+        <div class="profile">
+            <a href="<?php echo e(route('user.index')); ?>"><span class="head_pic"><img
+                            src="<?php if($user->ls_file!=''): ?><?php echo e(get_img_path('data/feedbackimg/'.$user->ls_file)); ?><?php else: ?><?php echo e(path('images/member_20.png')); ?><?php endif; ?>"
+                            alt="<?php echo e($user->user_name); ?>" title="<?php echo e($user->user_name); ?>"></span></a>
+            <div style="line-height:24px;text-align:center;" class="fn_clear">
+                <div><span class="name" alt="<?php echo e($user->msn); ?>" title="<?php echo e($user->msn); ?>"><?php echo e(str_limit($user->msn,18)); ?></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="list">
+        <h3><span class="ico"></span> 交易管理</h3>
+        <ul class="list_fist">
+            <li <?php if($action=='orderList'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.orderList')); ?>">我的订单 <span
+                            class="right_ico"></span></a></li>
+            <?php if($user->is_zhongduan==1): ?>
+                <li <?php if($action=='cz_order'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.cz_order')); ?>">充值订单<span
+                                class="right_ico"></span></a></li>
+            <?php endif; ?>
+            <?php if($user->is_zq==1||$user->is_zq==2||$show_zq==1): ?>
+                <li <?php if($action=='zq_order'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.zq_order')); ?>">账期汇总订单 <span
+                                class="right_ico"></span></a></li>
+            <?php endif; ?>
+            <?php if(isset($sy_zq_type)&&$sy_zq_type==1): ?>
+                <li <?php if($action=='zq_order_sy'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.zq_order_sy')); ?>">尚医账期汇总订单
+                        <span class="right_ico"></span></a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo e(route('jifen.order')); ?>">积分订单 <span class="right_ico"></span></a></li>
+            <li <?php if($action=='collectList'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.collectList')); ?>">我的收藏 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='zncg'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.zncg')); ?>">智能采购 <span
+                            class="right_ico"></span></a></li>
+            <!--<li><a href="online_user.php?act=online_order">团购订单 <span class="right_ico"></span></a></li>-->
+        </ul>
+        <h3 class="xiaoxi" style="text-indent: 0;"><img style="margin-right: 7px;"
+                                                        src="<?php echo e(get_img_path('images/xiaoxi.jpg')); ?>"/> 消息中心</h3>
+        <ul class="list_fist">
+            <li <?php if($action=='znx'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.znx_list')); ?>">我的消息<?php if(msg_count()>0): ?>
+                        (<?php echo e(msg_count()); ?>)<?php endif; ?> <span
+                            class="right_ico"></span></a></li>
+        </ul>
+        <h3><span class="ico2"></span> 我的账户</h3>
+        <ul>
+            <li <?php if($action=='youhuiq'): ?>class="li_checked"<?php endif; ?>><a href="<?php echo e(route('user.youhuiq')); ?>">优惠券管理 <span
+                            class="right_ico"></span></a></li>
+
+            <li <?php if($action=='account'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.accountInfo')); ?>">余额管理 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='mobile_login'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.mobile_login')); ?>">切换会员
+                    <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='tixian'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.tixian.index')); ?>">提现管理 <span
+                            class="right_ico"></span></a></li>
+            <?php if($user->is_zq==1||$user->is_zq==2): ?>
+                <li <?php if($action=='zq_log'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.zq_log')); ?>">账期记录 <span
+                                class="right_ico"></span></a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo e(route('jifen.user.index')); ?>">积分管理 <span class="right_ico"></span></a></li>
+            <li <?php if($action=='profile'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.profile')); ?>">基本信息 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='addressList'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.addressList')); ?>">收货地址 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='pswl'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.pswl')); ?>">配送物流 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='messageList'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.messageList')); ?>">我的留言 <span
+                            class="right_ico"></span></a></li>
+            <li <?php if($action=='buyList'): ?>class="li_checked"<?php endif; ?> ><a href="<?php echo e(route('user.buyList')); ?>">我的求购 <span
+                            class="right_ico"></span></a></li>
+        </ul>
+
+    </div>
+</div>

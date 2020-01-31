@@ -1,0 +1,438 @@
+.right{
+	width: 980px;
+	height: 740px;
+	background: white;
+}
+.ziliao_box{
+	width: 940px;
+	margin: 0 auto;
+}
+.gerenziliao{
+	float: left;
+	width: 460px;
+	padding-top: 20px;	
+}
+.ziliao{
+	border-right: 1px solid #ccc;
+	position: relative;
+}
+.ziliao_title{
+	font-size: 16px;
+	height: 16px;
+	line-height: 16px;
+}
+.shangchuanIMG {
+    width: 100%;
+    height: 102px;
+    margin-top: 10px;
+}
+#preview {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border: 1px solid #76b8dd;
+    overflow: hidden;
+    float: left;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+#imghead {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.shangchuanIMG .upload {
+    /*margin-left: 20px;*/
+   padding-left: 20px;
+    float: left;
+}
+.shangchuanIMG #up_img{
+	color: #3dbb2b;
+	font-size: 14px;
+	background: white;
+	margin-top: 25px;
+	*display: inline;
+}
+.shangchuanIMG .upload .p2 {
+    font-family: "宋体";
+    color: rgb(153, 153, 153);
+    margin-top: 14px;
+}
+.sex {
+    height: 46px;
+    line-height: 46px;
+   	font-family: "宋体";
+    color: rgb(153, 153, 153);
+    overflow: hidden;
+    padding-left: 30px;
+}
+.sex input {
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.sex label {
+    cursor: pointer;
+    margin-right: 5px;
+}
+.ziliao ul li{
+	margin-top: 20px;
+	color: red;
+}
+.ziliao ul li:first-child{
+	margin-top: 10px;
+}
+.ziliao ul li p.ts{
+	margin: 5px 0 0 80px;
+	font-family: "宋体";
+	color: #999;
+}
+.ziliao ul li span.xinxi_left{
+	display: inline-block;
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	color: #999;
+	font-family: "宋体";
+}
+.ziliao ul li input{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+}
+input.xiugai{
+	padding: 0;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	background: #3dbb2b;
+	cursor: pointer;
+	margin: 20px 0 0 72px;
+	*width: 315px!important;
+	*margin-top: 10px;
+	*position: relative;
+	*left: 0px;
+}
+.xgmm{
+	float: right;
+	width: 440px;
+	margin-top: 20px;
+}
+.xgmm ul li{
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	margin-top: 20px;
+}
+.xgmm ul li:first-child{
+	margin-top: 40px;
+}
+.xgmm ul li span{
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.xgmm ul li input{
+	height: 40px;
+	line-height: 40px;
+	width: 300px;
+	margin-right: 5px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+}
+.xgmm input.xiugai{
+	margin-left: 65px;
+	background: #8bd680;
+}
+
+/*生日样式*/
+
+.calendar_1 {
+	position: relative;
+	z-index: 3;
+}
+/*www.jq22.com*/
+
+.calendar {
+	POSITION: absolute;
+	WIDTH: 190px;
+	HEIGHT: 180px;
+	PADDING: 0;
+	DISPLAY: none;
+	border: 1px solid #819dba;
+	background: #fff;
+	top: 39px;
+	*top: 44px;
+	left: 185px;
+	*left: 196px;
+	z-index: 2;
+}
+
+.calendar .calMain {
+	WIDTH: 100%;
+	HEIGHT: 180px;
+	FLOAT: left;
+	OVERFLOW: hidden;
+	POSITION: absolute;
+}
+
+.calendar .calMain .calTitle {
+	WIDTH: 100%;
+	FLOAT: left;
+	HEIGHT: 23px;
+	BACKGROUND: #fff;
+	OVERFLOW: hidden;
+}
+
+.calendar .calMain .calTitle .t_date {
+	WIDTH: 149px;
+	FLOAT: left;
+	HEIGHT: 23px;
+	COLOR: #51729D;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 23px;
+	TEXT-ALIGN: center;
+}
+
+.calendar .calMain .calTitle .prevMonth {
+	WIDTH: 15px;
+	HEIGHT: 15px;
+	FLOAT: left;
+	MARGIN: 8px 0 0 5px;
+	CURSOR: pointer;
+	BACKGROUND: url(../img/date_bg.png) no-repeat 5px -87px;
+}
+
+.calendar .calMain .calTitle .nextMonth {
+	WIDTH: 15px;
+	HEIGHT: 15px;
+	FLOAT: right;
+	MARGIN: 8px 0 0 0;
+	CURSOR: pointer;
+	BACKGROUND: url(../img/date_bg.png) no-repeat 6px -157px;
+}
+
+.calendar .calMain .calTitle .currentYear {}
+
+.calendar .calMain .calTitle .currentMonth {}
+
+.calendar .calMain .calTitle .currentYearText {
+	FLOAT: left;
+	MARGIN: 0 0px 0 39px;
+	CURSOR: pointer;
+}
+
+.calendar .calMain .calTitle .currentMonthText {
+	FLOAT: left;
+	CURSOR: pointer;
+	WIDTH: 30px;
+	TEXT-ALIGN: right;
+}
+
+.calendar .calMain .calContent {
+	WIDTH: 378px;
+	HEIGHT: 157px;
+	FLOAT: left;
+}
+
+.calendar .calMain .calContent .enabled {
+	POSITION: absolute;
+	WIDTH: 100%;
+	HEIGHT: 157px;
+	FLOAT: left;
+}
+
+.calendar .calMain .calContent .reserve {
+	POSITION: absolute;
+	WIDTH: 100%;
+	HEIGHT: 157px;
+	FLOAT: left;
+}
+
+.calendar .calMain .calContent .tabD {
+	WIDTH: 100%;
+	FLOAT: left;
+	BORDER-COLLAPSE: collapse;
+	BORDER-SPACING: 0;
+	BORDER: 0;
+}
+
+.calendar .calMain .calContent .tabD th {
+	BACKGROUND: url(../img/date_bg.png) repeat-x;
+	LINE-HEIGHT: 22px;
+	FONT-WEIGHT: normal;
+	PADDING-BOTTOM: 4px;
+	COLOR: #fff;
+	text-align: center;
+}
+
+.calendar .calMain .calContent .tabD td {
+	COLOR: #1F3959;
+	TEXT-ALIGN: center;
+	LINE-HEIGHT: 19px;
+	WIDTH: 27px;
+	FONT-FAMILY: "Georgia";
+}
+
+.calendar .calMain .calContent .tabD td span {
+	COLOR: #C0C0C0;
+}
+
+.calendar .calMain .calContent .tabD td a {
+	WIDTH: 23px;
+	LINE-HEIGHT: 18px;
+	FLOAT: left;
+	MARGIN: 1px 0 0 2px;
+	CURSOR: pointer;
+	COLOR: #51729D;
+}
+
+.calendar .calMain .calContent .tabD td .nextD {
+	COLOR: #BCCADC;
+}
+
+.calendar .calMain .calContent .tabD td .prevD {
+	COLOR: #BCCADC;
+}
+
+.calendar .calMain .calContent .tabD td .hover {
+	WIDTH: 21px;
+	LINE-HEIGHT: 16px;
+	BORDER: 1px solid #7D99BD;
+	FLOAT: left;
+	MARGIN: 1px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabD td .current {
+	WIDTH: 21px;
+	LINE-HEIGHT: 16px;
+	BORDER: 1px solid #51729D;
+	FLOAT: left;
+	MARGIN: 1px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabD td .select {
+	WIDTH: 21px;
+	LINE-HEIGHT: 16px;
+	BACKGROUND: #51729D;
+	BORDER: 1px solid #51729D;
+	COLOR: #fff;
+	FLOAT: left;
+	MARGIN: 1px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabM {
+	WIDTH: 100%;
+	FLOAT: left;
+	BORDER-COLLAPSE: collapse;
+	BORDER-SPACING: 0;
+	BORDER: 0;
+}
+
+.calendar .calMain .calContent .tabM td {
+	COLOR: #1F3959;
+	TEXT-ALIGN: center;
+	HEIGHT: 50px;
+	WIDTH: 47px;
+	FONT-FAMILY: "Georgia";
+}
+
+.calendar .calMain .calContent .tabM td a {
+	WIDTH: 42px;
+	LINE-HEIGHT: 42px;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+	CURSOR: pointer;
+	COLOR: #51729D;
+}
+
+.calendar .calMain .calContent .tabM td .hover {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BORDER: 1px solid #7D99BD;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabM td .current {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BORDER: 1px solid #51729D;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabM td .select {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BACKGROUND: #51729D;
+	BORDER: 1px solid #51729D;
+	COLOR: #fff;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabY {
+	WIDTH: 100%;
+	FLOAT: left;
+	BORDER-COLLAPSE: collapse;
+	BORDER-SPACING: 0;
+	BORDER: 0;
+}
+
+.calendar .calMain .calContent .tabY td {
+	COLOR: #1F3959;
+	TEXT-ALIGN: center;
+	HEIGHT: 50px;
+	WIDTH: 47px;
+	FONT-FAMILY: "Georgia";
+}
+
+.calendar .calMain .calContent .tabY td a {
+	WIDTH: 42px;
+	LINE-HEIGHT: 42px;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+	CURSOR: pointer;
+	COLOR: #51729D;
+}
+
+.calendar .calMain .calContent .tabY td .nextY {
+	COLOR: #BCCADC;
+}
+
+.calendar .calMain .calContent .tabY td .prevY {
+	COLOR: #BCCADC;
+}
+
+.calendar .calMain .calContent .tabY td .hover {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BORDER: 1px solid #7D99BD;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabY td .current {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BORDER: 1px solid #51729D;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}
+
+.calendar .calMain .calContent .tabY td .select {
+	WIDTH: 40px;
+	LINE-HEIGHT: 40px;
+	BACKGROUND: #51729D;
+	BORDER: 1px solid #51729D;
+	COLOR: #fff;
+	FLOAT: left;
+	MARGIN: 0px 0 0 2px;
+}

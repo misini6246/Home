@@ -1,0 +1,15 @@
+<li>
+    <a href="<?php echo e($url); ?>" <?php if(!empty($action)&&$action==$name): ?>class="on"<?php endif; ?>>
+        <?php if($action==$name): ?>
+            <img src="/user/img/right_03.png"/>
+        <?php else: ?>
+            <img src="/user/img/right_03.png"/>
+        <?php endif; ?>
+        <span><?php echo e($text); ?></span>
+        <?php if($name=='znx'): ?>
+            <?php if(msg_count()>0): ?>
+                <div class="xx msg_count"><?php echo e(msg_count()); ?></div>
+            <?php endif; ?>
+        <?php endif; ?>
+    </a>
+</li>

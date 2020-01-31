@@ -1,0 +1,112 @@
+<?php $__env->startSection('links'); ?>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>领券中心</title>
+    <link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+    <link rel="stylesheet" type="text/css" href="/new_yhq/lyhj.css"/>
+    <!--layer-->
+    <?php /*<link rel="stylesheet" type="text/css" href="common/layer/layer.css" />*/ ?>
+
+    <script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/index/common/js/com-js.js" type="text/javascript" charset="utf-8"></script>
+    <!--layer-->
+    <script src="/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/layer/lazyload.js" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div class="big-container">
+        <!--头部-->
+       <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <!--/头部-->
+
+        <!--搜索导航-->
+        <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <!--/搜索导航-->
+
+        <!--导航-->
+       <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <!--/导航-->
+
+        <!--banner-->
+        <div id="tj_banner" class="container" style="background: url('/new_yhq/img/lingyhq.jpg') no-repeat;background-position:center;">
+            <div class="container_box">
+            </div>
+        </div>
+        <!--/banner-->
+
+        <!--优惠券-->
+        <div id="youhuiquan" class="container">
+            <div class="container_box" style="width: 1190px;margin: 0 auto;">
+                <!--优惠券-->
+                <div class="youhuiquan">
+                    <div class="title">
+                        <img src="/new_yhq/img/youhuiquan_title.png">
+                    </div>
+                    <ul class="yhj_list">
+                        <li>
+                            <div class="juan_box hong">
+                                <p class="money">
+                                    50<span>满200可用</span>
+                                </p>
+                                <p class="gz">都可以用(优惠券规则)</p>
+                                <p class="time">使用时间： 限2018.03.05至2018.12.30</p>
+                                <p class="lx">优惠券</p>
+                            </div>
+                            <div class="quan_btn" onclick="lq_you(4,this)">
+                                立即领取
+                            </div>
+                        </li>
+                        <li>
+                            <div class="juan_box lv">
+                                <p class="money">
+                                    50<span>满200可用</span>
+                                </p>
+                                <p class="gz">都可以用(优惠券规则)</p>
+                                <p class="time">使用时间： 限2018.03.05至2018.12.30</p>
+                                <p class="lx">优惠券</p>
+                            </div>
+                            <div class="quan_btn" onclick="lq_you(4,this)">
+                                立即领取
+                            </div>
+                        </li>
+                        <li>
+                            <div class="juan_box zi">
+                                <p class="money">
+                                    50<span>满200可用</span>
+                                </p>
+                                <p class="gz">都可以用(优惠券规则)</p>
+                                <p class="time">使用时间： 限2018.03.05至2018.12.30</p>
+                                <p class="lx">优惠券</p>
+                            </div>
+                            <div class="quan_btn" onclick="lq_you(4,this)">
+                                立即领取
+                            </div>
+                        </li>
+                        <li>
+                            <div class="juan_box huang">
+                                <p class="money">
+                                    111<span>满112可用</span>
+                                </p>
+                                <p class="gz">都可以用</p>
+                                <p class="time">使用时间： 限2018.03.19至2018.09.06</p>
+                                <p class="lx">优惠券</p>
+                            </div>
+                            <div class="quan_btn ylq">
+                                已领取
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--抵用券-->
+
+            </div>
+        </div>
+        <!--/优惠券-->
+
+        <!--footer-->
+        <?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <!--/footer-->
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

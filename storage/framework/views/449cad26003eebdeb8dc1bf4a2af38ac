@@ -1,0 +1,1055 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('new/css/lunbo.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('new/js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery-color.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <style>
+
+        #quick_links li {
+            padding: 0 !important;
+        }
+
+        .guanggao-zhezhao {
+            width: 100%;
+            height: 6300px;
+            background: rgba(0, 0, 0, 0.43);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000000;
+        }
+
+        .guanggao {
+            position: fixed;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 600px;
+            height: 460px;
+        }
+
+        .guanggao-btn1 {
+            margin-left: 105px;
+        }
+
+        .guanggao-btn2 {
+            margin-left: 70px;
+        }
+
+        .qiantai-btn img {
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .huodong-tishi {
+            height: 190px;
+            position: absolute;
+            top: 0;
+            margin-left: 1200px;
+            z-index: 999;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .huodong-tishi-box {
+            background: white;
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 330px;
+            left: -330px;
+        }
+
+        .huodong-tishi:hover .huodong-tishi-box {
+            display: block;
+        }
+
+        .huodong-tishi ul {
+            width: 100%;
+            display: inline-block;
+        }
+
+        .huodong-tishi ul li {
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            display: inline;
+        }
+
+        .category-menu {
+            display: block !important;
+        }
+
+        .category-menu .category-list li.on {
+            background: #55129f !important;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div class="bg_img" <?php if(!$ad152): ?> style="top: 0;" <?php endif; ?>></div>
+    <!-- 顶部广告结束 -->
+
+    <!-- 头部开始 -->
+    <link href="<?php echo e(path('new/css/header.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('new/css/index.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('new/css/main.css')); ?>" rel="stylesheet" type="text/css"/>
+    <style>
+        .fixsearch .fixsearch-box .fixedsearch_box .search_show {
+            left: -77px !important;
+        }
+
+        .bg_img {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background: url('<?php echo e(get_img_path('images/hd/1109/bg.jpg')); ?>') no-repeat scroll top center;
+            min-width: 1200px;
+            height: 1600px;
+        }
+
+        .search {
+            margin-top: 100px;
+            *margin-top: 70px;
+            width: 100%;
+            min-width: 1200px;
+        }
+
+        #nav {
+            border-bottom: none;
+            margin-top: 1px;
+            *margin-top: 5px;
+        }
+
+        .nav-box {
+            background: white;
+            height: 40px;
+        }
+
+        .nav-box ul li {
+            background: white;
+        }
+
+        .fenlei {
+            background: #3dbb2b !important;
+            position: relative;
+            z-index: 2222222222;
+        }
+
+        .search_box {
+            /*background: white;*/
+            height: 117px;
+        }
+
+        .category-menu {
+            margin-top: 0 !important;
+            top: 0px !important;
+            width: 209px !important;
+            /*height: ;*/
+            *height: 475px;
+        }
+
+        .banner-pic ul li a {
+            /*border: 1px solid red;*/
+            /*left: -1px;*/
+        }
+
+        .category-list li {
+            *height: 35px !important;
+        }
+
+        .logo_box {
+            width: 252px;
+            height: 117px !important;
+            display: inline-block;
+            float: left;
+        }
+
+        .dongtaitu {
+            width: 210px;
+            height: 104px;
+            /**height: 95px;*/
+            box-sizing: border-box;
+            background: white;
+            position: relative;
+            z-index: 2;
+            margin-top: -1px;
+            *margin-top: 2px;
+            left: -1px;
+        }
+
+        .input_box {
+            float: left;
+            height: 117px;
+            width: 948px;
+            position: relative;
+        }
+
+        #suggest {
+            margin: 30px 0 0 77px !important;
+            width: 399px !important;
+            height: 40px !important;
+            border: 1px solid #3d1867 !important;
+            background: #55129f !important;
+            color: #fff !important;
+        }
+
+        .search a.btn {
+            margin: 30px 0 0 485px;
+            float: none;
+            width: 80px !important;
+            height: 42px !important;
+            line-height: 42px !important;
+            text-align: center;
+            background: #420981 !important;
+            border: none !important;
+        }
+
+        .search_show {
+            margin-top: -1px !important;
+            margin-left: 77px !important;
+        }
+
+        .cuxiao {
+            left: 77px;
+            top: 83px;
+            margin: 0;
+        }
+
+        .dingdan, .gouwuche {
+            float: none;
+            margin: 0;
+            top: 30px;
+            background: #590fa3;
+            border: 1px solid #3d1867 !important;
+            color: #fff !important;
+        }
+
+        .dingdan {
+            right: 160px;
+            width: 110px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+        }
+
+        .gouwuche {
+            right: 10px;
+            width: 138px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+        }
+
+        .swiper_wrap {
+            margin: 0;
+            top: 100px;
+            right: 0px;
+        }
+
+        #huodong {
+            margin: 10px auto;
+            position: relative;
+            height: 685px;
+            background: url('<?php echo e(get_img_path('images/hd/1109/link.png')); ?>') no-repeat scroll top center;
+        }
+
+        #huodong a {
+            display: inline-block;
+            position: absolute;
+        }
+
+        #huodong .a1, #huodong .a2 {
+            width: 190px;
+            height: 60px;
+            top: 50px;
+            right: 98px;
+        }
+
+        #huodong .a1 {
+            right: 307px;
+            width: 220px;
+        }
+
+        #huodong .a3, #huodong .a4, #huodong .a5 {
+            width: 380px;
+            height: 230px;
+            top: 190px;
+        }
+
+        #huodong .a3 {
+            left: 0;
+        }
+
+        #huodong .a4 {
+            left: 410px;
+        }
+
+        #huodong .a5 {
+            right: 0;
+        }
+
+        #huodong .a6 {
+            width: 540px;
+            height: 230px;
+            bottom: 0px;
+            left: 400px;
+        }
+
+        .dsq {
+            width: 100%;
+            position: absolute;
+            top: -250px;
+            left: 0;
+            z-index: 2;
+        }
+
+        .dingshiqi {
+            width: 810px;
+            height: 99px;
+            background: url('<?php echo e(get_img_path('images/hd/1109/start_bg.png')); ?>') no-repeat scroll top center;
+            margin: 0 auto;
+            position: relative;
+            left: 65px;
+        }
+
+        .dingshiqi .txt {
+            font-size: 24px;
+            color: #fff;
+            height: 46px;
+            line-height: 46px;
+            /*border: 1px solid red;*/
+            position: absolute;
+            top: 25px;
+            left: 283px;
+        }
+
+        .rukou {
+            width: 100%;
+            height: 120px;
+            /*border: 1px solid red;*/
+            cursor: pointer;
+        }
+
+        .rukou img {
+            position: absolute;
+            top: 0;
+            left: -64px;
+        }
+
+        .quick_links {
+            margin: 0 !important;
+            top: 0 !important;
+        }
+
+        #rukou {
+            width: 270px;
+            height: 100%;
+            background: #f5f5f5;
+            opacity: 0;
+            filter: Alpha(Opacity:0);
+        }
+
+        #rukou_scroll {
+            margin-bottom: 40px;
+        }
+
+        /*#body{
+            background: #130158;
+        }
+        .tuijian-box,.meiri-box{
+            background: white;
+        }
+        .dibu{
+            margin-bottom: 0!important;
+        }
+        .site-footer{
+            margin-bottom: 0!important;
+            background: white;
+            padding: 0!important;
+        }*/
+        /*定时器*/
+        .remaintime {
+            width: 340px;
+            height: 48px;
+            position: absolute;
+            top: 26px;
+            left: 387px;
+        }
+
+        .remaintime span {
+            display: inline-block;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            color: #eae53f;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+
+        }
+
+        .remaintime .hourse {
+            left: 81px;
+        }
+
+        .remaintime .minute {
+            left: 161px;
+        }
+
+        .remaintime .second {
+            left: 243px;
+        }
+
+        .cuxiao a {
+            color: #fbee3f !important;
+        }
+
+        .slide_box, .banner-pic li, .banner-pic li a, .banner-pic li img, .slide_right {
+            height: 481px !important;
+        }
+
+        .zj {
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            overflow: hidden;
+            margin-top: 18px;
+            *margin-top: 25px;
+            background: rgba(0, 0, 0, 0.4);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+
+        }
+
+        .zj .zj_box {
+            width: 1040px;
+            height: 86px;
+            line-height: 86px;
+            text-align: center;
+            background: url('<?php echo e(get_img_path('images/hd/1109/zj.png')); ?>') no-repeat;
+            margin: 7px auto 0 auto;
+            color: #fff;
+            font-size: 36px;
+            display: none;
+        }
+
+        .zj .zj_box span {
+            color: #fef200;
+            font-size: 36px;
+        }
+
+        .search .list_box {
+            width: 403px !important;
+            border: 1px solid #3d1867;
+            /*display: block!important;*/
+        }
+
+        .fenlei {
+            background: #420981 !important;
+        }
+
+        .nav-box, .nav-box ul li {
+            background: none;
+        }
+
+        .nav-box ul {
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.8);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff, endColorstr=#7fffffff);
+        }
+
+        .li2 a.checked, .li2 a:hover {
+            color: #333 !important;
+        }
+
+        .category-menu .category-list {
+            background: rgba(255, 255, 255, 0.8);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff, endColorstr=#7fffffff);
+            padding-bottom: 2px;
+            background: none;
+        }
+
+        .category-menu {
+            background: rgba(255, 255, 255, 0.8);
+            /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff, endColorstr=#7fffffff);*/
+            border: none;
+            width: 210px !important;
+            height: 481px !important;
+        }
+
+        .category-menu .category-list {
+
+        }
+
+        .category-menu .category-list li.child-li {
+            /*background: rgba(255,255,255,0.8);*/
+            height: 40px !important;
+            border: none !important;
+            width: 209px;
+            *margin-top: -4px;
+            *height: 40px !important;
+            line-height: 40px !important;
+            /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);*/
+            background: none;
+        }
+
+        .img-jiantou {
+            display: none;
+        }
+
+        .search_btn img {
+            *position: relative;
+            *top: 10px;
+        }
+
+        .category-menu ul.category-list-child {
+            left: 209px !important;
+        }
+
+        .site-footer {
+            border-top: none !important;
+            background: #f1f1f1 !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 20px !important;
+            min-width: 1200px;
+        }
+
+        #header {
+            min-width: 1200px;
+        }
+
+        #footer1 {
+            display: none;
+        }
+
+
+    </style>
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        .category-menu {
+            background: none !important;
+            width: 210px !important;
+        }
+
+        .category-list {
+            width: 210px !important;
+        }
+    </style>
+    <![endif]-->
+
+    <script type="text/javascript" src="<?php echo e(path('new/js/index.js')); ?>"></script>
+    <script src="<?php echo e(path('js/sync/sync.js')); ?>"></script>
+    <!-- 顶部广告开始 -->
+    <?php if(($ad152)): ?>
+        <!-- 顶部广告开始 -->
+        <div class="top-wrap"
+             style="background: url('<?php echo e($ad152->ad_code); ?>') no-repeat scroll center top;height: 100px;min-width: 1200px;">
+            <div class="banner-box"><a href="<?php echo e($ad152->ad_link); ?>" style="display:block;width:100%;height:100%"
+                                       target="_blank"></a>
+                <?php /*<span class="close-btns"></span>*/ ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div id="header">
+        <!--登陆注册一栏-->
+        <div class="top_box" style="border: none;">
+            <div class="top">
+                <div class="top_left">
+
+                </div>
+                <ul class="jkn_head_t_r">
+                    <li class="mobile_version1" onmouseover="this.className='mobile_version1 mv_hover1'"
+                        onmouseout="this.className='mobile_version1'">
+                        <p class="mobile_anniu1">
+                            <a href="#">投诉</a><span></span></p>
+                        <div class="bjqr_code1">
+
+                            15208485597
+
+                        </div>
+                    </li>
+
+                    <li style="padding-left: 10px;">
+                        <a target="_blank" href="/article?id=3">帮助中心</a>
+                    </li>
+                    <li class="mobile_version" onmouseover="this.className='mobile_version mv_hover'"
+                        onmouseout="this.className='mobile_version'">
+                        <p class="mobile_anniu">
+                            <img src="<?php echo e(path('new/images/bgerweima_05.png')); ?>"
+                                 style="display: inline-block;vertical-align: middle;margin-top: -1px;"/>
+                            <a href="#">
+                                手机药易购
+                            </a>
+                            <span></span>
+                        </p>
+                        <div class="bjqr_code">
+                            <img src="<?php echo e(path('new/images//yaoyigou.png')); ?>"/>
+                        </div>
+                    </li>
+                    <li class="my_jianke">
+                        <a target="_blank" href="/user/collectList">
+                            我的收藏
+                        </a>
+                    </li>
+                    <li class="my_jianke">
+                        <a target="_blank" href="/requirement">求购专区</a>
+                        <div style="position: absolute;left: 67px;top: 0;color: #cecece;">|</div>
+                    </li>
+                    <li class="my_jianke">
+                        <a target="_blank" href="/ggzs.html" style="color:#46d23c;">广告合作</a>
+                        <div style="position: absolute;left: 67px;top: 0;color: #cecece;">|</div>
+                    </li>
+                    <li class="my_jianke">
+                        <a target="_blank" href="/zhijian">质检报告查询</a>
+                    </li>
+                    <li class="my_jianke">
+                        <a target="_blank" href="/dzfp" style="color:#46d23c;">电子发票查询</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!--登陆注册一栏结束-->
+
+    </div>
+
+    <!--搜索框开始-->
+    <div class="search" style="position: relative;*z-index: 9999;">
+        <div class="search_box">
+            <a href="http://www.hezongyy.com" style="display: inline-block;height: 64px;position: relative;"
+               class="logo_box">
+                <div class="dongtaitu">
+                    <?php if(ads(165)): ?>
+                        <?php foreach(ads(165) as $k=>$v): ?>
+                            <?php if($v->sort_order==0): ?>
+                                <img src="<?php echo e($v->ad_code); ?>">
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </a>
+            <div class="fn_clear input_box">
+                <input id="suggest" name="userSearch" type="text" value="药品名称(拼音缩写)或厂家名称" class="search_input suggest"/>
+                <a href="javascript:void(0)" class="btn search_btn"><img src="<?php echo e(get_img_path('images/hd/1109/f.png')); ?>"></a>
+
+                <div id="suggestions_wrap" class="search_show list_box suggestions_wrap"
+                     style="margin-left: 330px;margin-top: -46px;left:auto;top: auto;*margin-left: -503px;">
+
+                    <ul class="search_list suggestions" id="suggestions">
+                        <li class="" style="cursor: pointer;">(简)复方氨基酸注射液(18AA-V)</li>
+                        <li class="" style="cursor: pointer;">(精)复方氨基酸注射液(18AA-V)</li>
+                        <li class="" style="cursor: pointer;">(精)盐酸氨溴索葡萄糖注射液</li>
+                        <li class="" style="cursor: pointer;">(精)盐酸氨溴索葡萄糖注射液(给欣)</li>
+                        <li class="active" style="cursor: pointer;">(高邦爱无忧延缓)天然胶乳橡胶避孕套</li>
+                        <li>*复方福尔可定口服溶液(奥特斯)</li>
+                        <li>*小儿伪麻美芬滴剂(艾畅)</li>
+                        <li>*氨酚伪麻片(Ⅱ)</li>
+                        <li>*氨酚伪麻美芬片Ⅱ/氨麻苯美片(白加黑)</li>
+                        <li>*氨酚伪麻胶囊(II)</li>
+                    </ul>
+                </div>
+                <!--修改1：促销,购物车，订单,swiper_wrap放在了input的父级DIV里-->
+                <div class="cuxiao">
+                    <?php if(count(ads(159))>0): ?>
+                        <?php foreach(ads(159) as $v): ?>
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>" style="color: red;"><?php echo e($v->ad_name); ?></a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+                <a target="_blank" href="/cart">
+                    <div class="gouwuche" style="float: right;">
+                        <img style="margin-top: -5px;" src="<?php echo e(get_img_path('images/hd/1109/2.jpg')); ?>"/>
+                        购物车
+                        <span style="color: red;">(<span class="cart_number">0</span>)</span>
+                    </div>
+                </a>
+                <a target="_blank" href="/user/orderList">
+                    <div class="dingdan" style="float: right;">
+                        <img src="<?php echo e(get_img_path('images/hd/1109/1.jpg')); ?>"/> 订单查询
+                    </div>
+                </a>
+                <?php /*<div class="swiper_wrap">*/ ?>
+                <?php /*<ul class="font_inner">*/ ?>
+                <?php /*<li>*/ ?>
+                <?php /*<a target="_blank" href="http://www.hezongyy.com/images/zgz1.jpg">互联网药品交易服务资格证</a>*/ ?>
+                <?php /*</li>*/ ?>
+                <?php /*</ul>*/ ?>
+                <?php /*</div>*/ ?>
+            </div>
+        </div>
+    </div>
+    <!-- 头部结束 -->
+
+    <!-- 导航条开始 -->
+    <?php echo $__env->make('common.1109nav',['cate_tree'=>cate_tree_new()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!------------------------------------------轮播以及产品分类------------------------------------------>
+    <?php if(!$ad27&&auth()->check()&&isset($sjtj)&&$sjtj_type==1): ?>
+        <div class="guanggao-zhezhao">
+            <div class="guanggao">
+                <a id="qukankan" url="<?php echo e($sjtj->ad_link); ?>"><img
+                            src="<?php echo e(get_img_path('data/afficheimg/'.$sjtj->ad_code)); ?>"/></a>
+                <div class="qiantai-btn">
+                    <img src="<?php echo e(get_img_path('images/btn1.png')); ?>" class="guanggao-btn1" url="<?php echo e($sjtj->ad_link); ?>"/>
+                    <img src="<?php echo e(get_img_path('images/btn2.png')); ?>" class="guanggao-btn2"/>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div id="banner">
+        <div class="slide_box">
+            <div class="banner2">
+                <ul class="banner-ctrl" style="width: <?php echo e(count($ad121)*62); ?>px">
+                    <?php if($ad121): ?>
+                        <?php foreach($ad121 as $k=>$ad): ?>
+                            <li <?php if($k==0): ?> class="current" <?php endif; ?>>
+                                <span class="bg"></span>
+                                <div class="ctrl-dot">
+                                    <i <?php if($k==0): ?> class="on" <?php endif; ?>></i>
+                                </div>
+                                <div class="title-item">
+                                    <span class="title-bg"></span>
+                                    <div class="title-list">
+                                        <p><i></i></p>
+                                    </div>
+                                </div>
+                                <h4><?php echo e(str_replace('2017','',$ad->ad_name)); ?></h4>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+                <a class="banner-btn banner-prev" href="javascript:void(0);"></a>
+                <a class="banner-btn banner-next" href="javascript:void(0);"></a>
+                <div class="banner-pic">
+                    <?php if($ad121): ?>
+                        <?php foreach($ad121 as $k=>$ad): ?>
+                            <ul>
+                                <li style="<?php if($k==0): ?> display:list-item; <?php endif; ?>">
+                                    <a onClick="_hmt.push(['_trackEvent','首页焦点图1','浏览','<?php echo e(str_replace('2017','',$ad->ad_name)); ?>'])"
+                                       href="<?php echo e($ad->ad_link); ?>" title="" target="_blank" style="position:relative;">
+                                        <img data-src="<?php echo e(get_img_path('data/afficheimg/'.$ad->ad_code)); ?>"
+                                             src="<?php echo e(get_img_path('data/afficheimg/'.$ad->ad_code)); ?>" height="480"
+                                             width="780" alt=" "/>
+                                        <!--<span class="addSign">
+                                            <img alt="" src="//static.jianke.com/home/front/images/ad_tag.png">
+                                        </span>-->
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                </div>
+
+
+            </div>
+            <div style="width: 1200px;margin: 0 auto;">
+                <div class="slide_right">
+
+                    <ul>
+                        <?php if(ads(165)): ?>
+                            <?php foreach(ads(165) as $k=>$v): ?>
+                                <?php if($v->sort_order>0): ?>
+                                    <li>
+                                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                                            <img src="<?php echo e($v->ad_code); ?>"
+                                                 <?php if($k==0): ?> style="margin-top: 0"
+                                                 <?php else: ?> style="margin-top: 2px" <?php endif; ?>/></a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <?php /*<div class="huodong-tishi">*/ ?>
+                <?php /*<a target="_blank" href="/cxhd/cxzq"><img src="<?php echo e(get_img_path('images/qiantai_04.png')); ?>"/></a>*/ ?>
+                <?php /*<div class="huodong-tishi-box">*/ ?>
+                <?php /*<ul>*/ ?>
+                <?php /*<?php foreach($ad155 as $v): ?>*/ ?>
+                <?php /*<li>*/ ?>
+                <?php /*<a target="_blank" href="/cxhd/cxzq#<?php echo e($v->ad_link); ?>" class="zy-<?php echo e($v->ad_link); ?>">*/ ?>
+                <?php /*<img src="<?php echo e($v->ad_code); ?>"/>*/ ?>
+                <?php /*</a>*/ ?>
+                <?php /*</li>*/ ?>
+                <?php /*<?php endforeach; ?>*/ ?>
+                <?php /*</ul>*/ ?>
+                <?php /*</div>*/ ?>
+                <?php /*</div>*/ ?>
+
+            </div>
+        </div>
+        <!--产品分类结束-->
+        <!------------------------------------------轮播以及产品分类结束------------------------------------------>
+
+        <!--双11活动定时器-->
+        <div id="huodong" style="min-width: 1200px;">
+            <div style="width: 1200px;margin: 0 auto;position: relative;">
+                <a target="_blank" href="/119/" class="a1"></a>  <!--进入主会场-->
+                <a target="_blank" href="/119/index.html#img5" class="a2"></a>  <!--查看攻略-->
+                <a target="_blank" href="/119yh/" class="a3"></a>  <!--优惠劵-->
+                <a target="_blank" href="/jf_money" class="a4"></a>  <!--积分-->
+                <a target="_blank" href="/119ys/" class="a5"></a>  <!--预售-->
+                <a href="javascript:;" class="a6"></a>  <!--最后一个图片不知道有没有连接-->
+            </div>
+        </div>
+        <div class="zj" style="background: none;filter: none;">
+            <?php /*<div class="zj_box">*/ ?>
+            <?php /*恭喜，<span>“免单”</span>大奖被<span>测*号</span>夺走了一名!!*/ ?>
+            <?php /*</div>*/ ?>
+        </div>
+        <div class="dsq">
+            <div class="dingshiqi">
+                <p class="txt">距开幕剩</p>
+                <div class="remaintime">
+                    <span class="day"></span>
+                    <span class="hourse"></span>
+                    <span class="minute"></span>
+                    <span class="second"></span>
+                </div>
+                <a target="_blank" href="/119/"
+                   style="position: absolute;right: 40px;top: 18px;display: inline-block;width: 52px;height: 60px;"></a>
+            </div>
+        </div>
+        <!------------------------------------------轮播以及产品分类结束------------------------------------------>
+
+
+        <!------------------------------------------每日精选开始------------------------------------------>
+        <!------------------------------------------每日精选开始------------------------------------------>
+        <input type="hidden" id="daojs" value="<?php echo e(collect($ad124->first())->get('end_time')-time()); ?>"/>
+        <!-- app扫描开始 -->
+        <?php if(isset($ad147)): ?>
+            <?php foreach($ad147 as $k=>$v): ?>
+                <?php if($k==0): ?>
+                    <div class="saoma" style="left: 0px;bottom: 35px">
+                        <div class="saoma-box">
+                            <span class="saoma-close"
+                                  style="top: 9px;right: -3px;background-image: url('<?php echo e(path('new/images/x.png')); ?>')"
+                                  onclick="$('.saoma').hide()"></span>
+                            <a <?php if(!empty($v->ad_link)): ?> target="_blank"
+                               href="<?php echo e($v->ad_link); ?>" <?php else: ?> href="javascript:;" <?php endif; ?>>
+                                <img src="<?php echo e($v->ad_code); ?>" alt=""></a>
+                        </div>
+
+                    </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+    <!-- app扫描开始 -->
+    </div>
+    <!-- app扫描结束 -->
+    <div style="position: fixed;bottom: 0;left: 0;z-index: 100000;background: red;width: 360px;height: 288px;">
+        <object type="application/x-shockwave-flash" width="360" height="288" data="<?php echo e(path('video/mediaplayer.swf?file=http://211.149.176.77:8000/1.flv')); ?>">
+            <param name="src" value="<?php echo e(path('video/mediaplayer.swf?file=2.flv')); ?>">
+
+            <param name="wmode" value="transparent">
+            <param name="autoplay" value="true">
+            <param name="flashvars" value="file=http://211.149.176.77:8000/1.flv&autostart=true">
+            <param name="mute" value="0">  <!--静音-->
+            <param name="allowscriptaccess" value="always">
+            <param name="allowfullscreen" value="true">
+            <param name="bgColor" value="red">
+            <div class="flash" style="margin-top: 120px;text-align: center;">
+                <a href="http://www.adobe.com/go/getflashplayer">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+                </a>
+                <p>请点击上图启用或下载flash插件</p>
+            </div>
+        </object>
+    </div>
+    <!-- 弹出层结束 -->
+    <?php echo $__env->make('common.footer_1109', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.fixed_search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <input type="hidden" id="start" value="<?php echo e(strtotime('2017-11-09 00:00:00')); ?>">
+    <input type="hidden" id="end" value="<?php echo e(strtotime('2017-11-10 00:00:00')); ?>">
+    <script src="<?php echo e(path('new/js/new-lunbo.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            setInterval(function () {
+                $('.zj .zj_box').fadeIn('slow')
+            }, 5000);
+            setInterval(function () {
+                $('.zj .zj_box').fadeOut('slow')
+            }, 10000);
+            /*导航跳转效果插件*/
+            $('#fixedNavBar,.qudingbu,#lvjing').singlePageNav({
+                offset: 0
+            });
+            var _left = ($(window).width() - 1200) / 2 - 40
+            $('#fixedNavBar').css('left', _left);
+            $(window).scroll(function () {
+                var cy = 40;
+                var top1 = $('#demo1').offset().top - cy * 2;
+                var top2 = $('#demo2').offset().top - cy * 2;
+                var top3 = $('#demo3').offset().top - cy * 3;
+                var top4 = $('#demo4').offset().top - cy * 4;
+                var top5 = $('#demo5').offset().top - cy * 5;
+                var top6 = $('#demo6').offset().top - cy * 6;
+                var top7 = $('#demo7').offset().top - cy * 7;
+                var top8 = $('#demo8').offset().top - cy * 8;
+                var top9 = parseFloat(top8) + parseFloat($('#demo8').css('height'));
+                // 获得窗口滚动上去的距离
+                var ling = $('#fixedNavBar').offset().top;
+                // 在标题栏显示滚动的距离
+                //document.title = ling;
+                // 如果滚动距离大于1534的时候让滚动框出来
+                if (ling >= top1 && ling < top9) {
+                    if (_left < 20) {
+                        _left = 20
+                    }
+                    var hehe = $('#fixedNavBar ul li ');
+                    $('#fixedNavBar ul').show();
+                    if (ling >= top1 && ling < top2) {
+                        hehe[1].style.background = '#3dbb2b';
+
+                    } else {
+                        hehe[1].style.background = '#666666';
+                    }
+                    if (ling >= top2 && ling < top3) {
+                        hehe[2].style.background = '#3dbb2b';
+                    } else {
+                        hehe[2].style.background = '#666666'
+                    }
+                    if (ling >= top3 && ling < top4) {
+                        hehe[3].style.background = '#3dbb2b';
+                    } else {
+                        hehe[3].style.background = '#666666'
+                    }
+                    if (ling >= top4 && ling < top5) {
+                        hehe[4].style.background = '#3dbb2b';
+                    } else {
+                        hehe[4].style.background = '#666666';
+                    }
+                    if (ling >= top5 && ling < top6) {
+                        hehe[5].style.background = '#3dbb2b';
+                    } else {
+                        hehe[5].style.background = '#666666';
+                    }
+                    if (ling >= top6 && ling < top7) {
+                        hehe[6].style.background = '#3dbb2b';
+                    } else {
+                        hehe[6].style.background = '#666666';
+                    }
+                    if (ling >= top7 && ling < top8) {
+                        hehe[7].style.background = '#3dbb2b';
+                    } else {
+                        hehe[7].style.background = '#666666';
+                    }
+
+                    if (ling >= top8 && ling < top9) {
+                        hehe[8].style.background = '#3dbb2b';
+                    } else {
+                        hehe[8].style.background = '#666666';
+                    }
+                } else {
+                    $('#fixedNavBar ul').hide();
+                }
+
+            })
+
+            $('.slide_right-title-li1').hover(function () {
+                $('.news1 ul').css('display', 'block');
+                $('.news2 ul').css('display', 'none');
+                $('.banner-left-hr').css('display', 'block');
+                $('.banner-right-hr').css('display', 'none');
+                $('.slide_right-title-li1').css('color', '#333333');
+                $('.slide_right-title-li1').css('font-weight', 'bold');
+                $('.slide_right-title-li2').css('color', '#777777');
+                $('.slide_right-title-li2').css('font-weight', 'normal');
+                $('#cuxiao_gd').hide();
+                $('#dongtai_gd').show();
+            });
+            $('.slide_right-title-li2').hover(function () {
+                $('.news2 ul').css('display', 'block');
+                $('.news1 ul').css('display', 'none');
+                $('.banner-left-hr').css('display', 'none');
+                $('.banner-right-hr').css('display', 'block');
+                $('.slide_right-title-li2').css('color', '#333333');
+                $('.slide_right-title-li2').css('font-weight', 'bold');
+                $('.slide_right-title-li1').css('color', '#777777');
+                $('.slide_right-title-li1').css('font-weight', 'normal');
+                $('#dongtai_gd').hide();
+                $('#cuxiao_gd').show();
+            });
+
+            $(".main-page .nav div").mouseenter(function () {
+                var $this = $(this);
+                var index = $this.index();
+            }).mouseleave(function () {
+                var $this = $(this);
+                var index = $this.index();
+            }).hover(function () {
+                var $this = $(this);
+                var index = $this.index();
+                var l = -(index * 930);
+                $(".main-page .nav div").removeClass("on");
+                $(".main-page .nav div").eq(index).addClass("on");
+                $(".main-page .content div:eq(0)").stop().animate({
+                    "margin-top": l
+                }, 500);
+            });
+            jQuery(".picScroll-left").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                autoPage: true,
+                effect: "left",
+                autoPlay: true,
+                vis: 5,
+                trigger: "click"
+            });
+            $('.guanggao-btn1').click(function () {
+                var url = $(this).attr('url');
+                var sjtj_type = '1'
+                $.ajax({
+                    url: '/user/sjtj',
+                    type: 'get',
+                    data: {
+                        type: 1
+                    },
+                    success: function () {
+                        //window.open(url);
+                    }
+                });
+                window.open(url);
+            });
+            $('#qukankan').click(function () {
+                var url = $(this).attr('url');
+                var sjtj_type = '1'
+                $.ajax({
+                    url: '/user/sjtj',
+                    type: 'get',
+                    data: {
+                        type: 1
+                    },
+                    success: function () {
+                        //window.open(url);
+                    }
+                });
+                window.open(url);
+            });
+            $('.guanggao-btn2').click(function () {
+                var sjtj_type = '1'
+                $.ajax({
+                    url: '/user/sjtj',
+                    type: 'get',
+                    data: {
+                        type: 0
+                    },
+                    success: function () {
+                        //$('.guanggao-zhezhao').hide()
+                    }
+                });
+                $('.guanggao-zhezhao').hide()
+            });
+            setTimeout(function () {
+                $(".guanggao-zhezhao").hide();
+                $(".guanggao").hide();
+            }, 10000);
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

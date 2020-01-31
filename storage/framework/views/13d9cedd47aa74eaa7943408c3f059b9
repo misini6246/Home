@@ -1,0 +1,5 @@
+<?php if(count($ad)>0): ?>
+    <?php foreach($ad as $v): ?>
+        <a href="<?php echo e($v->ad_link); ?>" target='_blank'><img src="<?php echo e($v->ad_code); ?>" alt=""/></a>
+    <?php endforeach; ?>
+<?php endif; ?>

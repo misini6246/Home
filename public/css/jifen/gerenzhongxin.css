@@ -1,0 +1,88 @@
+.vip_right_container .account{
+	height: 140px;
+	padding: 25px 0 0 20px;
+}
+.account .kyjf{
+	height: 40px;
+	line-height: 40px;
+}
+.account .kyjf span{
+	float: left;
+	font-size: 16px;
+	color: #666;
+}
+.account .kyjf span.jf{
+	color: #ef2c2f;
+	font-size: 30px;
+	margin-left: 15px;
+}
+.account .kyjf a{
+	display: inline-block;
+	float: left;
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	font-family: "宋体";
+	text-align: center;
+	border-radius: 30px;
+	margin-top: 6px;
+}
+.account .kyjf a.dh{
+	color: #ff4700;
+	border: 1px solid #ff4700;
+	margin-left: 50px;
+}
+.account .kyjf a.zq{
+	color: #3dbb2b;
+	border: 1px solid #3dbb2b;
+	margin-left: 10px;
+}
+
+.account .yyjf{
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+	margin-top: 15px;
+}
+.account .yyjf span{
+	margin-left: 15px;
+}
+.jfjl_title{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 20px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+}
+.jfjl table{
+	width: 100%;
+	margin-bottom: 40px;
+}
+.jfjl table thead{
+	background: #f8f9fb;
+}
+.jfjl table thead,.jfjl table tbody{
+	height: 40px;
+	line-height: 40px;
+}
+.jfjl table tbody{
+	border-bottom: 1px dashed #e5e5e5;
+}
+.jfjl table tbody:hover{
+	background: #f5f5f5;
+}
+.jfjl table .time{
+	width: 240px;
+}
+.jfjl table .jfbd,.jfjl table .jfjy{
+	width: 140px;
+}
+.jfjl table td.jfjy{
+	color: #ef2c2f;
+}
+.jfjl table td a{
+	color: #3285fa;
+}

@@ -1,0 +1,86 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/my_order2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/index2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/new-common.css')); ?>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/my_order.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layout.page_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layout.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="main fn_clear">
+
+        <div class="main fn_clear">
+            <div class="top">
+                <span class="title">我的药易购</span> <a>>　<span>交易管理</span> </a> <a href="<?php echo e(route('user.orderList')); ?>" class="end">>　<span><?php echo e($pages_top); ?></span></a> </div>
+            <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="main_right1">
+                <div class="top_title">
+                    <h3><?php echo e($pages_top); ?></h3>
+                    <span class="ico" style="left: 50px;"></span>
+                    <?php /*<div class="right_box">*/ ?>
+                        <?php /*<form action="<?php echo e(route('user.orderList')); ?>" enctype="multipart/form-data" method="get">*/ ?>
+                            <?php /*<div class="search_box" id="search_box">*/ ?>
+                                <?php /*<input type="text" name="keys" class="keys" value="<?php echo e($keys); ?>" placeholder="订单编号"/>*/ ?>
+                                <?php /*<input type="submit" class="search" value="查询"><span class="ico"></span>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*<select name="dates">*/ ?>
+                                <?php /*<option value="0">全部时间</option>*/ ?>
+                                <?php /*<option value="1" <?php if($dates==1): ?> selected <?php endif; ?>>最近三个月</option>*/ ?>
+                                <?php /*<option value="2" <?php if($dates==2): ?> selected <?php endif; ?>>今年内</option>*/ ?>
+                                <?php /*<option value="<?php echo e(date('Y',strtotime('-1 year'))); ?>" <?php if($dates==date('Y',strtotime('-1 year'))): ?> selected <?php endif; ?>><?php echo e(date('Y',strtotime('-1 year'))); ?>年</option>*/ ?>
+                            <?php /*</select>*/ ?>
+                        <?php /*</form>*/ ?>
+                    <?php /*</div>*/ ?>
+                </div>
+
+                <table id="se">
+                    <tr>
+                        <th>订单号</th>
+                        <th>下单时间</th>
+                        <th>账期业务员</th>
+                        <th>订单总金额</th>
+                        <th>订单状态</th>
+                        <th> 操作 </th>
+                    </tr>
+                    <?php if(count($pages)>0): ?>
+                    <?php foreach($pages as $v): ?>
+                    <tr>
+                        <td class="nub tb1_td1" data-id="<?php echo e($v->zq_id); ?>"><a href="<?php echo e(route('user.zq_order_info',['id'=>$v->zq_id])); ?>"><?php echo e($v->order_sn); ?></a></td>
+                        <td class="date tb1_td2"><?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?></td>
+                        <td class="name tb1_td3"><?php echo e($v->zq_ywy); ?></td>
+                        <td class="score tb1_td4"><?php echo e(formated_price($v->goods_amount)); ?></td>
+                        <td class="data tb1_td5">
+                            <?php if($v->pay_status==2): ?>已付款<?php else: ?>未付款<?php endif; ?>
+                        </td>
+                        <td class="result tb1_td6">
+                            <a href="<?php echo e(route('user.zq_order_info',['id'=>$v->zq_id])); ?>" class="f6">查看订单</a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                    <tr>
+                        <td colspan="6">暂无任何订单！</td>
+                    </tr>
+                    <?php endif; ?>
+
+                </table>
+                <?php if($pages->lastPage()>0): ?>
+                <?php echo pagesView($pages->currentPage(),$pages->lastPage(),3,3,[
+                    'url'=>$pages_url,
+                    ]); ?>
+
+                <?php endif; ?>
+            </div>
+        </div>
+
+    </div>
+    <?php echo $__env->make('layout.page_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

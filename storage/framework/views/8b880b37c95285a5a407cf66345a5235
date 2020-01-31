@@ -1,0 +1,51 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/register.css')); ?>2"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('auth.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="container">
+        <div class="border_b"></div>
+        <div class="body_box bgF0F6FC pad30_0_40">
+            <div class="form_box bgFFFFFF pad20_0_40 w1200 mgAuto">
+                <div class="nav box3">
+                    <div class="nav_bg_1 transparent50">
+                        <span class="col3DBB2B number nav_cir">1</span>
+                        <span class="colFFFFFF text">验证手机号</span>
+                    </div>
+                    <div class="nav_bg_2_cur transparent50">
+                        <span class="col3DBB2B number nav_cir">2</span>
+                        <span class="colFFFFFF text">填写帐户信息</span>
+                    </div>
+                    <div class="nav_bg_3_cur">
+                        <span class="col3DBB2B number nav_cir">3</span>
+                        <span class="colFFFFFF text">注册成功</span>
+                    </div>
+                </div>
+                <div class="form w900 mgT50">
+                    <div class="img_box" style="text-align: center;">
+                        <img src="<?php echo e(get_img_path('adimages1/201807/auth/reg_success.png')); ?>"/>
+                    </div>
+                    <div class="text ffWRYH">
+                        <p class="fwBold"><?php echo e($user->user_name); ?>：</p>
+                        <p class="lh24">
+                            恭喜您成功注册为合纵药易购会员，请按照如下要求将相关资质材料邮寄给我们审核，审核通过后，即可在网站采购药品。
+                        </p>
+                        <img style="margin-top: 25px;" width="896" height="459"
+                             src="<?php echo e(get_img_path('adimages1/201807/auth/step_03.jpg')); ?>"/>
+                    </div>
+                    <a href="<?php echo e(route('index')); ?>" type="button" name="btn3" id="btn3">返回首页</a>
+                    <a href="/uploads/采购委托书模板.doc">
+                        <div class="box1"></div>
+                    </a>
+                    <a href="/uploads/购买特殊管理药品委托书格式.doc">
+                        <div class="box2"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('auth.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/common.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,131 @@
+$bgc: #f0fcf4;
+// flex布局,左右居中
+@mixin flex-mid {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background: $bgc;
+}
+img {
+  width: 100%;
+}
+header {
+  img {
+    display: block;
+    z-index: -10;
+    position: relative;
+  }
+}
+.list {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 100px 0;
+  background: url('/img/bottom.jpg') no-repeat;
+  background-size: 100%;
+  ul {
+    width: 1200px;
+    margin: 0 auto;
+    @include flex-mid;
+    flex-wrap: wrap;
+    li {
+      width: 585px;
+      height: 380px;
+      margin-top: 10px;
+      background-color: #e4f2e9;
+      border: solid 3px #718a75;
+      display: flex;
+      .left {
+        width: 290px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+      }
+      .right {
+        margin-left: 20px;
+        margin-top: 20px;
+        font-family: PingFang-SC-Regular;
+        font-size: 14px;
+        color: #35701a;
+        & > p {
+          margin-top: 14px;
+        }
+        .name {
+          font-size: 28px;
+          font-weight: bold;
+        }
+        .sccj {
+          margin-top: 30px;
+        }
+        .jg {
+          .hdj {
+            font-size: 20px;
+            color: #ff0000;
+            font-weight: bold;
+            & > span {
+              width: 32px;
+              height: 20px;
+              border: solid 1px #ff0000;
+              padding: 1px;
+            }
+          }
+          .yj {
+            margin-left: 8px;
+            font-size: 12px;
+            color: #333333;
+          }
+        }
+        .btn-box {
+          display: flex;
+          margin-top: 24px;
+          .jiajian {
+            display: flex;
+            input {
+              width: 45px;
+              height: 31px;
+              font-size: 14px;
+              text-align: center;
+              color: #000;
+            }
+            .jiajian_btn {
+              margin-left: 5px;
+            }
+            .jia,
+            .jian {
+              cursor: pointer;
+            }
+          }
+          .add-cart {
+            width: 105px;
+            height: 31px;
+            margin-left: 12px;
+            background-color: #ffffff;
+            border: solid 1px #88b799;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0000;
+            img {
+              width: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tip {
+    width: 100%;
+    margin-top: 10px;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    text-align: right;
+    color: #b3c8af;
+  }
+}
+footer{
+  margin-top: -350px;
+  position: relative;
+  z-index: -1;
+}

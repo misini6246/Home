@@ -1,0 +1,70 @@
+.right{
+	background: #fff;
+	min-height: 740px;
+	*min-height: 720px;
+	overflow: hidden;
+}
+.youhuijuan{
+	overflow: hidden;
+	margin-left: -30px;
+}
+.youhuijuan li{
+	background-color: #F8F8F8;
+	width: 280px;
+	height: 280px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+	margin: 30px 0 0 50px;
+}
+.youhuijuan li div.box {
+	background-color: #8D3ED8;
+	height: 164px;
+}
+.youhuijuan li p{
+	width: 100%;
+	position: absolute;
+	color: #fff;
+	text-align: center;
+	left: 0px;
+}
+.youhuijuan li .val{
+	top: 0px;
+	font-size: 60px;	
+}
+.youhuijuan li .mc{
+	top: 90px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.youhuijuan li .ff{
+	top: 120px;
+}
+.youhuijuan li .riqi{
+	top: 142px;
+}
+.youhuijuan li .tiaojian{
+	top: 180px;
+	text-align: left;
+	font-size: 14px;
+	color: #666666;
+	width: 90%;
+	margin-left: 5%;
+}
+.youhuijuan li .shiyong{
+	bottom: 10px;
+}
+.youhuijuan li .shiyong a{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 30px;
+	color: #FC3D39;
+	border: 1px solid #FC3D39;
+	font-size: 14px;
+}
+
+
+

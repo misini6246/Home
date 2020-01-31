@@ -1,0 +1,168 @@
+.dingdan_title{
+	height: 40px;
+	line-height: 40px;
+	background: #f8f9fb;
+	margin-top: 10px;
+}
+.dingdan_title li{
+	float: left;
+	font-weight: bold;
+	color: #666;
+	text-align: center;
+}
+.dingdan_title li.lpxx{
+	width: 610px;
+}
+.dingdan_title li.ddzt,.dingdan_title li.cz{
+	width: 120px;
+}
+.dingdan_title li.ze{
+	width: 100px;
+}
+.dingdan_list li{
+	border: 1px solid #e5e5e5;
+	margin-top: 10px;
+}
+.dingdan_list_title{
+	height: 40px;
+	line-height: 40px;
+	background: #f8f9fb;
+	border-bottom: 1px solid #e5e5e5;
+	padding-left: 10px;
+}
+.dingdan_list_title .dd_time{
+	margin-left: 50px;
+}
+
+.dingdan_list_title .dd_user{
+	margin-left: 55px;
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+}
+.dingdan_list_title .dd_user img{
+	margin-left: 5px;
+	position: relative;
+	top: -1px;
+	*top: 0;
+}
+.dingdan_content{
+	padding: 10px 0;
+	overflow: hidden;
+}
+.dingdan_content_left{
+	width: 610px;
+	border-right: 1px solid #e5e5e5;
+	float: left;
+}
+.dingdan_content_left .ct{
+	height: 110px;
+}
+.dingdan_content_left .ct .img_box{
+	width: 110px;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+	overflow: hidden;
+	float: left;
+}
+.dingdan_content_left .ct .text{
+	float: left;
+	width: 460px;
+	height: 110px;
+}
+.dingdan_content_left .ct .text p.name{
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 16px;
+	margin-top: 20px;
+}
+.dingdan_content_left .ct .text p.jifen{
+	font-size: 14px;
+	margin-top: 20px;
+	color: #666;
+}
+.dingdan_content_left .ct .text p.jifen span.fr{
+	color: #666;
+}
+.dingdan_content_left .ct .text p.jifen span.fr span{
+	color: #333;
+}
+.dingdan_content_left .ct{
+	border-top:1px solid #e5e5e5;
+}
+.dingdan_content_left .ct:first-child{
+	border-top: none;
+}
+.dingdan_content_right{
+	float: right;
+	width: 337px;
+}
+.dingdan_content_right .ze,.dingdan_content_right .ddzt,.dingdan_content_right .cz{
+	float: left;
+	text-align: center;
+}
+.dingdan_content_right .ze{
+	width: 100px;
+	border-right: 1px solid #e5e5e5;
+	color: #ef2c2f;
+	font-size: 14px;
+	font-weight: bold;
+}
+.dingdan_content_right .ddzt,.dingdan_content_right .cz{
+	width: 117px;
+}
+.dingdan_content_right .ddzt{	
+	border-right: 1px solid #e5e5e5;
+	color: #ef2c2f;
+	font-size: 14px;
+}
+.dingdan_content_right .cz a{
+	font-size: 14px;
+}
+.vip_right{
+	*padding-bottom: 20px!important;
+}
+.dd_user_box{
+	position: absolute;
+	left: 48px;
+	top: 40px;
+	width: 240px;
+	/*height: 120px;*/
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #e5e5e5 \9;
+	padding-bottom: 10px;
+	cursor: initial;
+	display: none;
+}
+.dd_user_box p{
+	min-height: 20px;
+	line-height: 20px;
+	margin-top: 10px;
+	color: #666;
+}
+.dd_user_box p img{
+	margin: 0 5px;
+	vertical-align: top;
+	top: 6px!important;
+}
+.dd_user_box p span.left{
+	vertical-align: top;
+}
+.dd_user_box p span.right{
+	display: inline-block;
+	width: 150px;
+	height: auto;
+}
+.dd_user_box .sanjiao_icon{
+	position: absolute!important;
+	top: -7px!important;
+	left: 5px!important;
+}
+.dd_user:hover .dd_user_box{
+	display: block;
+}

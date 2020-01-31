@@ -1,0 +1,32 @@
+<?php foreach($address as $v): ?>
+    <li class="address <?php if($v->is_default==1): ?> active <?php endif; ?>" id="address<?php echo e($v->id); ?>" onclick="set_default(<?php echo e($v->id); ?>)">
+        <div class="username">
+            <img src="<?php echo e(get_img_path('images/jf/user_icon.png')); ?>"/>
+            <span><?php echo e($v->true_name); ?></span>
+        </div>
+        <div class="user_phone">
+            <img src="<?php echo e(get_img_path('images/jf/phone_icon.png')); ?>"/>
+            <span><?php echo e($v->mob_phone); ?></span>
+        </div>
+        <div class="user_add">
+            <img src="<?php echo e(get_img_path('images/jf/add_icon.png')); ?>"/>
+            <span><?php echo e($v->location); ?><?php echo e($v->address); ?></span>
+        </div>
+        <img src="<?php echo e(get_img_path('images/jf/add_choose.png')); ?>" class="add_choose"/>
+        <div class="moren">
+            默认地址
+        </div>
+    </li>
+    <?php if($v->is_default==1): ?>
+        <input type="hidden" name="address_id" value="<?php echo e($v->id); ?>">
+    <?php endif; ?>
+<?php endforeach; ?>
+<?php if(count($address)<5): ?>
+    <li class="zengjia"
+        onclick="load_html()">
+        <div class="add_add">
+            <img src="<?php echo e(get_img_path('images/jf/add_add.jpg')); ?>"/>
+            <span>新增收货地址</span>
+        </div>
+    </li>
+<?php endif; ?>

@@ -1,0 +1,43 @@
+<form name="selectPageForm" action="<?php echo e(route('user.index')); ?>" method="get">
+
+
+    <div id="pager" class="pagebar" style="width:100%; height:40px; float:left;">
+        <span class="f_l f6" style="margin-right:10px;">总计 <b><?php echo e($pages->total()); ?></b>  个记录</span>
+        <?php if($pages->lastPage()>1): ?>
+        <?php if($pages->currentPage()>1): ?>
+            <a class="pre" href="<?php echo e(pageParams($pages->currentPage()-1,$params)); ?>">上一页</a>
+        <?php endif; ?>
+        <?php if($pages->currentPage()>$pages->lastPage()-3): ?>
+            <?php for($i=$pages->currentPage()-4-($pages->currentPage()-$pages->lastPage()+3);$i<$pages->currentPage();$i++): ?>
+                <?php if($i>0): ?>
+                    <a href="<?php echo e(pageParams($i,$params)); ?>">[<?php echo e($i); ?>]</a>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php else: ?>
+            <?php for($i=$pages->currentPage()-4;$i<$pages->currentPage();$i++): ?>
+                <?php if($i>0): ?>
+                <a href="<?php echo e(pageParams($i,$params)); ?>">[<?php echo e($i); ?>]</a>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php endif; ?>
+        <span class="page_now"><?php echo e($pages->currentPage()); ?></span>
+        <?php if($pages->currentPage()<5): ?>
+            <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4+5-$pages->currentPage();$i++): ?>
+                <?php if($i<=$pages->lastPage()): ?>
+                    <a href="<?php echo e(pageParams($i,$params)); ?>">[<?php echo e($i); ?>]</a>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php else: ?>
+            <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4;$i++): ?>
+                <?php if($i<=$pages->lastPage()): ?>
+                <a href="<?php echo e(pageParams($i,$params)); ?>">[<?php echo e($i); ?>]</a>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php endif; ?>
+        <?php if($pages->currentPage()<$pages->lastPage()): ?>
+            <a class="pre" href="<?php echo e(pageParams($pages->currentPage()+1,$params)); ?>">下一页</a>
+        <?php endif; ?>
+        <?php endif; ?>
+    </div>
+
+</form>

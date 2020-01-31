@@ -1,0 +1,33 @@
+/*主体部分样式开始*/
+.main{width: 1200px;margin: 0 auto;}
+.main .main_left{width: 210px;float: left;margin-top: 30px;}
+
+.subNavBox{width:210px;}
+.subNav{border-bottom:2px  solid #fff;cursor:pointer;font-weight:bold;font-size:14px;color:#fff;line-height:40px;background:url(../images/click_right.png) no-repeat;background-position:95% 50%;background-color: #35a418;text-align: center;}
+.subNav .subNav_a{cursor: pointer;font-weight: bold;font-size: 14px;color: #fff;}
+.subNav:hover{color:#fff;}
+.currentDd{color:#fff}
+.currentDt{background-image:url(../images/click_down.png);}
+.navContent{display: none;border-bottom:solid 1px #e5e3da;}
+.navContent li a{display:block;width:208px;height:40px;text-align:center;line-height:40px;color:#333;border: 1px solid #eee;background: url("../images/bg_user_left_btn.png");border-top: 0;}
+.navContent li a:hover{background: url("../images/bg_user_left_btn_on.png");}
+
+
+.main_right{width: 970px;float: right;margin-top: 30px;}
+.main .top{height: 40px;line-height: 40px;border-bottom: 2px solid #39a817;width: 970px;background: url("../images/user_right_title.png") no-repeat;}
+.main .top .title{display: block;float: left;margin-left: 60px;_margin-left: 30px;}
+.main .top a{color:#333;display: block;float: left;height: 40px;}
+.main .top a.end span{color: #39a817;}
+.main_right ul{margin-bottom: 30px;}
+.main_right ul li{width: 950px;padding: 10px;border-bottom: 1px dashed #cfcfcf;}
+.main_right ul li h3{height: 40px;line-height: 40px;}
+.main_right ul li h3 a{color: #39a817;font-size: 14px;}
+.main_right ul li p{margin: 5px 0;line-height: 24px;color: #6f6f6f;}
+.main_right ul li a.check{display: block;width: 70px;height: 30px;background-color: #fff;line-height: 30px;text-align: center;color: #333333;}
+.main_right ul li a.check:hover{background-color: #39a817;color: #fff;}
+
+code{display:block; float:left;margin:0 5px;
+
+
+/*主体部分样式结束*/
+

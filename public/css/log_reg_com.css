@@ -1,0 +1,17 @@
+/*顶部样式开始*/
+.site-header{background: url("../images/login_01.jpg") no-repeat scroll center top;height: 122px;min-width: 1200px;overflow: hidden;width: 100%;}
+.header-box{width: 1200px;height: 118px;margin: 0 auto;}
+.header-box .logo{margin: 20px 0 0 120px;float: left;}
+.site-header p{font-size: 24px;color: #39a817;width: 110px;height:32px;float: left;margin: 50px 0 0 70px;}
+/*底部样式*/
+.site-footer{width: 1200px;margin: 0 auto;}
+.footer-container{text-align: center;}
+.footer-container .title a{color: #000;padding: 0 15px;line-height: 34px;}
+.footer-container a.btn_ico{margin-top: 15px;display: block;}
+label{display:block;}
+#remember{cursor:pointer;}
+
+.footer_box{width: 1200px;margin: 0 auto;}
+.footer_bottom{text-align: center;}
+.footer_bottom .title a{color: #000;padding: 0 15px;line-height: 34px;}
+.footer_bottom a.btn_ico{margin-top: 15px;display: block;}

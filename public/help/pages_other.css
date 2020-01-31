@@ -1,0 +1,73 @@
+.listPageDiv {
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    margin-top: 10px;
+    float: right;
+    color: #333333;
+    font-family: "Microsoft YaHei"
+}
+
+.pageList {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.listPageDiv .p1 {
+    border: 1px #CCC solid;
+    padding: 4px 9px;
+    margin: 3px;
+    background-color: #efefef;
+}
+
+.listPageDiv .p_ok {
+    color: #950028;
+    border: 0;
+    background-color: #fff;
+}
+
+.listPageDiv a {
+    color: #666;
+}
+
+.listPageDiv a:hover {
+    text-decoration: underline;
+    color: #00a1e9;
+}
+
+.listPageDiv .no {
+    background-color: #fff;
+}
+
+.listPageDiv .no a {
+    color: #cccccc;
+}
+
+.listPageDiv .page_inout {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.listPageDiv .submit {
+    cursor: pointer;
+    width: 45px;
+    height: 24px;
+    line-height: 20px;
+    background-color: #efefef;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    vertical-align: baseline;
+}
+
+.listPageDiv .submit_input {
+    padding-left: 10px;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}

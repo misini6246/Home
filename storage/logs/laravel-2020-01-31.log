@@ -1,0 +1,390 @@
+[2020-01-31 09:31:10] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:31:10] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:39] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:39] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:40] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:40] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:41] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:42] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:43] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:43] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:43] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:43] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2020-01-31 09:49:44] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9621): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#10 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(9611): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#11 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2260): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#12 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2243): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#13 D:\phpstudy_pro\WWW\qt\public\index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 {main}  
+[2020-01-31 09:49:44] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php:7064
+Stack trace:
+#0 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1295): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('encrypter', Array)
+#3 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1340): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1324): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1310): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1248): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(1786): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 D:\phpstudy_pro\WWW\qt\bootstrap\cache\compiled.php(2267): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 D:\phpstudy_pro\WWW\qt\public\index.php(63): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  

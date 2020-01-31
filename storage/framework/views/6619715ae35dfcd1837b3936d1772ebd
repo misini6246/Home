@@ -1,0 +1,76 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/my_order2.css')); ?>" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/my_order.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="main fn_clear">
+
+        <div class="main fn_clear">
+            <div class="top">
+                <span class="title">我的药易购</span> <a>>　<span>优惠券管理</span> </a> <a href="<?php echo e(route('user.orderList')); ?>"
+                                                                                 class="end">>　<span><?php echo e($pages_top); ?></span></a>
+            </div>
+            <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div style="width:930px;margin:0px auto 0 auto;overflow:hidden">
+                <div class="top_title">
+                    <h3>优惠券管理</h3>
+                    <span class="ico"></span>
+                </div>
+                <div class="flq-box fn_clear" style="*margin-bottom:50px;">
+                    <?php if(count($pages)>0): ?>
+                        <div class="title"
+                             style="height:38px;width:100%;border-bottom:1px solid #69054d;position:relative;margin-bottom:30px;">
+                            <span><img src="<?php echo e(get_img_path('images/ganenquan03.jpg')); ?>" alt=""/></span>
+                        </div>
+                        <ul style="width:1000px;margin-left:40px;">
+                            <?php foreach($pages as $v): ?>
+                                <a href="<?php echo e(route('category.index',['dis'=>1,'py'=>1])); ?>">
+                                    <li style="width:240px;height:260px;position:relative;float:left;margin:0 68px 50px 0;cursor: pointer;">
+                                        <img src="<?php echo e(get_img_path('images/ganenquan04_03.jpg')); ?>" alt=""/>
+                                        <p style="color:#fff;position:absolute;left:0px;top:24px;font-weight:bold;font-size:60px;width:100%;text-align:center;">
+                                            <span style="color:#fff;font-size:20px;font-weight:bold;">￥</span><?php echo e(intval($v->je)); ?>
+
+                                        </p>
+
+                                        <p style="color:#fffee3;position:absolute;left:0px;top:91px;width:100%;text-align:center;">
+                                        <span style="color:#fff;font-size:14px">【<?php echo e(isset($v->yhq_cate->title) ? $v->yhq_cate->title : '满'.intval($v->min_je).'可用'); ?>
+
+                                            】</span>
+                                        </p>
+                                        <p style="color:#fffee3;position:absolute;left:0px;top:113px;font-size:14px;;width:100%;text-align:center;"><?php if($v->end-$v->start>3600*24): ?>
+                                                限<?php echo e(date('Y.m.d',$v->start)); ?>-<?php echo e(date('Y.m.d',$v->end - 1)); ?><?php else: ?>
+                                                仅限<?php echo e(date('Y.m.d',$v->start)); ?><?php endif; ?>使用</p>
+                                        <p style="color:#a2a1a1;position:absolute;left:20px;top:150px;padding-right:15px;">
+                                            <span style="color:#575656;font-size: 14px;">条件：</span><span
+                                                    style="font-size: 14px;color: #777"><?php echo e(isset($v->yhq_cate->msg) ? $v->yhq_cate->msg : ''); ?></span>
+                                        </p>
+
+                                    </li>
+                                </a>
+                            <?php endforeach; ?>
+
+                        </ul>
+                    <?php endif; ?>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,180 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/common.css')); ?>2"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/register.css')); ?>2"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('auth.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="container">
+
+        <div class="border_b"></div>
+
+        <div class="body_box bgF0F6FC pad30_0_40">
+            <div class="form_box bgFFFFFF pad20_0_40 w1200 mgAuto">
+                <div class="nav box3">
+                    <div class="nav_bg_1 transparent50">
+                        <span class="col3DBB2B number nav_cir">1</span>
+                        <span class="colFFFFFF text">验证手机号</span>
+                    </div>
+                    <div class="nav_bg_2_cur">
+                        <span class="col3DBB2B number nav_cir">2</span>
+                        <span class="colFFFFFF text">填写帐户信息</span>
+                    </div>
+                    <div class="nav_bg_3">
+                        <span class="col666666 number nav_cir">3</span>
+                        <span class="col000000 text">注册成功</span>
+                    </div>
+                </div>
+                <?php if(count($users)>0): ?>
+                    <div class="twice_reg clearfix">
+                        <p class="text">此手机号下已有如下会员：</p>
+                        <div class="box">
+                            <?php foreach($users as $user): ?>
+                                <div>
+                                    <p><span>用户名：</span><span><?php echo e($user->user_name); ?></span></p>
+                                    <p><span>企业名称：</span><span><?php echo e($user->msn); ?></span></p>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <form method="post" action="<?php echo e(route('xin.register.store')); ?>" id="form">
+                    <?php echo e(csrf_field()); ?>
+
+                    <input type="hidden" readonly id="mobile" name="mobile" value="<?php echo e($mobile); ?>">
+                    <input type="hidden" readonly id="province" name="province" value="0">
+                    <input type="hidden" readonly id="city" name="city" value="0">
+                    <input type="hidden" readonly id="district" name="district" value="0">
+                    <input type="hidden" readonly id="user_rank" name="user_rank" value="2">
+                    <div class="form">
+                        <div class="radio" id="user_rank">
+                            <span class="ipt_name">用户类型:</span>
+                            <span data-id="2" class="radio_box radio_cur mgL17_ie7">药店</span>
+                            <span data-id="5" class="radio_box">诊所</span>
+                            <span data-id="1" class="radio_box">连锁公司</span>
+                            <span data-id="7" class="radio_box">商业公司</span>
+                        </div>
+
+                        <div class="user_name mgT20">
+                            <span class="ipt_name">用户名:</span>
+                            <input autocomplete="off" type="text" name="user_name" id="user_name" value=""
+                                   placeholder="请输入2-30位字母、数字或中文组成的用户名"/>
+                            <span class="must">*</span>
+                        </div>
+
+                        <div class="password mgT20">
+                            <span class="ipt_name">密码:</span>
+                            <input autocomplete="off" type="password" name="password" id="password" value=""
+                                   placeholder="请输入6-24位字母或数字组成的密码"/>
+                            <span class="must">*</span>
+                        </div>
+
+                        <div class="password_confirmation mgT20">
+                            <span class="ipt_name">确认密码:</span>
+                            <input autocomplete="off" type="password" name="password_confirmation"
+                                   id="password_confirmation" value=""
+                                   placeholder="再次输入密码"/>
+                            <span class="must">*</span>
+                        </div>
+
+                        <div class="ls_name mgT20">
+                            <span class="ipt_name">真实姓名:</span>
+                            <input autocomplete="off" type="text" name="ls_name" id="ls_name" value="" placeholder=""/>
+                        </div>
+
+                        <div class="msn mgT20">
+                            <span class="ipt_name">企业名称:</span>
+                            <input autocomplete="off" type="text" name="msn" id="msn" value=""
+                                   placeholder="请与营业执照上名称一致，以便尽快通过审核"/>
+                            <span class="must">*</span>
+                        </div>
+
+                        <div class="area mgT20">
+                            <span class="ipt_name">所在地区:</span>
+                            <input class="pointer" type="text" name="" id="area" readonly="readonly" value=""
+                                   placeholder="请选择"/>
+                            <span class="must">*</span>
+                        </div>
+
+                        <!--下一步按钮开始-->
+                        <div class="form_foot">
+                            <input class="form_btn" type="button" name="" id="" value="下一步"/>
+                        </div>
+                        <!--下一步按钮结束-->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <?php echo $__env->make('auth.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/placeholderfriend.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/register_2.js')); ?>7"></script>
+    <script>
+        //省
+        var province = {
+                <?php foreach($province as $k=>$v): ?>
+                <?php if($k>0): ?>
+            ,
+                <?php endif; ?>
+            "<?php echo e($v->region_name); ?>"
+        :
+        {
+            id:"<?php echo e($v->region_id); ?>"
+        }
+        <?php endforeach; ?>
+
+        }
+        ;
+        //市
+        var city = {
+                <?php foreach($province as $k=>$v): ?>
+                <?php if($k>0): ?>
+            ,
+                <?php endif; ?>
+            "<?php echo e($v->region_id); ?>"
+        :
+        [
+            <?php foreach($v->child as $key=>$val): ?>
+            <?php if($key>0): ?>
+            ,
+                <?php endif; ?>
+            {
+                id: "<?php echo e($val->region_id); ?>",
+                name: "<?php echo e($val->region_name); ?>"
+            }
+            <?php endforeach; ?>
+        ]
+        <?php endforeach; ?>
+        }
+        ;
+        //区
+        var district = {
+                <?php foreach($province as $kk=>$city): ?>
+                <?php if($kk>0): ?>
+            ,
+                <?php endif; ?>
+                <?php foreach($city->child as $k=>$v): ?>
+                <?php if($k>0): ?>
+            ,
+        <?php endif; ?>
+            "<?php echo e($v->region_id); ?>"
+        :
+        [
+            <?php foreach($v->child as $key=>$val): ?>
+            <?php if($key>0): ?>
+            ,
+                <?php endif; ?>
+            {
+                id: "<?php echo e($val->region_id); ?>",
+                name: "<?php echo e($val->region_name); ?>"
+            }
+            <?php endforeach; ?>
+        ]
+        <?php endforeach; ?>
+        <?php endforeach; ?>
+        }
+        ;
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

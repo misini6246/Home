@@ -1,0 +1,418 @@
+/*===============================================================基础样式=================================================*/
+/* CSS Document */
+html, body, div, span, object, iframe, h1, h2,
+h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn,
+em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd,
+ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary, time, mark,
+audio, video {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline-style: none; /*FF*/
+}
+
+body {
+    line-height: 1;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    bblr: expression(this.onFocus=this.blur()); /*IE*/
+    outline-style: none; /*FF*/
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, select {
+    vertical-align: middle;
+    outline: none;
+    border: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+.posR {
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.mgAuto {
+    margin: 0 auto;
+}
+
+/*透明度*/
+.transparent50 {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.fwBold {
+    font-weight: bold;
+}
+
+.ffSimsun {
+    font-family: simsun !important;
+}
+
+.ffWRYH {
+    font-family: "微软雅黑";
+}
+
+/*===============================================================基础样式=================================================*/
+
+/*===============================================================布局样式=================================================*/
+.header_box,
+.body_box,
+.foot_box {
+    margin: 0 auto;
+    position: relative;
+}
+
+/*子元素水平布局平均宽度 */
+.box2 div,
+.box3 div {
+    float: left;
+}
+
+.box2 div {
+    width: 50%;
+}
+
+.box3 div {
+    width: 33.3333333% !important;
+}
+
+/*===============================================================布局样式=================================================*/
+
+/*===============================================================模块样式=================================================*/
+
+/*地址选择器开始*/
+.addr_box {
+    position: absolute;
+}
+
+.addr_pick {
+    /*padding-bottom: 10px;*/
+    width: 400px;
+    line-height: 20px;
+    position: absolute;
+    padding: 0 5px 5px 5px;
+    *left: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    z-index: 99;
+    -moz-box-shadow: 4px 4px 10px #E5E5E5; /* 老的 Firefox */
+    box-shadow: 4px 4px 10px #E5E5E5;
+    font-size: 12px;
+}
+
+.addr_pick .title {
+    border-bottom: 1px solid #00A1E9;
+    height: 41px;
+    padding: 0 5px 0 5px;
+    font-size: 14px;
+}
+
+.addr_pick .title span {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 80px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #00A1E9;
+    margin-right: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.addr_pick .title span:first-child + span,
+.addr_pick .title span:first-child + span + span {
+    display: none;
+}
+
+.addr_pick .title span:first-child + span + span + span {
+    float: right;
+    height: 20px;
+    width: 30px;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    border: 1px solid #00A1E9;
+}
+
+.addr_pick .title span:first-child + span + span + span:hover {
+    background-color: #00A1E9;
+    color: #FFFFFF;
+}
+
+.addr_pick .title span::before,
+.addr_pick .title span::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.addr_pick .title span:after {
+    clear: both;
+}
+
+.addr_pick .title span {
+    *zoom: 1; /*IE/7/6*/
+}
+
+.addr_pick .pick_p,
+.addr_pick .pick_c,
+.addr_pick .pick_d {
+    margin-top: 5px;
+}
+
+.addr_pick .pick_p ul li,
+.addr_pick .pick_c ul li,
+.addr_pick .pick_d ul li {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 70px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.addr_pick .pick_p ul li:hover,
+.addr_pick .pick_c ul li:hover,
+.addr_pick .pick_d ul li:hover {
+    background-color: #00A1E9;
+    border-radius: 30px;
+    color: #FFFFFF;
+}
+
+.pick_cur {
+    border: 1px solid #00A1E9 !important;
+    border-bottom: 1px solid #FFFFFF !important;
+}
+
+/*地址选择器结束*/
+
+/*===============================================================模块样式=================================================*/
+
+.foot_box {
+    font-family: "微软雅黑";
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer_bottom p a:hover {
+    text-decoration: underline;
+}
+
+.footer_bottom p {
+    color: #666;
+    margin-top: 20px;
+}
+
+.footer_bottom p a {
+    color: #000;
+    margin-right: 5px;
+}
+
+.footer_bottom_link {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+}
+
+.footer_bottom_link li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.bg_icon_phone {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/icon_phone.png');
+    background-repeat: no-repeat;
+}
+
+.icon {
+    vertical-align: middle;
+    *margin: 0;
+    display: inline-block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mgR20 {
+    margin-right: 20px;
+}
+
+.mgR30 {
+    margin-right: 30px;
+}
+
+.mgR35 {
+    margin-right: 35px;
+}
+
+.mgB2 {
+    margin-bottom: 2px;
+}
+
+.w13 {
+    width: 13px;
+}
+
+.h13 {
+    height: 13px;
+}
+
+.header_box {
+    height: 120px;
+    width: 100%;
+    background-color: #FFFFFF;
+    font-family: "微软雅黑";
+}
+
+.header {
+    width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header,
+.header .img_box,
+.header .left,
+.header .right {
+    height: 120px;
+}
+
+.header .left,
+.header .right {
+    width: 50%;
+    float: left;
+}
+
+.header .img_box,
+.header .reg_text,
+.header .text {
+    line-height: 120px;
+}
+
+.header .img_box {
+    float: left;
+}
+
+.header .img_box img {
+    vertical-align: middle;
+}
+
+.header .text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3DBB2B;
+}
+
+.header .code_box {
+    text-align: center;
+    float: right;
+    margin-top: 5.5px;
+}
+
+.header .code_box span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777777;
+}
+
+.header .text_box {
+    margin-right: 35px;
+    float: right;
+    width: 175px;
+    *width: 180px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.header .text_box span {
+    font-size: 16px;
+    color: #666666;
+}
+
+.header .text_box a {
+    font-size: 14px;
+    color: #2069F2;
+}

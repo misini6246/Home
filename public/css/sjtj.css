@@ -1,0 +1,353 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/*===============================================================基础样式=================================================*/
+/* CSS Document */
+html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video{
+    margin:0;
+    padding:0;
+    border:none;
+    outline:none;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+}
+
+body {
+    line-height:1;
+}
+
+a{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline: none;
+    text-decoration: none;
+}
+a:hover,
+a:focus{
+    text-decoration:none;
+    bblr:expression(this.onFocus=this.blur());/*IE*/
+    outline-style:none;/*FF*/
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+input, select {
+    vertical-align:middle;
+    outline: none;
+    border: none;
+}
+ul li {list-style-type: none;}
+
+input::-ms-clear,input::-ms-reveal{display:none;}
+
+::-webkit-input-placeholder{
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}/* 使用webkit内核的浏览器 */
+:-moz-placeholder{
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}/* Firefox版本4-18 */
+::-moz-placeholder{
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}/* Firefox版本19+ */
+:-ms-input-placeholder{
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}/* IE浏览器 */
+
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+
+
+.pad30_0_40 {padding: 30px 0 40px;}
+.pad20_0_40 {padding: 20px 0 40px;}
+
+.posR {position: relative;}
+
+.fl {float: left;}
+.fr {float: right;}
+
+.mgAuto {margin: 0 auto;}
+
+.mgR20 {margin-right: 20px;}
+.mgR30 {margin-right: 30px;}
+.mgR35 {margin-right: 35px;}
+
+.mgB2 {margin-bottom: 2px;}
+
+.mgT15 {margin-top: 15px;}
+.mgT20 {margin-top: 20px !important;}
+.mgT30 {margin-top: 30px !important;}
+.mgT50 {margin-top: 50px !important;}
+.mgT60 {margin-top: 60px !important;}
+
+.mgL0_ie7 {*margin-left: 0 !important;}
+.mgL17_ie7 {margin-left: 17px !important;*margin-left: 0 !important;}
+
+.bgF0F6FC {background-color: #F0F6FC;}
+.bgFFFFFF {background-color: #FFFFFF;}
+.bg0C002A {background-color: #0C002A;}
+.col3DBB2B {color: #3DBB2B;}
+.colFFFFFF {color: #FFFFFF;}
+.col666666 {color: #666666;}
+.col000000 {color: #000000;}
+.colFF1919 {color: #FF1919;}
+.col999999 {color: #999999;}
+
+/*输入框内按钮*/
+.btn_ipt_box {
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.bg_btn_ipt_cler {/*输入框内删除按钮*/
+    background-image: url(../../img/input_cler.png);
+    background-repeat:no-repeat;
+}
+.bg_btn_ipt_true {/*输入框内输入正确*/
+    background-image: url(../../img/input_true.png);
+    background-repeat:no-repeat;
+}
+.bg_ipt_down {/*输入框内下拉按钮*/
+    background-image: url(../../img/down.png);
+    background-repeat:no-repeat;
+}
+.bg_icon_phone {
+    background-image: url(../../img/icon_phone.png);
+    background-repeat:no-repeat;
+}
+.bg_icon_cir {
+    background-image: url(../../img/icon_cir.png);
+    background-repeat:no-repeat;
+}
+
+.w8 {width: 8px;}
+.w13 {width: 13px;}
+.w140 {width: 140px !important;}
+.w900 {width: 900px !important;}
+.w1200 {width: 1200px;}
+.w1920 {width: 1920px;}
+
+.h8 {height: 8px;}
+.h13 {height: 13px;}
+.h69 {height: 69px;}
+.h1011 {height: 1011px;}
+.h1080 {height: 1080px;}
+
+
+/*透明度*/
+.transparent50 {
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.cur_poin {cursor: pointer;}
+
+.font_w_bold {font-weight: bold;}
+
+.fs12 {font-size: 12px !important;}
+.fs14 {font-size: 14px !important;}
+
+.ffSimsun {font-family: simsun;}
+.ffWRYH {font-family: "微软雅黑";}
+
+.lh24 {line-height: 24px !important;}
+.lh40 {line-height: 40px;}
+/*===============================================================基础样式=================================================*/
+
+
+
+/*===============================================================布局样式=================================================*/
+.container {margin: 0 auto;}
+.header,
+.foot_box {
+    font-family: "微软雅黑";
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.foot_box {
+    text-align: center;
+}
+.body_box {
+    margin: 0 auto;
+    position: relative;
+}
+.left {
+    width: 50%;
+    float: left;
+}
+.right {
+    width: 50%;
+    float: right;
+}
+/*子元素水平布局平均宽度 (数量3)*/
+.box3 div{
+    width: 33.3333333% !important;
+    float: left;
+}
+.icon {
+    vertical-align: middle;
+    *margin: 0;
+    display: inline-block;
+}
+/*===============================================================布局样式=================================================*/
+
+
+/*===============================================================模块样式=================================================*/
+
+/*header 开始*/
+.header_box {
+    border-bottom: 1px solid #E5E5E5;
+    font-family: "微软雅黑";
+}
+.header {
+    width: 1180px;
+    padding: 0 10px;
+}
+.header,
+.header .img_box,
+.header .left,
+.header .right {
+    height: 120px;
+}
+.header .img_box,
+.header .reg_text,
+.header .text{
+    line-height: 120px;
+}
+.header .img_box {float: left;}
+.header .img_box img{vertical-align: middle;}
+.header .text{
+    font-size: 24px;
+    font-weight: bold;
+    color: #3DBB2B;
+}
+.header .code_box {
+    text-align: center;
+    float: right;
+    margin-top: 5.5px;
+}
+.header .code_box span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777777;
+}
+.header .text_box {
+    margin-right: 35px;
+    float: right;
+    width: 175px;
+    *width: 180px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+.header .text_box span {
+    font-size: 16px;
+    color: #666666;
+}
+.header .text_box a {
+    font-size: 14px;
+    color: #2069F2;
+}
+/*header 结束*/
+
+/*foot 开始*/
+.foot_box {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.footer_bottom p a:hover {
+    text-decoration: underline;
+}
+
+.footer_bottom p {
+    color: #666;
+    margin-top: 20px;
+}
+
+.footer_bottom p a {
+    color: #000;
+    margin-right: 5px;
+}
+
+.footer_bottom_link {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+}
+.footer_bottom_link li {
+    display: inline;
+    margin-right: 10px;
+}
+/*foot 结束*/
+
+/*地址选择器开始*/
+.addr_pick {
+    height: 200px;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 40px;
+    *left: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #FFFFFF;
+    color: #000000;
+    z-index: 99;
+    border: #000000 1px solid;
+}
+.addr_pick li {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: #ADADAD 1px solid;
+}
+.addr_pick li:hover {background-color: #6B9CFF;}
+/*地址选择器结束*/
+
+/*===============================================================模块样式=================================================*/

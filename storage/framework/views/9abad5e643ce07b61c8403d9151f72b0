@@ -1,0 +1,31 @@
+<div class="search-nav">
+    <div class="box-container">
+        <div class="logo-box">
+            <a href="http://www.cq_qt.com">
+                <img src="/index/img/logo.jpg" />
+            </a>
+        </div>
+        <div class="search-box">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="请输入搜索内容" />
+                <ul class="search-list">
+                </ul>
+            </div>
+            <div class="search-btn">搜 索</div>
+            <div class="search_hot">
+                <span>热门搜索：</span>
+                <ul>
+                    <?php foreach($ad159 as $v): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>"><?php echo e($v->ad_name); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+
+                </ul>
+            </div>
+        </div>
+        <div class="right-box">
+            <a href="<?php echo e(route('member.order.index')); ?>" class="dd"><i class="my-icon icon-3"></i>订单查询</a><a href="<?php echo e(route('cart.index')); ?>" class="gwc" ><i class="my-icon icon-1"></i>购物车<span id="only_gwc"><?php echo e(cart_info()); ?></span></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+/*分页*/
+.order_pagination{float: right;padding: 20px 0;margin-right: 30px}
+
+.pagination .clicked a{color: #f95706}
+
+.pagination{display: inline-block;}
+.pagination span{float: none;font-size: 12px}
+.pagination ul{margin: 0;padding: 0;list-style: none;overflow: hidden;display: inline-block;vertical-align: middle}
+.pagination p{display: inline-block;vertical-align: middle;}
+.pagination ul li{float: left;height: 27px;margin-left: 10px;background: url("../images/pagination.gif") center no-repeat}
+.pagination ul .page_num{width: 25px;}
+.pagination .pagination_toLeft{background: url("../images/account_left.gif") center no-repeat}
+.pagination .pagination_toRight{background: url("../images/account_right.gif") center no-repeat}
+.pagination ul li a{color: #848484;font-size: 14px;line-height: 25px;text-align: center;display: block;
+    text-decoration: none}
+.pagination .pagination_toLeft,.pagination .pagination_toRight{cursor: pointer;height: 27px;width: 39px}
+.pagination_toLeft button,.pagination_toRight button{display: block;height: 27px;width: 39px}
+.pagination .pagination_border{text-align: center}
+.about_page{line-height: 25px}
+.about_page label{display: inline-block}
+.about_page input{width: 25px;text-align: center;padding: 0;font-size: 12px;margin: 0 5px;outline: none;vertical-align: middle}
+.about_page span{vertical-align: middle}
+/*end*/

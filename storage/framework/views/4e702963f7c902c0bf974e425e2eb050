@@ -1,0 +1,126 @@
+<link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/youce.css')); ?>1"/>
+<div id="right_bar" class="container">
+    <div class="bg_color"></div>
+    <ul class="right_bar_list">
+        <li class="kefu">
+            <img src="<?php echo e(get_img_path('images/right-tousu.png')); ?>"/>
+            <div class="right_bar_list_show">
+                <?php if(isset($kfdh)&&$kfdh==0): ?>
+                    <img id="yindaokf" style="margin-right: 1px;" src="http://www.tiedsun.cn/images/kefu-new.png"/>
+                    <a onclick="kfdh()" class="close_server"></a>
+                <?php endif; ?>
+                <img <?php if(isset($kfdh)&&$kfdh==0): ?> style="display: none;" <?php endif; ?> id="kffw"
+                     src="http://www.tiedsun.cn/images/kefu-new.png"/>
+                <a target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=2&uin=3499696981&site=qq&menu=yes"
+                   class="online_server"></a>
+            </div>
+        </li>
+        <li class="xiaoxi">
+            <a href="<?php echo e(route('member.wodexiaoxi.index')); ?>">
+                <img src="<?php echo e(get_img_path('images/index/xiaoxi.png')); ?>"/>
+                <p>消息</p>
+                <span class="num msg_count"><?php echo e(msg_count()); ?></span>
+            </a>
+            <?php if(msg_count()>0): ?>
+                <a id="msg_count_tishi" href="<?php echo e(route('user.znx_list')); ?>" style="color: #ffffff">
+                    <div style="width: 120px;height: 40px;line-height: 40px;text-align: center;position: absolute;bottom: 0;left: -120px;background: #42bb36;font-weight: bold;color: #fff">
+                        您有<span class="msg_count" style="color: #fff536;margin: 0 5px;"><?php echo e(msg_count()); ?></span>条未读消息
+                        <div></div>
+                    </div>
+                </a>
+            <?php endif; ?>
+        </li>
+        <li class="right_gwc mpbtn_wdsc2">
+            <img src="<?php echo e(get_img_path('images/new/fixed-gwc.png')); ?>"/>
+            <span id="gwc_count" class="num cart_number"><?php echo e(cart_info(1,1)); ?></span>
+        </li>
+        <li class="right_myyyg">
+            <img src="<?php echo e(asset('images/myyaoyigou.png')); ?>"/>
+        </li>
+        <li class="right_sc">
+            <img src="<?php echo e(get_img_path('images/new/fix-sc.png')); ?>"/>
+            <div class="right_bar_list_show">
+                <a target="_blank" href="<?php echo e(route('member.collection.index')); ?>">
+                    <img src="<?php echo e(get_img_path('images/new/sc.png')); ?>" alt=""/>
+                </a>
+            </div>
+        </li>
+        <li class="right_zncg">
+            <img src="<?php echo e(get_img_path('images/new/fix-zncg.png')); ?>"/>
+            <div class="right_bar_list_show">
+                <a target="_blank" href="<?php echo e(route('member.zncg')); ?>">
+                    <img src="<?php echo e(get_img_path('images/new/cg.png')); ?>" alt=""/>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <ul class="bottom_list">
+        <?php /*<li>*/ ?>
+            <?php /*<a target="_blank" href="/feedback">*/ ?>
+                <?php /*<img src="<?php echo e(get_img_path('images/write.png')); ?>"/>*/ ?>
+                <?php /*<div class="right_bar_list_show">*/ ?>
+                    <?php /*<img src="<?php echo e(get_img_path('images/new/fankui.png')); ?>" alt=""/>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*</a>*/ ?>
+        <?php /*</li>*/ ?>
+        <li>
+            <i class="wdsc5 to_top"></i>
+            <div class="right_bar_list_show to_top">
+                <a href="javascript:;">
+                    <img src="<?php echo e(get_img_path('images/new/Totop-1.png')); ?>" alt=""/>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="fix-box-show" style="font-size: 12px;">
+    <div id="fix-gwc">
+
+    </div>
+    <div id="myyaoyigou">
+
+    </div>
+    <div id="wdsc">
+
+    </div>
+    <div id="zncg">
+
+    </div>
+</div>
+<div id="right-bgcolor">
+
+</div>
+<style type="text/css">
+    .fly_item {
+        border: 1px solid #000;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        z-index: 4;
+    }
+
+</style>
+<div id="flyItem" class="fly_item">
+    <img src="http://images.hezongyy.com/data/afficheimg/1483064251055739082.png" style="width: 100%;">
+</div>
+<script type="text/javascript" src="<?php echo e(path('new/js/jquery.slimscroll.min.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(path('js/index/youce.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(path('js/parabola.js')); ?>"></script>
+<script type="text/javascript">
+    function kfdh() {
+        $.ajax({
+            url: '/kfdh',
+            type: 'get',
+            data: {id: 1},
+            dataType: 'json',
+            success: function () {
+                $('#yindaokf').remove();
+                $('.close_server').remove();
+                $('#kffw').show();
+            }
+        });
+    }
+</script>

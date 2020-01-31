@@ -1,0 +1,26 @@
+<ul class="common_ul">
+    <?php foreach($cat as $k=>$v): ?>
+        <?php if($k<5): ?>
+            <li>
+                <div class="img_box">
+                    <a href="<?php echo e(route('jf.goods.show',['id'=>$v->id])); ?>"><img
+                                src="<?php echo e(get_img_path('jf/'.substr($v->goods_image,1))); ?>"/></a>
+                </div>
+                <div class="xx">
+                    <p class="text_overflow">
+                        <?php echo e($v->name); ?>
+
+                    </p>
+                    <p class="jiage">
+                        参考价：<span><?php echo e(formated_price($v->market_price)); ?></span>
+                    </p>
+                    <p class="jf">
+                        <img src="<?php echo e(get_img_path('images/jf/jrgwc_03.png')); ?>" class="fr"
+                             onclick="add_to_cart('<?php echo e($v->id); ?>',1)"/>
+                        <span><?php echo e($v->jf); ?>积分</span>
+                    </p>
+                </div>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</ul>

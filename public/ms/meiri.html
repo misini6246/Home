@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="baidu-site-verification" content="qUlVl7Atu0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Keywords" content="药品价格,药品销售,采购药品,药品查询,网上药品批发,四川药品批发，药物目录,OTC,医药公司,医院,药店,药品说明书,适应症，药厂，制药"/>
+    <meta name="Description"
+          content="【合纵医药网&mdash;药易购】是四川合纵医药股份有限公司旗下国家药监局批准的正规药品采购、批发、销售网上药品交易电子商务平台（药易购），主要经营普药、OTC高毛利、医疗器械、中药饮片；300人的团队为您的采购和销售，保驾护航，为您提供最有价值的医药服务；平台保证您的货款安全和药品质量，服务热线：400-6028-262,网址：www.hezongyy.com"/>
+    <meta name="_token" content="q7dlOfpo11REShvKYP1DShYUeYwMHDXPhzCWTvMi"/>
+    <meta name=renderer content=webkit>
+    <meta http-equiv="Content-Security-Policy" content="
+    img-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    script-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    style-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    connect-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    object-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    child-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;
+    media-src 'unsafe-inline' 'unsafe-eval' 'self'  *.hezongyy.com *.cnzz.com *.swiftpass.cn *.adyun.com;">
+    <title>每日秒杀-【合纵医药网&mdash;药易购】 网上药品批发-成都药品批发-四川医药批发-药品采购-选择药易购方便快捷又安心&ldquo;互联网药品交易许可证&rdquo;川B20130002</title>
+    <link rel="shortcut icon" href="http://www.hezongyy.com/images/favicon.ico?20180828085638"/>
+    <link rel="icon" href="http://www.hezongyy.com/images/animated_favicon.gif?20180828085638" type="image/gif"/>
+    <script type="text/javascript" src="http://www.hezongyy.com/js/jquery.min.js?20180828085638"></script>
+    <script type="text/javascript" src="http://www.hezongyy.com/layer/layer.js?20180828085638"></script>
+    <link href="http://www.hezongyy.com/css/new/mrms.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+
+            },
+            type: 'post',
+            error: function (jqXHR) {
+                if (jqXHR.status == 403) {
+                    layer.confirm('请登录后再操作', {
+                        btn: ['注册', '登录'], //按钮
+                        icon: 2
+                    }, function () {
+                        location.href = '/auth/register';
+                    }, function () {
+                        location.href = '/auth/login';
+                        return false;
+                    });
+                }
+            }
+        });
+        layer.config({
+            title: '温馨提示', //默认皮肤
+        });
+    </script>
+</head>
+
+<body id="body" style="background-color: #ffffff;">
+<div class="big_container">
+    <div class="top"></div>
+    <div class="content_box">
+        <div class="content" id="goods_box">
+            <div style="height: 320px;width: 100%"></div>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</div>
+<script>
+    $(function () {
+        getMrms();
+    });
+
+    function getMrms() {
+        $.ajax({
+            url: '/xin/miaosha/get_meiri',
+            type: 'get',
+            dataType: 'html',
+            success: function (data) {
+                $('#goods_box').html(data);
+            }
+        })
+    }
+
+    function addCart(group_id, goods_id) {
+        $.ajax({
+            url: '/xin/miaosha/add_cart',
+            type: 'get',
+            data: {group_id: group_id, goods_id: goods_id},
+            dataType: 'json',
+            success: function (data) {
+                if (data.error >= 300) {
+                    layer.msg(data.msg, {icon: 2});
+                    return false;
+                }
+                var icon = data.error + 1;
+                if (data.error == 2) {
+                    icon = 2;
+                }
+                layer.confirm(data.msg, {
+                    btn: ['继续购物', '去结算'], //按钮
+                    icon: icon
+                }, function (index) {
+                    layer.close(index);
+                }, function () {
+                    location.href = '/cart';
+                    return false;
+                });
+                $('#' + group_id + '-' + goods_id + '-kc').text(data.goods_number);
+                if (data.error == 2) {
+                    $('#' + group_id + '-' + goods_id + '-btn').html('<input type="button" name="btn" class="btn btn_sta_3" value="已抢完"/>')
+                    $('#' + group_id + '-' + goods_id + '-bg').html('<div class="status status_3"></div>')
+                } else {
+                    $('#' + group_id + '-' + goods_id + '-btn').html('<input type="button" name="btn" class="btn btn_sta_2" value="已抢购"/>')
+                    $('#' + group_id + '-' + goods_id + '-bg').html('<div class="status status_2"></div>')
+                }
+            }
+        });
+    }
+</script>
+<div style="position: absolute;width: 50px;height: 50px;left: 570px;top: 30px;z-index: 1000000;display: none;">
+
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1252987830'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1252987830%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</div>
+</body>
+</html>

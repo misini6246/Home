@@ -1,0 +1,285 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/zs/lunbo.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/zs/index.css')); ?>3" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/zs/lazyload.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/zs/index.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/keywordsSearch.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('zs.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--轮播-->
+    <div id="banner">
+        <div class="slide_box">
+            <div class="banner2">
+                <ul class="banner-ctrl">
+                    <?php foreach($ad167 as $k=>$v): ?>
+                        <li <?php if($k==0): ?> class="current" <?php endif; ?>>
+                            <span class="bg"></span>
+                            <div class="ctrl-dot">
+                                <i <?php if($k==0): ?>class="on"<?php endif; ?>></i>
+                            </div>
+                            <div class="title-item">
+                                <span class="title-bg"></span>
+                                <div class="title-list">
+                                    <p><i></i></p>
+                                </div>
+                            </div>
+                            <h4><?php echo e($v->ad_name); ?></h4>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <a class="banner-btn banner-prev" href="javascript:void(0);"></a>
+                <a class="banner-btn banner-next" href="javascript:void(0);"></a>
+                <div class="banner-pic">
+                    <?php foreach($ad167 as $k=>$v): ?>
+                        <ul>
+                            <li style="background:#<?php echo e($v->ad_bgc); ?>; <?php if($k==0): ?> display:list-item <?php endif; ?>">
+                                <a href="<?php echo e($v->ad_link); ?>"
+                                   title="" target="_blank">
+                                    <img data-src="<?php echo e($v->ad_code); ?>"
+                                         src="<?php echo e($v->ad_code); ?>"/>
+                                </a>
+                            </li>
+                        </ul>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+            <ul class="slide_right">
+                <?php foreach($type4 as $v): ?>
+                    <li>
+                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                            <div class="slide_right_img">
+                                <img src="<?php echo e(get_img_path($v->goods->goods_thumb)); ?>"/>
+                            </div>
+                            <p class="name" title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,30)); ?></p>
+                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                            <p class="company" title="<?php echo e($v->sccj); ?>"><?php echo e(str_limit($v->sccj,30)); ?></p>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <!--轮播-->
+    <!--连接-->
+    <div id="links" class="container">
+        <ul class="container_box" style="text-align: center;">
+            <li>
+                <a target="_blank" href="<?php echo e(route('category.index',['dis'=>'v'])); ?>">
+                    <img src="<?php echo e(get_img_path('images/zs/link_01.jpg')); ?>"/>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="<?php echo e(route('category.index',['dis'=>'r'])); ?>">
+                    <img src="<?php echo e(get_img_path('images/zs/link_02.jpg')); ?>"/>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="<?php echo e(route('category.index',['dis'=>'s'])); ?>">
+                    <img src="<?php echo e(get_img_path('images/zs/link_03.jpg')); ?>"/>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="<?php echo e(route('category.index',['dis'=>'t'])); ?>">
+                    <img src="<?php echo e(get_img_path('images/zs/link_04.jpg')); ?>"/>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="<?php echo e(route('category.index',['dis'=>'u'])); ?>">
+                    <img src="<?php echo e(get_img_path('images/zs/link_05.jpg')); ?>"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--连接-->
+    <!--精选好药-->
+    <div id="jxhy" class="container">
+        <div class="container_box">
+            <div class="jxhy_title">
+                <img src="<?php echo e(get_img_path('images/zs/jxhy.png')); ?>"/>
+            </div>
+            <ul class="jxhy_list">
+                <?php foreach($type1 as $v): ?>
+                    <li>
+                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                            <div class="img_box">
+                                <img src="<?php echo e(get_img_path($v->goods->goods_thumb)); ?>"/>
+                            </div>
+                            <div class="text">
+                                <p class="name" title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,22)); ?></p>
+                                <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                <p class="company" title="<?php echo e($v->sccj); ?>"><?php echo e(str_limit($v->sccj,26)); ?></p>
+                            </div>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <!--精选好药-->
+    <div id="xpsj" class="container">
+        <div class="container_box">
+            <!--销量排行-->
+            <div class="content-left">
+                <div class="content-left-title">
+                    <div></div>
+                    <span>一周销量排行榜</span>
+                </div>
+                <?php foreach($week_sale as $k=>$v): ?>
+                    <?php if($k<3): ?>
+                        <div class="paihang">
+                            <div class="paihang-title">
+                                <?php if($k==0): ?>
+                                    <img src="<?php echo e(get_img_path('images/zs/jin.jpg')); ?>"/>
+                                <?php elseif($k==1): ?>
+                                    <img src="<?php echo e(get_img_path('images/zs/yin.jpg')); ?>"/>
+                                <?php elseif($k==2): ?>
+                                    <img src="<?php echo e(get_img_path('images/zs/tong.jpg')); ?>"/>
+                                <?php endif; ?>
+                                <div class="chengjiaoliang">
+                                    成交量：<span><?php echo e($v->num); ?></span>
+                                </div>
+                                <div class="paihang-img">
+                                    <a target="_blank" href="<?php echo e($v->goods_url); ?>">
+                                        <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                    </a>
+                                </div>
+                                <div class="paihang-name">
+                                    <div><?php echo e($v->goods_name); ?></div>
+                                    <div><?php echo e($v->ypgg); ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <div class="paihang-bottom">
+                    <ul>
+                        <?php foreach($week_sale as $k=>$v): ?>
+                            <?php if($k>=3): ?>
+                                <li>
+                                    <span><?php echo e($k+1); ?></span>
+                                    <div class="hover-before">
+                                        <a target="_blank" href="<?php echo e($v->goods_url); ?>"><?php echo e($v->goods_name); ?></a>
+                                        <span class="ke"><?php echo e($v->ypgg); ?></span>
+                                    </div>
+                                    <div class="hover-after">
+                                        <a target="_blank" href="<?php echo e($v->goods_url); ?>">
+                                            <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                        </a>
+                                        <p class="hover-name"><?php echo e($v->goods_name); ?></p>
+                                        <p class="hover-guige"><?php echo e($v->ypgg); ?></p>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+            <!--销量排行结束-->
+            <div class="content-right">
+                <div class="content-right-title">
+                    <img src="<?php echo e(get_img_path('images/zs/xpsj.png')); ?>"/>
+                </div>
+                <ul class="xpsj_list">
+                    <?php foreach($type2 as $v): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                <div class="text">
+                                    <p class="name" title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,26)); ?></p>
+                                    <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                    <p class="company" title="<?php echo e($v->sccj); ?>"><?php echo e(str_limit($v->sccj,32)); ?></p>
+                                </div>
+                                <div class="img_box">
+                                    <img style="width: 205px;" class="lazy"
+                                         data-original="<?php echo e(get_img_path($v->goods->goods_thumb)); ?>"/>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php foreach($ad168 as $k=>$v): ?>
+                    <?php if($k==0): ?>
+                        <div class="right_img">
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>">
+                                <img src="<?php echo e($v->ad_code); ?>"/>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <div class="content-right-title">
+                    <img src="<?php echo e(get_img_path('images/zs/djrx.png')); ?>"/>
+                </div>
+                <ul class="xpsj_list">
+                    <?php foreach($type3 as $v): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                <div class="text">
+                                    <p class="name" title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,26)); ?></p>
+                                    <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                    <p class="company" title="<?php echo e($v->sccj); ?>"><?php echo e(str_limit($v->sccj,32)); ?></p>
+                                </div>
+                                <div class="img_box">
+                                    <img style="width: 205px;" class="lazy"
+                                         data-original="<?php echo e(get_img_path($v->goods->goods_thumb)); ?>"/>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php foreach($ad169 as $k=>$v): ?>
+                    <?php if($k==0): ?>
+                        <div class="right_img">
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>">
+                                <img src="<?php echo e($v->ad_code); ?>"/>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <!--新品上架-->
+
+    <!--新品上架-->
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script src="<?php echo e(path('js/zs/lunbo.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $("img.lazy").lazyload({
+                effect: "fadeIn",
+                threshold: 300,
+                placeholder: "http://app.hezongyy.com/images/small.gif"
+            });
+            //	左侧排名鼠标悬停显示图片
+            $('.paihang-bottom ul li').hover(function () {
+                $('.paihang-bottom ul li').css('height', '32px');
+                $('.paihang-bottom ul li span:first-child').css({
+                    'border': '1px solid #bbb',
+                    'color': '#666666'
+                });
+                $('.paihang-bottom ul li').children('.hover-before').show();
+                $('.paihang-bottom ul li').children('.hover-after').hide();
+                $(this).css('height', '68px');
+                $(this).find('.hover-before').hide();
+                $(this).find('.hover-after').show();
+                $(this).find('span:first-child').css({
+                    'border': '1px solid #e70000',
+                    'color': '#e70000'
+                })
+            })
+        });
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

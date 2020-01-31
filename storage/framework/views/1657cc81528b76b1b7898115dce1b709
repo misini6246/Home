@@ -1,0 +1,284 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/zs/lunbo.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/zyzq/index.css')); ?>6" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/zs/lazyload.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/zyzq/index.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/keywordsSearch.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+    <style>
+        .c-img {
+            height: 60px;
+            line-height: 60px;
+        }
+
+        .site_content {
+            display: block !important;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('zyzq.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--轮播-->
+    <div id="banner">
+        <div class="slide_box">
+            <div class="banner2">
+                <ul class="banner-ctrl">
+                    <?php foreach($ad187 as $k=>$v): ?>
+                        <li <?php if($k==0): ?> class="current" <?php endif; ?>>
+                            <span class="bg"></span>
+                            <div class="ctrl-dot">
+                                <i <?php if($k==0): ?>class="on"<?php endif; ?>></i>
+                            </div>
+                            <div class="title-item">
+                                <span class="title-bg"></span>
+                                <div class="title-list">
+                                    <p><i></i></p>
+                                </div>
+                            </div>
+                            <h4><?php echo e($v->ad_name); ?></h4>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <a class="banner-btn banner-prev" href="javascript:void(0);"></a>
+                <a class="banner-btn banner-next" href="javascript:void(0);"></a>
+                <div class="banner-pic">
+                    <?php foreach($ad187 as $k=>$v): ?>
+                        <ul>
+                            <li style="background:#<?php echo e($v->ad_bgc); ?>; <?php if($k==0): ?> display:list-item <?php endif; ?>">
+                                <a href="<?php echo e($v->ad_link); ?>"
+                                   title="" target="_blank">
+                                    <img data-src="<?php echo e($v->ad_code); ?>"
+                                         src="<?php echo e($v->ad_code); ?>"/>
+                                </a>
+                            </li>
+                        </ul>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+            <ul class="slide_right">
+                <?php foreach($ad188 as $v): ?>
+                    <li>
+                        <a href="<?php echo e($v->ad_link); ?>"
+                           title="" target="_blank">
+                            <img data-src="<?php echo e($v->ad_code); ?>"
+                                 src="<?php echo e($v->ad_code); ?>"/>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <!--轮播-->
+    <!--当季必备-->
+    <div id="djbz" class="container">
+        <div class="container_box" id="miaosha-box">
+
+        </div>
+    </div>
+    <!--新品热卖区-->
+    <div id="xprm" class="container">
+        <div class="container_box">
+            <div class="zy_title">
+                <div class="fr">
+                    <a target="_blank" href="/zy_category?pid=487">
+                        查看全部
+                        <i class="myicon readmore_icon"></i>
+                    </a>
+                </div>
+                优惠热卖区
+            </div>
+            <div class="xprm_content">
+                <div class="xprm_ly">
+                    <?php foreach($ad191 as $k=>$v): ?>
+                        <?php if($k<1): ?>
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+                <ul class="xprm_right">
+                    <?php if(isset($zp[17])): ?>
+                        <?php foreach($zp[17] as $k=>$v): ?>
+                            <?php if($k<8): ?>
+                                <li>
+                                    <a target="_blank" href="<?php echo e(route('goods.zyyp',['id'=>$v->goods_id])); ?>">
+                                        <?php if(!empty($v->cxxx)): ?>
+                                            <div class="mzxx" style="z-index: 1">
+                                                <?php if(strpos($v->cxxx,'换购')!==false): ?>
+                                                    换购信息
+                                                <?php else: ?>
+                                                    买赠信息
+                                                <?php endif; ?>
+                                                <i class="jiantou you_i"></i>
+                                                <div class="info_box">
+                                                    <img src="http://images.hezongyy.com/images/index/index_sanjiao.png?110112"
+                                                         class="index_sanjiao">
+                                                    <?php echo e($v->cxxx); ?>
+
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="price" style="z-index: 1"><?php echo e($v->format_price); ?></div>
+                                        <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                        <p class="mc_gg"
+                                           title="<?php echo e($v->goods_name); ?>&nbsp;&nbsp;<?php echo e($v->ypgg); ?>"><?php echo e($v->goods_name); ?>
+
+                                            &nbsp;<?php echo e($v->ypgg); ?></p>
+                                        <p class="cj"><?php echo e($v->sccj); ?></p>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--新品热卖区-->
+    <!--粉剂热卖区-->
+    <div id="fjrm" class="container">
+        <div class="container_box">
+            <div class="zy_title">
+                <div class="fr">
+                    <a target="_blank" href="/zy_category?pid=484">
+                        查看全部
+                        <i class="myicon readmore_icon"></i>
+                    </a>
+                </div>
+                粉剂热卖区
+            </div>
+            <div class="xprm_content">
+                <ul class="fjrm_left">
+                    <?php foreach($ad194 as $k=>$v): ?>
+                        <?php if($k<6): ?>
+                            <li <?php if(in_array($k,[0,3])): ?>class="w400"<?php endif; ?>>
+                                <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="fjrm_right">
+                    <?php foreach($ad195 as $k=>$v): ?>
+                        <?php if($k<1): ?>
+                            <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--粉剂热卖区-->
+    <!--礼盒订购区-->
+    <div id="lhdg" class="container">
+        <div class="container_box">
+            <div class="zy_title">
+                <div class="fr">
+                    <a target="_blank" href="/zy_category?pid=486">
+                        查看全部
+                        <i class="myicon readmore_icon"></i>
+                    </a>
+                </div>
+                礼盒订购区
+            </div>
+            <div class="lhdg_content">
+                <ul class="lhdg_list_y">
+                    <?php foreach($ad196 as $k=>$v): ?>
+                        <?php if($k<2): ?>
+                            <li>
+                                <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+                <ul class="lhdg_list_x">
+                    <?php foreach($ad197 as $k=>$v): ?>
+                        <?php if($k<2): ?>
+                            <li>
+                                <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+                <ul class="lhdg_list_y">
+                    <?php foreach($ad196 as $k=>$v): ?>
+                        <?php if($k>=2&&$k<4): ?>
+                            <li>
+                                <a target="_blank" href="<?php echo e($v->ad_link); ?>"><img src="<?php echo e($v->ad_code); ?>"></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--礼盒订购区-->
+    <!--在线咨询-->
+    <div id="zxzx" class="container">
+        <div class="container_box">
+            <ul class="zxzx_list">
+                <li>
+                    <div class="c-img">
+                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/zxzx.png')); ?>"/>
+                    </div>
+                    <p class="p1">问题咨询</p>
+                    <p class="p2">客服在线时间：AM9:00-PM18:00</p>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3297685353&site=qq&menu=yes">点击咨询</a>
+                </li>
+                <li>
+                    <div class="c-img">
+                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/qgdj.png')); ?>"/>
+                    </div>
+                    <p class="p1">求购登记</p>
+                    <p class="p2">在求购专区提交求购申请</p>
+                    <a href="/requirement">点击去求购</a>
+                </li>
+                <li>
+                    <div class="c-img">
+                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/qqqun.png')); ?>"/>
+                    </div>
+                    <p class="p1">QQ交流群:497800919</p>
+                    <p class="p2">更多中药相关交流可进群讨论，如：中药处方识别、药店转 让信息发布、 中药缺货查询、质量问题反馈等相关行业 信息。</p>
+                    <a href="javascript:;">查看群二维码</a>
+                    <div class="zxzx_erweima">
+                        <img src="<?php echo e(get_img_path('adimages1/201805/zyzq/ewm.jpg')); ?>">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--在线咨询-->
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script src="<?php echo e(path('js/zs/lunbo.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(function () {
+            getZy();
+            $('.mzxx').hover(function () {
+                $(this).find('.info_box').css('display', 'block');
+            }, function () {
+                $(this).find('.info_box').css('display', 'none');
+            });
+        });
+
+        function getZy() {
+            $.ajax({
+                url: '/xin/miaosha/get_zy',
+                type: 'get',
+                dataType: 'html',
+                success: function (data) {
+                    $('#miaosha-box').html(data);
+                }
+            })
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

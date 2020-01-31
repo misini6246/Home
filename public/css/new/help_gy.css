@@ -1,0 +1,43 @@
+.gy_title_list{
+	overflow: hidden;
+}
+.gy_title_list li{
+	font-size: 14px;
+	float: left;
+	border: 1px solid #ccc;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	cursor: pointer;
+	width: 275px;
+	margin: 10px 0 0 20px;
+	*width:273px;
+}
+.gy_title_list li.ml0{
+	margin-left: 0;
+}
+.gy_title_list li.w175{
+	width: 175px;
+	*width: 173px;
+}
+.gy_title_list li.w180{
+	width: 180px;
+	*width: 178px;
+}
+.gy_title_list li.active{
+	background: #3dbb2b;
+	color: #fff;
+}
+.gy_content_list li{
+	display: none;
+	padding: 40px 0;
+	text-align: center;
+}
+.gy_content_list li.active{
+	display: block;
+}
+
+
+
+
+

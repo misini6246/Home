@@ -1,0 +1,343 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/huiyuancommon.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/dingdanxiangqing.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/pay.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/user/huiyuancommon.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/submit_order.js')); ?>"></script>
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        .genzong {
+            border: 1px solid #e5e5e5;
+        }
+
+        .right_top_search #num {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style type="text/css">
+        .right_top_search select {
+            position: relative;
+            top: 6px;
+        }
+
+        .zt_2_top_left ul li span.zhuijia input[type="button"] {
+            position: relative;
+            top: -2px;
+        }
+    </style>
+    <![endif]-->
+    <style>
+        #zfbsm {
+            left: -190px !important;
+            top: -205px !important;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/user/weizhi.png')); ?>"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的药易购</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><a
+                        href="<?php echo e(route('member.order.index')); ?>">我的订单</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><span>订单详情</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_title">
+                    <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                    <span>订单详情</span>
+                </div>
+                <div class="right_content">
+                    <div class="zt_1">
+                        <div class="f">
+                            <span>订单编号：</span>
+                            <span class="span_right"><?php echo e($info->order_sn); ?></span>
+                        </div>
+                        <div class="f">
+                            <span>下单时间：</span>
+                            <span class="span_right"><?php echo e(date('Y-m-d H:i:s',$info->add_time)); ?></span>
+                        </div>
+                        <div class="f">
+                            <span>订单状态：</span>
+                            <span class="span_right zt">
+                                <?php if($info->order_status==2): ?>
+                                    已取消
+                                <?php elseif($info->pay_status==0): ?>
+                                    待付款
+                                    <?php if($info->is_mhj==2): ?>
+                                        (该订单含血液制品，请法人转款到公司对公账户！)
+                                    <?php elseif($info->is_mhj==1&&$user->is_zhongduan==0): ?>
+                                        (按GSP要求，含麻品种必须公对公转账！)
+                                    <?php endif; ?>
+                                <?php elseif($info->pay_status==2): ?>
+                                    已付款
+                                <?php else: ?>
+                                    已确认
+                                <?php endif; ?>
+                            </span>
+                        </div>
+                        <div class="f">
+                            <span>订单跟踪：</span>
+                            <span class="span_right"><?php echo e($info->ddgz->get('end')['time']); ?>
+
+                                &nbsp;&nbsp;&nbsp;<?php echo e($info->ddgz->get('end')['content']); ?></span>
+                            <span class="zhuizong">
+									查看全部跟踪
+                                <?php echo $__env->make('user.genzong', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+								</span>
+                        </div>
+                    </div>
+                    <div class="zt_2">
+                        <div class="zt_2_top">
+                            <div class="zt_2_top_left">
+                                <div class="zt_2_title">
+                                    费用总计
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>商品金额：</span>
+                                        <span><?php echo e(formated_price($info->goods_amount)); ?></span>
+                                    </li>
+                                    <li>
+                                        <span>+ 运费：</span>
+                                        <span><?php echo e(formated_price($info->shipping_fee)); ?></span>
+                                    </li>
+                                    <li>
+                                        <span>- 优惠券：</span>
+                                        <span><?php echo e(formated_price($info->pack_fee)); ?></span>
+                                    </li>
+                                    <?php if($info->money_paid>0): ?>
+                                        <li>
+                                            <span>- 已付款金额：</span>
+                                            <span><?php echo e(formated_price($info->money_paid)); ?></span>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($info->jf_money>0): ?>
+                                        <li>
+                                            <span>- 积分金币：</span>
+                                            <span><?php echo e(formated_price($info->jf_money)); ?></span>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($info->jnmj>0): ?>
+                                        <li>
+                                            <span>- <?php echo e(trans('common.jnmj')); ?>：</span>
+                                            <span><?php echo e(formated_price($info->jnmj)); ?></span>
+                                        </li>
+                                    <?php endif; ?>
+                                    <?php if($info->cz_money>0): ?>
+                                        <li>
+                                            <span>- <?php echo e(trans('common.cz_money')); ?>：</span>
+                                            <span><?php echo e(formated_price($info->cz_money)); ?></span>
+                                        </li>
+                                    <?php endif; ?>
+                                    <li>
+                                        <span>- 使用余额：</span>
+                                        <span><?php echo e(formated_price($info->surplus)); ?></span>
+                                        <?php if($info->jnmj==0&&$info->is_mhj==0&&$info->pay_xz==1&&$user->user_money>0): ?>
+                                            <span class="zhuijia" style="font-size: 12px;">
+                                            <form style="display: inline-block"
+                                                  action="<?php echo e(route('member.order.update',['id'=>$info->order_id])); ?>"
+                                                  method="post">
+                                                <?php echo csrf_field(); ?>
+
+                                                <input type="hidden" name="_method" value="put">
+												追加使用：<input style="border: 1px solid #ccc;box-sizing: border-box"
+                                                            type="text" value="0" name="surplus"/><input type="submit"
+                                                                                                         name="" id=""
+                                                                                                         value="确定"/>
+                                                </form>
+												<span class="keyong">可用余额：<?php echo e(formated_price($user->user_money)); ?></span>
+											</span>
+                                        <?php endif; ?>
+                                    </li>
+                                    <li>
+                                        <span style="color: #ff2424">应付款金额：</span>
+                                        <span style="color: #ff2424"><?php echo e(formated_price($info->order_amount)); ?></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="zt_2_right">
+                                <div class="zt_2_title" style="height: 150px;">
+                                    支付方式
+                                    <?php if($info->pay_xz==1&&!($user->is_zhongduan==0&&$info->is_mhj==1)): ?>
+                                        <p class="xz">选择支付方式：</p>
+                                        <a style="float: left;margin-right: 40px;"><?php echo isset($unionpay) ? $unionpay : ''; ?></a>
+                                        <a style="float: left;margin-right: 40px;"><?php echo isset($xyyh) ? $xyyh : ''; ?></a>
+                                        <a style="float: left;margin-right: 40px;"><?php echo isset($weixin) ? $weixin : ''; ?></a>
+                                        <?php if($info->pay_id==8): ?>
+                                            <a style="float: left;margin-right: 40px;position: relative;"><?php echo isset($zfbzz) ? $zfbzz : ''; ?></a>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <p class="xz">已选择支付方式：<?php echo e($info->pay_name); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div style="clear: both"></div>
+                                <p class="shuoming" style="float: right;margin: 0 25px 0 0;">
+                                    <a target="_blank" href="<?php echo e(route('articleInfo',['id'=>91])); ?>">在线支付说明</a>
+                                </p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="zt_2_bottom">
+                            <div class="zt_2_top_left">
+                                <div class="zt_2_title">
+                                    收货信息
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span>收货人：</span>
+                                        <span><?php echo e($info->consignee); ?> （<?php echo e(isset($info->tel) ? $info->tel : $info->mobile); ?>）</span>
+                                    </li>
+                                    <li>
+                                        <span>收货地址：</span>
+                                        <span><?php echo e($info->region_name); ?> <?php echo e($info->address); ?></span>
+                                    </li>
+                                    <li>
+                                        <span>配送方式：</span>
+                                        <span><?php echo e($info->shipping_name); ?></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="zt_2_right">
+                                <div class="zt_2_title">
+                                    发票信息
+                                </div>
+                                <ul>
+                                    <?php /*<?php if($info->dzfp!=1): ?>*/ ?>
+                                    <?php /*<li>*/ ?>
+                                    <?php /*<span>发票类型：</span>*/ ?>
+                                    <?php /*<span>电子发票</span>*/ ?>
+                                    <?php /*</li>*/ ?>
+                                    <?php /*<?php endif; ?>*/ ?>
+                                    <li>
+                                        <span>发票类型：</span>
+                                        <span><?php echo e($info->dzfp_name); ?></span>
+                                    </li>
+                                    <?php /*<li>*/ ?>
+                                    <?php /*<span>开票状态：</span>*/ ?>
+                                    <?php /*<?php if($info->order_status==1&&$info->shipping_status==1): ?>*/ ?>
+                                    <?php /*<span>已开票</span>*/ ?>
+                                    <?php /*<a href="<?php echo e(route('user.dzfp')); ?>">点击去查看</a>*/ ?>
+                                    <?php /*<?php else: ?>*/ ?>
+                                    <?php /*<span>未开票</span>*/ ?>
+                                    <?php /*<?php endif; ?>*/ ?>
+                                    <?php /*</li>*/ ?>
+                                </ul>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div class="spxx">
+                        <div class="spxx_title">
+                            <span>商品信息</span>
+                            <span><a style="color: #3dbb2b"
+                                     href="<?php echo e(route('user.orderBuy',['id'=>$info->order_id])); ?>">全部加入购物车</a></span>
+                        </div>
+                        <table>
+                            <tr>
+                                <th class="spbs">商品标识</th>
+                                <th class="spmc">商品名称</th>
+                                <th class="sccj">生产厂家</th>
+                                <th class="gg">规格</th>
+                                <th class="xq">效期</th>
+                                <th class="spdj">商品单价</th>
+                                <th class="sl">数量</th>
+                                <th class="xj">小计</th>
+                                <th class="cz">操作</th>
+                            </tr>
+                            <?php foreach($info->order_goods as $k=>$v): ?>
+                                <tr <?php if($k>=10): ?> style="display: none" class="xyyc" <?php endif; ?>>
+                                    <td>
+                                        <?php if($v->is_jp==1): ?>
+                                            <div class="spbs">
+                                                <span>精</span>
+                                            </div>
+                                        <?php elseif($v->zyzk>0): ?>
+                                            <div class="spbs">
+                                                <span>惠</span>
+                                            </div>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                            <div class="spmc"><?php echo e($v->goods_name); ?></div>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div class="sccj"><?php echo e($v->sccj); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="gg"><?php echo e($v->ypgg); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="xq"><?php echo e($v->xq); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="spdj"><?php echo e(formated_price($v->goods_price)); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="sl"><?php echo e($v->goods_number); ?></div>
+                                    </td>
+                                    <td>
+                                        <div class="xj"><?php echo e(formated_price($v->goods_price*$v->goods_number)); ?></div>
+                                    </td>
+                                    <td>
+                                        <img style="display:none;" src="<?php echo e($v->goods_thumb); ?>"
+                                             class="fly_img<?php echo e($v->goods_id); ?>">
+                                        <div class="cz fly_to_cart<?php echo e($v->goods_id); ?>"
+                                             onclick="tocart(<?php echo e($v->goods_id); ?>)"><img
+                                                    src="<?php echo e(get_img_path('images/user/gwc.png')); ?>"/></div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                        <?php if(count($info->order_goods)>10): ?>
+                            <div class="zhankai true zk">
+                                <span>展开余下<span><?php echo e(count($info->order_goods) - 10); ?></span>个商品</span>
+                                <img src="<?php echo e(get_img_path('images/user/zhankai.png')); ?>"/>
+                            </div>
+                            <div class="zhankai false sq" style="display: none">
+                                <span>收起商品信息</span>
+                                <img src="<?php echo e(get_img_path('images/user/shouqi.png')); ?>">
+                            </div>
+                        <?php endif; ?>
+                        <div class="heji">
+                            商品合计：<span><?php echo e(formated_price($info->goods_amount)); ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script>
+        $('.zk').click(function () {
+            $('.xyyc').show();
+            $(this).hide();
+            $('.sq').show();
+        })
+        $('.sq').click(function () {
+            $('.xyyc').hide();
+            $(this).hide();
+            $('.zk').show();
+        })
+    </script>
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

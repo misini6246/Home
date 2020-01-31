@@ -1,0 +1,307 @@
+<?php $__env->startSection('title'); ?>
+	<title>特价页面</title>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('links'); ?>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css"/>
+	<link rel="stylesheet" type="text/css" href="/pyzq/pyzq-css/pyzq.css" />
+	<link rel="stylesheet" type="text/css" href="/pyzq/pyzq-css/puyao_other.css"/>
+	<link rel="stylesheet" type="text/css" href="/pyzq/pyzq-css/pages_other.css"/>
+
+	<link rel="stylesheet" type="text/css" href="/layer/mobile/need/layer.css"/>
+
+	<script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/index/common/js/com-js.js" type="text/javascript" charset="utf-8"></script>
+	<!--layer-->
+	<script src="/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/layer/lazyload.js" type="text/javascript" charset="utf-8"></script>
+	<!--加减-->
+	<script src="/xiangqing/AAS.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/pyzq/pyzq.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/new/change_num.js" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+	<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('layouts.youce', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php /*<?php echo $__env->make('tejia.gg1',['page'=>$result->currentPage()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+	<div class="banner_box">
+		<img width="100%" height="320" src="/index/img/tj.jpg"/>
+	</div>
+	<div>
+		<div class="goods-box">
+			<div class="content">
+				<?php if(count($result)==0): ?>
+					<div id="none" class="container">
+						<div class="container_box">
+							<div class="none">
+								<div class="img_box">
+									<img src="/index/img/search_none.jpg"/>
+								</div>
+								<div class="text">
+									<p>抱歉！没有找到<?php if(!empty($keywords)): ?>与“<span><?php echo e($keywords); ?></span>”<?php endif; ?>相关的药品</p>
+									<p>你可以发布求购意向，重庆今瑜e药网会尽快补货！</p>
+									<a target="_blank" href="/requirement" class="link">发布求购</a>
+								</div>
+							</div>
+							<?php if(isset($cx_goods[6])): ?>
+								<div id="wntj" class="container">
+									<div class="container_box">
+										<div id="ban3" class="ban">
+											<div class="section_title">
+												<i class="myicon wntj_icon"></i>
+												<span class="biaoti">为您推荐</span>
+											</div>
+											<div class="banner">
+												<ul class="img">
+													<?php if(count($cx_goods[6])>0): ?>
+														<li>
+															<?php foreach($cx_goods[6] as $k=>$v): ?>
+																<?php if($k<5): ?>
+																	<a target="_blank"
+																	   href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+																		<div class="wntj-cp">
+																			<div class="img_box">
+																				<img src="<?php echo e($v->goods_thumb); ?>"/>
+																			</div>
+																			<p class="name"><?php echo e($v->goods_name); ?></p>
+																			<p class="gg"><?php echo e($v->ypgg); ?></p>
+																			<p class="money login"><?php echo e($v->format_price); ?></p>
+																		</div>
+																	</a>
+																<?php endif; ?>
+															<?php endforeach; ?>
+														</li>
+													<?php endif; ?>
+													<?php if(count($cx_goods[6])>5): ?>
+														<li>
+															<?php foreach($cx_goods[6] as $k=>$v): ?>
+																<?php if($k>=5&$k<10): ?>
+																	<a target="_blank"
+																	   href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+																		<div class="wntj-cp">
+																			<div class="img_box">
+																				<img src="<?php echo e($v->goods_thumb); ?>"/>
+																			</div>
+																			<p class="name"><?php echo e($v->goods_name); ?></p>
+																			<p class="gg"><?php echo e($v->ypgg); ?></p>
+																			<p class="money login"><?php echo e($v->format_price); ?></p>
+																		</div>
+																	</a>
+																<?php endif; ?>
+															<?php endforeach; ?>
+														</li>
+													<?php endif; ?>
+												</ul>
+												<div class="btn btn_l">
+													<i class="myicon lb_left_icon"></i>
+												</div>
+												<div class="btn btn_r">
+													<i class="myicon lb_right_icon"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php else: ?>
+					<div id="datu" class="container">
+						<div class="container_box">
+							<ul class="datu">
+								<?php foreach($result as $v): ?>
+									<li style="position: relative;">
+										<div class="datu-chanpin-img">
+											<?php if($v->is_cx==1&&$step=='yzj'): ?>
+												<?php echo $__env->make('goods.zkbz', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+											<?php endif; ?>
+											<a target="_blank" href="<?php echo e($v->goods_url); ?>">
+												<img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+												<?php if($v->getAttribute('119zk')>0): ?>
+													<img style="position: absolute;top: 0;right: 1px;"
+														 data-original="<?php echo e(get_img_path('adimages1/201809/sale_'.$v->getAttribute('119zk').'.png')); ?>"
+														 class="lazy"/>
+												<?php endif; ?>
+											</a>
+											<img title="加入收藏夹" onclick="tocollect('<?php echo e($v->goods_id); ?>')"
+												 src="/pyzq/img/icon_40.png"
+												 class="datu-shoucang"/>
+											<div class="datu_bs">
+												<?php /*<?php if($user&&in_array($step,['nextpro','promotion'])): ?>*/ ?>
+												<?php /*<div class="yh layer_tips lscg" id="dt_cg<?php echo e($v->goods_id); ?>"*/ ?>
+												<?php /*data-sync="0"*/ ?>
+												<?php /*data-msg="历史采购均价：$avg_price<br/>近期购买过$num<?php echo e($v->dw); ?>($count次)">*/ ?>
+												<?php /*历史采购<i class="jiantou xia_i"></i>*/ ?>
+												<?php /*</div>*/ ?>
+												<?php /*<?php endif; ?>*/ ?>
+												<?php if($v->zyzk>0): ?>
+													<div class="yh layer_tips" id="dt_yh<?php echo e($v->goods_id); ?>"
+														 data-msg="此商品为优惠商品">
+														优惠
+													</div>
+												<?php endif; ?>
+												<?php if($v->is_zx==1): ?>
+													<?php if(strpos($v->cxxx,'换购')!==false): ?>
+														<div class="hg layer_tips" id="dt_hg<?php echo e($v->goods_id); ?>"
+															 data-msg="<?php echo e($v->cxxx); ?>">
+															换购
+														</div>
+													<?php else: ?>
+														<div class="mz layer_tips" id="dt_mz<?php echo e($v->goods_id); ?>"
+															 data-msg="<?php echo e($v->cxxx); ?>">
+															买赠
+														</div>
+													<?php endif; ?>
+												<?php endif; ?>
+												<?php if($v->is_cx==1): ?>
+													<div class="tj layer_tips" id="dt_tj<?php echo e($v->goods_id); ?>"
+														 data-msg="此商品为特价促销商品">
+														特价
+													</div>
+												<?php endif; ?>
+											</div>
+										</div>
+										<?php if(!empty($v->getAttribute('119bz'))): ?>
+											<span title="<?php echo e($v->getAttribute('119bz')); ?>"
+												  style="position: absolute;width: 208px;background-color: red;height: 30px;line-height: 30px;top: 200px;margin: 0 10px;color: #fff;padding: 0 10px;overflow: hidden;"><?php echo e($v->getAttribute('119bz')); ?></span>
+										<?php endif; ?>
+										<?php if($v->is_can_see==0): ?>
+											<div class="datu-jiage-none">
+												会员可见
+											</div>
+										<?php else: ?>
+											<?php if($user->is_zhongduan==0): ?>
+												<div class="datu-jiage">
+													<?php echo e(formated_price($v->real_price)); ?>
+
+												</div>
+											<?php elseif($step=='nextpro'): ?>
+												<div class="datu-jiage">
+													活动价：<?php echo e(formated_price($v->promote_price)); ?>
+
+													<span style="margin-left: 5px;font-weight: normal;color: #999;text-decoration: line-through;"><?php echo e(formated_price($v->real_price)); ?></span>
+												</div>
+											<?php else: ?>
+												<div class="datu-jiage">
+													<?php echo e(formated_price($v->real_price)); ?>
+
+													<?php if(!isset($hide_shop_price)): ?>
+														<span style="margin-left: 5px;font-weight: normal;color: #999;text-decoration: line-through;"><?php echo e(formated_price($v->shop_price)); ?></span>
+													<?php endif; ?>
+												</div>
+											<?php endif; ?>
+										<?php endif; ?>
+										<div class="datu-mingzi">
+											<?php echo e($v->goods_name); ?>
+
+										</div>
+										<div class="datu-compamy">
+											<?php echo e($v->sccj); ?>
+
+										</div>
+										<?php if($step=='nextpro'): ?>
+											<div class="datu-guige">
+												规格：<span style="width: 80px;"><?php echo e($v->spgg); ?></span>
+												<?php if(($v->xg_type>0&&$v->xg_end_date>$v->promote_start_date&&$v->xg_start_date<=$v->promote_start_date)||$v->xg_type==1): ?>
+													限量：<span style="width: auto"><?php echo e($v->ls_ggg); ?></span>
+												<?php endif; ?>
+											</div>
+										<?php else: ?>
+											<div class="datu-guige">
+												规格：<span><?php echo e($v->spgg); ?></span>
+											</div>
+										<?php endif; ?>
+										<div class="datu-xiaoqi">
+											效期：<span
+													<?php if($v->is_xq_red==1): ?> class="daoqi" <?php endif; ?>><?php echo e($v->xq); ?></span>
+											<?php if($v->is_zyyp==0): ?>
+												件装量：
+												<span class="jianzhuang"><?php echo e($v->jzl); ?></span>
+											<?php endif; ?>
+										</div>
+										<?php if($step=='nextpro'): ?>
+											<div class="datu-jianzhuang">
+												<span style="color: #ef2c2f;width: 115px;">活动时间：<?php echo e(isset($ad160->ad_name) ? $ad160->ad_name : '12.29'); ?></span>
+												库存：<span><?php if($v->goods_number>=800): ?>充裕<?php elseif($v->goods_number==0): ?>
+														缺货<?php else: ?><?php echo e($v->goods_number); ?><?php endif; ?></span>
+											</div>
+										<?php else: ?>
+											<div class="datu-jianzhuang">
+												库存：<span><?php if($v->goods_number>=800): ?>充裕<?php elseif($v->goods_number==0): ?>
+														缺货<?php else: ?><?php echo e($v->goods_number); ?><?php endif; ?></span> 中包装：
+												<span><?php echo e($v->zbz); ?></span>
+											</div>
+										<?php endif; ?>
+										<div class="btn_box">
+											<div class="datu-jrgwc fly_to_cart<?php echo e($v->goods_id); ?>"
+												 style="background-color: #ef2c2f"
+												 data-img="<?php echo e($v->goods_thumb); ?>"
+												 onclick="tocart('<?php echo e($v->goods_id); ?>')">
+												<img src="/pyzq/img/icon_39.png"/> 加入购物车
+											</div>
+											<div class="jiajian">
+												<div class="jian min">
+													-
+												</div>
+												<input id="J_dgoods_num_<?php echo e($v->goods_id); ?>" type="text"
+													   value="<?php echo e($v->zbz); ?>" class="input_val"
+													   data-zbz="<?php echo e($v->zbz); ?>"
+													   data-kc="<?php echo e($v->goods_number); ?>"
+													   data-jzl="<?php echo e($v->jzl); ?>" data-xl="<?php echo e($v->xg_num); ?>"
+													   data-isxl="<?php echo e($v->is_xg); ?>"/>
+												<div class="jia">
+													+
+												</div>
+											</div>
+										</div>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php if($result->hasPages()): ?>
+								<?php echo $pages_view; ?>
+
+							<?php endif; ?>
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<?php if(isset($daohang)&&$daohang==1): ?>
+		<?php echo $__env->make('miaosha.daohang', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php endif; ?>
+	<?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<script type="text/javascript">
+        /**
+         * searchEvent 初始化搜索功能
+         * 参数1 获取数据方法
+         * 参数2 回调方法
+         * 参数3 按钮元素(执行搜索)(可选)
+         * 参数4 搜索结果列表显示或隐藏的回调  返回true/false(可选)
+         */
+        $('.search').searchEvent(
+            function(_target, _val) { //获取数据方法 val:搜索框内输入的值
+                $.get('/ajax/cart/searchKey',{keyword:_val},function(data){
+                    _target.searchDataShow(data, 'value')
+                },'json');
+                /**
+                 * searchDataShow 将数据渲染至页面
+                 * 参数1:数据数组
+                 * 参数2:数据数组内下标名
+                 */
+            },
+            function(val) { //回调方法 val:返回选中的值
+//                alert('搜索关键词"' + val + '"...');
+                window.location.href = "http://47.107.103.86/category?keywords="+val+"&showi=0";
+            },
+            $('.search-btn')
+        );
+	</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

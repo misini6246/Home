@@ -1,0 +1,58 @@
+<?php if($full_page==1): ?>
+    <div class="fix-title">
+        <i class="wdsc"></i>我的收藏
+        <i class="quxiao" onclick="quxiao()"></i>
+    </div>
+    <?php if(count($result)==0): ?>
+        <div class="cart-none">
+            <img src="<?php echo e(get_img_path('images/new/sc-none.jpg')); ?>"/>
+        </div>
+    <?php else: ?>
+        <div class="examples">
+            <div class="wdsc-scroll">
+                <div id="wdscDiv">
+                    <div class="fixhwc-chanpin">
+                        <ul id="collect_list" page="1" last_page="<?php echo e($result->lastPage()); ?>">
+                            <?php foreach($result as $v): ?>
+                                <li>
+                                    <div class="img-box">
+                                        <a href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>"><img
+                                                    src="<?php echo e($v->goods->goods_thumb); ?>"/></a>
+                                    </div>
+                                    <p class="biaot"><?php echo e(str_limit($v->goods->goods_name,26)); ?></p>
+                                    <p class="fixgwc-company"><?php echo e(str_limit($v->goods->sccj,30)); ?></p>
+                                    <p><?php echo e($v->goods->spgg); ?></p>
+                                    <span class="jiage"><?php echo e(formated_price($v->goods->real_price)); ?></span>
+                                    <span class="jrgwc" onclick="newtocart('<?php echo e($v->goods_id); ?>','<?php echo e($v->goods->zbz); ?>')">加入购物车</span>
+                                    <span class="shanchu"
+                                          onclick="shanchu('从收藏夹删除商品<?php echo e($v->goods->goods_name); ?>','<?php echo e($v->rec_id); ?>','delete_collect',$(this))">删除</span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="wdsc-bottom">
+        <a href="/user/collectList" class="ckqbsc">
+            查看全部收藏
+        </a>
+    </div>
+<?php else: ?>
+    <?php foreach($result as $v): ?>
+        <li>
+            <div class="img-box">
+                <a href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>"><img
+                            src="<?php echo e($v->goods->goods_thumb); ?>"/></a>
+            </div>
+            <p class="biaot"><?php echo e(str_limit($v->goods->goods_name,26)); ?></p>
+            <p class="fixgwc-company"><?php echo e(str_limit($v->goods->sccj,30)); ?></p>
+            <p><?php echo e($v->goods->spgg); ?></p>
+            <span class="jiage"><?php echo e(formated_price($v->goods->real_price)); ?></span>
+            <span class="jrgwc" onclick="newtocart('<?php echo e($v->goods_id); ?>','<?php echo e($v->goods->zbz); ?>')">加入购物车</span>
+            <span class="shanchu"
+                  onclick="shanchu('从收藏夹删除商品<?php echo e($v->goods->goods_name); ?>','<?php echo e($v->rec_id); ?>','delete_collect',$(this))">删除</span>
+        </li>
+    <?php endforeach; ?>
+<?php endif; ?>

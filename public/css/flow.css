@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+ul li {
+    list-style-type: none;
+}
+a{ color:#333; text-decoration:none;}
+a:hover{ color:#307635; text-decoration:none;}
+.header{ background-image:url(../images/top.jpg); width:100%; height:121px; min-width:1200px;margin:auto;}
+.ls_top{ width:980px; height:35px; font-size:12px; line-height:35px; margin:auto;}
+.ls_top_left{ float:left; width:60%; text-align:left; line-height:32px;}
+.ls_top_right{ float:right;text-align:right; line-height:32px; width:40%;}
+.ls_top_right ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+	color:#fff;
+}
+.ls_top_right ul li a{ color:#fff;}
+.ls_top_right ul li a:hover{ color:#fff; text-decoration:underline}
+.ls_top_right .lineul li{
+    float: left;
+    list-style-type: none;
+}
+.ls_b{ width:980px; margin:auto; height:90px;}
+.ls_b .ls_logo{ width:231px; height:70px; float:left; margin-top:10px;}
+.ls_b .gwc_logo{ width:200px; height:55px; float:left; margin-top:20px; background:url("../images/gwc.png") no-repeat scroll -38px 0 transparent}
+.ls_b .lxfs{background: url("../images/tel.png") no-repeat scroll center top transparent;
+    float: right;
+    height: 70px;
+    margin-top: 20px;
+    width: 270px;
+	font-size:12px;}
+	
+
+.ls_b .lxfs span {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    line-height: 30px;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+.ls_b .lxfs span em {
+    display: block;
+    float: right;
+    font-style: normal;
+    height: 20px;
+    line-height: 20px;
+    padding: 3px;
+    width: 78px;
+}
+.ls_gw{
+	width:1200px;
+	height: auto;
+	padding:30px;
+	background-color:#fff;
+	margin:auto;
+	margin-top:10px;
+}
+
+.ls_gw_bt{ width:100%; border-top:1px solid #266b2c; height:35px; background-color:#e1ece2;border-radius:5px 5px 5px 5px}
+.ls_gw_bt ul{ height:35px; margin:auto; width:100%; margin:0px;}
+.ls_gw_bt li{ line-height:35px;}
+.ls_gw ul li {
+    float: left;
+    font-size: 13px;
+    font-weight: 500;
+	text-align:center;
+}
+
+.ls_gw_lr { width:100%; border:1px solid #a4c4a7; margin-top:20px; height:100px; background-color:#e1ece2;border-radius:5px 5px 5px 5px;}
+.ls_gw_lr ul{ margin:auto;}
+
+.ls_gw_lr li .ls_gw_img{ width:57px; border:1px solid #c6c7c6; height:57px; margin-top:20px; float:left;}
+.ls_gw_lr li .ls_gw_sp{ width:335px; height:57px; margin-top:20px; float:left; margin-left:20px;}
+.ls_gw_lr li .ls_gw_sp .ls_gw_name{ width:335px; height:28px; font-size:12px; color:#333333; text-align:left; line-height:28px;}
+
+.ls_gw_js{ width:100%; height:50px; border:1px solid #c8c8c8; background-color:#ededed; margin-top:15px;border-radius:5px 5px 5px 5px}
+
+.ls_gw_js .ls_gw_js_lift { width:50%; height:50px; line-height:50px; color:#666666; float:left; padding-left:20px;}
+.ls_gw_js .ls_gw_js_lift a{color:#666666; font-size:14px; cursor:pointer;}
+.ls_gw_js .ls_gw_js_right{ width:auto; height:50px; line-height:50px; color:#666; float:right; text-align:right; font-size:14px;}
+
+.ls_gw_db { width:100%; height:40px; margin-top:20px; text-align:right; border-bottom:3px solid #266b2c; font-size:12px;}
+
+.footer{ width:1200px; margin:auto; margin-top:30px; text-align:center; font-size:14px;}

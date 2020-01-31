@@ -1,0 +1,55 @@
+<div class="fixed-right">
+    <div class="bar">
+        <div class="bg"></div>
+        <div class="kefu">
+            <img src="/index/img/客服.png"/>
+        </div>
+        <div class="huiyuan">
+            <img src="/index/img/会员.png"/>
+            <div class="hover">
+                <div class="jiantou"></div>
+                会员中心
+            </div>
+        </div>
+        <div class="message">
+            <img src="/index/img/消息.png"/>
+            <span><?php echo e(msg_count()); ?></span>
+            <div class="hover">
+                <div class="jiantou"></div>
+                我的消息
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="cart">
+            <a href="<?php echo e(route('cart.index')); ?>">
+            <img src="/index/img/购物车.png"/>
+            <span class="text">购物车</span>
+            <span class="num"><?php echo e(cart_info(1,1)); ?></span>
+            </a>
+        </div>
+        <div class="line"></div>
+        <div class="collect">
+            <a href="<?php echo e(route('member.collection.index')); ?>">
+            <img src="/index/img/图层 4.png"/>
+            <div class="hover">
+                <div class="jiantou"></div>
+                我的收藏
+            </div>
+            </a>
+        </div>
+        <div class="fankui">
+            <img src="/index/img/反馈.png"/>
+            <div class="hover">
+                <div class="jiantou"></div>
+                我要反馈
+            </div>
+        </div>
+        <div class="btn-top">
+            <img src="/index/img/首页-14.png"/>
+            <div class="hover">
+                <div class="jiantou"></div>
+                返回顶部
+            </div>
+        </div>
+    </div>
+</div>

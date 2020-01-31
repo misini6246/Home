@@ -1,0 +1,39 @@
+<ul>
+    <?php if($pages->lastPage()>1): ?>
+        <?php if($pages->currentPage()>1): ?>
+            <li class='pagination_toLeft' ><a href="<?php echo e(pageParams($pages->currentPage()-1,$params)); ?>"><button class='reset_btn'></button></a></li>
+        <?php endif; ?>
+        <?php if($pages->currentPage()>$pages->lastPage()-3): ?>
+            <?php for($i=$pages->currentPage()-4-($pages->currentPage()-$pages->lastPage()+3);$i<$pages->currentPage();$i++): ?>
+                <?php if($i>0): ?>
+                    <li class='page_num'><a href='<?php echo e(pageParams($i,$params)); ?>'><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php else: ?>
+            <?php for($i=$pages->currentPage()-4;$i<$pages->currentPage();$i++): ?>
+                <?php if($i>0): ?>
+                    <li class='page_num'><a href='<?php echo e(pageParams($i,$params)); ?>'><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php endif; ?>
+        <li class='clicked page_num'><a href=''><?php echo e($pages->currentPage()); ?></a></li>
+        <?php if($pages->currentPage()<5): ?>
+            <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4+5-$pages->currentPage();$i++): ?>
+                <?php if($i<=$pages->lastPage()): ?>
+                    <li class='page_num'><a href='<?php echo e(pageParams($i,$params)); ?>'><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php else: ?>
+            <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4;$i++): ?>
+                <?php if($i<=$pages->lastPage()): ?>
+                    <li class='page_num'><a href='<?php echo e(pageParams($i,$params)); ?>'><?php echo e($i); ?></a></li>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php endif; ?>
+        <?php if($pages->currentPage()<$pages->lastPage()): ?>
+            <li class='pagination_toRight'><a href="<?php echo e(pageParams($pages->currentPage()+1,$params)); ?>"><button class='reset_btn'></button></a></li>
+        <?php endif; ?>
+    <?php endif; ?>
+
+
+</ul>

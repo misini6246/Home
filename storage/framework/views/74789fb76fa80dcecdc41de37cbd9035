@@ -1,0 +1,323 @@
+<div class="tixian_jilu_title">
+    提现记录
+</div>
+<ul class="tixian_jilu_zt">
+    <li class="active">全部</li>
+    <li>正在进行</li>
+    <li>已完成</li>
+    <?php /*<li>已取消</li>*/ ?>
+</ul>
+<div class="all_tixian tixian_log">
+    <?php if(count($result)>0): ?>
+        <table>
+            <tr>
+                <th class="sqsj">申请时间</th>
+                <th class="je">金额</th>
+                <th class="yhxx">银行信息</th>
+                <th class="zt">状态</th>
+                <th class="cz">操作</th>
+            </tr>
+            <?php foreach($result as $v): ?>
+                <?php if($v->sq_type==0&&$v->sh_type!=4&&$v->sh_type!=5): ?>
+                    <tr>
+                        <td class="sqsj"><?php echo e($v->create_time->format('Y-m-d H:i:s')); ?></td>
+                        <td class="je"><?php echo e(number_format($v->money,2,'.','')); ?></td>
+                        <td class="yhxx">
+										<span>
+											<span class="chakan">查看</span>
+											<div class="xxck-xiangqing">
+												<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>"
+                                                     class="chakan_img"/>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														开户行：
+													</span>
+													<div class="khh-bank">
+														<?php echo e($v->bank); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														卡号：
+													</span>
+													<div class="khh-bank kahao">
+														<?php echo e(str_replace(' ','',$v->bank_sn)); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														户名：
+													</span>
+													<div class="khh-bank">
+														 <?php echo e($v->bank_user); ?>
+
+													</div>
+												</div>
+											</div>
+										</span>
+                        </td>
+                        <td class="zt">
+                            <?php echo e($v->sh_type_text); ?>
+
+                            <?php /*<div class="tx-zhuangtai">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>" class="chakan_img"/>*/ ?>
+                            <?php /*<ul>*/ ?>
+                            <?php /*<li>处理时间</li>*/ ?>
+                            <?php /*<li>订单追踪信息</li>*/ ?>
+                            <?php /*</ul>*/ ?>
+                            <?php /*<div class="tx-zhuangtai-xinxi">*/ ?>
+                            <?php /*<span class="zhuangtai-shijian">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>*/ ?>
+                            <?php /*2017-05-15 09:01:49*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*<span class="dingdan-xiangqing">*/ ?>
+                            <?php /*您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*</div>*/ ?>
+                        </td>
+                        <?php if($v->sq_type==0&&($v->sh_type==5||$v->sh_type==0)): ?>
+                            <td class="cz">取消
+                                <form action="<?php echo e(route('user.tixian.update',['id'=>$v->tx_id])); ?>" method="POST">
+                                    <input name="_method" value="PUT" type="hidden">
+                                    <?php echo csrf_field(); ?>
+
+                                    <div class="tx-queding tx-tcc" style="line-height: 12px;">
+                                        <div>您确定要取消此次金额为<span><?php echo e($v->money); ?>元</span>提现申请吗？</div>
+                                        <button type="submit" class="tx-quxiao-queding">
+                                            确定
+                                        </button>
+                                        <div class="tx-quxiao-quxiao" style="top: 12px;">
+                                            取消操作
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'没有申请过提现'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+</div>
+<div class="jinxing_tixian tixian_log" style="display: none;">
+    <?php if(count($result->jinxing)>0): ?>
+        <table>
+            <tr>
+                <th class="sqsj">申请时间</th>
+                <th class="je">金额</th>
+                <th class="yhxx">银行信息</th>
+                <th class="zt">状态</th>
+                <th class="cz">操作</th>
+            </tr>
+            <?php foreach($result->jinxing as $v): ?>
+                <?php if($v->sq_type==0&&$v->sh_type!=4&&$v->sh_type!=5): ?>
+                    <tr>
+                        <td class="sqsj"><?php echo e($v->create_time->format('Y-m-d H:i:s')); ?></td>
+                        <td class="je"><?php echo e(number_format($v->money,2,'.','')); ?></td>
+                        <td class="yhxx">
+										<span>
+											<span class="chakan">查看</span>
+											<div class="xxck-xiangqing">
+												<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>"
+                                                     class="chakan_img"/>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														开户行：
+													</span>
+													<div class="khh-bank">
+														<?php echo e($v->bank); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														卡号：
+													</span>
+													<div class="khh-bank kahao">
+														<?php echo e(str_replace(' ','',$v->bank_sn)); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														户名：
+													</span>
+													<div class="khh-bank">
+														 <?php echo e($v->bank_user); ?>
+
+													</div>
+												</div>
+											</div>
+										</span>
+                        </td>
+                        <td class="zt">
+                            <?php echo e($v->sh_type_text); ?>
+
+                            <?php /*<div class="tx-zhuangtai">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>" class="chakan_img"/>*/ ?>
+                            <?php /*<ul>*/ ?>
+                            <?php /*<li>处理时间</li>*/ ?>
+                            <?php /*<li>订单追踪信息</li>*/ ?>
+                            <?php /*</ul>*/ ?>
+                            <?php /*<div class="tx-zhuangtai-xinxi">*/ ?>
+                            <?php /*<span class="zhuangtai-shijian">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>*/ ?>
+                            <?php /*2017-05-15 09:01:49*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*<span class="dingdan-xiangqing">*/ ?>
+                            <?php /*您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*</div>*/ ?>
+                        </td>
+                        <?php if($v->sq_type==0&&($v->sh_type==5||$v->sh_type==0)): ?>
+                            <td class="cz">取消
+                                <form action="<?php echo e(route('user.tixian.update',['id'=>$v->tx_id])); ?>" method="POST">
+                                    <input name="_method" value="PUT" type="hidden">
+                                    <?php echo csrf_field(); ?>
+
+                                    <div class="tx-queding tx-tcc" style="line-height: 12px;">
+                                        <div>您确定要取消此次金额为<span><?php echo e($v->money); ?>元</span>提现申请吗？</div>
+                                        <button type="submit" class="tx-quxiao-queding">
+                                            确定
+                                        </button>
+                                        <div class="tx-quxiao-quxiao" style="top: 12px;">
+                                            取消操作
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'没有正在进行的提现申请'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+</div>
+<div class="wancheng_tixian tixian_log" style="display: none;">
+    <?php if(count($result->wancheng)>0): ?>
+        <table>
+            <tr>
+                <th class="sqsj">申请时间</th>
+                <th class="je">金额</th>
+                <th class="yhxx">银行信息</th>
+                <th class="zt">状态</th>
+                <th class="cz">操作</th>
+            </tr>
+            <?php foreach($result->wancheng as $v): ?>
+                <?php if($v->sq_type==0&&$v->sh_type!=4&&$v->sh_type!=5): ?>
+                    <tr>
+                        <td class="sqsj"><?php echo e($v->create_time->format('Y-m-d H:i:s')); ?></td>
+                        <td class="je"><?php echo e(number_format($v->money,2,'.','')); ?></td>
+                        <td class="yhxx">
+										<span>
+											<span class="chakan">查看</span>
+											<div class="xxck-xiangqing">
+												<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>"
+                                                     class="chakan_img"/>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														开户行：
+													</span>
+													<div class="khh-bank">
+														<?php echo e($v->bank); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														卡号：
+													</span>
+													<div class="khh-bank kahao">
+														<?php echo e(str_replace(' ','',$v->bank_sn)); ?>
+
+													</div>
+												</div>
+												<div class="khh">
+													<span class="khh-title">
+														<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>
+														户名：
+													</span>
+													<div class="khh-bank">
+														 <?php echo e($v->bank_user); ?>
+
+													</div>
+												</div>
+											</div>
+										</span>
+                        </td>
+                        <td class="zt">
+                            <?php echo e($v->sh_type_text); ?>
+
+                            <?php /*<div class="tx-zhuangtai">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/sanjiao.png')); ?>" class="chakan_img"/>*/ ?>
+                            <?php /*<ul>*/ ?>
+                            <?php /*<li>处理时间</li>*/ ?>
+                            <?php /*<li>订单追踪信息</li>*/ ?>
+                            <?php /*</ul>*/ ?>
+                            <?php /*<div class="tx-zhuangtai-xinxi">*/ ?>
+                            <?php /*<span class="zhuangtai-shijian">*/ ?>
+                            <?php /*<img src="<?php echo e(get_img_path('images/user/dian.jpg')); ?>"/>*/ ?>
+                            <?php /*2017-05-15 09:01:49*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*<span class="dingdan-xiangqing">*/ ?>
+                            <?php /*您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消您的订单已经取消*/ ?>
+                            <?php /*</span>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*</div>*/ ?>
+                        </td>
+                        <?php if($v->sq_type==0&&($v->sh_type==5||$v->sh_type==0)): ?>
+                            <td class="cz">取消
+                                <form action="<?php echo e(route('user.tixian.update',['id'=>$v->tx_id])); ?>" method="POST">
+                                    <input name="_method" value="PUT" type="hidden">
+                                    <?php echo csrf_field(); ?>
+
+                                    <div class="tx-queding tx-tcc" style="line-height: 12px;">
+                                        <div>您确定要取消此次金额为<span><?php echo e($v->money); ?>元</span>提现申请吗？</div>
+                                        <button type="submit" class="tx-quxiao-queding">
+                                            确定
+                                        </button>
+                                        <div class="tx-quxiao-quxiao" style="top: 12px;">
+                                            取消操作
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'没有已完成的提现申请'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+</div>
+<script>
+    $('.tixian_jilu_zt li').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        var index = $(this).index();
+        $('.tixian_log').hide();
+        if (index == 0) {
+            $('.all_tixian').show();
+        } else if (index == 1) {
+            $('.jinxing_tixian').show();
+        } else if (index == 2) {
+            $('.wancheng_tixian').show();
+        }
+    })
+</script>

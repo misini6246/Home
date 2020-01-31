@@ -1,0 +1,132 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/user/huiyuancommon.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/wodeqiugou.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/user/huiyuancommon.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.youce', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+    <div class="container" id="user_center">
+        <form id="search_form" name="search_form" action="<?php echo e(route('member.collection.index')); ?>">
+        </form>
+        <div class="container_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/user/weizhi.png')); ?>"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的太星医药网</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><span>我的反馈</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_title">
+                    <a target="_blank" href="/feedback">
+                        <div class="add_liuyan">我要反馈</div>
+                    </a>
+                    <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                    <span>我的反馈</span>
+                </div>
+                <?php if(count($result)>0): ?>
+                    <table>
+                        <tr>
+                            <th class="hf">反馈类型</th>
+                            <th class="hf">反馈内容</th>
+                            <th class="xq">反馈时间</th>
+                            <th class="hf">回复</th>
+                            <th class="xq">回复时间</th>
+                        </tr>
+                        <?php foreach($result as $v): ?>
+                            <tr>
+                                <td>
+                                    <div class="hf">
+                                        <?php echo e($v->fk_type); ?>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: inline-block;width: auto;max-width: 150px;" class="hf neirong"
+                                         id="hf<?php echo e($v->rec_id); ?>" data-id="<?php echo e($v->rec_id); ?>"
+                                         data-msg="<?php echo e($v->msg_content); ?>">
+                                        <?php echo e($v->msg_content); ?>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="xq">
+                                        <?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: inline-block;width: auto;max-width: 150px;" class="hf neirong"
+                                         id="hf<?php echo e($v->rec_id); ?>replay" data-id="<?php echo e($v->rec_id); ?>replay"
+                                         data-msg="<?php echo e($v->replay); ?>">
+                                        <?php echo e($v->replay); ?>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="xq">
+                                        <?php if(!empty($v->replay)): ?>
+                                            <?php echo e(date('Y-m-d H:i:s',$v->replay_time)); ?>
+
+                                        <?php endif; ?>
+                                    </div>
+                                </td>
+                                <?php /*<td>*/ ?>
+                                <?php /*<div class="hf neirong" id="hf<?php echo e($v->buy_id); ?>" data-id="<?php echo e($v->buy_id); ?>"*/ ?>
+                                <?php /*data-msg="<?php echo e($v->replay); ?>">*/ ?>
+                                <?php /*<?php if(!empty($v->replay)): ?>*/ ?>
+                                <?php /*<?php echo e(str_limit($v->replay,30)); ?>*/ ?>
+                                <?php /*<?php endif; ?>*/ ?>
+                                <?php /*</div>*/ ?>
+                                <?php /*</td>*/ ?>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'您还没有发布过反馈信息'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script>
+        //返回顶部
+        $('.btn-top').click(function() {
+            $('html,body').animate({
+                'scrollTop': 0
+            })
+        });
+        $('.neirong').hover(function () {
+            var msg = $(this).data('msg');
+            var id = $(this).data('id');
+            layer.tips(msg, '#hf' + id, {
+                tips: [4, '#3dbb2b'],
+                time: 0
+            });
+        }, function () {
+            layer.closeAll()
+        });
+    </script>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

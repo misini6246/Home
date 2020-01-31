@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="qUlVl7Atu0" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<link href="themes/yiyao/css/js.banner.css" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,jquery.min.js,index.js,js.banner.js,transport_jquery.js'}
+</head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="themes/yiyao/css/index.css" rel="stylesheet" type="text/css" />
+<link href="themes/yiyao/css/ls_tbb.css" rel="stylesheet" type="text/css" />
+<link href="themes/yiyao/css/common.css" rel="stylesheet" type="text/css" />
+<link href="themes/yiyao/css/jquery.jslides.css" rel="stylesheet" type="text/css" />
+<link href="themes/yiyao/css/jquery.bigautocomplete.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+{if $is_new_user == true}
+<!--wangcheng-drug-->
+<div class="big_ads" style="">
+    <div class="big_ad"><a href="xkh.php" style="width:100%;height:100%;display:block" target="_blank"></a></div>
+    <div class="small_ad" style="width:100%;min-width:1200px;height:80px;background:url('themes/yiyao/images/xkh_small.jpg') no-repeat center 0;"><a href="xkh.php" style="width:100%;height:100%;display:block" target="_blank"></a></div>
+</div>
+
+<script type="text/javascript">
+    $(".ad button").click(function(){
+        $(this).parent("div").parent("div").fadeOut(500);
+    });
+    $(".big_ads").css("left");
+    var addTime=0;
+    var interval=setInterval(function(){
+        addTime++;
+        if(addTime==6){
+            $(".big_ads").animate({height: "80px"},500);
+            $(".big_ad").animate({height: "80px",marginTop:"70px"},500,function(){
+                $(".big_ad").remove();
+            });
+        }
+    },1000); 
+</script>
+<!--end-->
+{/if}
+
+<div class="ls_header" style="height:165px;">  
+  <div class="ls_header_t">
+    <div class="ls_header_t_n">
+       <div class="ls_header_t_n_l">{insert name='member_infob'}</div>
+       <div class="ls_header_t_n_r">
+           <ul class="clearFloat">
+	       <li><a target="_blank" href="specialvote.php?step=online" style="color:#f00;" >团购专区</a><font style="color:#ddd">|</font></li>
+               <li><a target="_blank" href="specialvote.php">投票专区</a><font style="color:#ddd">|</font></li>
+               <li><a target="_blank" href="requirement.php">求购专区</a><font style="color:#ddd">|</font></li>
+               <li class="has_img"><a href="flow.php" title="查看购物车"><img src="images/gwc_red.png" width="15">购物车(<span>{insert name='cart_info'}</span>)</a><font style="color:#ddd">|</font></li>
+               <li><a target="_blank" href="user.php?act=collection_list"><img style="_margin: 9px 5px 9px 0" src="images/heart.png" alt=""/>我的收藏</a></li>
+               <li class="attention">
+                   <a href="javascript:;">关注</a><i></i>
+                   <div class="px1"></div>
+                   <div><img src="images/twoweima.jpg" alt=""/></div>
+               </li>
+               <li><a target="_blank" href="article_cat.php?id=3">帮助中心</a></li>
+           </ul>
+       </div>
+    </div>
+  </div>
+  <div class="ls_header_c">
+    <div class="ls_header_c_l">
+		<!--9-30-->
+          <style type="text/css">
+              /*下拉框*/
+              .select_options{display: none}
+              .select{position: relative;width: 58px;font-size: 12px;height: 25px;background-color: #fff;line-height: 25px;border: 1px solid #d1d1d1;}
+              .select_choose{height: 25px;width: 58px;font-size: 12px;line-height: 25px;text-indent: 10px;cursor: pointer;}
+              .select_choose i{float: right;height: 15px;width: 15px;margin-right: 5px;margin-top: 5px;*margin-top: -20px;background: url("themes/yiyao/images/select_down.png");}
+              .select_options{margin: 0;list-style: none;display: none;width: 58px;position: absolute;padding: 0;border: 1px solid #d1d1d1;
+                  border-top: 0;left: -1px;background-color: #fff;z-index:1000;}
+              .select_options li{margin: 0;padding-left: 10px;border-top: 1px solid #d1d1d1;font-size: 12px;cursor: pointer;}
+              .select_options li:hover{background-color: #eee;}
+              .select_options li a{text-decoration: none;color: #323232}
+          </style>
+          <div style="float: right;margin-right: 30px;margin-top: 24px">
+              <div class="select">
+                  <div class="select_choose"><span>{if $address_area eq 2}新疆{else}四川{/if}</span><i></i></div>
+				  {if $only_xj == false}
+					  <ul class="select_options">			      
+						  <li data-url="index.php?area={if $address_area eq 2}1{else}2{/if}">{if $address_area eq 2}四川{else}新疆{/if}</li>
+					  </ul>
+				  {/if}
+              </div>
+          </div>
+          <script type="text/javascript">
+              $(".select_choose").click(function(e){
+                  e.stopPropagation();//阻止冒泡但是允许默认事件的发生
+                  $(this).next(".select_options").slideDown(100);
+              });
+              $(".select_options li").click(function(){
+                  $(this).parent().prev().find("span").text($(this).text());
+                  $(this).parent().slideUp(100);
+                  var url = $(this).attr('data-url') ;
+				  location.href = url ;
+                  return false;
+              });
+              $(":not(.select_choose)").click(function(){
+                  $(".select .select_options").slideUp(100);
+              });
+          </script>
+        <!--end-->
+		<a href="../index.php" name="top"><img src="../images/logo1.gif" width="210" height="90"/></a>
+	</div>
+	<div class="searchBox_wrap">
+		<div class="searchBox fl">
+			<input id="suggest" type="text" class="search_input fl" value="{if $keywords_search eq ''}药品名称(拼音缩写){else}{$keywords_search}{/if}">
+			<input id="search_btn" type="button" class="search_btn fl">
+			<div id="suggestions_wrap" class="search_show">
+				<ul id="suggestions" class="search_list fl">
+				</ul>
+			</div>
+		</div>
+		<div id="hotwords">
+			<strong>热门搜索：</strong>
+			{foreach from=$searchkeywords item=val name=val}
+				{if $smarty.foreach.val.iteration<7}
+				 <a href="search.php?keywords={$val|escape:url}">{$val}</a>&nbsp;&nbsp;
+				{/if}
+			{/foreach}
+		</div>
+	</div>
+    <div class="ls_header_c_r">
+    <!--{foreach from=$guanggao_17 item=cat name=cat}-->
+ <!--{if $smarty.foreach.cat.index < 1} 帮助显示1条数-->
+   <a href="{$cat.ad_link}" target="_blank"><img src="data/afficheimg/{$cat.ad_code}" original="data/afficheimg/{$cat.ad_code}" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+   <!-- {/if} --> 
+<!--{/foreach}-->
+  </div>
+  </div>
+  <div class="ls_header_b_wrap">
+	  <div class="ls_header_b">
+	    <ul>
+	    <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav key=p} -->
+	<li {if $nav.active eq 1} class="li_bj"{/if} {if $p eq 2}style="position:relative"{/if}><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if}>{$nav.name}</a>{if $p eq 2}<b style="width:19px;height:21px;background:url('themes/yiyao/images/gw_sl2.png') no-repeat 0 0;position:absolute;right:10px;top:-10px;line-height:18px;font-weight:normal;font-size:12px;">热</b>{/if}</li>
+	 <!-- {/foreach} -->
+	 <li style="background: none"><a href="http://www.hezongyy.com/jf/" style="font-family: 'microsoft yahei', serif;color: #e0e066;font-weight: bold">积分商城</a></li>
+	    </ul>
+	    <div class="ls_gw">
+	      <div class="ls_gw_t">{insert name='cart_info'}</div>
+	      <div class="ls_gw_i"><a href="flow.php"></a></div>
+	    </div>
+	  </div>
+	</div>   
+</div>
+<script type="text/javascript">
+    (function(a){a(document).ready(function(){var b=0;var c='{$keywords_search}';var d;a('#suggest').bind('keyup',e);a('#suggest').bind('keydown',g);if(document.activeElement.id=='suggest'){a('#suggest').trigger("keyup")};a('#search_btn').click(function(){location.href='search.php?keywords='+a('#suggest').val()});a('#suggestions>li').live('mouseover',function(){var h=a(this).prevAll().length;b=h+1;a(this).css('cursor','pointer').addClass('active').siblings('li').removeClass('active')});a('#suggestions>li').live('click',function(){a('#suggest').val(a(this).text());location.href='search.php?keywords='+a('#suggest').val()});a('#suggest').blur(function(){a('#suggestions_wrap').fadeOut();var h=a(this).val();if(h==''){a(this).val('药品名称(拼音缩写)')}});a('#suggest').focus(function(){var h=a(this).val();if(h=='药品名称(拼音缩写)'){a(this).val('')};var i=a(this).val();if(i!=''){b=0;if(d)d.abort();if(i.length>=1){d=a.getJSON('flow.php',{keyword:i,step:'suggest'},f)}}});function e(h){if(h.keyCode!=40&&h.keyCode!=38){c=a.trim(a(this).val())};if(c==''||h.which==27){a('#suggestions').empty();a('#suggestions_wrap').hide()};if((h.which>=65&&h.which<=90)||h.which==8||h.which==46||h.which==32||h.which==13||h.which==undefined){b=0;if(d)d.abort();if(c.length>=1){d=a.getJSON('flow.php',{keyword:c,step:'suggest'},f)}}};function f(h){if(h==false){a('#suggestions').empty();a('#suggestions_wrap').hide()}else{var i='';for(var j=0;j<h.length;j++){i+='<li>'+h[j]+'</li>'};a('#suggestions').html(i);a('#suggestions_wrap').show()}};function g(h){switch(h.which){case 38:var i='';b=(b==0?a("#suggestions li").length:b-1);if(b==0){i=c;a("#suggestions li").removeClass("active")}else{a("#suggestions li").removeClass("active");a("#suggestions li").eq(b-1).addClass("active");i=a("#suggestions li").eq(b-1).text()};a("#suggest").val(i);break;case 40:var i="";if(b==a("#suggestions li").length){i=c;a("#suggestions li").removeClass("active")}else{a("#suggestions li").removeClass("active");i=a("#suggestions li").eq(b).text();a("#suggestions li").eq(b).addClass("active")};b=(b==a("#suggestions li").length?0:b+1);a("#suggest").val(i);break;case 13:b=0;if(a('#suggestions>li.active').length!=0){a('#suggest').val(a('#suggestions>li.active').html())};a('#suggestions').empty();a('#suggestions_wrap').hide();a('#suggest').unbind('keyup',e);location.href='search.php?keywords='+a('#suggest').val();break}}})})(jQuery);
+</script>
+
+<!-- 焦点图 begin -->
+<div style="margin:0 auto; width: 1200px;">
+<div class="FocusPic">
+
+<!--01-22-->
+{if $is_jp eq true}
+     <style type="text/css">
+            .black{position: absolute;background-color: #000;opacity: 0.6;filter: alpha(opacity=60);height: 395px;
+                z-index: 1010;width: 1600px;margin-left: -800px;left: 50%}
+            .alertAd{position: absolute;width: 1600px;height: 395px;top: 65px;z-index: 1020;line-height: 395px;left: 50%;
+                margin-left: -800px;text-align: center}
+            .alertAd img{border: 2px solid #fff;}
+            .alertAd i{position: absolute;background: url("themes/yiyao/images/close_tm.png")  center no-repeat;width: 17px;height: 17px;
+                z-index: 1020;left: 50%;margin-left: 183px;top: 2px;cursor: pointer;*top: 65px;_top: 2px}
+            .alertAd div{position: absolute;background: #000;width: 17px;height: 17px;left: 50%;top: 2px;margin: 0 0 0 183px;
+                z-index: 1015;opacity: 0.3;filter: alpha(opacity=30);*top: 65px;_top: 2px}
+     </style>
+     <script type="text/javascript">
+            $(function(){
+                $(".alertAd i").click(function(){
+                    $(this).parent().prev(".black").fadeOut(500);
+                    $(this).parent().remove().fadeOut(500);
+                });
+            });
+      </script>
+      <div class="black"></div>
+      <div class="alertAd">
+            <a href="./jpzq/" target="_blank"><img src="images/is_jp.jpg" alt=""/></a>
+            <div></div>
+            <i></i>
+      </div>
+{/if}
+<!--end-->
+
+    <div id="FS_numList_01" class="FP_NumList"></div>
+    <div id="FS_Cont_01" class="FP_cont">
+	<!--{foreach from=$guanggao_1 item=cat name=cat}-->
+		<div class="FP_pic">
+			<div><a href="{$cat.ad_link}" target="_blank"><img src="data/afficheimg/{$cat.ad_code}" width="1200" height="395" alt="" title="" border="0" style="vertical-align:middle;"/></a></div>
+		</div>
+	<!--{/foreach}-->
+   </div>
+</div>
+<script language="javascript" type="text/javascript">
+	var focusScroll = new ScrollPic();
+	focusScroll.scrollContId   = "FS_Cont_01"; /*内容容器ID*/	
+	focusScroll.dotListId      = "FS_numList_01";/*点列表ID*/	
+	focusScroll.dotClassName   = "";/*点className*/	
+	focusScroll.dotOnClassName	= "selected";/*当前点className*/	
+	focusScroll.listType		= "number";/*列表类型(number:数字，其它为空)*/	
+	focusScroll.listEvent      = "onmouseover"; /*切换事件*/	
+	focusScroll.frameWidth     = 1200;/*显示框宽度*/	
+	focusScroll.pageWidth      = 1200; /*翻页宽度*/	
+	focusScroll.upright        = false; /*垂直滚动*/	
+	focusScroll.speed          = 5; /*移动速度(单位毫秒，越小越快)*/	
+	focusScroll.space          = 30; /*每次移动像素(单位px，越大越快)*/	
+	focusScroll.autoPlay       = true; /*自动播放*/	
+	focusScroll.autoPlayTime   = 8; /*自动播放间隔时间(秒)*/	
+	focusScroll.initialize(); /*初始化*/	
+</script>
+<!-- 焦点图 end --></div>
+
+<!-- 主体-->
+<div class="container">
+    <div class="toptitle">
+    <ul class="title_list">
+    <li class="top_2"><a href="activity.php">促销专区</a></li>
+    <li class="top_2 rest_bg2"><a  style="padding-left:65px;font-size:18px;">国家批准 网上批发</a></li>
+    <li class="top_2 rest_bg"><a style="padding-left:65px;font-size:18px;">严格审核 在线咨询</a></li>
+    <li class="top_2 rest_bg"><a style="padding-left:65px;font-size:18px;">品类齐全 公开透明</a></li>
+    </ul></div>
+    <div class="clear"></div>
+
+
+<div class="sidebar_left">
+<ul class="pro_list">
+<!-- {foreach from=$guanggao_8 item=cat name=cat} -->
+<li><div class="boxgrid">
+	<!--{if $smarty.foreach.cat.index < 6} 帮助显示1条数-->
+   <a href="{$cat.ad_link}" target="_blank"><img src="data/afficheimg/{$cat.ad_code}" width="{$cat.ad_width}" height="{$cat.ad_height}" border="0"/></a>
+   <!-- {/if} --> 		
+</div></li>
+<!-- {/foreach} -->    
+</ul>
+
+</div>
+<div class="sidebar_right">
+<div class="right_re_ads"></div>
+<div class="top_title_2"></div>
+<style type="text/css">
+	.top_title_4 h2  {font-family:'Microsoft yahei';font-size:14px;}
+	.top_title_4 a.more_btn {text-decoration:none;font-family:'Microsoft yahei';font-weight:normal;font-size:12px;color:#4E8B50;float:right;display:inline;margin-right:60px;}
+	.top_title_4 a.more_btn:hover {color:#046C33;text-decoration:underline;}
+</style>
+<div class="top_title_4"> 
+<!-- {foreach from=$ls_zlgg item=help_cat} -->
+<h2><a href="article_cat.php?id=4" class="more_btn" target="_blank">更多></a>{$help_cat.cat_name}</h2>
+<ul class="news_list"> 
+<!-- {foreach from=$help_cat.article item=item name=gsdt} -->
+<li><a href="{$item.url}" target="_blank" title="{$item.title}" {if $smarty.foreach.gsdt.first==1}style="color:red"{/if}>{$item.title|truncate:22:"...":true}&nbsp;[{$item.add_time}]</a></li>
+<!-- {/foreach} -->
+</ul>
+<!-- {/foreach} -->
+
+<!-- {foreach from=$ls_wzgg item=help_cat} -->
+<h2><a href="article_cat.php?id=12" class="more_btn" target="_blank">更多></a>{$help_cat.cat_name}</h2>
+<ul class="news_list">
+<!-- {foreach from=$help_cat.article item=item name=cat} -->
+<li><a href="{$item.url}" target="_blank" title="{$item.title}" {if $smarty.foreach.cat.first==1}style="color:red"{/if}>{$item.title|truncate:22:"...":true}&nbsp;[{$item.add_time}]</a></li>
+<!-- {/foreach} -->
+</ul>
+<!-- {/foreach} -->
+</div>
+
+<div class="top_title_3"></div>
+</div>
+<div class="clear"></div>
+
+<div class="sidebar_left_re box_distance">  
+<div class="re_top_title"></div>
+<p class="first_re"><span style="width:212px;">商品名称</span><span>规格</span><span style="width:191px;">生产厂家</span></p>
+<ul class="zhanshi_list" id="ls_ticker">
+<!-- {foreach from=$new_product_list item=new_list} -->
+<li><span style="width:212px;"><a href="goods.php?id={$new_list.goods_id}" target="_blank">{$new_list.goods_name|truncate:13:"...":true}</a></span><span style="overflow:hidden;">{$new_list.gname}</span><span style="width:191px;">{$new_list.pname|truncate:13:"...":true}</span></li>
+<!-- {/foreach} -->
+</ul>
+</div>
+<div class="sidebar_right_re box_distance">
+<div class="re_top_title2"></div>
+<p class="first_re"><span style="width:273px;">求购商品</span>    <span>求购数量</span>  <span>求购时间</span></p>
+<ul class="zhanshi_list" id="ticker">
+<!-- {foreach from=$qg_list item=qg_list} -->
+<li><span style=" width:273px;">{$qg_list.buy_goods}</span><span>{$qg_list.buy_number}</span> <span>{$qg_list.buy_addtime}</span> </li>
+<!-- {/foreach} -->
+</ul>
+</div>
+<!-- 分段 -->
+<script type="text/javascript">
+	  $(function() {
+	  
+		//cache the ticker
+		var ls_ticker = $("#ls_ticker");
+		  
+		//wrap dt:dd pairs in divs
+		ls_ticker.children().filter("li").each(function() {
+		  
+		  var dt = $(this),
+		    container = $("<div>");
+		  
+		  dt.next().appendTo(container);
+		  dt.prependTo(container);
+		  
+		  container.appendTo(ls_ticker);
+		});
+				
+		//hide the scrollbar
+		ls_ticker.css("overflow", "hidden");
+		
+		//animator function
+		function animator(currentItem) {
+		    
+		  //work out new anim duration
+		  var distance = currentItem.height();
+			duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.025;
+
+		  //animate the first child of the ls_ticker
+		  currentItem.animate({ marginTop: -distance }, duration, "linear", function() {
+		    
+			//move current item to the bottom
+			currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+			//recurse
+			animator(currentItem.parent().children(":first"));
+		  }); 
+		};
+		
+		//start the ls_ticker
+		animator(ls_ticker.children(":first"));
+				
+		//set mouseenter
+		ls_ticker.mouseenter(function() {
+		  
+		  //stop current animation
+		  ls_ticker.children().stop();
+		  
+		});
+		
+		//set mouseleave
+		ls_ticker.mouseleave(function() {
+		          
+          //resume animation
+		  animator(ls_ticker.children(":first"));
+		  
+		});
+	  });
+	  
+	  
+	  
+	  $(function() {
+	  
+		//cache the ticker
+		var ticker = $("#ticker");
+		  
+		//wrap dt:dd pairs in divs
+		ticker.children().filter("li").each(function() {
+		  
+		  var dt = $(this),
+		    container = $("<div>");
+		  
+		  dt.next().appendTo(container);
+		  dt.prependTo(container);
+		  
+		  container.appendTo(ticker);
+		});
+				
+		//hide the scrollbar
+		ticker.css("overflow", "hidden");
+		
+		//animator function
+		function animator(currentItem) {
+		    
+		  //work out new anim duration
+		  var distance = currentItem.height();
+			duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.025;
+
+		  //animate the first child of the ticker
+		  currentItem.animate({ marginTop: -distance }, duration, "linear", function() {
+		    
+			//move current item to the bottom
+			currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+
+			//recurse
+			animator(currentItem.parent().children(":first"));
+		  }); 
+		};
+		
+		//start the ticker
+		animator(ticker.children(":first"));
+				
+		//set mouseenter
+		ticker.mouseenter(function() {
+		  
+		  //stop current animation
+		  ticker.children().stop();
+		  
+		});
+		
+		//set mouseleave
+		ticker.mouseleave(function() {
+		          
+          //resume animation
+		  animator(ticker.children(":first"));
+		  
+		});
+	  });
+    </script>
+
+<div class="clear"></div>
+{if $index_py}
+<div class="top_nav_left distance"><img src="images/topnav1.jpg" width="205" height="47" /></div>
+<div class="top_nav_right distance">
+<ul class="fenlei_list">
+<li><a href="category.php?id=22">推荐更多</a></li>
+</ul>
+<span style=" font-size:14px; color:#42b212">Generic drugs</span>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+	$(function(){
+		//王成8-21
+		var left_list_fenlei= $(".left_list_fenlei");
+		var left_list_fenlei_head= $(".left_list_fenlei_head");
+		left_list_fenlei.find("li:odd").css("border-right","0");
+		$(".left_com .left_list_fenlei_head:even").css({"border-right":"1px solid #ddd"});
+		$(".left_com .left_list_fenlei_head:even").find("span").addClass("to_up");
+		$(".left_com .left_list_fenlei_head:even").css({"background": "url(themes/yiyao/images/nav_left_click.jpg) repeat-x"});
+		$(".left_com").find(".left_list_fenlei:odd").hide();
+		left_list_fenlei_head.click(function(){
+			$(this).parent().children(left_list_fenlei_head).not(this).find("span").removeClass("to_up");
+			$(this).find("span").addClass("to_up");
+			$(this).css({"background": "url(themes/yiyao/images/nav_left_click.jpg) repeat-x"});
+			//end
+			$(this).siblings().css({"background": "url(\"themes/yiyao/images/nav_left.png\") 0 -5px repeat-x"});
+			$(this).parent().parent().children(".left_list_fenlei").css("display","none");
+			$(this).parent().parent().children(".left_list_fenlei").eq($(".left_com>ul>li").index(this)%2).show();
+		});
+	});
+</script>
+<div class="left_com">
+<ul class="clearFloat">
+	<li class="left_list_fenlei_head">西药<span></span></li>
+	<li class="left_list_fenlei_head">中成药<span></span></li>
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$xypharmacat1 item=xy key=i}
+	{if $i < 30}
+		<li><a href="{$xy.url}" title="{$xy.name}">{$xy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$zcypharmacat1 item=zcy key=i}
+	{if $i < 30}
+		<li><a href="{$zcy.url}" title="{$zcy.name}">{$zcy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+</div>
+<div class="right_com">
+<ul class="re_list">
+{foreach from=$index_py item=item_py}
+<li>
+<div style="width:193px; height:170px;"><a href="{$item_py.url}"><img class="err-poster" data-original="{$item_py.goods_thumb}" src="images/grey.gif" width="193" height="170" title="{$item_py.goods_name}" /></a></div>
+<div style="width:191px; height:138px; background-color:#fff; border:1px solid #d7d5d5;line-height: 25px; text-align:center">
+<p style="padding-left: 10px; text-align: left; padding-right: 10px; padding-top:5px; height:25px;overflow:hidden" title="{$item_py.goods_name}"><font style="color:#48914A;"><a href="{$item_py.url}" target="_blank">{$item_py.goods_name}</a></font></p>
+{foreach name=goods_list from=$item_py.pon item=pon}
+    
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='药品规格'}<p style="color:#666666; font-size:12px; text-align:left; height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">药品规格：{$pro.value}</p>{/if}
+    {if $pro.name=='生产厂家'}<p style="color:#666666; font-size:12px;text-align:left;height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">生产厂家：{$pro.value}</p>{/if}
+    {/foreach}
+    {/foreach}
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A; height:25px;">
+{if $item_py.ls_xs}
+	供货价：会员可见
+{else}
+	{if $activity_flag}
+		{if $item_py.goods_id == 1084 || $item_py.goods_id == 1972 || $item_py.goods_id == 2196 || $item_py.goods_id == 659 || $item_py.goods_id == 307 || $item_py.goods_id==3167 || $item_py.goods_id == 3227 || $item_py.goods_id == 2196 || $item_py.goods_id == 1208 || $item_py.goods_id == 1206 || $item_py.goods_id==3110 || $item_py.goods_id == 3138 || $item_py.goods_id == 4000 || $item_py.goods_id == 3159 || $item_py.goods_id == 3497 || $item_py.goods_id==1095 || $item_py.goods_id == 3932 || $item_py.goods_id == 2120 || $item_py.goods_id == 1966 || $item_py.goods_id==714 || $item_py.goods_id == 3068 || $item_py.goods_id == 963 || $item_py.goods_id == 1985 || $item_py.goods_id == 1986 || $item_py.goods_id == 4302 || $item_py.goods_id == 3300}
+			{if $is_new_user == true}
+				{if $item_py.promote_price}
+					<font style=" color:#F00;">特价：{$item_py.promote_price}
+				{else}
+					{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+						供货价:<font style=" color:#F00;">{$item_py.org_price}
+					{else}
+						供货价:<font style=" color:#F00;">{$item_py.shop_price}
+					{/if}
+				{/if}
+			{else}
+				{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+					供货价:<font style=" color:#F00;">{$item_py.org_price}
+				{else}
+					供货价:<font style=" color:#F00;">{$item_py.shop_price}
+				{/if}
+			{/if}
+		{else}
+			{if $item_py.promote_price}
+				<font style=" color:#F00;">特价：{$item_py.promote_price}
+			{else}
+				{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+					供货价:<font style=" color:#F00;">{$item_py.org_price}
+				{else}
+					供货价:<font style=" color:#F00;">{$item_py.shop_price}
+				{/if}
+			{/if}
+		{/if}
+	{else}
+		{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+			供货价:<font style=" color:#F00;">{$item_py.org_price}
+		{else}
+			供货价:<font style=" color:#F00;">{$item_py.shop_price}
+		{/if}
+	{/if}
+{foreach name=goods_list from=$item_py.pon item=pon} 
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='包装单位'}/{$pro.value}{/if}{/foreach}
+    {/foreach}</font>{/if}</p>
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A;"><a href="javascript:collect({$item_py.goods_id})" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline; line-height:25px; text-align:center; color:#666; margin-right:20px;">加入收藏</a><a href="{if $item_py.ls_xs}javascript:addToCart2({$item_py.goods_id}){else}javascript:addToCart1({$item_py.goods_id}<!--{foreach name=goods_list from=$item_py.pon item=pon}--><!--{foreach name=goods_list from=$pon item=pro}-->{if $pro.name=='中包装'},'{$pro.value}'{/if}<!--{/foreach}--><!--{/foreach}-->){/if}" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline;line-height:25px; text-align:center; color:#666;">立即购买</a></p></div>
+</li>
+{/foreach}
+
+</ul>
+</div>
+<div class="advs">
+ {foreach from=$guanggao_2 item=cat name=cat}
+ {if $smarty.foreach.cat.index < 2}
+   <a href="{$cat.ad_link}" target="_blank"><img class="err-poster" data-original="data/afficheimg/{$cat.ad_code}" src="images/grey.gif" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+ {/if} 
+ {/foreach}
+</div>
+{/if}
+<!-- py end -->
+
+<div class="clear"></div>
+{if $index_tszq}
+<div class="top_nav_left distance"><img src="images/topnav2.jpg" width="205" height="47" /></div>
+<div class="top_nav_right distance">
+<ul class="fenlei_list">
+<li><a href="category.php?id=21">推荐更多</a></li>
+</ul>
+<span style=" font-size:14px; color:#42b212">Product introduction</span>
+
+</div>
+<div class="clear"></div>
+<div class="left_com">
+<ul class="clearFloat">
+	<li class="left_list_fenlei_head">西药<span></span></li>
+	<li class="left_list_fenlei_head">中成药<span></span></li>
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$xypharmacat2 item=xy key=i}
+	{if $i < 30}
+		<li><a href="{$xy.url}" title="{$xy.name}">{$xy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$zcypharmacat2 item=zcy key=i}
+	{if $i < 30}
+		<li><a href="{$zcy.url}" title="{$zcy.name}">{$zcy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+</div>
+<div class="right_com">
+<ul class="re_list">
+{foreach from=$index_tszq item=item_tszq}
+<li>
+<div style="width:193px; height:170px;"><a href="{$item_tszq.url}"><img class="err-poster" data-original="{$item_tszq.goods_thumb}" src="images/grey.gif" width="193" height="170" title="{$item_tszq.goods_name}" /></a></div>
+<div style="width:191px; height:138px; background-color:#fff; border:1px solid #d7d5d5;line-height: 25px; text-align:center">
+<p style="padding-left: 10px; text-align: left; padding-right: 10px; padding-top:5px; height:25px;overflow:hidden" title="{$item_tszq.goods_name}"><font style="color:#48914A;"><a href="{$item_tszq.url}" target="_blank">{$item_tszq.goods_name}</a></font></p>
+{foreach name=goods_list from=$item_tszq.pon item=pon}
+    
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='药品规格'}<p style="color:#666666; font-size:12px; text-align:left; height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">药品规格：{$pro.value}</p>{/if}
+    {if $pro.name=='生产厂家'}<p style="color:#666666; font-size:12px;text-align:left;height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">生产厂家：{$pro.value}</p>{/if}
+    {/foreach}
+{/foreach}
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A; height:25px;">
+{if $item_tszq.ls_xs}
+	供货价：会员可见
+{else}
+	{if $activity_flag}
+		{if $item_tszq.promote_price}
+			<font style=" color:#F00;">特价：{$item_tszq.promote_price}
+		{else}
+			{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+				供货价:<font style=" color:#F00;">{$item_tszq.org_price}
+			{else}
+				供货价:<font style=" color:#F00;">{$item_tszq.shop_price}
+			{/if}
+		{/if}
+	{else}
+		{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+			供货价:<font style=" color:#F00;">{$item_tszq.org_price}
+		{else}
+			供货价:<font style=" color:#F00;">{$item_tszq.shop_price}
+		{/if}
+	{/if}
+{foreach name=goods_list from=$item_tszq.pon item=pon}
+{foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='包装单位'}/{$pro.value}{/if}
+{/foreach}
+{/foreach}</font>{/if}</p>
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A;"><a href="javascript:collect({$item_tszq.goods_id})" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline;line-height:25px; text-align:center; color:#666; margin-right:20px;">加入收藏</a><a href="{if $item_tszq.ls_xs}javascript:addToCart2({$item_tszq.goods_id}){else}javascript:addToCart1({$item_tszq.goods_id}<!--{foreach name=goods_list from=$item_tszq.pon item=pon}--><!--{foreach name=goods_list from=$pon item=pro}-->{if $pro.name=='中包装'},'{$pro.value}'{/if}<!--{/foreach}--><!--{/foreach}-->){/if}" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline;line-height:25px; text-align:center; color:#666;">立即购买</a></p></div>
+</li>
+{/foreach}
+</ul>
+</div>
+<div class="advs">
+{foreach from=$guanggao_4 item=cat name=cat}
+   {if $smarty.foreach.cat.index < 2}
+   <a href="{$cat.ad_link}" target="_blank"><img class="err-poster" data-original="data/afficheimg/{$cat.ad_code}" src="images/grey.gif" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+   {/if}
+{/foreach}
+</div>
+<!-- 分段 -->
+{/if}
+<!-- ts end -->
+
+<!-- 分段 -->
+<div class="clear"></div>
+{if $index_xty}
+<div class="top_nav_left distance"><img src="images/topnav3.jpg" width="205" height="47" /></div>
+<div class="top_nav_right distance">
+<ul class="fenlei_list">
+<li><a href="category.php?id=21">推荐更多</a></li>
+</ul>
+<span style=" font-size:14px; color:#42b212">Boutique area</span>
+
+</div>
+<div class="clear"></div>
+<div class="left_com">
+<ul class="clearFloat">
+	<li class="left_list_fenlei_head">西药<span></span></li>
+	<li class="left_list_fenlei_head">中成药<span></span></li>
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$xypharmacat3 item=xy key=i}
+	{if $i < 30}
+		<li><a href="{$xy.url}" title="{$xy.name}">{$xy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+<ul class="left_list_fenlei clearFloat">
+	{foreach from=$zcypharmacat3 item=zcy key=i}
+	{if $i < 30}
+		<li><a href="{$zcy.url}" title="{$zcy.name}">{$zcy.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+</div>
+<div class="right_com">
+<ul class="re_list">
+{foreach from=$index_xty item=item_xty}
+<li>
+<div style="width:193px; height:170px;"><a href="{$item_xty.url}"><img class="err-poster" data-original="{$item_xty.goods_thumb}" src="images/grey.gif" width="193" height="170" title="{$item_xty.goods_name}" /></a></div>
+<div style="width:191px; height:138px; background-color:#fff; border:1px solid #d7d5d5;line-height: 25px; text-align:center">
+<p style="padding-left: 10px; text-align: left; padding-right: 10px; padding-top:5px; height:25px;overflow:hidden" title="{$item_xty.goods_name}"><font style="color:#48914A;"><a href="{$item_xty.url}" target="_blank">{$item_xty.goods_name}</a></font></p>
+{foreach name=goods_list from=$item_xty.pon item=pon} 
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='药品规格'}<p style="color:#666666; font-size:12px; text-align:left; height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">药品规格：{$pro.value}</p>{/if}
+    {if $pro.name=='生产厂家'}<p style="color:#666666; font-size:12px;text-align:left;height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">生产厂家：{$pro.value}</p>{/if}
+    {/foreach}
+{/foreach}
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A; height:25px;">
+{if $item_xty.ls_xs}
+	供货价：会员可见
+{else}
+	{if $activity_flag}
+		{if $item_xty.promote_price}
+			<font style=" color:#F00;">特价：{$item_xty.promote_price}
+		{else}
+			{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+				供货价:<font style=" color:#F00;">{$item_xty.org_price}
+			{else}
+				供货价:<font style=" color:#F00;">{$item_xty.shop_price}
+			{/if}
+		{/if}
+	{else}
+		{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+			供货价:<font style=" color:#F00;">{$item_xty.org_price}
+		{else}
+			供货价:<font style=" color:#F00;">{$item_xty.shop_price}
+		{/if}
+	{/if}
+{foreach name=goods_list from=$item_xty.pon item=pon}
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='包装单位'}/{$pro.value}{/if}
+	{/foreach}
+{/foreach}</font>{/if}</p>
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A;"><a href="javascript:collect({$item_xty.goods_id})" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline;line-height:25px; text-align:center; color:#666; margin-right:20px;">加入收藏</a><a href="{if $item_xty.ls_xs}javascript:addToCart2({$item_xty.goods_id}){else}javascript:addToCart1({$item_xty.goods_id}<!--{foreach name=goods_list from=$item_xty.pon item=pon}--><!--{foreach name=goods_list from=$pon item=pro}-->{if $pro.name=='中包装'},'{$pro.value}'{/if}<!--{/foreach}--><!--{/foreach}-->){/if}" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; display:inline;line-height:25px; text-align:center; color:#666;">立即购买</a></p></div>
+</li>
+{/foreach}
+
+</ul>
+</div>
+<div class="advs">
+ {foreach from=$guanggao_3 item=cat name=cat}
+   {if $smarty.foreach.cat.index < 2}
+   <a href="{$cat.ad_link}" target="_blank"><img class="err-poster" data-original="data/afficheimg/{$cat.ad_code}" src="images/grey.gif" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+   {/if}
+ {/foreach}
+</div>
+{/if}
+<!-- xty end -->
+
+<!-- 分段 -->
+<div class="clear"></div>
+{if $index_bjp}
+<div class="top_nav_left distance"><img src="images/topnav5.jpg" width="205" height="47" /></div>
+<div class="top_nav_right distance">
+<ul class="fenlei_list">
+<li><a href="category.php?id=12">推荐更多</a></li>
+</ul>
+<span style=" font-size:14px; color:#42b212">Health care products</span>
+
+</div>
+<div class="clear"></div>
+<div class="left_com">
+<ul class="left_list_fenlei clearFloat" style="border-top:1px solid #ddd;">
+	{foreach from=$bjppharmacat item=bjp key=i}
+	{if $i < 30}
+		<li><a href="{$bjp.url}" title="{$bjp.name}">{$bjp.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+</div>
+<div class="right_com">
+<ul class="re_list">
+{foreach from=$index_bjp item=item_bjp}
+<li>
+<div style="width:193px; height:170px;"><a href="{$item_bjp.url}"><img class="err-poster" data-original="{$item_bjp.goods_thumb}" src="images/grey.gif" width="193" height="170" title="{$item_bjp.goods_name}" /></a></div>
+<div style="width:191px; height:138px; background-color:#fff; border:1px solid #d7d5d5;line-height: 25px; text-align:center">
+<p style="padding-left: 10px; text-align: left; padding-right: 10px; padding-top:5px; height:25px;overflow:hidden" title="{$item_bjp.goods_name}"><font style="color:#48914A;"><a href="{$item_bjp.url}" target="_blank">{$item_bjp.goods_name}</a></font></p>
+{foreach name=goods_list from=$item_bjp.pon item=pon}
+{foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='药品规格'}<p style="color:#666666; font-size:12px; text-align:left; height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">药品规格：{$pro.value}</p>{/if}
+    {if $pro.name=='生产厂家'}<p style="color:#666666; font-size:12px;text-align:left;height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">生产厂家：{$pro.value}</p>{/if}
+    {/foreach}
+{/foreach}
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A; height:25px;">
+{if $item_bjp.ls_xs}
+	供货价：会员可见
+{else}
+	{if $activity_flag}
+		{if $item_bjp.promote_price}
+			<font style=" color:#F00;">特价：{$item_bjp.promote_price}
+		{else}
+			{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+				供货价:<font style=" color:#F00;">{$item_bjp.org_price}
+			{else}
+				供货价:<font style=" color:#F00;">{$item_bjp.shop_price}
+			{/if}
+		{/if}
+	{else}
+		{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+			供货价:<font style=" color:#F00;">{$item_bjp.org_price}
+		{else}
+			供货价:<font style=" color:#F00;">{$item_bjp.shop_price}
+		{/if}
+	{/if}
+
+{foreach name=goods_list from=$item_bjp.pon item=pon} 
+    {foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='包装单位'}/{$pro.value}{/if}{/foreach}
+    {/foreach}</font>{/if}</p>
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A;"><a href="javascript:collect({$item_bjp.goods_id})" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; line-height:25px; text-align:center; color:#666; margin-right:20px;">加入收藏</a><a href="{if $item_bjp.ls_xs}javascript:addToCart2({$item_bjp.goods_id}){else}javascript:addToCart1({$item_bjp.goods_id}<!--{foreach name=goods_list from=$item_bjp.pon item=pon}--><!--{foreach name=goods_list from=$pon item=pro}-->{if $pro.name=='中包装'},'{$pro.value}'{/if}<!--{/foreach}--><!--{/foreach}-->){/if}" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; line-height:25px; text-align:center; color:#666;">立即购买</a></p></div>
+</li>
+{/foreach}
+
+</ul>
+</div>
+<div class="advs">
+ {foreach from=$guanggao_6 item=cat name=cat}
+  {if $smarty.foreach.cat.index < 2}
+   <a href="{$cat.ad_link}" target="_blank"><img class="err-poster" data-original="data/afficheimg/{$cat.ad_code}" src="images/grey.gif" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+  {/if}
+{/foreach}
+</div>
+<!-- 分段 -->
+{/if}
+<!-- bjp end -->
+
+<div class="clear"></div>
+{if $index_ylqx}
+<div class="top_nav_left distance"><img src="images/topnav6.jpg" width="205" height="47" /></div>
+<div class="top_nav_right distance">
+<ul class="fenlei_list">
+<li><a href="category.php?id=1">推荐更多</a></li>
+</ul>
+<span style=" font-size:14px; color:#42b212">Medical apparatus</span>
+</div>
+<div class="clear"></div>
+<div class="left_com">
+<ul class="left_list_fenlei clearFloat" style="border-top:1px solid #ddd;">
+	{foreach from=$ylqxpharmacat item=ylqx key=i}
+	{if $i < 30}
+		<li><a href="{$ylqx.url}" title="{$ylqx.name}">{$ylqx.name}</a></li>
+	{/if}
+	{/foreach}
+</ul>
+</div>
+<div class="right_com">
+<ul class="re_list">
+{foreach from=$index_ylqx item=item_ylqx}
+<li>
+<div style="width:193px; height:170px;"><a href="{$item_ylqx.url}"><img class="err-poster" data-original="{$item_ylqx.goods_thumb}" src="images/grey.gif" width="193" height="170" title="{$item_ylqx.goods_name}" /></a></div>
+<div style="width:191px; height:138px; background-color:#fff; border:1px solid #d7d5d5;line-height: 25px; text-align:center">
+<p style="padding-left: 10px; text-align: left; padding-right: 10px; padding-top:5px; height:25px;overflow:hidden" title="{$item_ylqx.goods_name}"><font style="color:#48914A;"><a href="{$item_ylqx.url}" target="_blank">{$item_ylqx.goods_name}</a></font></p>
+{foreach name=goods_list from=$item_ylqx.pon item=pon}
+{foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='药品规格'}<p style="color:#666666; font-size:12px; text-align:left; height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">药品规格：{$pro.value}</p>{/if}
+    {if $pro.name=='生产厂家'}<p style="color:#666666; font-size:12px;text-align:left;height:25px; overflow:hidden;padding-right: 10px;padding-left: 10px;" title="{$pro.value}">生产厂家：{$pro.value}</p>{/if}
+{/foreach}
+{/foreach}
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A; height:25px;">
+{if $item_ylqx.ls_xs}
+	供货价：会员可见
+{else}
+	{if $activity_flag}
+		{if $item_ylqx.promote_price}
+			<font style=" color:#F00;">特价：{$item_ylqx.promote_price}
+		{else}
+			{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+				供货价:<font style=" color:#F00;">{$item_ylqx.org_price}
+			{else}
+				供货价:<font style=" color:#F00;">{$item_ylqx.shop_price}
+			{/if}
+		{/if}
+	{else}
+		{if $ecs_session.user_rank==1 || $ecs_session.user_rank==6 || $ecs_session.user_rank==7}
+			供货价:<font style=" color:#F00;">{$item_ylqx.org_price}
+		{else}
+			供货价:<font style=" color:#F00;">{$item_ylqx.shop_price}
+		{/if}
+	{/if}
+
+{foreach name=goods_list from=$item_ylqx.pon item=pon}
+	{foreach name=goods_list from=$pon item=pro}
+    {if $pro.name=='包装单位'}/{$pro.value}{/if}{/foreach}
+    {/foreach}</font>{/if}</p>
+<p style="text-align:left; padding-left:10px; padding-right:10px;color:#48914A;"><a href="javascript:collect({$item_ylqx.goods_id})" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; line-height:25px; text-align:center; color:#666; margin-right:20px;">加入收藏</a><a href="{if $item_ylqx.ls_xs}javascript:addToCart2({$item_ylqx.goods_id}){else}javascript:addToCart1({$item_ylqx.goods_id},<!--{foreach name=goods_list from=$item_ylqx.pon item=pon}--><!--{foreach name=goods_list from=$pon item=pro}-->{if $pro.name=='中包装'},'{$pro.value}'{/if}<!--{/foreach}--><!--{/foreach}-->){/if}" style="width:70px; height:25px; border:1px solid #D7D5D5; float:left; line-height:25px; text-align:center; color:#666;">立即购买</a></p></div>
+</li>
+{/foreach}
+
+</ul>
+</div>
+<div class="advs">
+ {foreach from=$guanggao_7 item=cat name=cat}
+   {if $smarty.foreach.cat.index < 2}
+   <a href="{$cat.ad_link}" target="_blank"><img class="err-poster" data-original="data/afficheimg/{$cat.ad_code}" src="images/grey.gif" width="{$cat.ad_width}" height="{$cat.ad_height}" alt="" title="" border="0" style=" margin-top:5px;"/></a>
+   {/if}
+{/foreach}
+</div>
+<!-- 分段 -->
+{/if}
+<!-- ylqx end -->
+</div>
+<div style="width:1200px; height:auto; overflow:hidden; margin:auto;">
+  <div class="top_nav_left_2 distance"><img width="205" height="47" src="images/hzmt.jpg"></div>
+  <div class="clear"></div>
+  <div class="parterner">
+<ul class="par_list">
+<!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+    <li><a href="{$link.url}" target="_blank" title="{$link.name}"><img class="err-poster" data-original="{$link.logo}" src="images/grey.gif" alt="{$link.name}" border="0" width="115" height="58"/></a>
+  <p><a href="{$link.url}" target="_blank">{$link.name}</a></p></li>
+    <!--结束图片类型的友情链接{/foreach}-->
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

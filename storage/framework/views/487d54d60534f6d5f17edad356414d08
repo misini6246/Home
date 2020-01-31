@@ -1,0 +1,114 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('css/jf/common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/jf/xiangqing.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/jf/AAS.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/jf/add_to_cart.js')); ?>" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('jf.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('jf.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--container-->
+    <div class="container content">
+        <div class="content_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/jf/address_03.png')); ?>"/>
+                <span>当前位置：<a href="<?php echo e(route('jf.index')); ?>">积分首页</a> > <?php echo e($info->name); ?></span>
+            </div>
+            <div class="detail">
+                <div class="img_box">
+                    <?php foreach($info->goodsImg as $k=>$v): ?>
+                        <?php if($k==0): ?>
+                            <img style="width: 398px;height: 398px;"
+                                 src="<?php echo e(get_img_path('jf/'.substr($v->small_img,1))); ?>"/>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+
+                </div>
+                <ul class="img_list">
+                    <?php foreach($info->goodsImg as $k=>$v): ?>
+                        <li <?php if($k==0): ?>class="active"<?php endif; ?>>
+                            <img src="<?php echo e(get_img_path('jf/'.substr($v->small_img,1))); ?>"/>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="text">
+                    <p class="name"><?php echo e(str_limit($info->name,44)); ?></p>
+                    <p class="jifen">
+                        <span class="txt">所需积分：</span><span class="jf"><?php echo e($info->jf); ?></span><span class="scj">市场价：</span><span
+                                class="money"><?php echo e(formated_price($info->market_price)); ?></span>
+                    </p>
+                    <p class="kucun">
+                        库存： <span><?php echo e($info->goods_stock); ?></span>
+                    </p>
+                    <p class="sl">
+                        <span>数量：</span>
+                        <span class="jian">
+								<img src="<?php echo e(get_img_path('images/jf/jian_03.png')); ?>"/>
+							</span>
+                        <input type="text" id="num_btn" value="1"/>
+                        <span class="jia">
+								<img src="<?php echo e(get_img_path('images/jf/jia_03.png')); ?>"/>
+							</span>
+                    </p>
+                    <div class="btn">
+                        <div class="dh" onclick="ljdh('<?php echo e($info->id); ?>',$('#num_btn').val())">立即兑换</div>
+                        <div class="jr" onclick="add_to_cart('<?php echo e($info->id); ?>',$('#num_btn').val())">
+                            <img src="<?php echo e(get_img_path('images/jf/jr_btn.jpg')); ?>"/>加入礼品车
+                        </div>
+                    </div>
+                    <form action="<?php echo e(route('jf.cart.jiesuan')); ?>" method="post" id="ljdh_form">
+                        <?php echo csrf_field(); ?>
+
+                        <input id="cart_id" type="hidden" name="ids[]" value="0">
+                    </form>
+                </div>
+            </div>
+            <div class="xiangqing">
+                <div class="xiangqing_title">
+                    <img src="<?php echo e(get_img_path('images/jf/dian_03.png')); ?>"/>
+                    <span>礼品详情</span>
+                </div>
+                <p>商品名称：<?php echo e($info->name); ?></p>
+                <p>上架时间：<?php echo e(date('Y-m-d H:i:s',$info->add_time)); ?></p>
+            </div>
+        <?php echo $__env->make('jf.layouts.hot', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <!--热门兑换-->
+        </div>
+    </div>
+    <!--container-->
+    <?php echo $__env->make('jf.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script>
+        $('.img_list li').click(function () {
+            var src = $(this).find('img').attr('src');
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('.detail .img_box img').attr('src', src);
+        });
+        $('.sl').Aas({
+            jia: '.jia',
+            jian: '.jian',
+            val: '#num_btn',
+            max: '<?php echo e($info->goods_stock); ?>',  //最大值
+            callback: function () {
+//			 没有则不写
+            }
+        })
+        function ljdh(id, num) {
+            $.ajax({
+                url: '/jf/cart',
+                data: {id: id, gd_num: num},
+                dataType: 'json',
+                success: function (result) {
+                    if (result.error == 0) {
+                        $('#cart_id').val(result.id);
+                        $('#ljdh_form').submit();
+                    } else {
+                        layer.msg(result.msg, {icon: result.error + 1});
+                    }
+                }
+            });
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('jf.layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

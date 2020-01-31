@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>新闻中心</title>
+    <link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+    <link rel="stylesheet" type="text/css" href="/help/bzzx.css"/>
+    <link rel="stylesheet" type="text/css" href="/help/pages_other.css"/>
+
+</head>
+
+<body>
+<div class="big-container">
+    <!--头部-->
+<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!--/头部-->
+
+    <!--顶部-->
+    <div class="top-box">
+        <div class="box-container">
+            <div class="left">
+                <a href="<?php echo e('/'); ?>"><img src="/index/img/logo.jpg"></a>
+                <div class="line"></div>
+                新闻中心
+            </div>
+            <div class="option">
+                <div class="box-container">
+                    <div class="left">
+                        <a href="<?php echo e('/'); ?>"><img src="/images/yunnan/logo.jpg"></a>
+                        <div class="line"></div>
+                        新闻中心
+                    </div>
+                    <div class="option">
+                        <div class="option">
+                            <div  <?php if($id==17): ?> class="option-item cur" <?php else: ?> class="option-item" <?php endif; ?>><a href="/article?id=17">公司动态</a></div>
+                            <div  <?php if($id==20): ?> class="option-item cur" <?php else: ?> class="option-item" <?php endif; ?>>
+                                <a href="/article?id=20">行业资讯</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/顶部-->
+
+    <!--主体内容-->
+    <div class="news-box">
+        <div class="box-container">
+            <div class="breadcrumb">
+                <ul>
+                    <li class="breadcrumb-cur"> <?php if($id==17): ?>公司动态 <?php else: ?> 行业信息 <?php endif; ?></li>
+                </ul>
+            </div>
+            <div class="info">
+                <ul class="grids-2">
+                    <?php foreach($pages as $v): ?>
+                        <li class="grids-item">
+                            <?php /*<div class="img-box">*/ ?>
+                            <?php /*<img src="/images/yunnan/logo.jpg"/>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <div class="text-box">
+                                <p class="title">
+                                    <?php echo e($v->title,20); ?>
+
+                                </p>
+                                <p class="intro"><?php echo e($v->content); ?></p>
+                                <a href="<?php echo e(route('articleInfo',['id'=>$v->article_id])); ?>">详情查看>></a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="listPageDiv" style="float: none">
+                    <div class="pageList">
+                        <?php if($pages->lastPage()>1): ?>
+                            <?php if($pages->currentPage()-4>1): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams(1,$params)); ?>">第一页</a></span>
+                            <?php endif; ?>
+                            <?php if($pages->currentPage()>1): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($pages->currentPage()-1,$params)); ?>">上一页</a></span>
+                            <?php endif; ?>
+                            <?php if($pages->currentPage()>$pages->lastPage()-3): ?>
+                                <?php for($i=$pages->currentPage()-4-($pages->currentPage()-$pages->lastPage()+3);$i<$pages->currentPage();$i++): ?>
+                                    <?php if($i>0): ?>
+                                        <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            <?php else: ?>
+                                <?php for($i=$pages->currentPage()-4;$i<$pages->currentPage();$i++): ?>
+                                    <?php if($i>0): ?>
+                                        <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                            <span class="p1 p_ok"><?php echo e($pages->currentPage()); ?></span>
+                            <?php if($pages->currentPage()<5): ?>
+                                <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4+5-$pages->currentPage();$i++): ?>
+                                    <?php if($i<=$pages->lastPage()): ?>
+                                        <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            <?php else: ?>
+                                <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4;$i++): ?>
+                                    <?php if($i<=$pages->lastPage()): ?>
+                                        <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                            <?php if($pages->currentPage()<$pages->lastPage()): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($pages->currentPage()+1,$params)); ?>">下一页</a></span>
+                            <?php endif; ?>
+                            <?php if($pages->currentPage()+3<$pages->lastPage()): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($pages->lastPage(),$params)); ?>">最末页</a></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                    <form action="<?php echo e(route('article.index')); ?>" type="get" class="submit_input">
+                        <span>共<?php echo e($pages->lastPage()); ?>页</span>
+                        <span>到第<input name="page" class="page_inout" value="<?php echo e($pages->currentPage()); ?>" type="text">页</span>
+                        <input value="确定" class="submit" type="submit">
+                        <input name="id" value="<?php echo e($id); ?>" type="hidden">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/主体内容-->
+
+    <!--footer-->
+<?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!--/footer-->
+</div>
+</body>
+
+</html>

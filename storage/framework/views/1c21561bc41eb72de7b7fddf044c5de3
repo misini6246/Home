@@ -1,0 +1,53 @@
+<?php foreach($category->cate as $k=>$value): ?>
+    <?php if($k==0): ?>
+        <?php if(count($value->cate)>0): ?>
+            <div class="category_list_title">
+                <?php echo e(isset($category->cat_name) ? $category->cat_name : ''); ?>
+
+            </div>
+            <?php foreach($category->cate as $v): ?>
+                <?php if(count($v->cate)>0): ?>
+                    <div class="ct">
+                <span class="category_list_title_left">
+                    <?php echo e($v->cat_name); ?>
+
+                </span>
+                        <div class="category_list_link">
+                            <?php if(!in_array($ylfl_show_area,['b','c','e','f'])): ?>
+                                <?php foreach($v->cate as $val): ?>
+                                    <a target="_blank"
+                                       href="<?php echo e(route('category.index',['ylfl'=>$ylfl_show_area,'ylfl1'=>$category->cat_id,'ylfl2'=>$val->cat_id])); ?>"><?php echo e($val->cat_name); ?></a>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <?php foreach($v->cate as $val): ?>
+                                    <a target="_blank"
+                                       href="<?php echo e(route('category.index',['ylfl'=>$ylfl_show_area,'ylfl1'=>$val->cat_id])); ?>"><?php echo e($val->cat_name); ?></a>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="category_list_title notitle">
+                <?php echo e(isset($category->cat_name) ? $category->cat_name : ''); ?>
+
+            </div>
+            <div class="ct notitle_ct">
+                <div class="category_list_link">
+                    <?php if($ylfl_show_area=='l'): ?>
+                        <?php foreach($category->cate as $val): ?>
+                            <a target="_blank"
+                               href="<?php echo e(route('category.zyyp',['pid'=>$val->cat_id])); ?>"><?php echo e($val->cat_name); ?></a>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <?php foreach($category->cate as $val): ?>
+                            <a target="_blank"
+                               href="<?php echo e(route('category.index',['ylfl'=>$ylfl_show_area,'ylfl1'=>$val->cat_id])); ?>"><?php echo e($val->cat_name); ?></a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endforeach; ?>

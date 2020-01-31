@@ -1,0 +1,218 @@
+body {
+    background: #f0f6fc !important;
+}
+
+#header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.right_list li span {
+    color: #00a1e9;
+    font-size: 16px;
+}
+
+.right_list li img {
+    margin-right: 5px;
+}
+
+/*nav*/
+#nav {
+    border: none;
+    height: 100px;
+    line-height: 100px;
+    background: #fff;
+    box-shadow: 5px 10px 20px rgba(86, 147, 208, 0.2);
+    overflow: hidden;
+}
+
+#nav .logo {
+    float: left;
+}
+
+#nav img {
+    vertical-align: top;
+}
+
+#nav .nav_list {
+    float: left;
+    margin-left: 110px;
+}
+
+#nav .nav_list li {
+    height: 100px;
+    *height: 98px;
+    line-height: 100px;
+    padding: 0 10px;
+}
+
+#nav .nav_list li a {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#nav .nav_list li.active a, #nav .nav_list li:hover a {
+    color: #00a1e9;
+}
+
+#nav .nav_list li.active {
+    border-bottom: 2px solid #00a1e9;
+}
+
+#gsdt_title {
+    margin: 20px 0 10px 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+#gsdt_title .xiangqing_title, #gsdt_title .xiangqing_title a {
+    font-family: "宋体";
+}
+
+/*footer*/
+.footer {
+    height: 120px;
+    margin-top: 40px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.footer_list {
+    height: 16px;
+    line-height: 16px;
+    width: 615px;
+    margin: 20px auto 0 auto;
+}
+
+.footer_list li {
+    float: left;
+    padding: 0 15px;
+    border-left: 2px solid #7d7d7d;
+}
+
+.footer_list li:first-child {
+    border-left: none;
+}
+
+.footer_list li:hover a, .footer p a:hover {
+    color: #00a1e9;
+}
+
+.footer p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*内容部分*/
+.content {
+    padding: 20px;
+    background: #fff;
+}
+
+.news_list li {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    /*height: 120px;*/
+    overflow: hidden;
+}
+
+.news_list li:first-child .date {
+    background: #3285fa;
+}
+
+.news_list li:first-child .date p {
+    color: #fff;
+}
+
+.news_list li .date {
+    width: 80px;
+    *width: 60px;
+    height: 80px;
+    padding: 0 10px;
+    background: #e8eaf1;
+    margin-right: 30px;
+}
+
+.news_list li .date p {
+    text-align: center;
+}
+
+.news_list li .date p.day {
+    font-size: 24px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #878a9a;
+}
+
+.news_list li .date p.year {
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.news_list li:first-child .date p.day {
+    border-bottom: 1px solid #fff;
+}
+
+.news_list li .text p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.news_list li .text p.text_title {
+    margin-top: 5px;
+}
+
+.news_list li .text p.text_title a {
+    font-size: 20px;
+    color: #000;
+}
+
+.news_list li .text .text_content {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    width: 1050px;
+}
+
+.news_list li .text .text_content p {
+    font-size: 14px;
+    color: #666;
+    width: auto;
+    max-width: 947px;
+    float: left;
+    margin-right: 25px;
+}
+
+.news_list li .text .text_content a.fl {
+    display: inline-block;
+    width: 74px;
+    height: 24px;
+    line-height: 22px;
+    *line-height: 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    border: 1px solid #3285fa;
+    color: #3285fa;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.news_list li:hover .text_title a {
+    color: #f52547 !important;
+}
+
+.news_list li:hover .text .text_content a.fl {
+    color: #fff !important;
+    background: #3285fa !important;
+}
+
+/*add新闻*/
+i.address {
+    width: 9px;
+    height: 15px;
+    *height: 11px;
+    background-position: -264px -113px;
+}

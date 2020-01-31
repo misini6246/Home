@@ -1,0 +1,15 @@
+<div id="append_parent"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php if($user): ?>
+<span class="login_after" >
+    <span class="username" alt="<?php echo e($user->msn); ?>" title="<?php echo e($user->msn); ?>"><?php echo e($user->msn); ?></span>
+
+    [<a href="/auth/logout" class="out">退出</a>]
+    <span class="separate2">|</span>
+    <a href="<?php echo e(route('user.index')); ?>" class="my_name">会员中心</a>
+ </span>
+<?php else: ?>
+<span class="login_before">
+    <a href="<?php echo e(url('auth/login')); ?>" class="login"><?php echo e(trans('common.login')); ?></a><span class="separate">|</span><a href="<?php echo e(url('auth/register')); ?>" class="reg"><?php echo e(trans('common.register')); ?></a>
+ </span>
+<?php endif; ?>

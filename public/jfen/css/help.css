@@ -1,0 +1,36 @@
+.help{width: 1188px;margin: 0 auto}
+.road_nav{line-height: 40px}
+
+/*内容区*/
+.help_list{width: 177px;border: 1px solid #ff9967;float: left}
+.help_content{margin-left: 27px;width: 980px;float: left;border-top: 0;vertical-align: top}
+
+/*手风琴*/
+ul{list-style: none}
+.accordion_list .open ul{display: block}
+.accordion_list .open p i{background :url('../images/my_page_toDown.png') center no-repeat}
+.accordion_list div{width: 177px;overflow: hidden}
+.accordion_list_out p{line-height: 35px;font-weight: bold;cursor: pointer;padding-left: 30px;height: 35px;text-indent: 5px;
+                         background-color: #ffede1;border-top: 1px solid #ff9967;_margin-bottom: 0;color: #4b4b4b}
+/*10-9*/
+.accordion_list_out ul li{text-align: center;font-weight: normal;padding-left: 0;
+                             line-height: 35px;height: 35px;background-color: #fff;border-top: 1px dotted #ffaf88}
+/*end*/
+.accordion_list_out li span{margin-right: 5px;color: #f95706;font-size: 16px}
+
+.accordion_list_out ul{display: none;}
+.accordion_list_out p i{float: right;height: 35px;width: 10px;background: url("../images/list_right.png") center no-repeat;
+                            margin-right: 24px;*margin-top: -35px}
+.accordion_list_out a{color: #f87017}
+
+.help_content_head{height: 34px;position: relative;background-color: #f5f5f5;border-top: 2px solid #f95706}
+.help_content_head p{line-height: 34px;margin-left: 10px;font-size: 16px;font-weight: bold;color: #f95706}
+/*.help_content_head img{position: absolute;top: -2px;left: 0}*/
+
+.help_content_content{margin-top: 10px;padding: 20px}
+.help_content .content_title{line-height: 30px;border-bottom: 1px solid #efefef;color: #d30203;font-weight: bold;
+                                font-size: 14px;margin-bottom: 10px}
+.help_content_content p{line-height: 30px;font-family: "宋体",serif;color: #282828;margin: 0;padding-left: 10px}
+
+.help_content_content p span{color: #d30203;font-weight: bold}
+.help_content_content .left20{padding-left: 30px}

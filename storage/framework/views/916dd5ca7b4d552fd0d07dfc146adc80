@@ -1,0 +1,73 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/my_buy2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/index2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/new-common.css')); ?>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/my_buy.js')); ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layout.page_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layout.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="main fn_clear">
+        <div class="top"><span class="title">我的药易购</span> <a>>　<span>我的账户</span> </a> <a href="<?php echo e(route('user.buyList')); ?>" class="end">>　<span>秒杀商品管理</span></a> </div>
+        <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="main_right1">
+            <div class="top_title">
+                <h3>秒杀商品管理</h3>
+                <span class="ico"></span>
+            </div>
+            <table>
+                <tr>
+                    <th class="case1">商品名称</th>
+                    <th class="case1">商品id</th>
+                    <th class="case1">商品货号</th>
+                    <th>商品组别</th>
+                    <th>限购区域</th>
+                    <th>规格</th>
+                    <th>商品剩余库存</th>
+                    <th>商品价格</th>
+                    <th>商品限购数量</th>
+                    <th>商品购物车中数量</th>
+                    <th>商品订单中数量</th>
+
+
+                </tr>
+
+                <?php if(count($team)>0): ?>
+                    <?php foreach($team as $k=>$val): ?>
+                        <?php foreach($val->goods as $v): ?>
+                            <tr>
+                                <td class="case1 tb1_td1" ><?php echo e($v->goods_name); ?></td>
+                                <td class="case1 tb1_td1" ><?php echo e($v->goods_id); ?></td>
+                                <td class="case1 tb1_td1" ><?php echo e($v->goods_sn); ?></td>
+                                <td   class="tb1_td2"><?php echo e($v->team); ?></td>
+                                <td   class="tb1_td2"><?php echo e($v->xg_tip); ?></td>
+                                <td   class="tb1_td2"><?php echo e($v->spgg); ?></td>
+                                <td  class="tb1_td3"><?php echo e($v->goods_number); ?></td>
+                                <td  class="tb1_td4"><?php echo e(formated_price($v->real_price)); ?></td>
+                                <td  class="tb1_td5"><?php echo e(isset($v->cart_number) ? $v->cart_number : 0); ?></td>
+                                <td  class="tb1_td5"><?php echo e(isset($v->gwc) ? $v->gwc : 0); ?></td>
+                                <td  class="tb1_td5"><?php echo e(isset($v->ddsl) ? $v->ddsl : 0); ?></td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">暂无任何信息！</td>
+                    </tr>
+                <?php endif; ?>
+            </table>
+        </div>
+    </div>
+    <?php echo $__env->make('layout.page_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

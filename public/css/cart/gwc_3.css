@@ -1,0 +1,150 @@
+.success {
+    /*height: 570px;*/
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.success_title {
+    height: 130px;
+    position: relative;
+    overflow: hidden;
+}
+
+.success_title img {
+    vertical-align: bottom;
+    margin: 28px 0 0 30px;
+}
+
+.success_title_bottom {
+    position: absolute;
+    left: 160px;
+    color: #ff2828;
+    font-size: 16px;
+    bottom: 37px;
+}
+
+.success_title_top {
+    position: absolute;
+    left: 160px;
+    color: #33cc33;
+    font-size: 20px;
+    bottom: 70px;
+}
+
+.dingdanxinxi, .tsok {
+    width: 990px;
+    border: 1px solid #3dbb2b;
+    margin-left: 160px;
+    padding: 10px 0;
+}
+
+.dingdanxinxi p {
+    height: 30px;
+    line-height: 30px;
+}
+
+.dingdanxinxi p span.left {
+    display: inline-block;
+    width: 155px;
+    color: #666;
+    font-size: 16px;
+    text-align: right;
+}
+
+.dingdanxinxi p span.right {
+    color: #666;
+    font-size: 16px;
+}
+
+.dingdanxinxi p span.red {
+    color: #ff2828;
+}
+
+.dingdanxinxi p span.right a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.dingdanxinxi p a.fr {
+    margin-right: 20px;
+    color: #247be6;
+    font-family: "宋体";
+}
+
+.tsok {
+    border: 1px solid #ffd6bd;
+    background: #fff9f6;
+    margin-top: 10px;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.tsok_title {
+    color: #ff2828;
+    font-size: 16px;
+    float: left;
+    margin-top: 18px;
+}
+
+.tsok_right {
+    float: left;
+    line-height: normal;
+    margin: 18px 0 18px 10px;
+}
+
+.tsok_right p {
+    font-size: 16px;
+    color: #666;
+}
+
+.tsok_right p:first-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.tsok_right p span {
+    color: #ff2828;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fukuan {
+    margin: 20px 0 0 160px;
+}
+
+.fukuan a {
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    display: inline-block;
+    background: #ff2828;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.link {
+    height: 20px;
+    line-height: 20px;
+    color: #666;
+    margin: 20px 0 40px 0;
+}
+
+.link a {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 3px;
+    background: #33cc33;
+    margin: 0 10px;
+}
+
+.order_sn:hover span{
+    color: #247be6 !important;
+}

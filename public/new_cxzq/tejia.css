@@ -1,0 +1,158 @@
+.container *, body, html {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+}
+.container {
+    width: 100%;
+}
+.container .container_box {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+
+
+/*è¶…å€¼æ¢è´­*/
+
+.czhg_list {
+    overflow: hidden;
+    padding-bottom: 7px;
+    *padding-bottom: 20px;
+    margin-top: 10px;
+}
+.czhg_list li {
+    position: relative;
+    width: 290px;
+    border: 1px solid #e5e5e5;
+    height: 470px;
+    padding: 0 20px;
+    float: left;
+    margin: 0 0 13px 13px;
+    background: #fff;
+}
+.czhg_list li .tejia{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 10;
+    background: #ff5d60;
+    width: 40px;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+}
+.czhg_list li:nth-child(4n+1){
+    margin-left: 0;
+}
+.czhg_list li:hover {
+    border: 1px solid #ff1919 !important;
+}
+
+.czhg_list li .img_box {
+    height: 290px;
+    line-height: 290px;
+    text-align: center;
+}
+
+.czhg_list li .img_box img {
+    width: 250px;
+    height: 250px;
+}
+
+.czhg_list li p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 7px;
+    color: #666666;
+    font-family: "å®‹ä½“";
+}
+.czhg_list li .origin-price p{
+    font-size: 18px;
+}
+.czhg_list li .origin-price p span{
+    font-size: 18px;
+    text-decoration: line-through;
+}
+.czhg_list li .hd {
+    height: 32px;
+}
+
+.czhg_list li .hd .fl {
+    width: 18px;
+    background: #ff1919;
+    text-align: center;
+    color: #fff;
+    font-family: "å®‹ä½“";
+    padding: 2px 0;
+}
+
+.czhg_list li .hd .fr {
+    width: 225px;
+    color: #ff1919;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    overflow: hidden;
+    height: 32px;
+}
+
+.czhg_list li .btn {
+    height: 42px;
+    line-height: 42px;
+    margin-top: 20px;
+}
+
+.czhg_list li .btn .fl {
+    width: 120px;
+    color: #ff1919;
+    font-size: 24px;
+}
+
+.czhg_list li .btn .fr {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    background: #ff1919;
+    color: #fff;
+    font-size: 14px;
+}
+#page-box{
+    text-align: center;
+}
+.readmore {
+    text-align: center;
+}
+
+.readmore a {
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid #ff1919;
+    color: #ff1919;
+    font-size: 16px;
+}
+
+.readmore a:hover {
+    background: #ff1919;
+    color: #fff;
+}

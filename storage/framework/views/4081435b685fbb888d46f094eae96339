@@ -1,0 +1,13 @@
+
+
+<div class="site-header">
+    <div class="header-box">
+        <div class="logo">
+            <a href="<?php echo e(route('index')); ?>"><img src="<?php echo e(asset('images/auth-logo.png')); ?>"></a>
+
+        </div>
+        <p><?php echo e($title); ?></p>
+
+    </div>
+
+</div>

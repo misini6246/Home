@@ -1,0 +1,23 @@
+
+.content_box{margin-top: 10px;border: 1px solid #e5e5e5;}
+.content_box h4{height: 38px;line-height: 38px;border-bottom:1px solid #e5e5e5;background-color: #f5f5f5;text-indent: 12px; }
+table{width: 434px;margin: 20px auto;*width: 460px;}
+.table2{width: 490px;}
+table tr td{height: 37px;line-height: 37px;color:#b7b7b7; position: relative;}
+table tr td.title{text-align: right;color: #666666;}
+table tr td.btn1{padding-bottom: 20px;}
+table tr td.btn1 {padding-left: 130px;}
+table tr td.btn2{padding-left: 160px;}
+table tr td.btn1 .revise,table tr td.btn2 .revise2{cursor: pointer;width: 100px;height: 24px;background:url("../images/bt_bg.jpg");color: #fff;text-align: center;line-height: 24px;}
+table tr td.btn1 .del{width: 70px;height: 24px;background-color: #fff;color: #39a817;text-align: center;line-height: 24px;}
+
+table tr td .com{width: 194px;height: 18px;border: 1px solid #c5c5c5;line-height: 18px;text-indent: 5px;color: #b7b7b7;padding: 2px 0;}
+table tr td select{width: 76px;height: 18px;color: #b7b7b7;border: 1px solid #c5c5c5;line-height: 18px;margin-right: 3px;margin-right: 8px\9;}
+table tr td .tip_ico2{color: #FF6102;}
+table tr td .file_ico{width: 13px;height: 14px;position: absolute;top: 12px;right: 131px;background: url("../images/user_msg.png") no-repeat;*right:150px;}
+table tr td .file{padding: 1px ;}
+table tr td p{border: 1px solid #c5c5c5;width: 194px;padding: 1px;height: 22px;line-height: 22px;*margin-left: 5px;_width:190px;overflow: hidden;}
+table tr td .txt{color: #FF6102;padding-left: 5px;}
+
+.collaboration_unit{margin-top: 0px;}
+.more{margin-top: 5px;}

@@ -1,0 +1,33 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('jfen/css/css_reset.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/dialog.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('jfen/css/exchange_success.css')); ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/jquery-1.7.2.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('jfen/js/dialog.js')); ?>"></script>
+
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('layout.jf_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="sure_order">
+    <p class="road_nav">您当前的位置： <span>首页</span> >> <span class="goods_name">我的礼品车</span></p>
+    <div class="look_step">
+        <ul class="clear_float cross">
+            <li>1.查看礼品车</li>
+            <li>2.确认订单信息</li>
+            <li style="color: #fff">3.确认兑换</li>
+            <li>4.确认收货</li>
+        </ul>
+    </div>
+    <div class="sure_order_real clear_float">
+        <p><img src="<?php echo e(path('jfen/images/success.png')); ?>" alt=""/><span>礼品兑换成功</span></p>
+        <a class="reset_btn" href="<?php echo e(route('jf.index')); ?>">返回首页 >> </a>
+    </div>
+</div>
+</div>
+<?php echo $__env->make('layout.jf_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.jf_body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

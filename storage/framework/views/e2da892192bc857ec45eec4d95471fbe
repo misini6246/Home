@@ -1,0 +1,82 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_problem.css')); ?>"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('article.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('article.help_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div id="help_title" class="container">
+        <div class="container_box">
+            <ul class="help_title_list">
+                <?php foreach($articles as $k=>$v): ?>
+                    <li <?php if($k==$article_id): ?>class="active"<?php endif; ?>><a
+                                href="<?php echo e(route('xin.help',['cat_id'=>$cat_id,'article_id'=>$k])); ?>"><?php echo e($v); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class="container_box">
+            <div class="help_title">常见问题</div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+            <div class="problem_q">
+                <span>Q</span>药易购网上销售的药品是正品吗？我如何验证？
+            </div>
+            <div class="problem_a">
+                <span>A</span>
+                <div class="problem_ct">
+                    药易购是四川合纵医药的官方网上商城，是经国家批准的正规、合法的网上商城（互联网药品交易资格证书编号:川B20130002）。药易购上销售的商品与合纵医药线下销售的药品来源一致，都是来自于合纵医药物流中心，正品保真。如果顾客想验证药品真伪，可以根据商品页面的“药品的批准文号或产品名”，通过国家药监局（http://www.sda.gov.cn/  网站底部有直达链接）的网站上，并通过输入药品的批准文号/产品名称进行查询。
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('article.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,97 @@
+.sx_box {
+    height: 120px;
+    background: #fff;
+    margin: 20px 0 10px 0;
+    padding: 0 20px;
+}
+
+.sx_box_top {
+    height: 60px;
+    line-height: 60px;
+    *height: 59px;
+    border-bottom: 1px dashed #e5e5e5;
+    overflow: hidden;
+}
+
+.sx_box_title {
+    width: 80px;
+    float: left;
+    font-size: 14px;
+}
+
+.sx_box_top ul {
+    float: left;
+}
+
+.sx_box_top ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+.sx_box_top ul li a {
+    font-size: 14px;
+}
+
+.sx_box_top ul li.active a {
+    color: #ff4700;
+}
+
+.sx_bottom {
+    border-bottom: none;
+}
+
+.product_list {
+    overflow: hidden;
+    background: #fff;
+}
+
+.product_list li {
+    width: 240px;
+    height: 330px;
+    float: left;
+}
+
+.product_list li .img_box {
+    width: 100%;
+    height: 230px;
+    line-height: 230px;
+    text-align: center;
+}
+
+.product_list li .img_box img {
+    width: 200px;
+    height: 200px;
+}
+
+.product_list li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 20px;
+    margin-top: 5px;
+}
+
+.product_list li p.ck {
+    color: #666;
+}
+
+.product_list li p.ck span {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.product_list li p.jf {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ef2c2f;
+    margin-top: 15px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.product_list li p.jf img {
+    cursor: pointer;
+}
+
+
+

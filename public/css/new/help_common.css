@@ -1,0 +1,155 @@
+body{
+	background: #f0f6fc !important;
+}
+#header{
+	border-bottom: 1px solid #e5e5e5;
+	background: #f8f8f8;
+}
+.right_list li{
+	border-left: 1px solid #e5e5e5;
+}
+.right_list li:first-child{
+	border-left: none
+}
+/*nav*/
+#nav{
+	border: none;
+	height: 100px;
+	line-height: 100px;
+	background: #fff;
+	box-shadow: 5px 10px 20px rgba(86,147,208,0.2);
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+#nav .logo{
+	float: left;
+}
+#nav img{
+	vertical-align: top;
+}
+#nav .nav_list{
+	float: right;
+}
+#nav .nav_list li{
+	height: 100px;
+	*height: 98px;
+	line-height: 100px;
+	padding: 0 10px;
+	cursor: pointer;
+}
+#nav .nav_list li a{
+	font-size: 18px;
+	font-weight: normal;
+}
+#nav .nav_list li.active a,#nav .nav_list li:hover a{
+	color: #00a1e9;
+}
+#nav .nav_list li.active{
+	border-bottom: 2px solid #00a1e9;
+}
+/*footer*/
+.footer{
+	height: 120px;
+	margin-top: 40px;
+	background: #fff;
+	overflow: hidden;
+}
+.footer_list{
+	height: 16px;
+	line-height: 16px;
+	width: 615px;
+	margin: 20px  auto 0 auto;
+}
+.footer_list li{
+	float: left;
+	padding: 0 15px;
+	border-left: 2px solid #7d7d7d;
+}
+.footer_list li:first-child{
+	border-left: none;
+}
+.footer_list li:hover a,.footer p a:hover{
+	color: #54d53b;
+}
+.footer p{
+	text-align: center;
+	margin-top: 20px;
+}
+
+/*content*/
+.help_title{
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.help_title span{
+	vertical-align: middle;
+	font-size: 18px;
+	font-weight: bold;
+}
+.help_title img{
+	margin: 0 10px;
+}
+.help_content{
+	width: 1158px;
+	margin: 0 auto;
+	border-top: 1px solid #e5e5e5;
+}
+#content .container_box{
+	background: #fff;
+	*width: 1160px;
+	padding: 0 20px 50px 20px;
+	min-height: 500px;
+}
+#content .container_box .content_step{
+	height: 40px;
+	line-height: 40px;
+	background: #edf4ff;
+	border-left: 2px solid #3285fa;
+	padding-left: 20px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+#content .container_box .content_step a{
+	color: #3285fa;
+	font-size: 16px;
+}
+.img_content{
+	padding: 10px 0 20px 0;
+	text-align: center;	
+}
+.text_content{
+	padding: 20px 0;
+}
+/*title*/
+#help_title{
+	margin: 20px 0;
+}
+.help_title_list{
+	height: 40px;	
+}
+.help_title_list li{
+	float: left;
+	margin-right: 10px;
+	height: 40px;
+	line-height: 40px;
+	width: 90px;
+	text-align: center;
+	background: #fff;
+	
+}
+.help_title_list li a{
+	font-size: 14px;
+}
+.help_title_list li.active{
+	background: #3285fa;
+}
+.help_title_list li.active a{
+	color: #fff;
+}
+.gy_content p{
+	font-size: 18px;
+	line-height: 24px;
+	padding-bottom: 30px;
+}

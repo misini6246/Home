@@ -1,0 +1,166 @@
+.category_list {
+    min-height: 479px;
+}
+
+.menu_list {
+    height: 481px;
+    *height: 480px;
+}
+
+.slide_right ul.slide_right_title li {
+    *height: 23px;
+    line-height: 23px;
+}
+
+.center_banner {
+    margin-top: 9px;
+}
+
+.slide_right {
+    height: 481px;
+    *height: 479px;
+}
+
+.mzjx_content {
+    *height: 280px;
+}
+
+#wntj .ban .banner a .wntj-cp {
+    *width: 239px;
+}
+
+.section_left_content_bottom li {
+    *width: 33%;
+}
+
+.section_right {
+    *width: 570px;
+    *margin-right: 20px;
+}
+
+.section_right_content {
+    *height: 510px;
+}
+
+.dj_common {
+    *width: 1180px;
+    *height: 380px;
+}
+
+.right_content li {
+    *width: 49.5%;
+}
+
+.cj_content li {
+    *width: 29.3%;
+}
+
+#fixed_search {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.search_btn {
+    *height: 44px;
+}
+
+#fixed_search .fixed_input_box input[type=text],
+.input_box input[type=text] {
+    line-height: 42px;
+}
+
+#header .right_list li.app_yyg .hover_box,
+#header .right_list li.tel .hover_box,
+#header .right_list li.help .hover_box,
+.appyyg .hover_box {
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#header .right_list li.hover:hover,
+.appyyg:hover {
+    background: #fff;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.appyyg {
+    height: 41px;
+    width: 120px;
+    *width: auto;
+}
+
+#header .yyg_erweima {
+    top: 0;
+}
+
+#header .right_list li,
+.appyyg {
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+#header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#header .right_list li.help .hover_box {
+    *width: 75px;
+}
+
+#header .right_list li.app_yyg .hover_box {
+    *width: 87px;
+}
+
+.appyyg .hover_box {
+    left: -1px;
+}
+
+#header i.myicon {
+    *top: -4px;
+}
+
+span.icon i.myicon {
+    *top: 3px !important;
+    *margin: 0;
+}
+
+/*普药*/
+
+.puyao_title ul.puyao_title_list li {
+    padding: 0 5px;
+}
+
+.puyao_title_right .prev,
+.puyao_title_right .next {
+    top: -1px;
+    *top: 0;
+}
+
+#liebiao table td span.jian, #liebiao table td span.jia, .section_right_content li p.text span .tishi_xx {
+    border: 1px solid #e5e5e5 !important;
+}
+
+.bs_tishi, .datu_tishi {
+    border: 1px solid #ccc;
+}
+
+#datu .puyao_sanjiao {
+    display: none;
+}
+
+#layer_tips {
+    border: 1px solid #e5e5e5;
+}
+
+#header .right_list li.app_yyg {
+    background: #3dbb2b !important;
+}
+
+#header .right_list li.app_yyg {
+    height: 24px;
+    line-height: 24px;
+}
+
+.section_right_content li p.text span .tishi_xx .index_sanjiao {
+    left: -8px !important;
+}

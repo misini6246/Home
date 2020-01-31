@@ -1,0 +1,96 @@
+.sure_order{width: 1188px;margin: 0 auto}
+.road_nav{line-height: 40px}
+
+.look_step{background: url("../images/step2.jpg") no-repeat;height: 39px;line-height: 39px}
+.look_step ul li{width: 292px;text-align: center;font-size: 15px;color: #4a4a4a;font-weight: bold}
+/*确认订单*/
+.sure_order_real{padding: 15px;border: 1px solid#dedede}
+.sor_title{line-height: 30px;color: #fff;background-color: #4a4a4a;}
+.sor_title span{font-size: 14px;font-weight: bold;margin-left: 15px}
+.manage_address{float: right;margin-right: 100px;line-height: 30px;color: #fff;}
+
+.sure_order_real_d{padding: 0 10px;margin-top: 10px}
+.sure_order_real_d li{margin-bottom: 20px;line-height: 58px}
+
+/*发送至*/
+.send_to{position: relative;height: 58px;
+         background-color: #fffae5;color: #4a4a4a}
+.phone_num{color: #777;}
+.send_to .send_bg{height: 60px;width: 1139px;background-color: #f3f3f3;position: absolute;top: 5px;left: 5px;z-index: 1}
+.send_to{font-size: 14px;font-weight: bold}
+.send_detail{background-color: #fffae5;position: absolute;z-index: 2;top: 0;left: 0;width: 100%;border: 1px solid #ffe580;}
+.send_detail .change_this_address{float: right;margin-right: 40px;}
+.sure_order_real .to_where{line-height: 58px;height: 58px;padding-left: 84px;*padding-left: 88px;_padding-left: 90px;_padding-top: 15px;_height: 43px;}
+.send_to .send_to_tips{color: #ff5500;font-size: 13px;}
+.send_to img,.send_to_radio{vertical-align: middle;margin-top: -1px;margin-right: 5px}
+.send_to_radio{margin-left: 5px}
+.send_detail .change_this_address a{font-size: 12px;font-weight: normal;margin-right: 15px;color: #3366cc}
+
+.use_new_address{background: url("../images/use_new_address.gif") no-repeat;
+                   width: 90px;display: block;height: 27px;margin-left: 115px;margin-top: 10px;}
+
+.fill_msg{margin-top: 25px;margin-left: 60px;display: none}
+.fill_msg .ca_tip{float: left;width: 83px;line-height: 25px;text-align: right;margin-right: 5px;color: #4a4a4a}
+.fill_msg label{display: block;padding-top: 10px}
+.fill_msg label textarea{padding: 5px;vertical-align: top;outline: none}
+.fill_msg label input{line-height: 19px;border: 1px solid #d9d9d9;width: 145px;text-indent: 5px;padding: 2px 0;vertical-align: middle}
+.alert{color: #f95706;margin-left: 10px;vertical-align: middle;line-height: 25px}
+.fill_msg label textarea .alert{color: #f95706;margin-left: 10px;vertical-align: top}
+
+.submit{margin: 40px 0 0 170px}
+.submit button{line-height: 35px;padding: 0 25px;font-weight: bold}
+.save{background-color:#f95706;margin-right: 30px;color: #fff;}
+.reset{background-color: #dedede;color: #5b5b5b}
+
+.fill_phone{color: #dadada;margin-top: 10px;line-height: 25px}
+.fill_phone label{display: inline;}
+.fill_phone .fill_phone1,.fill_phone3{width: 50px;}
+.fill_phone .fill_phone2{width: 95px}
+/*下拉框*/
+.choose_address{margin-top: 10px}
+.sure_order_real .choose_select{border: 1px solid #d9d9d9;float: left;height: 23px;line-height: 23px;margin-right: 5px;width: 145px;display: inline-block;}
+.fill_msg .choose_select ul{width: 146px;max-height: 261px;_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>261?"261px":"");}
+
+.choose_select .select_choose{height: 23px;line-height: 23px;color: #4a4a4a;width: 145px}
+.choose_select .select_choose span{line-height: 23px}
+.choose_select .select_choose i{height: 23px;width: 20px;background-color: #f7f7f7;margin-right: 0;*margin-top: -23px;
+                                            border-left: 1px solid #dadada}
+
+.sure_order_msg{margin-top: 55px}
+.som_title{line-height: 30px;background-color: #4a4a4a;font-size: 14px;color: #fff;padding-left: 15px}
+
+/*表格*/
+.list_in_car table{width: 100%;color: #4a4a4a}
+.list_in_car thead tr{line-height: 67px;text-align: center}
+.list_in_car thead tr td{margin-top: 25px}
+.list_in_car tbody{border: 1px solid #d8d8d8;border-top: 0;background-color: #f8f8f8}
+.list_in_car tbody tr{height: 130px;border-top: 1px solid #d8d8d8;text-align: center}
+
+.sure_goods_msg{width: 350px;padding: 0 25px;text-align: left}
+.sure_goods_msg img{float: left}
+.sure_goods_msg p{float: left;width: 200px;vertical-align: top;margin-left: 20px;line-height: 20px}
+.send_method{border-left: 1px solid #d8d8d8;width: 230px}
+.send_method .select{display: inline-block;float: none;background-color: #fff}
+.need_point{color: #f95706}
+
+/*留言*/
+.table_operate{background-color: #fff2df;border: 1px solid #d8d8d8;border-top: 0;padding: 25px 0 25px 20px}
+.table_operate .to_right{float: right;width: 280px}
+.to_right p{margin-bottom: 15px;color: #4a4a4a;_line-height: 19px}
+.to_right span{font-weight: bold}
+.pay_record{color: #f95706}
+.give_us_msg{position: relative;}
+.give_us_msg span{position: absolute;left: 80px;line-height: 30px;color: #cacaca;top: -6px;*top: 3px;}
+
+.give_us_msg input{line-height: 20px;padding: 4px 0;text-indent: 5px;border: 0;width: 350px;vertical-align: middle;
+                     border-top: 1px solid #d8d8d8;border-left: 1px solid #d8d8d8;*padding: 5px 0 10px 0;}
+
+.send_msg{height: 55px;padding-left: 20px;line-height: 55px;margin-top: 20px;background-color: #f1f1f1;color: #4a4a4a}
+.send_msg_to{_height: 41px;_padding-top: 14px;}
+.send_msg img{vertical-align: middle;margin-right: 5px}
+.user_name{margin-right: 5px}
+.the_last_record{margin-left: 110px}
+.the_last_record span{color: #f95706;font-size: 18px;margin: 0 5px}
+
+.sub_order{float: right;height: 55px;text-align: center;padding: 0 15px;color: #fff;font-size: 20px;
+            font-weight: bold;background-color: #f95706}

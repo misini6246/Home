@@ -1,0 +1,45 @@
+<div class="left">
+    <a href="<?php echo e(route('member.index')); ?>">
+        <div class="myyyg">
+            <img src="<?php echo e(get_img_path('images/user/myyyg.png')); ?>"/><span>我的太星医药网</span>
+        </div>
+    </a>
+    <ul class="f_ul">
+        <p class="biaoti">
+            <img src="<?php echo e(get_img_path('images/user/jiaoyi_03.png')); ?>"/>
+            <span>交易管理</span>
+        </p>
+        <?php echo $__env->make('user.menu',['name'=>'order','text'=>'我的订单','url'=>route('member.order.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php if($zq_order>0): ?>
+            <?php echo $__env->make('user.menu',['name'=>'zq_order','text'=>'账期汇总订单','url'=>route('member.zq_order.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endif; ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'cz_order','text'=>'充值记录','url'=>route('user.cz_order')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'','text'=>'积分订单','url'=>route('jifen.order.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+    </ul>
+    <ul class="f_ul">
+        <p class="biaoti">
+            <img src="<?php echo e(get_img_path('images/user/zichan_03.png')); ?>"/>
+            <span>资产管理</span>
+        </p>
+        <?php echo $__env->make('user.menu',['name'=>'money','text'=>'余额管理','url'=>route('member.money')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'youhuiq','text'=>'优惠劵管理','url'=>route('member.youhuiq')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'','text'=>'积分管理','url'=>route('jifen.user.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'jf_money','text'=>'积分金币管理','url'=>route('member.jf_money_log')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+    </ul>
+    <ul class="f_ul last_ul">
+        <p class="biaoti">
+            <img src="<?php echo e(get_img_path('images/user/geren_03.png')); ?>"/>
+            <span>个人中心</span>
+        </p>
+        <?php echo $__env->make('user.menu',['name'=>'profile','text'=>'基本信息','url'=>route('member.info')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'collection','text'=>'我的收藏','url'=>route('member.collection.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'zncg','text'=>'智能采购','url'=>route('member.zncg')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'qhhy','text'=>'多会员管理','url'=>route('member.duohuiyuan.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'znx','text'=>'我的消息','url'=>route('member.wodexiaoxi.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'message','text'=>'我的留言','url'=>route('user.messageList')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'buy','text'=>'我的求购','url'=>route('member.buy')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+        <?php /*<?php echo $__env->make('user.menu',['name'=>'fankui','text'=>'我的反馈','url'=>route('member.fankui')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+        <?php echo $__env->make('user.menu',['name'=>'address','text'=>'收货地址','url'=>route('member.address.index')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('user.menu',['name'=>'pswl','text'=>'配送物流','url'=>route('member.pswl')], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </ul>
+</div>

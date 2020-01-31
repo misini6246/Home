@@ -1,0 +1,106 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/attach_left.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/help.css')); ?>" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript" src="<?php echo e(path('/js/goods_list.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.lazyload.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jump.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.boxy.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/slides.jquery.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.cookie.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('layout.page_header_help', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<style>
+    .subNavBox .subNav1 {
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #393838;
+        text-indent: 42px;
+        border-bottom: 1px solid #E6E3E3;
+    }
+</style>
+<div class="help_container fn_clear">
+    <div class="main_left">
+        <div class="title"><img src="<?php echo e(get_img_path('images/xwzx.png')); ?>"></div>
+        <div class="subNavBox">
+            <a href="<?php echo e(route('article.index',['id'=>4])); ?>" title="公司动态"><div class="subNav1">公司动态</div></a>
+            <a href="<?php echo e(route('article.index',['id'=>12])); ?>" title="行业信息"><div class="subNav1">行业信息</div></a>
+        </div>
+    </div>
+    <div class="main_right">
+        <h2><?php echo e($page_title); ?></h2>
+        <?php foreach($pages as $v): ?>
+            <div class="news_box">
+                <h3><?php echo e($v->title,20); ?></h3>
+                <p><?php echo e($v->content); ?></p>
+                <a href="<?php echo e(route('articleInfo',['id'=>$v->article_id])); ?>" target="_blank">查看详情</a>
+
+            </div>
+        <?php endforeach; ?>
+        <div class="listPageDiv">
+            <div class="pageList">
+                <?php if($pages->lastPage()>1): ?>
+                    <?php if($pages->currentPage()-4>1): ?>
+                        <span class="p1"><a href="<?php echo e(pageParams(1,$params)); ?>">第一页</a></span>
+                    <?php endif; ?>
+                    <?php if($pages->currentPage()>1): ?>
+                        <span class="p1"><a href="<?php echo e(pageParams($pages->currentPage()-1,$params)); ?>">上一页</a></span>
+                    <?php endif; ?>
+                    <?php if($pages->currentPage()>$pages->lastPage()-3): ?>
+                        <?php for($i=$pages->currentPage()-4-($pages->currentPage()-$pages->lastPage()+3);$i<$pages->currentPage();$i++): ?>
+                            <?php if($i>0): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php else: ?>
+                        <?php for($i=$pages->currentPage()-4;$i<$pages->currentPage();$i++): ?>
+                            <?php if($i>0): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                    <span class="p1 p_ok"><?php echo e($pages->currentPage()); ?></span>
+                    <?php if($pages->currentPage()<5): ?>
+                        <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4+5-$pages->currentPage();$i++): ?>
+                            <?php if($i<=$pages->lastPage()): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php else: ?>
+                        <?php for($i=$pages->currentPage()+1;$i<$pages->currentPage()+4;$i++): ?>
+                            <?php if($i<=$pages->lastPage()): ?>
+                                <span class="p1"><a href="<?php echo e(pageParams($i,$params)); ?>"><?php echo e($i); ?></a></span>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                    <?php if($pages->currentPage()<$pages->lastPage()): ?>
+                        <span class="p1"><a href="<?php echo e(pageParams($pages->currentPage()+1,$params)); ?>">下一页</a></span>
+                    <?php endif; ?>
+                    <?php if($pages->currentPage()+3<$pages->lastPage()): ?>
+                        <span class="p1"><a href="<?php echo e(pageParams($pages->lastPage(),$params)); ?>">最末页</a></span>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+            <form action="<?php echo e(route('article.index')); ?>" type="get" class="submit_input">
+                <span>共<?php echo e($pages->lastPage()); ?>页</span>
+                <span>到第<input name="page" class="page_inout" value="<?php echo e($pages->currentPage()); ?>" type="text">页</span>
+                <input value="确定" class="submit" type="submit">
+                <input name="id" value="<?php echo e($id); ?>" type="hidden">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<?php echo $__env->make('layout.page_footer_help', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

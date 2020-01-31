@@ -1,0 +1,17 @@
+/*样式初始化*/
+.com{min-width: 1200px;overflow: hidden;width: 100%;}
+.div1{background: url(../images/jianjie_02.jpg) no-repeat scroll center top;height: 604px;}
+.div2{background: url(../images/jianjie_08.jpg) no-repeat scroll center top;height: 1100px;}
+.div3{background: url(../images/jianjie_04.jpg) no-repeat scroll center top;height: 1460px;}
+.div4{background: url(../images/jianjie_05.jpg) no-repeat scroll center top;height: 1188px;}
+.div5{background: url(../images/jianjie_06.jpg) no-repeat scroll center top;height: 1933px;}
+.div6{background: url(../images/jianjie_07.jpg) no-repeat scroll center top;height: 2035px;}
+.div7{background: url(../images/jianjie_09.jpg) no-repeat scroll center top;height: 800px;}
+
+.checked_on{background: url(../images/jianjie_10.jpg) no-repeat scroll center top; }
+
+
+
+
+
+

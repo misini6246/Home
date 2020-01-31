@@ -1,0 +1,454 @@
+/*===============================================================基础样式=================================================*/
+/* CSS Document */
+html, body, div, span, object, iframe, h1, h2,
+h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn,
+em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd,
+ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary, time, mark,
+audio, video {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline-style: none; /*FF*/
+}
+
+body {
+    line-height: 1;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    bblr: expression(this.onFocus=this.blur()); /*IE*/
+    outline-style: none; /*FF*/
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input, select {
+    vertical-align: middle;
+    outline: none;
+    border: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+/*css为clearfix，清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+.posR {
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.tc {
+    text-align: center;
+}
+
+.mgAuto {
+    margin: 0 auto;
+}
+
+/*透明度*/
+.transparent50 {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.fwBold {
+    font-weight: bold;
+}
+
+.ffSimsun {
+    font-family: simsun;
+}
+
+.ffWRYH {
+    font-family: "微软雅黑";
+}
+
+/*===============================================================基础样式=================================================*/
+
+/*===============================================================布局样式=================================================*/
+.header_box,
+.body_box,
+.foot_box {
+    margin: 0 auto;
+    position: relative;
+}
+
+/*子元素水平布局平均宽度 */
+.box2 div,
+.box3 div {
+    float: left;
+}
+
+.box2 div {
+    width: 50%;
+}
+
+.box3 div {
+    width: 33.3333333%;
+}
+
+/*===============================================================布局样式=================================================*/
+
+/*===============================================================模块样式=================================================*/
+
+body {
+    background-color: #aaaaaa;
+}
+
+/*banner*/
+
+.flexslider {
+    position: relative;
+    width: 100%;
+    height: 482px;
+    overflow: hidden;
+    overflow-x: auto;
+    zoom: 1;
+}
+
+.flexslider,
+.flexslider img {
+    width: 100%;
+    min-width: 1200px;
+    z-index: 3;
+}
+
+.flexslider .slides li {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+.flex-control-nav li {
+    margin: 0 2px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.flex-control-paging li a {
+    background: url(http://images.hezongyy.com/adimages1/201807/erji/dot.png) no-repeat 0 -16px;
+    display: block;
+    height: 16px;
+    overflow: hidden;
+    text-indent: -99em;
+    width: 16px;
+    cursor: pointer;
+}
+
+.flex-control-paging li a.flex-active,
+.flex-control-paging li.active a {
+    background-position: 0 0;
+}
+
+.flexslider .slides a img {
+    width: 100%;
+    height: 482px;
+    display: block;
+}
+
+.header_box,
+.classify,
+.list {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.ppzq_container {
+    margin: 0 auto;
+    position: relative;
+    background-color: #F3F3F3;
+}
+
+.fixed_nav {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    z-index: 1;
+}
+
+.fixed_nav .box {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fixed_nav .box .menu {
+    width: 60px;
+    height: 315px;
+    position: absolute;
+    z-index: 2;
+    right: -65px;
+    background: url(http://images.hezongyy.com/adimages1/201807/erji/ppzq3.png) no-repeat center;
+    display: none;
+}
+
+.fixed_nav .box .menu ul {
+    margin-top: 80px;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    color: #666666;
+    text-align: center;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.fixed_nav .box .menu ul li {
+    display: block;
+    height: 60px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.fixed_nav .box .menu ul .cur {
+    color: #0053FF;
+}
+
+/*列表*/
+.classify {
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #333333;
+    overflow: hidden;
+    position: relative;
+}
+
+.classify .title {
+    float: left;
+    width: 80px;
+    height: 100%;
+    padding: 0 10px;
+    text-align: center;
+    color: #999999;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.classify .goods {
+    display: block;
+    width: 1080px;
+    float: left;
+    font-weight: bold;
+}
+
+.classify .goods li {
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+.classify .goods .cur {
+    color: #0053ff;
+}
+
+.classify .goods li {
+    margin-right: 40px;
+}
+
+.classify .more {
+    width: 92px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+.classify .more img {
+    margin-top: 18px;
+}
+
+/*标题*/
+.header_box img {
+    margin: 10px 0 20px 0;
+}
+
+/*列表*/
+.list .item {
+    position: relative;
+    font-family: "微软雅黑";
+    float: left;
+    width: 590px;
+    height: 390px;
+    background-color: #fff;
+    display: none;
+}
+
+.list .page0 {
+    display: block;
+}
+
+.list .item:nth-child(Odd) {
+    margin: 0 20px 20px 0;
+}
+
+.list .item .logo {
+    float: left;
+    height: 120px;
+    width: 180px;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+.list .item .name,
+.list .item .number {
+    width: 230px;
+}
+
+.list .item .name {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    color: #3f1e00;
+    font-size: 18px;
+    margin: 20px 0 0 240px;
+}
+
+.list .item .number {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #733700;
+    margin-left: 240px;
+}
+
+.list .item .number span {
+    color: #fd311b;
+}
+
+.list .item .activity {
+    font-size: 14px;
+    height: 60px;
+    width: 330px;
+    margin-left: 240px;
+    line-height: 20px;
+    color: #ef2c2f;
+    margin-top: 5px;
+}
+
+.list .item .btn {
+    position: absolute;
+    height: 40px;
+    width: 80px;
+    background-image: url(http://images.hezongyy.com/adimages1/201807/erji/ppzq_btn.png);
+    right: 15px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.list .item .product {
+    position: absolute;
+    bottom: 20px;
+    *left: 0;
+}
+
+.list .item .product div {
+    float: left;
+    height: 225px;
+    width: 180px;
+    margin-left: 5px;
+}
+
+.list .item .product div span {
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #111;
+    background-color: #fff;
+    line-height: 20px;
+    margin-top: -1px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 180px;
+    *margin-top: -4px;
+}
+
+.bottom-page {
+    height: 60px;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bottom-page a {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.bottom-page .cur {
+    color: #0053FF;
+}
+
+/*===============================================================模块样式=================================================*/

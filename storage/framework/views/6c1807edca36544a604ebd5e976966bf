@@ -1,0 +1,30 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/attach_left.css')); ?>1" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/help.css')); ?>" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript" src="<?php echo e(path('/js/goods_list.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.lazyload.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jump.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.boxy.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/slides.jquery.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/jquery.cookie.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('layout.page_header_help', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="help_container">
+    <div class="main_left">
+        <?php echo $__env->make('layout.articleTree', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+    <?php echo $article; ?>
+
+</div>
+
+<?php echo $__env->make('layout.page_footer_help', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

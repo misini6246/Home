@@ -1,0 +1,119 @@
+#content .container_box {
+    padding-bottom: 100px;
+}
+
+.content_title {
+    font-size: 16px;
+    line-height: 30px;
+    color: #666;
+}
+
+.content_title span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.fklx {
+    height: 52px;
+    line-height: 52px;
+    overflow: hidden;
+}
+
+.fklx_title {
+    font-family: "宋体";
+    float: left;
+    width: 68px;
+    text-align: right;
+}
+
+.fklx_title span {
+    color: #ff1919;
+}
+
+.fklx_list, .fklx .fklx_list li {
+    float: left;
+}
+
+.fklx_list li {
+    width: 70px;
+    margin-left: 18px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.fklx_list li .choose_box {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #4dc03e;
+    position: relative;
+    top: 3px;
+}
+
+.fklx .fklx_list li .choose_box span {
+    font-weight: bold;
+    color: #4dc03e;
+    font-size: 16px;
+    position: absolute;
+    top: -2px;
+    *top: 0;
+    left: 1px;
+    *left: 2px;
+    display: none;
+}
+
+.fklx_list li.active .choose_box span {
+    display: block !important;
+}
+
+textarea {
+    resize: none;
+    width: 800px;
+    height: 160px;
+    padding: 10px !important;
+    margin-left: 18px !important;
+}
+
+.fklx input {
+    vertical-align: baseline;
+    margin-left: 18px;
+}
+
+.fklx input[type=text] {
+    width: 240px;
+    line-height: 38px;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid rgb(169, 169, 169);
+}
+
+.btn input {
+    width: 160px;
+    line-height: 42px;
+    height: 42px;
+    background: #3dbb2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 20px 0 0 86px;
+    cursor: pointer;
+}
+
+.tishi {
+    color: #666;
+    font-size: 16px;
+    margin-top: 45px;
+}
+
+.tishi a {
+    color: #247be6;
+    font-size: 16px;
+}
+
+#preview {
+    display: none;
+}

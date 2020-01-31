@@ -1,0 +1,14 @@
+<div id="nav" class="container">
+    <div class="container_box">
+        <div class="logo">
+            <a href="<?php echo e(route('index')); ?>"><img src="<?php echo e(get_img_path('images/new/help_logo.jpg')); ?>"/></a>
+        </div>
+        <ul class="nav_list">
+            <?php foreach($category as $k=>$v): ?>
+                <li <?php if($k==$cat_id): ?>class="active"<?php endif; ?>>
+                    <a href="<?php echo e(route('xin.help',['cat_id'=>$k])); ?>"><?php echo e($v); ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

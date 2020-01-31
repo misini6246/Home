@@ -1,0 +1,58 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/huiyuancommon.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/youhuijuan.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/user/huiyuancommon.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/user/weizhi.png')); ?>"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的药易购</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><span>我的优惠券</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_title">
+                    <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                    <span>我的优惠券</span>
+                </div>
+                <?php if(count($result)>0): ?>
+                    <ul class="youhuijuan">
+                        <?php foreach($result as $v): ?>
+                            <li>
+                                <img src="<?php echo e(get_img_path('images/user/juan_'.$v->img_id.'.jpg')); ?>"/>
+                                <p class="val"><?php echo e(intval($v->je)); ?></p>
+                                <p class="mc">【<?php echo e(isset($v->yhq_cate->name) ? $v->yhq_cate->name : ''); ?>】</p>
+                                <p class="ff"><?php echo e(isset($v->yhq_cate->title) ? $v->yhq_cate->title : '满'.intval($v->min_je).'可用'); ?></p>
+                                <p class="riqi"><?php if($v->end-$v->start>3600*24): ?>
+                                        限<?php echo e(date('Y.m.d',$v->start)); ?>至<?php echo e(date('Y.m.d',$v->end - 1)); ?><?php else: ?>
+                                        仅限<?php echo e(date('Y-m-d',$v->start)); ?>当天<?php endif; ?>使用</p>
+                                <p class="tiaojian">条件：<?php echo e(isset($v->yhq_cate->msg) ? $v->yhq_cate->msg : ''); ?></p>
+                                <p class="shiyong">
+                                    <a href="<?php echo e(route('category.index',['dis'=>1,'py'=>1])); ?>" class="shiyong">去使用</a>
+                                </p>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php else: ?>
+                    <?php echo $__env->make('user.empty',['type'=>3], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

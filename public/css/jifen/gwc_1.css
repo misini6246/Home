@@ -1,0 +1,140 @@
+label{
+	vertical-align: baseline;
+}
+.jiesuan_box{
+	padding: 0 20px;
+	background: #fff;
+}
+.jiesuan_box table{
+	width: 100%;
+}
+.jiesuan_box table th{
+	height: 40px;
+	line-height: 40px;
+	background: #f8f9fb;
+}
+.jiesuan_box table .qx{
+	width: 60px;
+	text-align: left;
+}
+.jiesuan_box table .lpxx{
+	width: 460px;
+}
+.jiesuan_box table .jf,.jiesuan_box table .sl,.jiesuan_box table .xj,.jiesuan_box table .cz{
+	width: 160px;
+}
+.jiesuan_box table td{
+	height: 110px;
+	line-height: 110px;
+	border-bottom: 1px dashed #e5e5e5;
+}
+.jiesuan_box table input[type=checkbox]{
+	margin-left: 5px;
+}
+.jiesuan_box table .img_box{
+	width: 70px;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+}
+.jiesuan_box table .img_box img{
+	max-height: 100%;
+	max-width: 100%;
+}
+.jiesuan_box table .text{
+	float: left;
+	width: 380px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: left;
+	font-size: 16px;
+}
+.jiesuan_box table td.jf{
+	font-size: 16px;
+	font-weight: bold;
+}
+.jiesuan_box table td.xj{
+	font-size: 16px;
+	font-weight: bold;
+	color: #ef2c2f;
+}
+.jiesuan_box table td .delete{
+	cursor: pointer;
+}
+.jiesuan_box table td.sl span{
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border: 1px solid #cccccc;
+	outline: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.jiesuan_box table td.sl span img{
+	vertical-align: baseline;
+}
+.jiesuan_box table td.sl input{
+	width: 42px;
+	height: 20px;
+	*height: 22px;
+	line-height: 22px;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-left: none;
+	border-right: none;
+	padding: 0;
+	outline: none;
+}
+.heji{
+	height: 60px;
+	line-height: 60px;
+	background: #f8f9fb;
+	margin-top: 10px;
+}
+.heji .fr span.shuliang,.heji .fr span.jifen{
+	font-size: 18px;
+	font-weight: bold;
+}
+.heji .fr span.shuliang span,.heji .fr span.jifen span.jf_sum{
+	margin: 0 5px;
+	color: red;
+	font-size: 18px;
+}
+.heji .fr span.jifen{
+	margin-left: 60px;
+}
+.heji .fr span.jifen span.keyong{
+	font-size: 14px;
+	font-weight: initial;
+}
+.heji .fr span.jifen span.keyong span{
+	font-weight: bold;
+	color: red;
+	font-size: 14px;
+}
+#jiesuan{
+	width: 120px;
+	height: 60px;
+	line-height: 60px;
+	border: none;
+	background: #ff4700;
+	color: #fff;
+	font-size: 18px;
+	vertical-align: top;
+	*vertical-align: middle;
+	outline: none;
+	margin-left: 60px;
+}
+.heji .fl{
+	text-align: center;
+	margin-left: 5px \9;
+}
+.disabled{
+	opacity: 0.4;
+	filter: Alpha(Opacity=40);
+}

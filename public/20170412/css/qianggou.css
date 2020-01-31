@@ -1,0 +1,226 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+	font-size: 12px;
+}
+
+.container-box{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+.title-img{
+	width: 526px;
+	margin: 0 auto;
+}
+
+/*秒杀时间开始*/
+.shijian-9,.shijian-14{
+	width: 270px;
+	height: 60px;
+	float: left;
+	margin-top:-35px;
+	border-radius:30px;
+	position: relative;
+	cursor: pointer;
+	behavior:url(20170412/css/pie.htc);
+}
+.shijian-9 img,.shijian-14 img,.shijian-9 .ing,.shijian-9 .start,.shijian-9 .end,.shijian-14 .ing,.shijian-14 .start,.shijian-14 .end,.remaintime9,.remaintime14,.hourse,.sencond,.minuted,.chanpin-img,.maiwan{
+	position: absolute;
+}
+.shijian-9 img,.shijian-14 img{
+	top: 5px;
+}
+.shijian-9 img{
+	left: 5px;
+}
+.shijian-14 img{
+	right: 5px;
+}
+
+.shijian-9{
+	margin-left: 285px;
+	background: #4dac98;
+}
+.shijian-14{
+	margin-left:85px;
+	background: #4dac98;
+}
+.shijian-9 .start,.shijian-14 .start{
+	top: 0px;
+	color: white;
+	display: none;
+	font-size: 18px;
+}
+.shijian-9 .ing,.shijian-14 .ing{
+	top: 0px;
+	color: #f6ff00;
+	display: block;
+	font-size: 18px;
+}
+.shijian-9 .end,.shijian-14 .end{
+	top: 0px;
+	color: white;
+	display: none;
+	font-size: 18px;
+}
+.shijian-9 .ing{
+	right:15px;	
+	display: none;
+}
+.shijian-9 .start{
+	right:30px;	
+	display: block;
+}
+.shijian-9 .end{
+	right:25px;	
+	display: none;
+}
+.shijian-14 .start{
+	left:30px;
+	display: block;
+}
+.shijian-14 .ing{
+	left:15px;
+	display: none;
+}
+.shijian-14 .end{
+	left:25px;
+	display: none;
+}
+
+/*秒杀时间开始*/
+
+
+/*到计时开始*/
+.remaintime9,.remaintime14{
+	width: 450px;
+	height: 80px;
+	border: 10px solid #96cdc1;
+	top: 315px;
+	left: 365px;
+}
+
+
+.hourse,.minuted,.sencond{
+	width: 40px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	top: 14px;
+	font-size: 24px;
+}
+.hourse{
+	left:185px;
+}
+.minuted{
+	left:315px;
+}
+.sencond{
+	left:251px;
+}
+/*到计时结束*/
+
+
+/*产品开始*/
+.chanpin-9,.chanpin-14{
+	width:100%;
+	height:260px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	top:470px;
+	left: -10px;
+}
+.chanpin-14 .chanpin-2,.chanpin-9,.chanpin-2{
+	margin-left: 20px;
+}
+
+.chanpin-14{
+	left: 10px;
+}
+
+.chanpin-img{
+	border: 1px solid #e5e5e5;
+	width: 220px;
+	height: 220px;
+	overflow: hidden;
+	top:20px;
+	left:20px;
+	display:block;
+}
+.maiwan{
+	width: 220px;
+	height: 220px;
+	overflow: hidden;
+	top:21px;
+	left:21px;
+	background: gray;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	zoom: 1;
+	display: none;
+}
+.mingzi,.haosheng,.company,.kucun,.xianliang,.jiage,.goumaiBtn,.goumaiBtn-1,.goumaiBtn-end,.goumaiBtn-no{
+	position: absolute;
+	left:273px;
+}
+.mingzi{
+	font-size: 20px;
+	color: #f32c3a;
+	top: 15px;
+}
+.haosheng{
+	font-size: 14px;
+	color: #f32c3a;
+	top: 45px;
+}
+.company{
+	color: #6f6e6e;
+	top: 83px;
+}
+.kucun{
+	color: #6f6e6e;
+	top: 105px;
+}
+.xianliang{
+	color: #6f6e6e;
+	top: 126px;
+}
+.jiage{
+	color: #f32c3a;
+	top: 171px;
+}
+.jiage span{
+	font-size: 18px;
+	font-weight: bold;
+}
+.goumaiBtn,.goumaiBtn-1,.goumaiBtn-end,.goumaiBtn-no{
+	width: 270px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+		font-weight: bold;
+	font-size: 18px;
+	top: 205px;
+	cursor: pointer;
+	background:#999999;
+	color:white;
+}
+.goumaiBtn{
+	background:#f32c3a;
+	color:#f9ff63;
+	display: none;
+}
+.goumaiBtn-1{
+	display:block;
+}
+.goumaiBtn-end{
+  	display: none;
+}
+.goumaiBtn-no{
+	display: none;
+}
+/*产品结束*/

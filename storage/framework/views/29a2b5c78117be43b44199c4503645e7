@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="top_box">
+        <div class="top">
+            <div class="top_left">
+                <?php echo member_info(); ?>
+
+            </div>
+            <div class="top_right"><a href="#" id="addCollect">加入收藏</a>|<a href="<?php echo e(route('index')); ?>">返回页面</a></div>
+        </div>
+    </div>
+    <div class="banner_box">
+        <div class="banner">
+            <a href="<?php echo e(route('article.index')); ?>"><img src="http://www.tiedsun.cn/images/logo-new.png" alt=""/></a>
+            <h1><?php echo e($title); ?></h1>
+            <span class="tel"><img src="<?php echo e(path('images/login00.png')); ?>" alt=""/></span>
+        </div>
+    </div>
+</div>

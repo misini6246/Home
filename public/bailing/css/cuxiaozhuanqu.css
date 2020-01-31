@@ -1,0 +1,268 @@
+﻿
+*{ margin:0; padding:0; list-style:none;}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+.flickerplate {
+	position:relative;
+	width:100%;
+	height:350px;
+	background-color:#e6e6e6;
+	overflow:hidden
+}
+.flickerplate ul.flicks {
+	width:10000%;
+	height:100%;
+	padding:0px;
+	margin:0px;
+	list-style:none
+}
+.flickerplate ul.flicks>li {
+	float:left;
+	width:1%;
+	height:100%;
+	background-position:center;
+	background-size:cover;
+	display:table
+}
+.flickerplate ul.flicks>li .flick-inner {
+	height:100%;
+	padding:10px;
+	color:#fff;
+	display:table-cell;
+	vertical-align:middle
+}
+.flickerplate ul.flicks>li .flick-inner .flick-content {
+	max-width:68.75em;
+	margin-left:auto;
+	margin-right:auto
+}
+.flickerplate ul.flicks>li .flick-title {
+	padding:0px 0px;
+	font-size:2.778em;
+	line-height:1.995em;
+	text-align:center
+}
+@media only screen and (max-width: 43.813em) {
+.flickerplate ul.flicks>li .flick-title {
+font-size:1.667em
+}
+}
+.flickerplate ul.flicks>li .flick-sub-text {
+	padding:5px;
+	font-weight:300;
+	line-height:2.5em;
+	color:rgba(255, 255, 255, 0.8);
+	text-align:center
+}
+.flickerplate ul.flicks>li .flick-title span.flick-block-text, .flickerplate ul.flicks>li .flick-sub-text span.flick-block-text {
+	padding:12px 18px;
+	background-color:rgba(0, 0, 0, 0.6)
+}
+.flickerplate .arrow-navigation {
+	position:absolute;
+	height:80%;
+	width:10%;
+	top:10%;
+	z-index:100;
+	overflow:hidden
+}
+.flickerplate .arrow-navigation .arrow {
+	display:block;
+	height:100%;
+	width:90%;
+	-webkit-transition:all 0.2s ease-out;
+	-moz-transition:all 0.2s ease-out;
+	-o-transition:all 0.2s ease-out;
+	-ms-transition:all 0.2s ease-out;
+	transition:all 0.2s ease-out
+}
+.flickerplate .arrow-navigation:hover, .flickerplate .arrow-navigation .arrow:hover {
+	cursor:pointer
+}
+.flickerplate .arrow-navigation.left {
+	left:0%
+}
+.flickerplate .arrow-navigation.left .arrow {
+	opacity:0;
+	margin:0px 0px 0px 50%;
+	background-image:url("../img/flickerplate/arrow-left-light.png");
+	background-repeat:no-repeat;
+	background-position:left
+}
+.flickerplate .arrow-navigation.right {
+	right:0%
+}
+.flickerplate .arrow-navigation.right .arrow {
+	opacity:0;
+	margin:0px 0px 0px -50%;
+	background-image:url("../img/flickerplate/arrow-right-light.png");
+	background-repeat:no-repeat;
+	background-position:right
+}
+.flickerplate .arrow-navigation.left.hover .arrow {
+	opacity:1;
+	margin:0px 0px 0px 20%
+}
+.flickerplate .arrow-navigation.right.hover .arrow {
+	opacity:1;
+	margin:0px 0px 0px -20%
+}
+.flickerplate .dot-navigation {
+	position:absolute;
+	bottom:15px;
+	width:100%;
+	text-align:center;
+	z-index:100
+}
+.flickerplate .dot-navigation ul {
+	text-align:center;
+	list-style:none;
+	padding:0px 15px;
+	*margin-left: 50%;
+}
+.flickerplate .dot-navigation ul li {
+	display:inline-block;
+	float:none;
+	*float:left;
+}
+.flickerplate .dot-navigation .dot {
+	width:14px;
+	height:14px;
+	margin:0px 6px;
+	background-color:#fff;
+	border-radius:50%;
+	-o-border-radius:50%;
+	-ms-border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	-webkit-transition:background-color 0.2s ease-out;
+	-moz-transition:background-color 0.2s ease-out;
+	-o-transition:background-color 0.2s ease-out;
+	-ms-transition:background-color 0.2s ease-out;
+	transition:background-color 0.2s ease-out
+}
+.flickerplate .dot-navigation .dot:hover {
+	cursor:pointer;
+	background-color:#fff;
+}
+.flickerplate .dot-navigation .dot.active {
+	background-color:#f00
+}
+.flickerplate .dot-navigation.left, .flickerplate .dot-navigation.left ul {
+	text-align:left
+}
+.flickerplate .dot-navigation.right, .flickerplate .dot-navigation.right ul {
+	text-align:right
+}
+.flickerplate.flicker-theme-dark .arrow-navigation.left .arrow {
+	background-image:url("../img/flickerplate/arrow-left-dark.png")
+}
+.flickerplate.flicker-theme-dark .arrow-navigation.right .arrow {
+	background-image:url("../img/flickerplate/arrow-right-dark.png")
+}
+.flickerplate.flicker-theme-dark .dot-navigation .dot {
+	background-color:rgba(0, 0, 0, 0.12)
+}
+.flickerplate.flicker-theme-dark .dot-navigation .dot:hover {
+	background-color:rgba(0, 0, 0, 0.6)
+}
+.flickerplate.flicker-theme-dark .dot-navigation .dot.active {
+	background-color:#000
+}
+.flickerplate.flicker-theme-dark ul.flicks li .flick-inner {
+	color:rgba(0, 0, 0, 0.9)
+}
+.flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-sub-text {
+	color:rgba(0, 0, 0, 0.9)
+}
+.flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-title span.flick-block-text, .flickerplate.flicker-theme-dark ul.flicks li .flick-inner .flick-content .flick-sub-text span.flick-block-text {
+	background-color:rgba(255, 255, 255, 0.5)
+}
+.flickerplate ul.flicks li.flick-theme-dark .flick-inner {
+	color:rgba(0, 0, 0, 0.9)
+}
+.flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-sub-text {
+	color:rgba(0, 0, 0, 0.9)
+}
+.flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-title span.flick-block-text, .flickerplate ul.flicks li.flick-theme-dark .flick-inner .flick-content .flick-sub-text span.flick-block-text {
+	background-color:rgba(255, 255, 255, 0.5)
+}
+.flickerplate.animate-transform-slide ul.flicks {
+	-webkit-perspective:1000;
+	-webkit-backface-visibility:hidden;
+	transform:translate3d(0%, 0px, 0px);
+	-webkit-transform:translate3d(0%, 0px, 0px);
+	-webkit-transition:-webkit-transform 0.6s;
+	-o-transition:-o-transform 0.6s;
+	-moz-transition:-moz-transform 0.6s;
+	transition:transform 0.6s
+}
+.flickerplate.animate-transition-slide ul.flicks {
+	position:relative;
+	left:0%;
+	-webkit-transition:left 0.4s ease-out;
+	-moz-transition:left 0.4s ease-out;
+	-o-transition:left 0.4s ease-out;
+	-ms-transition:left 0.4s ease-out;
+	transition:left 0.4s ease-out
+}
+.flickerplate.animate-jquery-slide ul.flicks {
+	position:relative;
+	left:0%
+}
+.flickerplate.animate-scroller-slide {
+	padding-bottom:0px;
+	overflow:auto
+}
+.flickerplate.animate-scroller-slide ul.flicks {
+	position:auto
+}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+
+
+.cxzq-box{
+	position: relative;
+	/*background:#f5af53;*/
+	/*padding: 20px 0 20px 0;*/
+	background: url(../images/bg.jpg) no-repeat scroll center top;
+	/*height:399px;*/
+	min-width: 1200px;
+	overflow: hidden;
+	width: 100%;
+	/*height: 1000px;*/
+}
+.cxzq-list{
+	width: 1200px;margin: 0 auto;overflow: hidden;margin-bottom: 15px;
+}
+.cxzq-box .cxzq-list ul{width: 1240px;}
+.cxzq-box .cxzq-list ul li{position: relative;width: 292px;height: 504px;float: left;background-color: #f0f0f0;margin:0 8px 10px 0;}
+.cxzq-box .cxzq-list ul li .li-box img{width: 290px;height: 300px;}
+.cxzq-box .cxzq-list ul li .ico{position: absolute;width: 54px;height: 64px;left: 5px;top:0;}
+.cxzq-box .cxzq-list ul li .title{font-size: 14px;color: #c40f32;height: 40px;line-height: 40px;border-bottom: 1px solid #b7b6b6;font-weight: border;text-indent: 10px;}
+.cxzq-box .cxzq-list ul li .text{padding: 10px 10px 0 10px;position: relative;z-index: 9999;}
+.cxzq-box .cxzq-list ul li .text .tip{position: absolute;left: 0px;top:59px;background-color: #fff;
+	color: #c40f32;width: 280px;padding: 5px;border: 1px solid #d2d0d0;display: none;}
+.cxzq-box .cxzq-list ul li .text .tip .ico{position: absolute;left: 20px;top:-9px;}
+
+.cxzq-box .cxzq-list ul li .text p{height: 20px;line-height: 20px;color: #090909;}
+
+.cxzq-box .cxzq-list ul li  .price p{height: 40px;line-height: 40px;color: #cb173e;font-size: 16px;padding-left: 10px;}
+.cxzq-box .cxzq-list ul li  .price span{color: #cb173e;font-size: 25px;font-weight: bold;}
+.cxzq-box .cxzq-list ul li .goumai{position: absolute;width: 125px;height: 35px;right: 0;bottom:0;}
+
+/*特价区样式开始*/
+.cxzq-list1{width: 1200px;margin: 0 auto;overflow: hidden;}
+.cxzq-list1 ul li{
+	float: left;
+	/*margin-left: 10px;*/
+	margin-top: 30px;
+	margin:30px 10px 10px 0;
+	/*border-right: 1px solid red;*/
+}
+.banner{
+	/*border: 1px solid red;*/
+	background: url(../images/banner.jpg) no-repeat scroll center top;
+	height:399px;
+	min-width: 1200px;
+	overflow: hidden;
+	width: 100%;
+}

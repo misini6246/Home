@@ -1,0 +1,59 @@
+
+/*礼品车列表*/
+
+.car_list{width: 1188px;margin: 0 auto}
+.look_step{background: url("../images/step.png") no-repeat;height: 39px;line-height: 39px}
+.look_step ul li{width: 292px;text-align: center;font-size: 15px;color: #4a4a4a;font-weight: bold}
+
+.car_list_detail{margin-top: 20px}
+.cld_topNav{border-bottom: 2px solid #d2d2d2;height: 54px;}
+.lack,.all_list{height: 56px;padding: 0 30px;line-height: 56px;font-size: 14px;font-weight: bold;}
+.all_list{border-bottom: 2px solid #f95706;color: #f95706}
+.cld_topNav span{color: #f95706}
+
+.pay{float: right;line-height: 56px;_padding: 15px 0;}
+.choose_record{margin: 0 4px;color: #f95706}
+.pay button{padding: 5px 10px;margin-left: 30px;background-color: #efefef;border: 0;cursor: pointer;color: #969696;vertical-align: middle}
+
+.list_in_car table{width: 100%;color: #4a4a4a}
+.list_in_car thead tr{line-height: 67px;text-align: center}
+.list_in_car thead tr td{margin-top: 25px}
+.list_in_car tbody{border: 1px solid #d8d8d8;border-top: 0;background-color: #f8f8f8}
+.list_in_car tbody tr{height: 130px;border-top: 1px solid #d8d8d8;text-align: center}
+.list_in_car tbody tr label input{vertical-align: top;margin-right: 15px}
+.choose_every_label{line-height: 24px}
+.del1,.add1{line-height: 22px;border: 1px solid #eaeaea;cursor: pointer;vertical-align: middle;_color: #4b4b4b;}
+.del1{border-right: 0}
+.add1{border-left: 0}
+.list_in_car .choose_every_num{width: 40px;text-align: center;margin-right: 0;border: 1px solid #999;outline: none;
+                                  line-height: 22px;padding: 3px 0\9;line-height: 16px\9;*padding: 4px 0 5px 0;_padding: 5px 0;vertical-align: middle}
+
+.check_goods input{outline: none}
+
+.goods_msg{font-family: "宋体", serif;width: 225px}
+.goods_msg p{padding: 0 5px;text-align: left;line-height: 20px;display: inline-block;*display: inline;_zoom: 1;}
+
+.need_point{color: #f95706;min-width: 100px}
+.operate{text-align: center}
+.operate a{margin-bottom: 10px;display: block;color: #4a4a4a;_line-height: 19px}
+.operate button{_line-height: 21px;color:#4a4a4a;}
+.operate .addCart{border: 1px solid #f47800;color: #fff;padding: 0 30px;*padding: 0 10px;line-height: 27px;
+    font-family: "宋体", serif;background: url("../images/open_collect.png");margin-bottom: 20px}
+.table_operate{height: 56px;margin-top: 20px;background-color: #f8f8f8;line-height: 56px;padding-left: 30px}
+.t_op{height: 16px;line-height: 16px;float: left;margin: 20px 0;}
+.all_select{vertical-align: middle;}
+.all_select input{margin-right:  10px;vertical-align: middle;}
+.t_op .delete_goods,.cancel,.t_op .move_to_collect{margin-left: 35px;vertical-align: middle;}
+.delete_goods,.cancel:hover{color: #f20000}
+.cancel{margin-left: 20px;color: #333}
+.cancel_btn{color: #333}
+
+.all_goods_msg{float: right;position: relative;height: 56px;line-height: 56px}
+.all_goods_msg .show_sth{position: absolute;line-height: 30px;color: #666;border: 1px solid #dcddde;padding: 0 10px;display: none;
+           top: -21px;right: -10px;background-color: #fff}
+.all_goods_msg .is_choose{margin-right: 20px}
+.choose_num{color: #f60000}
+.all_goods_msg span{margin: 0 4px}
+.all_goods_msg .pay_btn{margin-left: 35px;font-size: 22px;color: #fff;padding:  17px 40px;
+                          *line-height: 46px;*padding: 0 40px;vertical-align: top;background-color: #f95706;*vertical-align: middle;}
+.all_goods_msg p{display: inline;vertical-align: middle}

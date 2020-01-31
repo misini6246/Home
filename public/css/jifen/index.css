@@ -1,0 +1,301 @@
+/*我的积分以及信息*/
+.my {
+    height: 320px;
+    margin-top: 20px;
+}
+
+.my_left {
+    width: 300px;
+    float: left;
+    height: 320px;
+}
+
+.my_left_top {
+    background: #fff;
+    padding: 0 3.5%;
+}
+
+.my_left_top {
+    height: 200px;
+}
+
+.my_left_bottom {
+    height: 110px;
+    margin-top: 10px;
+}
+
+.my_left_top_title {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.my_left_top_title .img_box {
+    height: 50px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid #ea5d27;
+}
+
+.my_left_top_title span {
+    vertical-align: middle;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.my_left_top .login_before {
+    width: 100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.my_left_top .login_before a {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    background: #3dbb2b;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 9px rgba(61, 187, 43, 0.5);
+}
+
+.my_left_top .login_after .login_after_title {
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.my_left_top .login_after .login_after_title span {
+    color: #111;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.my_left_top .login_after .login_after_content {
+    height: 82px;
+    line-height: 82px;
+    font-size: 14px;
+}
+
+.my_left_top .login_after .login_after_content span {
+    color: #ef2c2f;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.my_left_top .login_after .login_after_bottom {
+    height: 12px;
+    line-height: 12px;
+}
+
+.my_left_top .login_after .login_after_bottom a {
+    color: #3285fa;
+    font-family: "瀹嬩綋";
+    margin-left: 27px;
+}
+
+.my_left_top .login_after .login_after_bottom a:first-child, .my_left_bottom_content a:first-child {
+    margin-left: 0;
+}
+
+.my_left_bottom {
+    background: #fff;
+}
+
+.my_left_bottom li {
+    float: left;
+    width: 100px;
+    *width: 99px;
+    text-align: center;
+    height: 90px;
+    margin-top: 10px;
+    border-left: 1px solid #e5e5e5;
+}
+
+.my_left_bottom li .img_box {
+    height: 60px;
+    line-height: 60px;
+}
+
+.my_left_bottom li p {
+    font-size: 14px;
+}
+
+.my_left_bottom li:first-child {
+    border-left: none;
+}
+
+/*轮播*/
+/*为您推荐*/
+#ban2 {
+    position: relative;
+    float: right;
+}
+
+.banner {
+    /*  淇敼杈撳嚭灞忓ぇ灏�  */
+    width: 890px;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.banner .img {
+    width: 99999px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+
+.banner .img li {
+    float: left;
+    width: 890px;
+    height: 320px;
+    text-align: center;
+}
+
+#ban2 .num {
+    position: absolute;
+    bottom: 6px;
+    right: 50%;
+}
+
+#ban2 .num li {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    background: #53aaff;
+    margin: 0 3px;
+    cursor: pointer;
+    float: left;
+    background: rgba(0, 0, 0, 0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+}
+
+#ban2 .num li.on {
+    width: 18px;
+    height: 18px;
+    background: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#C8000000, endColorstr=#C8000000);
+}
+
+/*/ 按钮 /*/
+.banner .btn {
+    height: 72px;
+    position: absolute;
+    top: 124px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 72px;
+    width: 36px;
+    background: rgba(0, 0, 0, 0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);
+    text-align: center;
+    display: none;
+}
+
+.banner .btn_l {
+    left: 0px;
+}
+
+.banner .btn_r {
+    right: 0px;
+}
+
+#ban2:hover .btn {
+    display: block;
+}
+
+/*轮播*/
+/*我的积分以及信息*/
+
+/*家用电器 办公用品 季节特惠 居家必备*/
+.common .content_box {
+    height: 380px;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.common .common_ul li {
+    float: left;
+    height: 330px;
+    width: 240px;
+    *width: 238px;
+}
+
+.common .common_ul li .img_box {
+    width: 240px;
+    height: 220px;
+    line-height: 220px;
+    text-align: center;
+}
+
+.common .common_ul li .img_box img {
+    width: 200px;
+    height: 200px;
+}
+
+.common .common_ul li .xx {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.common .common_ul li .xx p.text_overflow, .common .common_ul li .xx p.jiage {
+    width: 100%;
+    margin-top: 7px;
+}
+
+.common .common_ul li .xx p.jiage span {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.common .common_ul li .xx p.jf {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 13px;
+}
+
+.common .common_ul li .xx p.jf span {
+    color: #ef2c2f;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.common .common_ul li .xx p.jf img.fr {
+    cursor: pointer;
+}
+
+#djq .jf {
+    margin-top: 30px;
+}
+
+#djq .common_ul .img_box img {
+    width: 174px;
+    height: 126px;
+}
+
+/*家用电器 办公用品 季节特惠 居家必备*/
+.login_after_content a.fr {
+    width: 52px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    background: #ff3300;
+    font-family: "宋体";
+    border-radius: 30px;
+    margin: 27px 20px 0 0;
+}

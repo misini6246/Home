@@ -1,0 +1,49 @@
+#content .container_box {
+    padding-bottom: 120px;
+}
+table{
+	width: 1120px;
+	margin: 10px auto!important;
+}
+table th{
+	height: 40px;
+	line-height: 40px;
+}
+table th{
+	background: #f8f9fb;
+	color: #666;
+	font-size: 16px!important;
+	font-weight: normal;
+}
+table .pswl{
+	width: 170px;
+}
+table .fhsj{
+	width: 400px;
+}
+table .sfbz{
+	width: 350px;
+}
+table .psqy{
+	width: 220px;
+}
+table td{
+	height: 100px;
+	border-bottom:1px solid #e5e5e5;
+	font-size: 16px!important;
+}
+table td p{
+	font-size: 16px!important;
+}
+.wl_tishi p{
+	line-height: 24px;
+	font-size: 16px;
+	color: #666;
+	padding-left: 20px;
+}
+.wl_tishi_title{
+	height:35px;
+	line-height: 35px;
+	font-weight: bold;
+	margin-top: 20px;
+}

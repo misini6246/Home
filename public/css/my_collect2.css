@@ -1,0 +1,58 @@
+
+
+/*主体部分样式开始*/
+
+
+.slideTxtBox .hd{ height:30px; line-height:30px;    border-bottom:1px solid #ddd;  position:relative; }
+.slideTxtBox .hd ul{ float:left;  position:absolute; right:0px; top:0; height:32px;   }
+.slideTxtBox .hd ul li{ float:left; padding:0 15px; cursor:pointer;  }
+.slideTxtBox .hd ul li a{color: #5c5c5c}
+.slideTxtBox .hd ul li.on{ height:30px;  background:#fff; border:1px solid #ddd; border-bottom:2px solid #fff; }
+.slideTxtBox .hd ul li.on a{color: #3ebb2b}
+.slideTxtBox .bd ul{ padding:15px;  zoom:1;  }
+.slideTxtBox .bd li{ height:24px; line-height:24px;   }
+.slideTxtBox .bd li .date{ float:right; color:#999;  }
+
+table tr td a.cancel{color: #999999;}
+
+
+table{margin-top: 10px;border: 1px solid #e5e5e5;width: 982px; color: #666666;}
+table tr td,table tr th{text-align: center;height: 38px;line-height: 38px; position: relative;}
+table tr th{background-color: #f5f5f5;border-bottom: 1px solid #e5e5e5;}
+table tr td{border-bottom: 1px dashed #e5e5e5;}
+table tr.hover{background-color: #fbfbfb;}
+table tr td .num{color: #cf0000;padding: 0 5px;}
+
+table tr td select{color: #999999;}
+table tr td img{margin: 10px 10px 10px 20px;float: left;width: 62px;height: 62px;}
+table tr td .name{float: left;margin-top: 20px;}
+table tr td.tb2_td1{text-align: left;padding-left: 15px;width: 50px;}
+table tr td.tb2_td2{text-align: left;width: 242px;}
+table tr td.tb2_td3{width: 170px;}
+table tr td.tb2_td4{width: 80px;}
+table tr td.tb2_td5{width: 100px;}
+table tr td.tb2_td6{width: 100px;}
+table tr td.tb2_td7{width: 80px;}
+
+
+.con_left{margin-top: 26px;padding-left: 15px;width: 260px;float: left;}
+.con_left .submit{margin-top: -2px;width: 82px;height: 25px;border: 1px solid #dddddd;text-align: center;line-height: 21px;color: #39a817;background-color: #fff;margin-right: 15px;*margin-right: 10px;cursor:pointer;}
+.con_left .cancel{color: #FE8502;
+    border: 1px solid #E5E5E5;
+    padding: 4px 15px;}
+
+.pagination{text-align: right;margin-top: 20px;width: 760px;float: right;}
+.pagination a {border: 1px solid #e1e1e1;color: #fff;}
+
+.pagination a, .pagination span {display: inline-block;padding: 5px 10px;margin: 5px;}
+
+.pagination .current {background: #39a817; color: #fff;}
+
+.pagination .current.prev, .pagination .current.next{ color:#333333;background:#fff;border:1px solid #e1e1e1; }
+
+/*主体部分样式结束*/
+
+.collaboration_unit{margin-top: 0px;}
+.more{margin-top: 5px;}
+.gwc_tb2 tr td.tb2_td8 img{width: 27px;height: 23px;}
+.gwc_tb2 tr td.tb2_td8 img{margin: 10px;}

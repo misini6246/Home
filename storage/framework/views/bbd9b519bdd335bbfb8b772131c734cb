@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Keywords" content="<?php echo e(shopConfig('shop_keywords')); ?>"/>
+    <meta name="Description" content="<?php echo e(shopConfig('shop_desc')); ?>"/>
+    <meta name="_token" content="<?php echo e(csrf_token()); ?>"/>
+    <title>重置密码-<?php echo e(shopConfig('shop_title')); ?></title>
+    <link rel="shortcut icon" href="<?php echo e(path('images/favicon.ico')); ?>"/>
+    <link rel="icon" href="<?php echo e(path('images/animated_favicon.gif')); ?>" type="image/gif"/>
+    <link href="<?php echo e(path('css/base.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/login.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/log_reg_com.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/confirm_psw.css')); ?>" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<?php echo $__env->make('layout.auth_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="main_2">
+    <h2>重置密码</h2>
+
+    <form action="<?php echo e(route('pwd_reset')); ?>" method="post" name="getPassword2" class="refer" onsubmit="return yzmm()">
+        <?php echo csrf_field(); ?>
+
+        <input type="hidden" name="mobile_phone" value="<?php echo e($mobile_phone); ?>">
+        <input type="hidden" name="code" value="<?php echo e($code); ?>">
+        <?php /*<label class="input_box fn_clear">*/ ?>
+        <?php /*<span class="input_box_before">用户名：</span>*/ ?>
+        <?php /*<p>*/ ?>
+        <?php /*<input class="psw2" type="text" name="email" value="<?php echo e(isset($user_name) ? $user_name : old('email')); ?>"/>*/ ?>
+        <?php /*<span class="prompt"></span>*/ ?>
+        <?php /*</p>*/ ?>
+        <?php /*</label>*/ ?>
+        <label class="input_box fn_clear">
+            <span class="input_box_before">新密码：</span>
+            <p>
+                <input class="psw2" type="password" name="password"/>
+                <span class="prompt"></span>
+            </p>
+        </label>
+        <label class="input_box psw_label fn_clear">
+            <span class="input_box_before">密码确认 ：</span>
+            <p>
+                <input class="psw3" type="password" name="password_confirmation"/>
+                <span class="prompt margin_problem"></span>
+            </p>
+
+        </label>
+        <span class="tip_txt"></span>
+        <div class="btn">
+            <input style="border-radius: 6px;
+    background-color: rgb(61, 187, 43);
+    width: 110px;
+    height: 40px;background-image: none;line-height: 40px;" type="submit" class="psw_btn" value="确认密码"/>
+        </div>
+
+    </form>
+</div>
+<?php echo $__env->make('layout.auth_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+<script type="text/javascript" src="<?php echo e(path('/js/jquery.min.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(path('layer/layer.js')); ?>"></script>
+<script>
+    function yzmm() {
+        var mm = $('input[name=password]').val();
+        var is_mm = /^[a-zA-Z\d_]{6,24}$/;
+        if (!is_mm.test(mm)) {
+            layer.msg('密码只能包含大小写数字及下划线,最短六位', {icon: 2});
+            return false;
+        }
+        var c_mm = $('input[name=password_confirmation]').val();
+        if (c_mm != mm) {
+            layer.msg('两次输入密码不一致', {icon: 2});
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>

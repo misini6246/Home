@@ -1,0 +1,27 @@
+<div class="nav content">
+    <div class="content_box">
+        <div class="logo_box">
+            <a href="<?php echo e(route('index')); ?>"><img src="<?php echo e(get_img_path('images/jf/logo.png')); ?>"/></a>
+        </div>
+        <div class="nav_title">
+            <a href="<?php echo e(route('jf.index')); ?>"><img src="<?php echo e(get_img_path('images/jf/nav_title.png')); ?>"/></a>
+        </div>
+        <ul class="nav_list">
+            <li <?php if($action=='index'): ?>class="active"<?php endif; ?>>
+                <a href="<?php echo e(route('jf.index')); ?>">积分首页</a>
+            </li>
+            <li <?php if($action=='user'): ?>class="active"<?php endif; ?>>
+                <a href="<?php echo e(route('jf.user.index')); ?>">个人中心</a>
+            </li>
+            <li>
+                <a href="<?php echo e(route('index')); ?>">药品采购</a>
+            </li>
+        </ul>
+        <div class="lp_cart">
+            <a href="<?php echo e(route('jf.cart.index')); ?>">
+                <img src="<?php echo e(get_img_path('images/jf/lipin_03.png')); ?>"/>
+                <span class="txt">礼品车</span><span class="num"><?php echo e(jf_cart_count()); ?></span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,698 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>1"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/index.css')); ?>3"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/lunbo.css')); ?>1"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/carousel.css')); ?>1"/>
+    <script src="<?php echo e(path('js/index/remaintime.min.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/zs/lazyload.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/index/lb.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/index/navigation.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/index/index.js')); ?>2" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/index/carousel.js')); ?>1" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/slideshow.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php /*<?php if(isset($yindao)&&$yindao==0): ?>*/ ?>
+    <?php /*<?php echo $__env->make('layouts.yindao', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+    <?php /*<?php endif; ?>*/ ?>
+    <?php if(isset($mhj_qrh)&&$mhj_qrh): ?>
+        <?php echo $__env->make('layouts.mhj_qrh', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php elseif($ad27): ?>
+        <!-- 弹出层开始 -->
+        <div class="zzsc" style="display: block;z-index: 999999;">
+            <div class="content_tj"><a href="<?php echo e($ad27->ad_link); ?>" target="_blank"><img
+                            src="<?php echo e(get_img_path('data/afficheimg/'.$ad27->ad_code)); ?>" class="ad"></a>
+                <span class="close" style="width: 30px;height: 30px;"><img style="width: 100%"
+                                                                           src="<?php echo e(path('/images/close.png')); ?>"
+                                                                           alt=""></span>
+            </div>
+        </div>
+        <div class="content_mark" style="display: block;z-index: 999990"></div>
+    <?php elseif(time()<=strtotime(20180414)): ?>
+        <?php echo $__env->make('layouts.weihu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+    <?php /*<a target="_blank" href="<?php echo e(route('jifen.qiandao.index')); ?>"*/ ?>
+       <?php /*style="display: block;position: fixed;left: 0;bottom: 50px;z-index: 1000">*/ ?>
+        <?php /*<img src="<?php echo e(get_img_path('adimages1/201805/jifen/qiandao.gif')); ?>">*/ ?>
+    <?php /*</a>*/ ?>
+    <div id="banner" class="container">
+        <div class="slide_box">
+            <div class="banner2">
+                <ul class="banner-ctrl">
+                    <?php foreach($ad121 as $k=>$ad): ?>
+                        <li <?php if($k==0): ?> class="current" <?php endif; ?>>
+                            <span class="bg"></span>
+                            <div class="ctrl-dot">
+                                <i <?php if($k==0): ?> class="on" <?php endif; ?>></i>
+                            </div>
+                            <div class="title-item">
+                                <span class="title-bg"></span>
+                                <div class="title-list">
+                                    <p><i></i></p>
+                                </div>
+                            </div>
+                            <h4 style="font-weight: normal;"><?php echo e(str_replace('2017','',$ad->ad_name)); ?></h4>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <a class="banner-btn banner-prev" href="javascript:void(0);">
+                    <i class="myicon banner_left_icon"></i>
+                </a>
+                <a class="banner-btn banner-next" href="javascript:void(0);">
+                    <i class="myicon banner_right_icon"></i>
+                </a>
+                <div class="banner-pic">
+                    <?php foreach($ad121 as $k=>$ad): ?>
+                        <ul>
+                            <li style="background:#<?php echo e($ad->ad_bgc); ?>; <?php if($k==0): ?> display:list-item; <?php endif; ?>">
+                                <a href="<?php echo e($ad->ad_link); ?>"
+                                   title="" target="_blank">
+                                    <img data-src="<?php echo e(get_img_path($ad->ad_code)); ?>"
+                                         src="<?php echo e('http://manage.tiedsun.cn/'.$ad->ad_code); ?>"/>
+                                    <?php /*<?php if($ad->enabled==2): ?>*/ ?>
+                                        <?php /*<?php if(!empty($ad->left_img)): ?>*/ ?>
+                                            <?php /*<img class="animate_img_left"*/ ?>
+                                                 <?php /*data-src="<?php echo e('http://manage.tiedsun.cn/'.$ad->left_img); ?>"*/ ?>
+                                                 <?php /*src="<?php echo e('http://manage.tiedsun.cn/'.$ad->left_img); ?>"/>*/ ?>
+                                        <?php /*<?php endif; ?>*/ ?>
+                                        <?php /*<?php if(!empty($ad->right_img)): ?>*/ ?>
+                                            <?php /*<img class="animate_img_right"*/ ?>
+                                                 <?php /*data-src="<?php echo e('http://manage.tiedsun.cn/'.$ad->right_img); ?>"*/ ?>
+                                                 <?php /*src="<?php echo e('http://manage.tiedsun.cn/'.$ad->right_img); ?>"/>*/ ?>
+                                        <?php /*<?php endif; ?>*/ ?>
+                                    <?php /*<?php endif; ?>*/ ?>
+                                </a>
+                            </li>
+                        </ul>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+        </div>
+        <div class="slide_right">
+            <ul class="guanggao">
+                <?php foreach($ad123 as $k=>$ad): ?>
+                    <?php if($k<3): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e($ad->ad_link); ?>">
+                                <img src="<?php echo e($ad->ad_code); ?>"/>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <li>
+                    <a target="_blank" href="/zs">
+                        <img src="<?php echo e(asset('images/zszq.jpg')); ?>"/>
+                    </a>
+                </li>
+            </ul>
+            <?php /*<div class="huodong-tishi">*/ ?>
+                <?php /*<a target="_blank" href="/cxhd/cxzq"><img src="<?php echo e(get_img_path('images/qiantai_04.png')); ?>"></a>*/ ?>
+                <?php /*<div class="huodong-tishi-box">*/ ?>
+                    <?php /*<ul>*/ ?>
+                        <?php /*<?php foreach($ad155 as $v): ?>*/ ?>
+                            <?php /*<li>*/ ?>
+                                <?php /*<a target="_blank" href="/cxhd/cxzq#<?php echo e($v->ad_link); ?>" class="zy-<?php echo e($v->ad_link); ?>">*/ ?>
+                                    <?php /*<img src="<?php echo e($v->ad_code); ?>"/>*/ ?>
+                                <?php /*</a>*/ ?>
+                            <?php /*</li>*/ ?>
+                        <?php /*<?php endforeach; ?>*/ ?>
+                    <?php /*</ul>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*</div>*/ ?>
+        </div>
+    </div>
+    <div id="center_banner" class="container">
+        <div id="ban2" class="ban">
+            <div class="banner">
+                <ul class="img">
+                    <?php if(count($ad198)>0): ?>
+                        <li>
+                            <?php foreach($ad198 as $k=>$ad): ?>
+                                <?php if($k<3): ?>
+                                    <div class="wntj-cp img_box">
+                                        <a target="_blank" href="<?php echo e($ad->ad_link); ?>">
+                                            <img src="<?php echo e($ad->ad_code); ?>"/>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(count($ad198)>3): ?>
+                        <li>
+                            <?php foreach($ad198 as $k=>$ad): ?>
+                                <?php if($k>=3&&$k<6): ?>
+                                    <div class="wntj-cp img_box">
+                                        <a target="_blank" href="<?php echo e($ad->ad_link); ?>">
+                                            <img src="<?php echo e($ad->ad_code); ?>"/>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="daojs" value="<?php echo e($ad124[0]->end_time-time()); ?>"/>
+    <div id="mzjx" class="container">
+        <div class="container_box">
+            <div class="section_title">
+                <i class="myicon mzjx_icon"></i>
+                <span class="biaoti">每周精选</span>
+                <div class="remaintime">
+                    本期剩余时间：<span class="day"></span>天<span class="hourse"></span>时<span class="minute"></span>分<span
+                            class="second"></span>秒
+                </div>
+            </div>
+            <ul class="mzjx_content">
+                <?php foreach($ad124 as $k=>$ad): ?>
+                    <?php if($k<6): ?>
+                        <li>
+                            <a target="_blank" href="<?php echo e($ad->ad_link); ?>">
+                                <?php /*<div class="sale">75折</div>*/ ?>
+                                <div class="img_box" style="height: 280px;">
+                                    <img src="<?php echo e(get_img_path($ad->ad_code)); ?>"/>
+                                </div>
+                                <?php /*<p class="name">复方甘草片</p>*/ ?>
+                                <?php /*<p class="gg">50片/瓶</p>*/ ?>
+                                <?php /*<p class="money">*/ ?>
+                                <?php /*￥24.36<span class="yuanjia">￥24.36</span>*/ ?>
+                                <?php /*</p>*/ ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <?php echo $__env->make('new.ppzq', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php if(isset($cx_goods[6])): ?>
+        <div id="wntj" class="container">
+            <div class="container_box">
+                <div id="ban3" class="ban">
+                    <div class="section_title">
+                        <i class="myicon wntj_icon"></i>
+                        <span class="biaoti">为您推荐</span>
+                    </div>
+                    <div class="banner">
+                        <ul class="img">
+                            <?php if(count($cx_goods[6])>0): ?>
+                                <li>
+                                    <?php foreach($cx_goods[6] as $k=>$v): ?>
+                                        <?php if($k<5): ?>
+                                            <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                                <div class="wntj-cp">
+                                                    <div class="img_box">
+                                                        <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                                    </div>
+                                                    <p class="name"><?php echo e($v->goods_name); ?></p>
+                                                    <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                                    <p class="money login"><?php echo e($v->format_price); ?></p>
+                                                </div>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </li>
+                            <?php endif; ?>
+                            <?php if(count($cx_goods[6])>5): ?>
+                                <li>
+                                    <?php foreach($cx_goods[6] as $k=>$v): ?>
+                                        <?php if($k>=5&$k<10): ?>
+                                            <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                                <div class="wntj-cp">
+                                                    <div class="img_box">
+                                                        <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                                    </div>
+                                                    <p class="name"><?php echo e($v->goods_name); ?></p>
+                                                    <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                                    <p class="money login"><?php echo e($v->format_price); ?></p>
+                                                </div>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                        <div class="btn btn_l">
+                            <i class="myicon lb_left_icon"></i>
+                        </div>
+                        <div class="btn btn_r">
+                            <i class="myicon lb_right_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php /*<div id="xpsj" class="container">*/ ?>
+        <?php /*<div class="container_box">*/ ?>
+            <?php /*<div class="section_left">*/ ?>
+                <?php /*<div class="section_title">*/ ?>
+                    <?php /*<i class="myicon xpsj_icon"></i>*/ ?>
+                    <?php /*<span class="biaoti">新品上架</span>*/ ?>
+                <?php /*</div>*/ ?>
+                <?php /*<div class="section_left_content">*/ ?>
+                    <?php /*<div class="img_box">*/ ?>
+                        <?php /*<div id="ban4" class="ban common_ban">*/ ?>
+                            <?php /*<div class="banner">*/ ?>
+                                <?php /*<ul class="img">*/ ?>
+                                    <?php /*<?php foreach($ad126 as $k=>$v): ?>*/ ?>
+                                        <?php /*<li>*/ ?>
+                                            <?php /*<a href="<?php echo e($v->ad_link); ?>" target="_blank">*/ ?>
+                                                <?php /*<img style="width: 100%;height: 100%;" class="lazy"*/ ?>
+                                                     <?php /*data-original="<?php echo e($v->ad_code); ?>"/>*/ ?>
+                                            <?php /*</a>*/ ?>
+                                        <?php /*</li>*/ ?>
+                                    <?php /*<?php endforeach; ?>*/ ?>
+                                <?php /*</ul>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*<ul class="num"></ul>*/ ?>
+                        <?php /*</div>*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<?php if(isset($cx_goods[7])): ?>*/ ?>
+                        <?php /*<ul class="section_left_content_bottom">*/ ?>
+                            <?php /*<?php foreach($cx_goods[7] as $k=>$v): ?>*/ ?>
+                                <?php /*<?php if($k<3): ?>*/ ?>
+                                    <?php /*<li>*/ ?>
+                                        <?php /*<a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">*/ ?>
+                                            <?php /*<div class="img_box">*/ ?>
+                                                <?php /*<img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>*/ ?>
+                                            <?php /*</div>*/ ?>
+                                            <?php /*<p class="name"><?php echo e($v->goods_name); ?></p>*/ ?>
+                                            <?php /*<p class="money login"><?php echo e($v->format_price); ?></p>*/ ?>
+                                        <?php /*</a>*/ ?>
+                                    <?php /*</li>*/ ?>
+                                <?php /*<?php endif; ?>*/ ?>
+                            <?php /*<?php endforeach; ?>*/ ?>
+                        <?php /*</ul>*/ ?>
+                    <?php /*<?php endif; ?>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*</div>*/ ?>
+            <?php /*<?php if(isset($zp[8])): ?>*/ ?>
+                <?php /*<div class="section_right">*/ ?>
+                    <?php /*<div class="section_title">*/ ?>
+                        <?php /*<div class="fr">*/ ?>
+                            <?php /*<a target="_blank" href="/cxhd/czhg">*/ ?>
+                                <?php /*查看全部*/ ?>
+                                <?php /*<i class="myicon readmore_icon"></i>*/ ?>
+                            <?php /*</a>*/ ?>
+                        <?php /*</div>*/ ?>
+                        <?php /*<i class="myicon czhg_icon"></i>*/ ?>
+                        <?php /*<span class="biaoti">超值换购</span>*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<ul class="section_right_content">*/ ?>
+                        <?php /*<?php foreach($zp[8] as $k=>$v): ?>*/ ?>
+                            <?php /*<?php if($k<4): ?>*/ ?>
+                                <?php /*<li>*/ ?>
+                                    <?php /*<a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">*/ ?>
+                                        <?php /*<p class="name"><?php echo e($v->goods_name); ?></p>*/ ?>
+                                        <?php /*<p class="gg"><?php echo e($v->ypgg); ?></p>*/ ?>
+                                        <?php /*<p class="text">*/ ?>
+									        <?php /*<span class="tishi">*/ ?>
+										        <?php /*换购信息<i class="jiantou you_i"></i>*/ ?>
+										        <?php /*<span class="tishi_xx">*/ ?>
+											    <?php /*<?php echo e($v->cxxx); ?>*/ ?>
+                                                    <?php /*<img src="<?php echo e(get_img_path('images/index/index_sanjiao.png')); ?>"*/ ?>
+                                                         <?php /*class="index_sanjiao"/>*/ ?>
+										        <?php /*</span>*/ ?>
+									        <?php /*</span>*/ ?>
+                                        <?php /*</p>*/ ?>
+                                        <?php /*<div class="img_box">*/ ?>
+                                            <?php /*<img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>*/ ?>
+                                        <?php /*</div>*/ ?>
+                                    <?php /*</a>*/ ?>
+                                <?php /*</li>*/ ?>
+                            <?php /*<?php endif; ?>*/ ?>
+                        <?php /*<?php endforeach; ?>*/ ?>
+                    <?php /*</ul>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*<?php endif; ?>*/ ?>
+        <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php if(count($ad128)>0): ?>
+        <div class="container section_guanggao">
+            <div class="container_box">
+                <?php foreach($ad128 as $k=>$ad): ?>
+                    <?php if($k<3): ?>
+                        <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+                            <img class="lazy" data-original="<?php echo e($ad->ad_code); ?>"/>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php /*<div id="cptj" class="container">*/ ?>
+        <?php /*<div class="container_box">*/ ?>
+            <?php /*<div class="section_left">*/ ?>
+                <?php /*<div class="section_title">*/ ?>
+                    <?php /*<i class="myicon cptj_icon"></i>*/ ?>
+                    <?php /*<span class="biaoti">产品推荐</span>*/ ?>
+                <?php /*</div>*/ ?>
+                <?php /*<div class="section_left_content">*/ ?>
+                    <?php /*<div class="img_box">*/ ?>
+                        <?php /*<div id="ban5" class="ban common_ban">*/ ?>
+                            <?php /*<div class="banner">*/ ?>
+                                <?php /*<ul class="img">*/ ?>
+                                    <?php /*<?php foreach($ad129 as $k=>$v): ?>*/ ?>
+                                        <?php /*<li>*/ ?>
+                                            <?php /*<a href="<?php echo e($v->ad_link); ?>" target="_blank">*/ ?>
+                                                <?php /*<img style="width: 100%;height: 100%;" class="lazy"*/ ?>
+                                                     <?php /*data-original="<?php echo e($v->ad_code); ?>"/>*/ ?>
+                                            <?php /*</a>*/ ?>
+                                        <?php /*</li>*/ ?>
+                                    <?php /*<?php endforeach; ?>*/ ?>
+                                <?php /*</ul>*/ ?>
+                            <?php /*</div>*/ ?>
+                            <?php /*<ul class="num"></ul>*/ ?>
+                        <?php /*</div>*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<?php if(isset($cx_goods[9])): ?>*/ ?>
+                        <?php /*<ul class="section_left_content_bottom">*/ ?>
+                            <?php /*<?php foreach($cx_goods[9] as $k=>$v): ?>*/ ?>
+                                <?php /*<?php if($k<3): ?>*/ ?>
+                                    <?php /*<li>*/ ?>
+                                        <?php /*<a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">*/ ?>
+                                            <?php /*<div class="img_box">*/ ?>
+                                                <?php /*<img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>*/ ?>
+                                            <?php /*</div>*/ ?>
+                                            <?php /*<p class="name"><?php echo e($v->goods_name); ?></p>*/ ?>
+                                            <?php /*<p class="money login"><?php echo e($v->format_price); ?></p>*/ ?>
+                                        <?php /*</a>*/ ?>
+                                    <?php /*</li>*/ ?>
+                                <?php /*<?php endif; ?>*/ ?>
+                            <?php /*<?php endforeach; ?>*/ ?>
+                        <?php /*</ul>*/ ?>
+                    <?php /*<?php endif; ?>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*</div>*/ ?>
+            <?php /*<?php if(isset($zp[10])): ?>*/ ?>
+                <?php /*<div class="section_right">*/ ?>
+                    <?php /*<div class="section_title">*/ ?>
+                        <?php /*<div class="fr">*/ ?>
+                            <?php /*<a target="_blank" href="/cxhd/jpmz">*/ ?>
+                                <?php /*查看全部*/ ?>
+                                <?php /*<i class="myicon readmore_icon"></i>*/ ?>
+                            <?php /*</a>*/ ?>
+                        <?php /*</div>*/ ?>
+                        <?php /*<i class="myicon jpmz_icon"></i>*/ ?>
+                        <?php /*<span class="biaoti">精品买赠</span>*/ ?>
+                    <?php /*</div>*/ ?>
+                    <?php /*<ul class="section_right_content">*/ ?>
+                        <?php /*<?php foreach($zp[10] as $k=>$v): ?>*/ ?>
+                            <?php /*<?php if($k<4): ?>*/ ?>
+                                <?php /*<li>*/ ?>
+                                    <?php /*<a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">*/ ?>
+                                        <?php /*<p class="name"><?php echo e($v->goods_name); ?></p>*/ ?>
+                                        <?php /*<p class="gg"><?php echo e($v->ypgg); ?></p>*/ ?>
+                                        <?php /*<p class="text">*/ ?>
+									        <?php /*<span class="tishi">*/ ?>
+										        <?php /*买赠信息<i class="jiantou you_i"></i>*/ ?>
+										        <?php /*<span class="tishi_xx">*/ ?>
+											    <?php /*<?php echo e($v->cxxx); ?>*/ ?>
+                                                    <?php /*<img src="<?php echo e(get_img_path('images/index/index_sanjiao.png')); ?>"*/ ?>
+                                                         <?php /*class="index_sanjiao"/>*/ ?>
+										        <?php /*</span>*/ ?>
+									        <?php /*</span>*/ ?>
+                                        <?php /*</p>*/ ?>
+                                        <?php /*<div class="img_box">*/ ?>
+                                            <?php /*<img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>*/ ?>
+                                        <?php /*</div>*/ ?>
+                                    <?php /*</a>*/ ?>
+                                <?php /*</li>*/ ?>
+                            <?php /*<?php endif; ?>*/ ?>
+                        <?php /*<?php endforeach; ?>*/ ?>
+                    <?php /*</ul>*/ ?>
+                <?php /*</div>*/ ?>
+            <?php /*<?php endif; ?>*/ ?>
+        <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php if(count($ad131)>0): ?>
+        <div class="container section_guanggao">
+            <div class="container_box">
+                <?php foreach($ad131 as $k=>$ad): ?>
+                    <?php if($k<3): ?>
+                        <a href="<?php echo e($ad->ad_link); ?>" target="_blank">
+                            <img class="lazy" data-original="<?php echo e($ad->ad_code); ?>"/>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div id="djrx" class="container">
+        <div class="container_box">
+            <div class="section_title">
+                <i class="myicon djrx_icon"></i>
+                <span class="biaoti">当季热销</span>
+            </div>
+            <div class="dj_common">
+                <div class="left_img">
+                    <?php foreach($ad133 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img style="width: 100%;height: 100%;" class="lazy" data-original="<?php echo e($v->ad_code); ?>"/>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <?php if(isset($cx_goods[11])): ?>
+                    <ul class="right_content">
+                        <?php foreach($cx_goods[11] as $k=>$v): ?>
+                            <?php if($k<4): ?>
+                                <li>
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                        <div class="img_box">
+                                            <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                        </div>
+                                        <div class="text">
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <div id="jybj" class="container">
+        <div class="container_box">
+            <div class="section_title">
+                <i class="myicon jtbj_icon"></i>
+                <span class="biaoti">家庭保健</span>
+            </div>
+            <div class="dj_common">
+                <div class="left_img">
+                    <?php foreach($ad137 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img style="width: 100%;height: 100%;" class="lazy" data-original="<?php echo e($v->ad_code); ?>"/>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <?php if(isset($cx_goods[12])): ?>
+                    <ul class="right_content">
+                        <?php foreach($cx_goods[12] as $k=>$v): ?>
+                            <?php if($k<4): ?>
+                                <li>
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                        <div class="img_box">
+                                            <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                        </div>
+                                        <div class="text">
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <div id="zyyp" class="container">
+        <div class="container_box">
+            <div class="section_title">
+                <i class="myicon zyyp_icon"></i>
+                <span class="biaoti">中药饮片</span>
+            </div>
+            <div class="dj_common">
+                <div class="left_img">
+                    <?php foreach($ad140 as $k=>$v): ?>
+                        <a href="<?php echo e($v->ad_link); ?>" target="_blank">
+                            <img style="width: 100%;height: 100%;" class="lazy" data-original="<?php echo e($v->ad_code); ?>"/>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <?php if(isset($cx_goods[13])): ?>
+                    <ul class="right_content">
+                        <?php foreach($cx_goods[13] as $v): ?>
+                            <?php if($k<4): ?>
+                                <li>
+                                    <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                        <div class="img_box">
+                                            <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                        </div>
+                                        <div class="text">
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <div id="cjtj" class="container">
+        <div class="container_box">
+            <div class="cjtj_title">
+                <p class="biaoti">厂家推荐</p>
+                <p class="text">
+                    品牌厂家，优质推荐
+                    <span class="left"></span>
+                    <span class="right"></span>
+                </p>
+            </div>
+            <ul class="cj_content">
+                <li>
+                    <div class="cj_content_title">
+                        <img src="http://www.tiedsun.cn/new/ewzy.jpg"/>
+                        <a target="_blank" href="<?php echo e(route('category.index',['keywords'=>'四川恩威制药有限公司','showi'=>0])); ?>">查看全部</a>
+                    </div>
+                    <?php if(isset($cx_goods[14])): ?>
+                        <ul class="cj_content_list">
+                            <?php foreach($cx_goods[14] as $k=>$v): ?>
+                                <?php if($k<4): ?>
+                                    <li>
+                                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                            <div class="img_box">
+                                                <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                            </div>
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+                <li>
+                    <div class="cj_content_title">
+                        <img src="<?php echo e(get_img_path('images/index/company_2_03.jpg')); ?>"/>
+                        <a target="_blank" href="<?php echo e(route('category.index',['keywords'=>'同仁堂','showi'=>0])); ?>">查看全部</a>
+                    </div>
+                    <?php if(isset($cx_goods[15])): ?>
+                        <ul class="cj_content_list">
+                            <?php foreach($cx_goods[15] as $k=>$v): ?>
+                                <?php if($k<4): ?>
+                                    <li>
+                                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                            <div class="img_box">
+                                                <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                            </div>
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+                <li>
+                    <div class="cj_content_title">
+                        <img style="width: 240px;margin-top: 15px;"
+                             src="http://www.tiedsun.cn/new/qjxj.png"/>
+                        <a target="_blank" href="<?php echo e(route('category.index',['keywords'=>'湖南千金湘江药业股份有限公司','showi'=>0])); ?>">查看全部</a>
+                    </div>
+                    <?php if(isset($cx_goods[16])): ?>
+                        <ul class="cj_content_list">
+                            <?php foreach($cx_goods[16] as $k=>$v): ?>
+                                <?php if($k<4): ?>
+                                    <li>
+                                        <a target="_blank" href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                            <div class="img_box">
+                                                <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                            </div>
+                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                            <p class="money"><?php echo e($v->format_price); ?></p>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <?php /*<div id="tishi" class="container">*/ ?>
+    <?php /*<div class="container_box">*/ ?>
+    <?php /*<img src="<?php echo e(get_img_path('images/index/daodi.jpg')); ?>"/>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.fixed_search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--电梯导航-->
+    <div id="fixedNavBar" class="container">
+        <div class="container_box">
+            <div class="fixedNavBar_title">
+                导航
+            </div>
+            <ul>
+                <li>
+                    <a href="#mzjx">每周精选</a>
+                </li>
+                <li>
+                    <a href="#ppzq">品牌专区</a>
+                </li>
+                <li>
+                    <a href="#wntj">为您推荐</a>
+                </li>
+                <li>
+                    <a href="#djrx">当季热销</a>
+                </li>
+                <li>
+                    <a href="#jybj">家用保健</a>
+                </li>
+                <li>
+                    <a href="#zyyp">中药饮片</a>
+                </li>
+                <li>
+                    <a href="#cjtj">厂家推荐</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--电梯导航-->
+    <script src="<?php echo e(path('js/index/lunbo.js')); ?>1" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

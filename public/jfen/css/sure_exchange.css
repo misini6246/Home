@@ -1,0 +1,15 @@
+.sure_order{width: 1188px;margin: 0 auto}
+.road_nav{line-height: 40px}
+.look_step{background: url("../images/step3.jpg") no-repeat;height: 39px;line-height: 39px}
+.look_step ul li{width: 292px;text-align: center;font-size: 15px;color: #4a4a4a;font-weight: bold}
+
+.sure_order_real{margin-top: 25px}
+
+.user_msg img,.user_msg span{vertical-align: middle;font-size: 16px;}
+.user_msg img{margin-right: 5px;margin-left: 10px}
+.message{margin-top: 12px}
+.message table{width: 100%}
+.message table thead tr{background-color: #f5f5f5;}
+.message table tr{height: 30px;line-height: 30px;}
+.message table td{border: 1px solid #e5e5e5;text-align: center}
+.sure_btn{display: block;width: 127px;height: 38px;background: url("../images/btn_exchange.png") no-repeat;margin: 70px auto 0 auto}

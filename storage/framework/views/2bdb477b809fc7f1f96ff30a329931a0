@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>新闻中心-详情</title>
+    <link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+    <link rel="stylesheet" type="text/css" href="/help/bzzx.css"/>
+</head>
+
+<body>
+<div class="big-container">
+    <!--头部-->
+<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!--/头部-->
+
+    <!--顶部-->
+    <div class="top-box">
+        <div class="box-container">
+            <div class="left">
+                <a href="<?php echo e('/'); ?>"><img src="/index/img/logo.jpg"></a>
+                <div class="line"></div>
+                新闻中心
+            </div>
+            <div class="option">
+
+                <div <?php if($cat_id==17): ?> class="option-item cur" <?php else: ?> class="option-item" <?php endif; ?>>
+                    <a href="/article?id=17">公司动态</a>
+                </div>
+
+                <div <?php if($cat_id==20): ?> class="option-item cur" <?php else: ?> class="option-item" <?php endif; ?>>
+                    <a href="/article?id=20">行业资讯</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/顶部-->
+
+    <!--主体内容-->
+    <div class="news-box">
+        <div class="box-container">
+            <div class="breadcrumb">
+                <ul>
+                    <li>
+                        <a href="#">公司动态</a>
+                    </li>
+                    <li class="breadcrumb-divider">&gt;</li>
+                    <li class="breadcrumb-cur">正文</li>
+                </ul>
+            </div>
+            <div class="info">
+                <h1><?php echo e($article->title); ?></h1>
+                <p class="date">发布日期：<span><?php echo e(date('Y-m-d H:i:s',$article->add_time)); ?></span> </p>
+                <div class="content">
+                    <?php if($article->content!=''): ?>
+                        <?php echo $article->content; ?>
+
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="btn-box" style="margin-top: 26px;">
+                    <span class="btn">上一篇</span>
+                    <?php if($preArticle): ?>
+                        <a href="/articleInfo?id=<?php echo e($preArticle->article_id); ?>" style="color: #999"><?php echo e($preArticle->title); ?></a>
+                    <?php else: ?>
+                        <a href="javascript:;" style="color: #999">无</a>
+                    <?php endif; ?>
+                </div>
+                <div class="btn-box">
+                    <span class="btn">下一篇</span>
+                    <?php if($nextArticle): ?>
+                        <a href="/articleInfo?id=<?php echo e($nextArticle->article_id); ?>" style="color: #999"><?php echo e($nextArticle->title); ?></a>
+                    <?php else: ?>
+                        <a href="javascript:;" style="color: #999">无</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/主体内容-->
+
+    <!--footer-->
+<?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!--/footer-->
+</div>
+</body>
+
+</html>

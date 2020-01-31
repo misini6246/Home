@@ -1,0 +1,51 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/new/help_common.css')); ?>"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('article.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('article.help_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div id="help_title" class="container">
+        <div class="container_box">
+            <ul class="help_title_list">
+                <?php foreach($articles as $k=>$v): ?>
+                    <li <?php if($k==$article_id): ?>class="active"<?php endif; ?>><a
+                                href="<?php echo e(route('xin.help',['cat_id'=>$cat_id,'article_id'=>$k])); ?>"><?php echo e($v); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class="container_box">
+            <div class="help_title">安全购药</div>
+            <div class="step">
+                <div class="content_step">
+                    商城有哪些积分种类？
+                </div>
+                <div class="gy_content">
+                    <p>这是内容</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content_step">
+                    什么是“可兑换积分”？
+                </div>
+                <div class="gy_content">
+                    <p>这是内容</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content_step">
+                    什么是“精品专区积分”？
+                </div>
+                <div class="gy_content">
+                    <p>这是内容</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('article.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

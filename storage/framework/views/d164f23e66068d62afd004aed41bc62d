@@ -1,0 +1,53 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('css/jifen/common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/jifen/gerenzhongxin.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/jfen/jfsc-css/common.css"/>
+    <script src="<?php echo e(path('js/jifen/lb.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .vip_right_container p {
+            font-size: 14px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('jifen.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('jifen.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--container-->
+    <div class="container content">
+        <div class="content_box">
+            <div class="top_title">
+                <img src="http://images.hezongyy.com/images/jf/address_03.png?1"/>
+                <span>当前位置：<a href="<?php echo e(route('jifen.index')); ?>">积分首页</a> > <a
+                            href="<?php echo e(route('jifen.help')); ?>">帮助中心</a>> <?php echo e($info->name); ?></span>
+            </div>
+            <div class="vip">
+                <div class="vip_left">
+                    <div class="vip_left_title">
+                        帮助中心
+                    </div>
+                    <ul class="title_list">
+                        <?php foreach($result as $v): ?>
+                            <li <?php if($id==$v->id): ?>class="active"<?php endif; ?>><a
+                                        href="<?php echo e(route('jifen.help',['id'=>$v->id])); ?>"><?php echo e($v->name); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="vip_right">
+                    <div class="vip_right_title">
+                        <img src="http://images.hezongyy.com/images/jf/dian_03.png?1"/>
+                        <span><?php echo e($info->name); ?></span>
+                    </div>
+                    <div class="vip_right_container" style="min-height: 120px;padding: 20px;">
+                        <?php echo $info->content; ?>
+
+                    </div>
+                </div>
+                <?php echo $__env->make('jifen.layouts.wntj', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+    </div>
+    <!--container-->
+    <?php echo $__env->make('jifen.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('jifen.layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

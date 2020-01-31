@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页</title>
+		<link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css"/>
+		<link rel="stylesheet" type="text/css" href="/register/register.css"/>
+
+		<script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/register/register.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="big-container" style="background-color: #FFFFFF;">
+			<!--头部开始-->
+			<?php echo $__env->make('layout.auth_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<!--头部结束-->
+
+			<!--表单-->
+			<div class="site-content">
+
+				<div class="content-container clear_float">
+
+					<form id="register" action="<?php echo e(url('auth/register')); ?>" method="post">
+						<?php echo csrf_field(); ?>
+
+						<div class="user-type-radio">
+
+							<span class="input-box-before">用户类型：</span>
+
+							<input type="radio" name="ls_lx" class="user-type" value="2" checked="checked">药店
+
+							<input type="radio" name="ls_lx" class="user-type" value="5">诊所
+
+							<input type="radio" name="ls_lx" class="user-type" value="1">连锁公司
+
+							<input type="radio" name="ls_lx" class="user-type" value="7">商业公司
+
+						</div>
+
+						<label class="input_box" for="username">
+
+			                <span class="input-box-before">用户名：</span>
+
+			                <input name="user_name" type="text" class="username input-com" id="username" value=" " autocomplete="off">
+
+			                <span class="prompt">*</span>
+			                <span class="prompt2">请输入2-30个字符组成的用户名</span>
+
+			            </label>
+
+						<label class="input_box" for="password">
+
+			                <span class="input-box-before" for="password">密码：</span>
+
+			                <input name="password" type="password" id="password" class="password input-com">
+
+			                <span class="prompt">*</span>
+			                <span class="prompt2">请输入6-24位英文、数字、"_"组成的密码</span>
+
+			            </label>
+
+						<!--<div class="pass_safe clear">
+
+							<span class="input-box-before">密码强度：</span>
+
+							<p class="after_clear"><span class="safe_level"> </span><span class="safe_level"> </span><span class="safe_level"> </span></p>
+
+						</div>-->
+
+						<label class="input_box" for="confirm_password">
+
+			                <span class="input-box-before">确认密码：</span>
+
+			                <input name="password_confirmation" type="password" id="confirm_password" class="sure_pass input-com">
+
+			                <span class="prompt">*</span>
+
+			            </label>
+
+						<?php /*<label class="input_box email_label" for="email">*/ ?>
+
+			                <?php /*<span class="input-box-before">电子邮箱：</span>*/ ?>
+
+			                <?php /*<input name="email" type="text" class="email input-com" id="email" value="" autocomplete="off">*/ ?>
+
+			                <?php /*<span class="prompt">*</span>*/ ?>
+			                <?php /*<span class="prompt2">请输入有效的电子邮箱</span>*/ ?>
+
+			                <?php /*<div class="cemail">*/ ?>
+
+			                    <?php /*<ul>*/ ?>
+
+			                        <?php /*<li>@qq.com</li>*/ ?>
+
+			                        <?php /*<li>@163.com</li>*/ ?>
+
+			                        <?php /*<li>@126.com</li>*/ ?>
+
+			                        <?php /*<li>@sohu.com</li>*/ ?>
+
+			                        <?php /*<li>@sina.com</li>*/ ?>
+
+			                        <?php /*<li>@hotmail.com</li>*/ ?>
+
+			                        <?php /*<li>@gmail.com</li>*/ ?>
+
+			                        <?php /*<li>@foxmail.com</li>*/ ?>
+
+			                        <?php /*<li>@139.com</li>*/ ?>
+
+			                        <?php /*<li>@189.cn</li>*/ ?>
+
+			                    <?php /*</ul>*/ ?>
+
+			                <?php /*</div>*/ ?>
+
+			            <?php /*</label>*/ ?>
+
+						<label class="input_box" for="ls_name">
+
+			                <span class="input-box-before">真实姓名：</span>
+
+			                <input name="ls_name" type="text" id="ls_name" class="real_name input-com" value="" autocomplete="off">
+
+			                <span class="prompt"></span>
+
+			            </label>
+
+						<label class="input_box" for="enterprise">
+
+			                <span class="input-box-before">企业名称：</span>
+
+			                <input class="enterprise input-com" type="text" name="msn" id="enterprise" value="" autocomplete="off">
+
+			                <span class="prompt ">*</span>
+			                <span class="prompt2">请填写与营业执照上名称一致，以便尽快通过审核</span>
+
+			            </label>
+
+						<?php /*<label class="input_box" for="extend_field2">*/ ?>
+
+			                <?php /*<span class="input-box-before">QQ：</span>*/ ?>
+
+			                <?php /*<input class="qq input-com" type="text" name="qq" id="extend_field2" value="" autocomplete="off">*/ ?>
+
+			                <?php /*<span class="prompt ">*</span>*/ ?>
+
+			            <?php /*</label>*/ ?>
+
+						<label class="input_box" for="extend_field5">
+
+			                <span class="input-box-before">联系电话：</span>
+
+			                <input class="phone input-com" type="text" name="mobile_phone" id="extend_field5" value="" autocomplete="off">
+
+			                <span class="prompt">*</span>
+			                <span class="prompt2">请输入正确的电话号码，座机格式：xxx-xxxxxx</span>
+
+			            </label>
+
+						<div class="choose_address fn_clear">
+
+							<span class="ca_tip">所在地区：</span>
+
+							<div class="select choose_select province" style="margin-left: 0px;">
+
+								<div class="select_choose"><span data-id="0">请选择</span><i></i></div>
+
+								<ul class="select_options">
+
+									<li data-id="0" style="border: 0">请选择</li>
+									<?php foreach(\App\Region::where('region_type',1)->orderBy('agency_id','desc')->get() as $v): ?>
+										<li data-id="<?php echo e($v->region_id); ?>"><?php echo e($v->region_name); ?></li>
+									<?php endforeach; ?>
+
+								</ul>
+
+							</div>
+
+							<div class="select choose_select city" style="margin-left: 0px;">
+
+								<div class="select_choose"><span data-id="0">请选择</span><i></i></div>
+
+								<ul class="select_options"></ul>
+
+							</div>
+
+							<div class="select choose_select district" style="margin-left: 0px;margin-right:40px;">
+
+								<div class="select_choose"><span data-id="0">请选择</span><i></i></div>
+
+								<ul class="select_options"></ul>
+
+							</div>
+
+							<span class="prompt margin_problem" style="margin-left: -1px">*</span>
+							<input type="hidden" name="province" value="" id="province"/>
+							<input type="hidden" name="city" value="" id="city"/>
+							<input type="hidden" name="district" value="" id="district"/>
+						</div>
+
+						<label class="agree">
+
+			                <span class="input-box-before">&nbsp;</span>
+
+			                <input name="agreement" type="checkbox" value="1" checked="checked">
+
+			                我已看过并接受<a href="/articleInfo?id=19" target="_blank">《用户协议》</a> </label>
+
+						<a href="javascript:;" id="submit"> 注册
+						</a>
+
+						<p class="reg_other">
+
+							<span class="input-box-before">&nbsp;</span>
+
+							<a href="<?php echo e(url('auth/login')); ?>" class="want_login after_clear">我已有账号，我要登录</a>&nbsp;&nbsp;
+
+							<a href="<?php echo e(url('password/email')); ?>">您忘记密码了吗？</a>
+
+						</p>
+
+					</form>
+
+				</div>
+
+			</div>
+			<!--/表单-->
+
+			<!--footer开始-->
+			<?php echo $__env->make('layout.auth_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<!--footer结束-->
+		</div>
+	</body>
+
+</html>
+<script>
+    $(function(){
+        $('.header_reg_log .left span').text('注册页面')
+    })
+</script>

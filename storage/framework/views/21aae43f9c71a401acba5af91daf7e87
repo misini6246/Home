@@ -1,0 +1,337 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/cart/jiesuan_common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/cart/gwc_3.css')); ?>12" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('/css/confirm_order.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/pay.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/submit_order.js')); ?>"></script>
+    <style>
+        body {
+            background: #f0f6fc !important;
+        }
+
+        #J_payonline {
+            width: 160px !important;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            display: inline-block;
+            background: #ff2828;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        #pay_form {
+            float: none;
+        }
+
+        #zfbsm {
+            left: 160px !important;
+            top: -200px !important;
+            width: 190px;
+            height: 250px;
+        }
+
+        .tsok_right img {
+            position: relative;
+            top: -2px;
+            *top: 0;
+            margin-right: 5px;
+        }
+
+        .tsok_right p {
+            margin-top: 5px;
+        }
+
+        .fendan_a {
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            width: 48px;
+            font-family: "宋体";
+            color: #fff;
+            border-radius: 5px;
+            background: #f13b3a;
+            margin-left: 10px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('cart.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="jiesuan">
+        <div class="jiesuan_nav">
+            <div class="jiesuan_box">
+                <a href="<?php echo e(route('index')); ?>">
+                    <img src="<?php echo e(asset('images/gwc-logo.png')); ?>"/>
+                </a>
+                <div class="jiesuan_nav_title">
+                    购物流程
+                </div>
+                <div class="jiesuan_nav_step">
+                    <img src="<?php echo e(get_img_path('images/cart/step_3.jpg')); ?>"/>
+                </div>
+            </div>
+        </div>
+        <div class="jiesuan_box container">
+            <div class="container_title">
+                成功提交订单
+            </div>
+            <div class="success">
+                <div class="success_title">
+                    <img src="<?php echo e(get_img_path('images/cart/success.png')); ?>"/>
+                    <p class="success_title_top">
+                        感谢您在本网站购买商品，您的订单已成功提交！
+                    </p>
+                    <?php /*<p class="success_title_bottom">*/ ?>
+                    <?php /*（如果您要对订单进行修改，请与客服人员联系。）*/ ?>
+                    <?php /*</p>*/ ?>
+                </div>
+                <?php echo $__env->make('choujiang.box', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="dingdanxinxi">
+                    <p>
+                        <span class="left">
+								订单编号：
+							</span>
+                        <a href="<?php echo e(route('member.order.show',['id'=>$order['order_id']])); ?>" class="order_sn"><span
+                                    class="right"><?php echo e(isset($order['order_sn']) ? $order['order_sn'] : ''); ?>
+
+                                &nbsp;<?php if(isset($order['order_sn_mhj'])||isset($order['order_sn_sy'])): ?><span
+                                        style="color: red;font-size: 16px;">(应付金额：<?php echo e(formated_price($info->order_amount)); ?>
+
+                                    )</span>
+                                <?php endif; ?>
+                            </span></a>
+                        <?php if((isset($order['order_sn_mhj'])||isset($order['order_sn_sy']))&&$order['order_amount']>0): ?>
+                            <a target="_blank" href="<?php echo e(route('member.order.show',['id'=>$order['order_id']])); ?>"
+                               class="fendan_a">去支付</a>
+                        <?php endif; ?>
+                    </p>
+                    <?php if(isset($order['order_sn_mhj'])): ?>
+                        <p>
+                            <span class="left">
+								订单编号：
+							</span>
+                            <a href="<?php echo e(route('member.order.show',['id'=>$order['order_id_mhj']])); ?>"
+                               class="order_sn"><span
+                                        class="right">
+                                    <?php echo e(isset($order['order_sn_mhj']) ? $order['order_sn_mhj'] : ''); ?>&nbsp;<span
+                                            style="color: red;font-size: 16px;">(麻黄碱订单，应付金额：<?php echo e(formated_price($order['order_amount_mhj'])); ?>
+
+                                        )</span>
+                                </span></a>
+                            <a target="_blank" href="<?php echo e(route('member.order.show',['id'=>$order['order_id_mhj']])); ?>"
+                               class="fendan_a">去支付</a>
+                        </p>
+                    <?php endif; ?>
+                    <?php if(isset($order['order_sn_sy'])): ?>
+                        <p>
+                            <span class="left">
+								订单编号：
+							</span>
+                            <a href="<?php echo e(route('member.order.show',['id'=>$order['order_id_sy']])); ?>"
+                               class="order_sn"><span
+                                        class="right">
+                                    <?php echo e(isset($order['order_sn_sy']) ? $order['order_sn_sy'] : ''); ?>&nbsp;<span
+                                            style="color: red;font-size: 16px;">(血液制品订单，应付金额：<?php echo e(formated_price($order['order_amount_sy'])); ?>
+
+                                        )</span>
+                                </span></a>
+                            <a target="_blank" href="<?php echo e(route('member.order.show',['id'=>$order['order_id_sy']])); ?>"
+                               class="fendan_a">去支付</a>
+                        </p>
+                    <?php endif; ?>
+                    <p>
+							<span class="left">
+								商品总金额：
+							</span>
+                        <span class="right red">
+								<?php echo e(formated_price($order['goods_amount'])); ?>
+
+							</span>
+                    </p>
+                    <?php if($order['shipping_fee']>0): ?>
+                        <p>
+							<span class="left">
+								运费：
+							</span>
+                            <span class="right red">
+							<?php echo e(formated_price($order['shipping_fee'])); ?>&nbsp;(四川省内单张订单满800包邮)
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if($order['zyzk']): ?>
+                        <p>
+							<span class="left">
+								优惠金额：
+							</span>
+                            <span class="right red">
+							<?php echo e(formated_price($order['zyzk'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if($order['surplus']): ?>
+                        <p>
+							<span class="left">
+								使用余额：
+							</span>
+                            <span class="right red">
+							<?php echo e(formated_price($order['surplus'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if($order['pack_fee']): ?>
+                        <p>
+							<span class="left">
+								<?php echo e(trans('common.pack_fee')); ?>：
+							</span>
+                            <span class="right red">
+							<?php echo e(formated_price($order['pack_fee'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if(isset($order['cz_money'])&&$order['cz_money']>0): ?>
+                        <p>
+							<span class="left">
+								使用<?php echo e(trans('common.cz_money')); ?>：
+							</span>
+                            <span class="right red">
+			                <?php echo e(formated_price($order['cz_money'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if(isset($order['jf_money'])&&$order['jf_money']>0): ?>
+                        <p>
+							<span class="left">
+								使用<?php echo e(trans('common.jf_money')); ?>：
+							</span>
+                            <span class="right red">
+			                <?php echo e(formated_price($order['jf_money'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if(isset($order['hongbao_money'])&&$order['hongbao_money']>0): ?>
+                        <p>
+							<span class="left">
+								使用<?php echo e(trans('common.hongbao_money')); ?>：
+							</span>
+                            <span class="right red">
+			                <?php echo e(formated_price($order['hongbao_money'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <?php if($order['jnmj']>0): ?>
+                        <p>
+							<span class="left">
+								使用<?php echo e(trans('common.jnmj')); ?>：
+							</span>
+                            <span class="right red">
+			                <?php echo e(formated_price($order['jnmj'])); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                    <p>
+							<span class="left">
+								应付金额：
+							</span>
+                        <span class="right red">
+								<?php echo e(formated_price($order['order_amount'])); ?>
+
+							</span>
+                    </p>
+                    <p>
+							<span class="left">
+								支付方式：
+							</span>
+                        <span class="right">
+								<a href="#">
+									<?php echo e($order['pay_name']); ?>
+
+								</a>
+							</span>
+                    </p>
+                    <?php if(!empty($info->consignee)): ?>
+                        <p>
+							<span class="left">
+								配送信息：
+							</span>
+                            <span class="right">
+                                <?php if(!empty($info->shipping_name)): ?>
+                                    <?php echo e($info->shipping_name); ?>
+
+                                    /
+                                <?php endif; ?>
+                                <?php echo e($info->consignee); ?>  <?php echo e(isset($info->tel) ? $info->tel : $info->mobile); ?>  <?php echo e(get_region_name([$info->province,$info->city,$info->district],' ')); ?> <?php echo e($info->address); ?>
+
+							</span>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                <?php if(!isset($order['order_sn_mhj'])&&!isset($order['order_sn_sy'])&&$order['order_amount']>0&&$order['pay_name']!='银行汇款/转帐'&&$order['pay_name']!='月结'): ?>
+                    <div class="fukuan" style="height: 50px;width: 200px;position: relative;">
+                        <?php echo $onlinePay; ?>
+
+                    </div>
+                <?php endif; ?>
+                <div class="tsok">
+                    <div class="tsok_title">
+                        温馨提示：
+                    </div>
+                    <div class="tsok_right">
+                        <p>
+                            <img src="<?php echo e(get_img_path('adimages1/zfdd_dian.png')); ?>">为保证你所选的商品库存，请尽快付款，未付款订单系统会在<span>48小时以后</span>自动取消。
+                        </p>
+                        <p><img src="<?php echo e(get_img_path('adimages1/zfdd_dian.png')); ?>">为了您的货款安全，请不要将货款转到公司指定以外的账户！</p>
+                        <?php if(isset($order['mhj_tip'])&&!empty($order['mhj_tip'])): ?>
+                            <p><img src="<?php echo e(get_img_path('adimages1/zfdd_dian.png')); ?>"><?php echo e($order['mhj_tip']); ?></p>
+                        <?php endif; ?>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <?php /*<div class="fukuan">*/ ?>
+                <?php /*<a href="#">立即支付</a>*/ ?>
+                <?php /*</div>*/ ?>
+                <?php if($order['pay_name']=='银行汇款/转帐'): ?>
+                    <div class="bank-list" style="margin-top: 20px;">
+                        <p style="font-size: 16px;color: #333">支持以下转账/汇款方式：</p>
+                        <img src="<?php echo e(get_img_path('adimages1/201807/yinhangxinxi.png')); ?>5">
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="link" style="clear: both;">
+                返回<a href="<?php echo e(route('index')); ?>">首页</a>或者返回<a href="<?php echo e(route('user.index')); ?>">我的药易购</a>
+            </div>
+        </div>
+    </div>
+    <div class="alert_mark" style="display:none;">
+        <div class="content_l">
+            <div class="mark_box">
+                <span class="close"> </span>
+                <p class="feed_back">支付反馈</p>
+                <div class="info_m">
+                    <p>请您在新打开的网上银行页面进行支付，支付完成后选择：</p>
+                    <p class="text"><span class="suc_ico ico"></span> 支付成功： <a
+                                href="<?php echo e(route('user.orderList')); ?>">查看订单</a> <a href="<?php echo e(route('index')); ?>">继续购物</a></p>
+                    <p class="text"><span class="fail_ico ico"></span> 支付失败： <a
+                                href="<?php echo e(route('articleInfo',['id'=>49])); ?>">查看支付帮助</a></p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <?php echo $__env->make('layouts.old_footer',['hide_yc'=>1], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

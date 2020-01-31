@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.toolbar-wrap{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 9990;
+    width: 35px;
+    height: 100%;
+   
+    
+}
+
+.toolbar {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 29px;
+    height: 100%;
+    border-right: 6px solid #7A6E6E;
+    border: 1px solid red;
+}
+.toolbar-panels {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 278px;
+    height: 100%;
+    z-index: 2;
+    background: #cc074e none repeat scroll 0% 0%;
+    overflow-y: auto;
+     overflow-x: hidden;
+}
+.toolbar-panel {
+    width: 278px;
+    height: 100%;
+    position: absolute;
+    background: #cc074e none repeat scroll 0% 0%;
+     overflow-y: auto;
+      overflow-x: hidden;
+}

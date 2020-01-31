@@ -1,0 +1,137 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('new/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/my_buy2.css')); ?>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(path('/js/my_buy.js')); ?>"></script>
+    <style type="text/css">
+
+        .listPageDiv {
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            margin-top: 10px;
+            float: right;
+            width: 82%;
+            color: #333333;
+            font-family: "Microsoft YaHei"
+        }
+
+        .pageList {
+            width: 600px;
+            float: left;
+        }
+
+        .listPageDiv .p1 {
+            border: 1px #CCC solid;
+            padding: 4px 9px;
+            margin: 3px;
+            background-color: #efefef;
+        }
+
+        .listPageDiv .p_ok {
+            color: #39a817;
+            border: 0;
+            background-color: #fff;
+        }
+
+        .listPageDiv a {
+            color: #666;
+        }
+
+        .listPageDiv a:hover {
+            text-decoration: underline;
+            color: #39a817;
+        }
+
+        .listPageDiv .no {
+            background-color: #fff;
+        }
+
+        .listPageDiv .no a {
+            color: #cccccc;
+        }
+
+        .listPageDiv .page_inout {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        .listPageDiv .submit {
+            cursor: pointer;
+            width: 45px;
+            height: 24px;
+            line-height: 20px;
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .listPageDiv .submit_input {
+            padding-left: 10px;
+            width: 180px;
+            float: right;
+            _margin-top: 10px;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('common.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('common.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="main fn_clear">
+        <div class="top"><span class="title">我的药易购</span> <a>>　<span>我的账户</span> </a> <a href="<?php echo e(route('user.buyList')); ?>" class="end">>　<span>我的求购</span></a> </div>
+        <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="main_right1">
+            <div class="top_title">
+                <h3>我的求购</h3>
+                <span class="ico"></span>
+                <p class="right_box"><a href="<?php echo e(route('user.buyNew')); ?>" style="color: #39a817">增加求购</a> </p>
+            </div>
+            <table>
+                <tr>
+                    <th class="case1">求购产品</th>
+                    <th>规格</th>
+                    <th>求购数量</th>
+                    <th>求购价格</th>
+                    <th>求购有效期</th>
+                    <th> 回复 </th>
+                    <th> 操作 </th>
+                </tr>
+
+                <?php if(count($pages)>0): ?>
+                <?php foreach($pages as $v): ?>
+                <tr>
+                    <td class="case1 tb1_td1" ><?php echo e($v->buy_goods); ?></td>
+                    <td   class="tb1_td2"><?php echo e($v->buy_spec); ?></td>
+                    <td  class="tb1_td3"><?php echo e($v->buy_number); ?></td>
+                    <td  class="tb1_td4"><?php echo e(formated_price($v->buy_price)); ?></td>
+                    <td  class="tb1_td5"><?php echo e($v->buy_time); ?></td>
+                    <td  class="tb1_td6"><?php if($v->buy_through==1): ?><?php echo e($v->replay); ?><?php endif; ?></td>
+                    <td class="tb1_td7" ><?php if($v->buy_through==0): ?><a href="<?php echo e(route('user.buyUpdate',['id'=>$v->buy_id])); ?>">修改</a><?php endif; ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">暂无任何信息！</td>
+                    </tr>
+                <?php endif; ?>
+            </table>
+            <?php if($pages->lastPage()>0): ?>
+                <?php echo pagesView($pages->currentPage(),$pages->lastPage(),3,3,['url'=>'user.buyList']); ?>
+
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php echo $__env->make('common.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

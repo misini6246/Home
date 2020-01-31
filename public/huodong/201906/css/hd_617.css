@@ -1,0 +1,181 @@
+img:hover {
+    transform: none !important;
+    transition: none !important;
+}
+
+.container {
+    background: url("/huodong/201906/img/bg.jpg") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 700px;
+    padding-bottom: 320px;
+}
+
+.container .content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 优惠券 */
+
+.container .content .coupon-box {
+    margin-top: 40px;
+}
+
+.container .content .coupon-box .title {
+    text-align: center;
+}
+
+.container .content .coupon-box .coupons {
+    margin-top: 50px;
+    padding: 0 80px;
+    background: url("/huodong/201906/img/coupon-bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 清除浮动 */
+
+.container .content .coupon-box .coupons::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.container .content .coupon-box .coupons .coupon {
+    float: left;
+    margin-left: 60px;
+}
+
+.container .content .coupon-box .coupons .coupon:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.container .content .coupon-box .coupons .coupon:nth-child(1), .container .content .coupon-box .coupons .coupon:nth-child(2), .container .content .coupon-box .coupons .coupon:nth-child(3) {
+    margin-top: 50px;
+}
+
+.container .content .coupon-box .coupons .coupon:nth-child(4), .container .content .coupon-box .coupons .coupon:nth-child(5), .container .content .coupon-box .coupons .coupon:nth-child(6) {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.container .content .coupon-box .coupons .coupon img{
+    cursor: pointer;
+}
+
+/* 商品 */
+
+.container .content .list {
+    margin-top: 70px;
+}
+
+.container .content .list .title {
+    text-align: center;
+}
+
+.container .content .list ul {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container .content .list ul li {
+    padding-top: 22px;
+    padding-left: 38px;
+    padding-bottom: 20px;
+    background: url("/huodong/201906/img/goods-bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.container .content .list ul li::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+.container .content .list ul li .left {
+    width: 400px;
+    height: 400px;
+    line-height: 400px;
+    float: left;
+    background: #fff;
+    text-align: center;
+}
+.container .content .list ul li .left a{
+    width: 100%;
+}
+.container .content .list ul li .left a img{
+    max-width: 100%;
+}
+.container .content .list ul li .right{
+    float: left;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 18px;
+}
+.container .content .list ul li .right p{
+    margin-top: 10px;
+}
+.container .content .list ul li .right p.name{
+    font-size: 30px;
+}
+.container .content .list ul li .right .hdj{
+    color: #eb0101;
+    font-size: 20px;
+    font-weight: bold;
+}
+.container .content .list ul li .right .hdj>span{
+    border: 1px solid #eb0101;
+    padding: 2px;
+    margin-right: 3px;
+    font-weight: normal;
+}
+/* 原价 */
+.container .content .list ul li .right .yj{
+    font-size: 16px;
+    color: #000;
+    margin-left: 10px;
+}
+.container .content .list ul li .right .btn-box .jiajian{
+    margin-top: 10px;
+}
+.container .content .list ul li .right .btn-box .jiajian::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .content .list ul li .right .btn-box .jiajian input{
+    height: 40px;
+    width: 60px;
+    float: left;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+}
+.container .content .list ul li .right .btn-box .jiajian .jiajian_btn{
+    float: left;
+    margin-left: 10px;
+}
+.container .content .list ul li .right .btn-box .jiajian .jiajian_btn .jia,
+.container .content .list ul li .right .btn-box .jiajian .jiajian_btn .jian{
+    cursor: pointer;
+}
+.container .content .list ul li .right .btn-box .add-cart{
+    height: 38px;
+    margin-top: 10px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #92b2a6;
+    color: #ff1a1a;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 20px;
+}
+.container .content .list ul li .right .btn-box .add-cart img{
+    width: 22px;
+}
+.big-container .footer-box {
+    margin-top: 0;
+}

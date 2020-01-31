@@ -1,0 +1,44 @@
+.all_address{padding-bottom: 10px;border: 1px solid #c7c7c7;margin-top: 1px}
+.all_address tr{height: 40px;line-height: 40px;text-align: center}
+.all_address table{width: 100%;font-family: "宋体",serif}
+.all_address thead tr{border-bottom: 1px solid #c7c7c7;background-color: #efeeef;font-weight: bold;color: #323232}
+.all_address tbody tr{border-bottom: 1px solid #f0f0f0;background-color: #f9f9f9;color: #4b4b4b;}
+
+.operate a{padding: 0 5px;color: #089aca;vertical-align: middle}
+.operate a:hover{color: #ec0000}
+
+/*添加地址*/
+.fill_msg{padding: 28px 0 20px 75px;border: 1px solid #dedede;margin-top: 28px;font-size: 12px;position: relative;font-family: "宋体",serif}
+.get_address_title{position: absolute;background: url("../images/prompt.gif") no-repeat;width: 116px;height: 27px;
+                     top: -13px;left: 25px;text-align: center;line-height: 27px;color: #f96529;}
+.fill_msg .get_address_title{_margin-left: -75px}
+.manage_all_address .fill_msg span{font-size: 12px;height: 23px}
+
+.fill_msg .ca_tip{float: left;width: 83px;line-height: 25px;text-align: right;margin-right: 5px;color: #4a4a4a}
+.fill_msg label{display: block;padding-top: 10px}
+.fill_msg label textarea{padding: 5px;vertical-align: top}
+.fill_msg label input{line-height: 19px;border: 1px solid #d9d9d9;width: 145px;text-indent: 5px;padding: 2px 0;vertical-align: middle}
+.fill_msg .alert{color: #f95706;margin-left: 10px;vertical-align: middle;float: none}
+.fill_msg label textarea .alert{color: #f95706;margin-left: 10px;vertical-align: top;float: none}
+.name{margin-bottom: 10px}
+
+/*下拉框*/
+/*10-15*/
+.fill_msg .choose_select{border: 1px solid #d9d9d9;float: left;height: 23px;line-height: 23px;margin-right: 5px;width: 145px}
+.choose_address .choose_select ul{max-height: 260px;width: 146px;_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>261?"261px":"");}
+.choose_address .choose_select ul li{height: 25px;line-height: 25px;overflow: hidden}
+.choose_address{_margin: 10px 0 0 3px}
+.choose_address .alert{line-height: 25px}
+.choose_select .select_choose{height: 23px;line-height: 23px;color: #aaa9a9;width: 145px;}
+.choose_select .select_choose span{line-height: 23px;width: 124px;font-weight: normal;text-align: left;white-space: nowrap;overflow: hidden}
+.choose_select .select_choose i{height: 23px;width: 20px;background-color: #f7f7f7;margin-right: 0;
+    border-left: 1px solid #dadada}
+/*end*/
+.fill_msg .to_default{width: 14px;margin-top: 6px;border: 0;*margin-top: 3px}
+
+.submit{margin: 15px 0 0 90px}
+.submit button{line-height: 26px;padding: 0 14px;*padding: 0 8px;font-weight: normal}
+.save{margin-right: 30px;color: #4f4f4f;background: url("../images/save.gif") center no-repeat;}
+.reset{background: url("../images/save.gif") center no-repeat;color: #4f4f4f}
+
+/**/

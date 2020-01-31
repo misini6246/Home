@@ -1,0 +1,198 @@
+<?php $__env->startSection('title'); ?>
+<title>拣耙活</title>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('links'); ?>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+<link rel="stylesheet" type="text/css" href="/layer/mobile/need/layer.css" />
+<link rel="stylesheet" href="/huodong/201908/css/hd_1908.css">
+
+<script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="/xiangqing/AAS.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/new/change_num.js" type="text/javascript" charset="utf-8"></script>
+
+<!--IE兼容-->
+<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+	<![endif]-->
+<!--IE兼容-->
+<!--[if lte IE 7]>
+	<script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+	<![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="container">
+    <div class="header">
+        <img class="header-pic" src="/huodong/201908/img/header.png" alt="">
+        <div class="title">
+            <img src="/huodong/201908/img/title.png">
+        </div>
+    </div>
+    <div class="list">
+        <ul>
+            <?php foreach($goods as $k=>$v): ?>
+            <li>
+                <?php /* 商品图片 */ ?>
+                <div class="thumb">
+                    <a href="http://www.jyeyw.com/goods?id=<?php echo e($v->goods_id); ?>" target="_blank">
+                        <img src="http://112.74.176.233/<?php echo e($v->goods_thumb); ?>" alt="">
+                    </a>
+                </div>
+                <?php /* 标签 */ ?>
+                <div class="label">
+                    <?php /* 标签背景 */ ?>
+                    <div class="bg">
+                        <img src="/huodong/201908/img/label.png" alt="">
+                    </div>
+                    <?php /* 节省钱 */ ?>
+                    <div class="save-money">
+                        <?php echo e($v->shop_price-$v->promote_price); ?>
+
+                    </div>
+                </div>
+                <?php /* 商品信息 */ ?>
+                <div class="goods-info">
+                    <!-- 商品名 -->
+                    <p class="name" title="<?php echo e($v->goods_name); ?>"><?php echo e($v->goods_name); ?></p>
+                    <!-- 生产厂家 -->
+                    <p class="sccj"><?php echo e($v->product_name); ?></p>
+                    <!-- 商品规格 -->
+                    <p class="spgg">规格：<?php echo e($v->ypgg); ?></p>
+                    <!-- 效期 件装量-->
+                    <p class="xq-jzl">
+                        <span class="xq">效期：<?php echo e($v->xq); ?></span>
+                        <span class="jzl">件装量：<?php echo e(isset($v->jzl) ? $v->jzl : '无'); ?></span>
+                    </p>
+                    <!-- 价格 -->
+                    <p class="jg">
+                        <!-- 活动价 -->
+                        <?php if($user): ?>
+                        <?php if($v->promote_price>0): ?>
+                        <span class="hdj">
+                            <span>特价</span>
+                            ￥<?php echo e($v->promote_price); ?>
+
+                        </span>
+                        <span class="yj">
+                            原价:
+                            <span style="text-decoration:line-through">
+                                ￥<?php echo e($v->shop_price); ?>
+
+                            </span>
+                        </span>
+                        <?php else: ?>
+                        <!-- 原价 -->
+                        <span class="yj" style="margin-left:0">
+                            原价:
+                            <span>￥<?php echo e($v->shop_price); ?></span>
+                        </span>
+                        <?php endif; ?>
+                        <?php else: ?>
+                        <span class="hdj">
+                            <span>特价</span>
+                            会员可见
+                        </span>
+                        <?php endif; ?>
+                    </p>
+                    <!-- 库存 中包装-->
+                    <p class="kc-zbz">
+                        <span class="kc">
+                            库存：
+                            <?php if($v->goods_number>800): ?>
+                            充裕
+                            <?php elseif($v->goods_number==0): ?>
+                            缺货
+                            <?php else: ?>
+                            <?php echo e($v->goods_number); ?>
+
+                            <?php endif; ?>
+                        </span>
+                        <span class="zbz">
+                            中包装：<?php echo e(isset($v->zbz) ? $v->zbz : 1); ?>
+
+                        </span>
+                    </p>
+                    <?php /* 限购 */ ?>
+                    <?php /* <p class="xg">
+                        限购：10袋
+                    </p> */ ?>
+                    <div class="btn-box">
+                        <!-- 加减 -->
+                        <div class="jiajian">
+                            <input id="J_dgoods_num_<?php echo e($v->goods_id); ?>" type="text" value="1" class="input_val"
+                                data-zbz="1" data-kc="350" data-jzl="100" data-xl="100" data-isxl="0" />
+                            <div class="jiajian_btn">
+                                <div class="jia">
+                                    <img src="/huodong/april/img/up.png" alt="">
+                                </div>
+                                <div class="jian min">
+                                    <img src="/huodong/april/img/down.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 加入购物车 -->
+                        <?php if($v->promote_start_date>time()): ?>
+                        <div class="add-cart" data-img="<?php echo e($v->goods_thumb); ?>">
+                            <img src="/huodong/april/img/cart.png" />
+                            活动未开始
+                        </div>
+                        <?php elseif($v->promote_end_date<time()): ?> 
+                        <div class="add-cart" data-img="<?php echo e($v->goods_thumb); ?>">
+                            <img src="/huodong/april/img/cart.png" />
+                            活动已结束
+                        </div>
+                    <?php else: ?>
+                    <div class="add-cart" data-img="<?php echo e($v->goods_thumb); ?>" onclick="tocart('<?php echo e($v->goods_id); ?>')">
+                        <img src="/huodong/april/img/cart.png" /> 加入购物车
+                    </div>
+                    <?php endif; ?>
+                </div>
+    </div>
+    </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+</div>
+<?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<script type="text/javascript">
+    //返回顶部
+        $('.btn-top').click(function(){
+            $('html,body').animate({
+                'scrollTop':0
+            })
+        });
+        /**
+         * searchEvent 初始化搜索功能
+         * 参数1 获取数据方法
+         * 参数2 回调方法
+         * 参数3 按钮元素(执行搜索)(可选)
+         * 参数4 搜索结果列表显示或隐藏的回调  返回true/false(可选)
+         */
+        $('.search').searchEvent(
+            function(_target, _val) { //获取数据方法 val:搜索框内输入的值
+                $.get('/ajax/cart/searchKey',{keyword:_val},function(data){
+                    _target.searchDataShow(data, 'value')
+                },'json');
+                /**
+                 * searchDataShow 将数据渲染至页面
+                 * 参数1:数据数组
+                 * 参数2:数据数组内下标名
+                 */
+            },
+            function(val) { //回调方法 val:返回选中的值
+                window.location.href = "http://www.jyeyw.com/category?keywords="+val+"&showi=0";
+            },
+            $('.search-btn')
+        );
+</script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

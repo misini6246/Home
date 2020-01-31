@@ -1,0 +1,553 @@
+input {
+[;
+    line-height: 1px !important;
+];
+    *line-height: 40px !important;
+    *color: #666666;
+}
+
+::-webkit-input-placeholder {
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}
+
+/* 使用webkit内核的浏览器 */
+:-moz-placeholder {
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}
+
+/* Firefox版本4-18 */
+::-moz-placeholder {
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}
+
+/* Firefox版本19+ */
+:-ms-input-placeholder {
+    font-size: 12px;
+    color: #666666;
+    font-family: simsun;
+}
+
+/* IE浏览器 */
+
+.ipt_false::-webkit-input-placeholder {
+    font-size: 12px;
+    color: #e21e1e;
+    font-family: simsun;
+}
+
+/* 使用webkit内核的浏览器 */
+.ipt_false:-moz-placeholder {
+    font-size: 12px;
+    color: #e21e1e;
+    font-family: simsun;
+}
+
+/* Firefox版本4-18 */
+.ipt_false::-moz-placeholder {
+    font-size: 12px;
+    color: #e21e1e;
+    font-family: simsun;
+}
+
+/* Firefox版本19+ */
+.ipt_false:-ms-input-placeholder {
+    font-size: 12px;
+    color: #e21e1e;
+    font-family: simsun;
+}
+
+/* IE浏览器 */
+
+.border_b {
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.lh24 {
+    line-height: 24px !important;
+}
+
+.fs12 {
+    font-size: 12px !important;
+}
+
+.fs14 {
+    font-size: 14px !important;
+}
+
+.fs18 {
+    font-size: 18px;
+}
+
+.h8 {
+    height: 8px;
+}
+
+.pad30_0_40 {
+    padding: 30px 0 40px;
+}
+
+.pad20_0_40 {
+    padding: 20px 0 40px;
+}
+
+.posR {
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.mgAuto {
+    margin: 0 auto;
+}
+
+.mgR20 {
+    margin-right: 20px;
+}
+
+.mgR30 {
+    margin-right: 30px;
+}
+
+.mgR35 {
+    margin-right: 35px;
+}
+
+.mgB2 {
+    margin-bottom: 2px;
+}
+
+.mgT15 {
+    margin-top: 15px;
+}
+
+.mgT20 {
+    margin-top: 20px !important;
+}
+
+.mgT30 {
+    margin-top: 30px !important;
+}
+
+.mgT50 {
+    margin-top: 50px !important;
+}
+
+.mgT60 {
+    margin-top: 60px !important;
+}
+
+.mgL17_ie7 {
+    margin-left: 17px !important;
+    *margin-left: 0 !important;
+}
+
+.bgF0F6FC {
+    background-color: #F0F6FC;
+}
+
+.bgFFFFFF {
+    background-color: #FFFFFF;
+}
+
+.col3DBB2B {
+    color: #3DBB2B;
+}
+
+.colFFFFFF {
+    color: #FFFFFF;
+}
+
+.col666666 {
+    color: #666666;
+}
+
+.col000000 {
+    color: #000000;
+}
+
+.colFF1919 {
+    color: #FF1919;
+}
+
+.col999999 {
+    color: #999999 !important;
+}
+
+/*输入框内按钮*/
+.btn_ipt_box {
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.bg_btn_ipt_cler { /*输入框内删除按钮*/
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/input_cler.png');
+    background-repeat: no-repeat;
+}
+
+.bg_btn_ipt_true { /*输入框内输入正确*/
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/input_true.png');
+    background-repeat: no-repeat;
+}
+
+.bg_ipt_down { /*输入框内下拉按钮*/
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/down.png');
+    background-repeat: no-repeat;
+}
+
+.bg_icon_cir {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/icon_cir.png');
+    background-repeat: no-repeat;
+}
+
+.w8 {
+    width: 8px;
+}
+
+.w13 {
+    width: 13px;
+}
+
+.w140 {
+    width: 140px !important;
+}
+
+.w900 {
+    width: 900px !important;
+}
+
+.w1200 {
+    width: 1200px;
+}
+
+/*背景图标盒子*/
+.icon {
+    vertical-align: middle;
+    *margin: 0;
+    display: inline-block;
+}
+
+/*两次以上注册显示的模块*/
+/*改 20180731*/
+.twice_reg {
+    margin: 40px auto 20px;
+    font-size: 12px;
+    color: #666666;
+    width: 900px;
+}
+
+.twice_reg .text {
+    margin-left: 10px;
+}
+
+.twice_reg .box {
+    box-sizing: border-box;
+    border: 1px dashed #E5E5E5;
+    margin-top: 15px;
+    padding: 9px;
+}
+
+.twice_reg .box div {
+    height: 40px;
+    line-height: 40px;
+    background-color: #f8f9fb;
+    margin-top: 5px;
+    padding: 0 9px;
+}
+
+.twice_reg .box div:first-child {
+    margin-top: 0px;
+}
+
+.twice_reg .box div p {
+    display: block;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.twice_reg .box div p span:first-child {
+    color: #999999;
+}
+
+.twice_reg .box div p span:first-child + span {
+    color: #4ac039;
+    margin-left: 15px;
+}
+
+/*改 20180731*/
+
+.form_box {
+    font-family: simsun;
+}
+
+/*流程导航*/
+.nav,
+.nav div {
+    height: 56px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.nav div span {
+    margin-top: 16px;
+}
+
+.nav_bg_1 {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_1.png');
+    background-repeat: no-repeat;
+}
+
+.nav_bg_2 {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_2.png');
+    background-repeat: no-repeat;
+}
+
+.nav_bg_2_cur {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_2_cur.png');
+    background-repeat: no-repeat;
+}
+
+.nav_bg_3 {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_3.png');
+    background-repeat: no-repeat;
+}
+
+.nav_bg_3_cur {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_3_cur.png');
+    background-repeat: no-repeat;
+}
+
+.nav_cir {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/nav_cir.png');
+    background-repeat: no-repeat;
+}
+
+.nav .number,
+.nav .text {
+    float: left;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.nav .number {
+    font-size: 20px;
+    margin-left: 78px;
+    font-weight: bold;
+    width: 24px;
+}
+
+.nav .text {
+    font-size: 14px;
+    margin-left: 25px;
+}
+
+/*表单*/
+.form {
+    margin: 0 auto;
+    width: 468px;
+    font-size: 12px;
+    color: #666666;
+    line-height: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.form .must {
+    vertical-align: middle;
+    color: #FD2D1A;
+}
+
+.form .radio_box,
+.form .radio_cur {
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 20px;
+    margin-left: 10px;
+    *margin-left: 0;
+    border-radius: 20px;
+    color: #333333;
+    background-color: #EFF0F4;
+    cursor: pointer;
+}
+
+.form .radio_cur {
+    color: #FFFFFF;
+    background-color: #4AC039;
+}
+
+.form input {
+[;
+    margin-top: -1px;
+]; /*safari*/
+    height: 38px;
+    line-height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #EFF0F4;
+    padding-left: 20px;
+    margin-left: 17px;
+    *margin-left: 0px;
+    color: #2069F2;
+    *color: #666666;
+    color: #666666 \0;
+}
+
+.form input:focus {
+    *color: #2069F2;
+    color: #2069F2 \0;
+}
+
+.form .ipt_name {
+    display: inline-block;
+    vertical-align: middle;
+    width: 55px;
+    text-align: right;
+}
+
+.form .phone p {
+    margin-left: 96px;
+    *margin-left: 80px;
+    color: #999999;
+    font-size: 12px;
+    height: 40px;
+    line-height: 25px;
+}
+
+.form .form_btn,
+.form .code_get, /*获取验证码*/
+.form .code_again_get, /*重新获取验证码*/
+.form .code_false, /*验证码错误*/
+.form .form_btn {
+    width: 140px !important;
+    padding: 0;
+    color: #FFFFFF;
+    height: 40px;
+}
+
+.form .text {
+    margin-top: 47px;
+    line-height: 1;
+}
+
+.form .text p {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #333333;
+}
+
+.form .audit_data {
+    margin-top: 46px;
+    border: #3dbb2b 1px solid;
+    position: relative;
+    color: #333333;
+    text-align: center;
+    padding-bottom: 60px;
+    background-color: #f6fff5;
+}
+
+.form .audit_data .title {
+    width: 208px;
+    height: 17px;
+    line-height: 17px;
+    margin: 0 auto;
+    position: absolute;
+    top: -10px;
+    left: 346px;
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #3dbb2b;
+    font-size: 16px;
+}
+
+.form .audit_data p {
+    font-size: 18px;
+}
+
+.bg_audit_title {
+    background-image: url('http://images.hezongyy.com/adimages1/201807/auth/shzlts.png');
+    background-repeat: no-repeat;
+}
+
+.form .code_get,
+.form .form_btn {
+    background-color: #3DBB2B;
+}
+
+.form .code_again_get,
+.form .code_false {
+    background-color: #999999;
+}
+
+.form .form_btn {
+    font-family: "微软雅黑";
+    width: 320px !important;
+    background-color: #6B9CFF;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.form .check {
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #8f8f8f;
+    float: left;
+    margin-top: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form .form_foot {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form #btn3 {
+    display: block;
+    width: 320px;
+    height: 42px;
+    margin: 30px auto 0;
+    background-color: #00A1E9;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    text-align: center;
+    line-height: 42px;
+}
+
+.form .box1,
+.form .box2 {
+    position: absolute;
+    height: 40px;
+    bottom: 173px;
+}
+
+.form .box1 {
+    width: 166px;
+    left: 24px;
+}
+
+.form .box2 {
+    width: 250px;
+    left: 210px;
+}

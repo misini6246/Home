@@ -1,0 +1,11 @@
+.sure_order{width: 1188px;margin: 0 auto}
+.road_nav{line-height: 40px}
+.look_step{background: url("../images/step3.jpg") no-repeat;height: 39px;line-height: 39px}
+.look_step ul li{width: 292px;text-align: center;font-size: 15px;color: #4a4a4a;font-weight: bold}
+
+.sure_order_real{margin-top: 35px}
+.sure_order_real p{float: left;margin: 0 0 0 90px;vertical-align: middle;line-height: 40px;}
+.sure_order_real p img,.sure_order_real p span{vertical-align: middle;font-size: 24px;color: #7cbe54}
+.sure_order_real p img{margin-right: 10px}
+.sure_order_real a{vertical-align: middle;font-size: 20px;color: #fff;margin-left: 100px;background-color: #f95706;
+                     text-decoration: none;padding: 10px 30px;font-family: "宋体", serif;font-weight: bold;float: left}

@@ -1,0 +1,25 @@
+.pwd_content{
+	overflow: hidden;
+	padding: 0 0 20px 20px;
+}
+.pwd_content_left{
+	width: 580px;
+	float: left;
+}
+.pwd_content p{
+	font-size: 16px;
+	line-height: 30px;
+}
+.pwd_content_right{
+	float: left;
+	margin-left: 90px;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.img_box{
+	margin-top: 10px;
+}
+.red{
+	color: #ff1919;
+	margin: 20px 0;
+}

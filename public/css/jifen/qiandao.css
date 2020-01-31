@@ -1,0 +1,197 @@
+.qiandao_top {
+    height: 450px;
+    margin-top: 20px;
+}
+
+.qiandao_top .fl {
+    width: 400px;
+    height: 450px;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.qiandao_top_user {
+    width: 380px;
+    height: 430px;
+    background: url(http://images.hezongyy.com/adimages1/201805/jifen/qiandao_bg.jpg) no-repeat;
+    display: inline-block;
+    margin: 10px;
+}
+
+.qiandao_top_user p {
+    color: #fff;
+}
+
+.qd_user {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 200px;
+}
+
+.qd_c {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.qd_c span {
+    color: #fbec56;
+    margin: 0 5px;
+}
+
+.qd_btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qd_btn input {
+    width: 240px;
+    height: 55px;
+    line-height: 55px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background: #fb2644;
+    background-image: linear-gradient(45deg, rgb(254, 187, 36) 0%, rgb(251, 38, 68) 100%);
+    background-image: -moz-linear-gradient(45deg, rgb(254, 187, 36) 0%, rgb(251, 38, 68) 100%);
+    background-image: -webkit-linear-gradient(45deg, rgb(254, 187, 36) 0%, rgb(251, 38, 68) 100%);
+    background-image: -ms-linear-gradient(45deg, rgb(254, 187, 36) 0%, rgb(251, 38, 68) 100%);
+    outline: none;
+}
+
+.qiandao_top .fr {
+    width: 790px;
+    height: 450px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.qd_y {
+    height: 70px;
+    line-height: 70px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.qd_y img{
+    width: 26px;
+}
+
+.qd_y .btn {
+    float: right;
+}
+
+.qd_y .btn input {
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 31px;
+    line-height: 31px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.enabled {
+    background: #0090ff;
+    color: #fff;
+}
+
+.disabled {
+    color: #333;
+}
+
+.qd_y span {
+    vertical-align: middle;
+    color: #363636;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.data_list {
+    padding: 0 35px;
+}
+
+.data_list li {
+    height: 56px;
+    line-height: 56px;
+    width: 56px;
+    text-align: center;
+    float: left;
+    position: relative;
+    color: #666;
+    font-size: 24px;
+    margin: 20px 23px 0 0;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.data_list li.yqd {
+    background: #3dbb2b;
+    color: #fff;
+}
+
+.data_list li.today {
+    color: #ff4700;
+    border: 2px solid #ff4700;
+    background: #ffece4;
+}
+
+.data_list li.today span.qdjf {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    background: #ff4700;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 30px;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+.qiandao_bottom {
+    padding: 20px 0;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.qiandao_bottom_title {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.qiandao_bottom_list {
+    padding-left: 20px;
+}
+
+.qiandao_bottom_list li {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.qiandao_bottom_list li img {
+    margin-right: 5px;
+    width: 14px;
+}
+
+.qiandao_bottom_list li span {
+    vertical-align: middle;
+}
+
+.qiandao_bottom_list li span span {
+    vertical-align: baseline;
+    color: #ff1919;
+    margin: 0 2px;
+}
+
+.djqd {
+    position: fixed;
+    left: 0;
+    top: 30%;
+}

@@ -1,0 +1,12 @@
+body .layer-ext-cart .layui-layer-btn0 {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+body .layer-ext-cart .layui-layer-btn1 {
+    background-color: #ff5d5b;
+    color: #fff;
+    border-radius: 5px;
+}

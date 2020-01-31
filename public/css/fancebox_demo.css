@@ -1,0 +1,56 @@
+#payingDv {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-width: 0;
+    color: #666666;
+    font-family: Verdana,Microsoft YaHei,Arial,Helvetica,sans-serif;
+    margin: 0;
+    outline-width: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: baseline;
+    display: none;
+    height: 140px;
+    width: 450px;
+	border-width: 0;
+    color: #666666;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+    outline-width: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: baseline;
+}
+#payingDv dt {
+    background: none repeat scroll 0 0 #DDEEFF;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 10px;
+}
+#payingDv div {
+    color: #004080;
+    font-size: 14px;
+    line-height: 2em;
+    margin: 15px 0;
+}
+#payingDv dd .ico {
+    background: url("../img/box.png") no-repeat scroll -32px top rgba(0, 0, 0, 0);
+    clear: left;
+    float: left;
+    height: 32px;
+    margin-right: 10px;
+    width: 34px;
+}
+#payingDv a {
+	color:#004080 ;
+	text-decoration:none ;
+}
+
+#facebox .popup {
+    background: url("../img/b1.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#facebox .close {
+    display: none;
+}
+
+

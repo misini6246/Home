@@ -1,0 +1,128 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('css/jf/common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/jf/jifendingdan.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/jf/lb.js')); ?>" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('jf.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('jf.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--container-->
+    <div class="container content">
+        <div class="content_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/jf/address_03.png')); ?>"/>
+                <span>当前位置：<a href="<?php echo e(route('jf.index')); ?>">积分首页</a> > <a href="<?php echo e(route('jf.user.index')); ?>">个人中心</a>> 积分订单</span>
+            </div>
+            <div class="vip">
+                <?php echo $__env->make('jf.layouts.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="vip_right">
+                    <div class="vip_right_title">
+                        <img src="<?php echo e(get_img_path('images/jf/dian_03.png')); ?>"/>
+                        <span>积分订单</span>
+                    </div>
+                    <div class="vip_right_container">
+                        <?php if(count($result)>0): ?>
+                            <ul class="dingdan_title">
+                                <li class="lpxx">礼品信息</li>
+                                <li class="ze">总额</li>
+                                <li class="ddzt">订单状态</li>
+                                <li class="cz">操作</li>
+                            </ul>
+                            <ul class="dingdan_list" style="margin-bottom: 20px;">
+                                <?php foreach($result as $v): ?>
+                                    <li>
+                                        <div class="dingdan_list_title">
+										<span class="dd_num">
+											订单编号：<?php echo e($v->order_sn); ?>
+
+										</span>
+                                            <span class="dd_time">
+											下单时间：<?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?>
+
+										</span>
+                                            <span class="dd_user">
+											收货人：<?php echo e(isset($v->address->name) ? $v->address->name : ''); ?><img
+                                                        src="<?php echo e(get_img_path('images/jf/zhankai.png')); ?>" alt=""/>
+											<div class="dd_user_box">
+												<img src="<?php echo e(get_img_path('images/jf/alert_box_sanjiao.png')); ?>"
+                                                     class="sanjiao_icon"/>
+												<p class="name">
+													<img src="<?php echo e(get_img_path('images/jf/zhuizong_dian.png')); ?>"/>
+													<span class="left">收货人：</span>
+													<span class="right"><?php echo e(isset($v->address->name) ? $v->address->name : ''); ?></span>
+												</p>
+												<p class="name">
+													<img src="<?php echo e(get_img_path('images/jf/zhuizong_dian.png')); ?>"/>
+													<span class="left">
+														联系电话：
+													</span>
+													<span class="right"><?php echo e(isset($v->address->mob_phone) ? $v->address->mob_phone : ''); ?></span>
+												</p>
+												<p class="name">
+													<img src="<?php echo e(get_img_path('images/jf/zhuizong_dian.png')); ?>"/>
+													<span class="left">
+														收货地址：
+													</span>
+													<span class="right"><?php echo e(isset($v->address->address) ? $v->address->address : ''); ?></span>
+												</p>
+											</div>
+										</span>
+                                        </div>
+                                        <div class="dingdan_content">
+                                            <div class="dingdan_content_left">
+                                                <?php foreach($v->goods as $goods): ?>
+                                                    <div class="ct">
+                                                        <div class="img_box">
+                                                            <a href="<?php echo e(route('jf.goods.show',['id'=>$goods->goods_id])); ?>"><img
+                                                                        style="width: 100%;height: 100%;"
+                                                                        src="<?php echo e(get_img_path('jf/'.substr($goods->goods_image,1))); ?>"/></a>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p class="name"><?php echo e($goods->goods_name); ?></p>
+                                                            <p class="jifen">
+                                                                <span class="fr">数量：<span><?php echo e($goods->goods_num); ?></span></span>
+                                                                积分：<?php echo e($goods->jf); ?>
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                            <div class="dingdan_content_right">
+                                                <div class="ze"><?php echo e($v->goods_amount); ?></div>
+                                                <div class="ddzt"><?php echo e($v->order_state); ?></div>
+                                                <div class="cz">
+                                                    <a href="<?php echo e(route('jf.order.show',['id'=>$v->id])); ?>">订单详情</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php else: ?>
+                            <?php echo $__env->make('user.empty',['type'=>4], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php echo $__env->make('jf.layouts.wntj', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+    </div>
+    <!--container-->
+    <?php echo $__env->make('jf.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript">
+        $(function () {
+            $('.dingdan_content_right').each(function () {
+                $(this).css({
+                    'height': $(this).prev().height() + 'px',
+                    'line-height': $(this).prev().height() + 'px'
+                })
+            })
+
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('jf.layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,28 @@
+<tr class="td-tip tr<?php echo e($v->rec_id); ?>" id="zp_goods<?php echo e($v->rec_id); ?>"
+    <?php if((($v->goods->is_zx==1)&&!empty($v->goods->cxxx))||!empty($v->goods->bzxx)||!empty($v->goods->bzxx2)||$v->goods->tsbz=='预'): ?> style="display: table-row;"
+    <?php else: ?> style="display: none;" <?php endif; ?>>
+    <td colspan="12">
+        <?php if(isset($v->child)&&count($v->child)>0): ?>
+            <?php foreach($v->child as $child): ?>
+                <div class="zengpin">
+                    <span class="biaoshi">赠品</span>
+                    <span class="name"><?php echo e($child->zp_goods->goods_name); ?></span>
+                    <span class="changjia"><?php echo e($child->zp_goods->product_name); ?></span>
+                    <span class="guige"><?php echo e($child->zp_goods->ypgg); ?></span>
+                    <span class="jianzhuang"></span>
+                    <span class="xiaoqi"></span>
+                    <span class="kucun"></span>
+                    <span class="danjia"><?php echo e(formated_price($child->goods_price)); ?></span>
+                    <span class="shuliang"><?php echo e($child->goods_number); ?></span>
+                    <span class="xiaoji"><?php echo e(formated_price($child->goods_price*$child->goods_number)); ?></span>
+                    <?php /*<span class="caozuo">删除</span>*/ ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <p>
+            <span style="color:#444343;font-weight:bold;padding-left:10px;"> 注：</span>
+            <span style="color:#ff6600"><?php echo e($v->goods->cxxx); ?><?php echo e($v->goods->bzxx); ?><?php echo e($v->goods->bzxx2); ?><?php if($v->goods->tsbz=='预'): ?>
+                    为保证抢购成功，预售商品请立即提交付款，商品随119订单一起配送。<?php endif; ?></span>
+        </p>
+    </td>
+</tr>

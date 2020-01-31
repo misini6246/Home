@@ -1,0 +1,10 @@
+<li id="msg<?php echo e($v->msg_id); ?>">
+    <div>
+        <input type="checkbox" class="danxuan" value="<?php echo e($v->msg_id); ?>" onclick="danxuan($('.danxuan'),$('.quanxuan'))"/>
+        <span class="weidu">未读</span>
+        <span class="biaoti"><?php echo e($v->title); ?></span>
+    </div>
+    <div class="neirong">
+        <div class="chakan" onclick="cknr('<?php echo e($v->msg_id); ?>')">点击查看内容</div>
+    </div>
+</li>

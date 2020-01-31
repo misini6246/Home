@@ -1,0 +1,770 @@
+
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <?php if(isset($keywords)&&!empty($keywords)): ?>
+        <link href="<?php echo e(path('css/new/puyao1.css')); ?>2" rel="stylesheet" type="text/css"/>
+    <?php else: ?>
+        <link href="<?php echo e(path('css/new/puyao.css')); ?>2" rel="stylesheet" type="text/css"/>
+    <?php endif; ?>
+    <link href="<?php echo e(path('css/new/pages.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<?php echo e(path('js/new/puyao.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/new/change_num.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/new/AAS.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/zs/lazyload.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/index/lb.js')); ?>"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="goods-box">
+        <?php if(isset($keywords)&&!empty($keywords)): ?>
+            <?php echo $__env->make('goods.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endif; ?>
+        <div class="goods-box-right">
+            <div class="container-topimg">
+                <a href="<?php echo e($fl_url); ?>"><img src="<?php echo e(get_img_path('images/new/img-title.png')); ?>"/><span>药品筛选</span></a>
+            </div>
+            <?php if(isset($ylfl)): ?>
+                <div class="shaixuan-yongtu" style="display: inline-block;z-index: 6;">
+                    <img src="<?php echo e(get_img_path('images/new/shaixuan-right.png')); ?>" class="toright"/>
+                    <div class="shaixuan-box">
+
+                        <div class="shaixuan-mingzi">
+                            药理分类：<span class="choose-name"><?php echo e($show_area[$ylfl]); ?></span>
+                        </div>
+                        <a href="<?php echo e($fl_url); ?>"><span
+                                    class="title-shanchu">×</span></a>
+                        <div class="yongtu-all" style="width: 950px;">
+                            <ul>
+                                <?php foreach($show_area as $k=>$v): ?>
+                                    <?php if($k!=$ylfl): ?>
+                                        <a href="<?php echo e($fl_url); ?>&ylfl=<?php echo e($k); ?>">
+                                            <li>
+                                                <div><?php echo e($v); ?></div>
+                                            </li>
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($ylfl1)): ?>
+                <div class="shaixuan-yongtu" style="display: inline-block;z-index: 6;">
+                    <div class="shaixuan-box">
+
+                        <div class="shaixuan-mingzi">
+                            药理分类：<span class="choose-name"><?php echo e($ylfl1_name); ?></span>
+                        </div>
+                        <a href="<?php echo e($fl_url1); ?>"><span
+                                    class="title-shanchu">×</span></a>
+                        <div class="yongtu-all" <?php if(in_array($ylfl,['d','g','h','k'])): ?> style="width: 100%;"
+                             <?php elseif(in_array($ylfl,['i','j'])): ?>
+                             style="width: 340px;"
+                             <?php else: ?> style="width: 800px;" <?php endif; ?>>
+                            <ul>
+                                <?php foreach($shaixuan['ylfl']['list'] as $v): ?>
+                                    <?php if($shaixuan['ylfl']['type']==1): ?>
+                                        <?php foreach($v['cate'] as $val): ?>
+                                            <?php foreach($val['cate'] as $value): ?>
+                                                <?php if($value->cat_id!=$ylfl1): ?>
+                                                    <a href="<?php echo e($fl_url1); ?>&ylfl1=<?php echo e($value->cat_id); ?>">
+                                                        <li>
+                                                            <div><?php echo e(str_limit($value->cat_name,20)); ?></div>
+                                                        </li>
+                                                    </a>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <?php if($v->cat_id!=$ylfl1): ?>
+                                            <a href="<?php echo e($fl_url1); ?>&ylfl1=<?php echo e($v->cat_id); ?>">
+                                                <li>
+                                                    <div><?php echo e(str_limit($v->cat_name,20)); ?></div>
+                                                </li>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($ylfl2)): ?>
+                <div <?php if(in_array($ylfl2,[923,753])): ?> class="shaixuan-none" <?php else: ?> class="shaixuan-yongtu"
+                     <?php endif; ?> style="display: inline-block;z-index: 6;">
+                    <div class="shaixuan-box">
+
+                        <div class="shaixuan-mingzi">
+                            药理分类：<span class="choose-name"><?php echo e($ylfl2_name); ?></span>
+                        </div>
+                        <a href="<?php echo e($fl_url2); ?>"><span
+                                    class="title-shanchu">×</span></a>
+                        <div class="yongtu-all" style="width: 650px;">
+                            <ul>
+                                <?php foreach($shaixuan['ylfl']['list'] as $v): ?>
+                                    <?php if($v->cat_id==$ylfl1): ?>
+                                        <?php if($shaixuan['ylfl']['type']==2): ?>
+                                            <?php foreach($v['cate'] as $val): ?>
+                                                <?php if($ylfl1==682): ?>
+                                                    <?php if($val->cat_id!=$ylfl2): ?>
+                                                        <a href="<?php echo e($fl_url2); ?>&ylfl2=<?php echo e($val->cat_id); ?>">
+                                                            <li>
+                                                                <div><?php echo e(str_limit($val->cat_name,20)); ?></div>
+                                                            </li>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                <?php else: ?>
+                                                    <?php foreach($val['cate'] as $value): ?>
+                                                        <?php if($ylfl1==$v->cat_id): ?>
+                                                            <a href="<?php echo e($fl_url2); ?>&ylfl2=<?php echo e($value->cat_id); ?>">
+                                                                <li>
+                                                                    <div><?php echo e(str_limit($value->cat_name,20)); ?>
+
+                                                                    </div>
+                                                                </li>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <?php foreach($v['cate'] as $val): ?>
+                                                <?php if($val->cat_id!=$ylfl2): ?>
+                                                    <a href="<?php echo e($fl_url2); ?>&ylfl2=<?php echo e($val->cat_id); ?>">
+                                                        <li>
+                                                            <div><?php echo e(str_limit($val->cat_name,20)); ?></div>
+                                                        </li>
+                                                    </a>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($xz_arr['jx'])): ?>
+                <div <?php if(count($shaixuan['jx'])<=1): ?> class="shaixuan-none" <?php else: ?> class="shaixuan-jixing"
+                     <?php endif; ?> style="display: inline-block;z-index: 3;">
+                    <?php if(!isset($ylfl)): ?>
+                        <img src="<?php echo e(get_img_path('images/new/shaixuan-right.png')); ?>" class="toright"/>
+                    <?php endif; ?>
+                    <div class="shaixuan-box">
+                        <div class="shaixuan-mingzi">
+                            剂型：<span class="choose-name"><?php echo e($xz_arr['jx']); ?></span>
+                        </div>
+                        <a href="<?php echo e(str_replace('jx='.$xz_arr['jx'],'',$result->url(1))); ?>">
+                            <span class="title-shanchu">×</span>
+                        </a>
+                        <div class="yongtu-all" <?php if(count($shaixuan['jx'])>8): ?> style="width: 630px"
+                             <?php elseif(count($shaixuan['jx'])==2): ?> style="width: 100%"
+                             <?php else: ?> style="width: <?php echo e((count($shaixuan['jx'])-1)*80+30); ?>px" <?php endif; ?>>
+                            <ul>
+                                <?php foreach($shaixuan['jx'] as $v): ?>
+                                    <?php if($v!==$xz_arr['jx']): ?>
+                                        <a href="<?php echo e($result->url(1)); ?>&jx=<?php echo e($v); ?>">
+                                            <li><?php echo e($v); ?></li>
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($ypgg)): ?>
+                <div <?php if(count($shaixuan['ypgg'])<=1): ?> class="shaixuan-none" <?php else: ?> class="shaixuan-guige"
+                     <?php endif; ?> style="display: inline-block;z-index: 2;">
+                    <?php if(!isset($ylfl)): ?>
+                        <img src="<?php echo e(get_img_path('images/new/shaixuan-right.png')); ?>" class="toright"/>
+                    <?php endif; ?>
+                    <div class="shaixuan-box">
+                        <div class="shaixuan-mingzi">
+                            规格：<span class="choose-name"><?php echo e($ypgg); ?></span>
+                        </div>
+                        <a href="<?php echo e(str_replace('ypgg='.$ypgg,'',$result->url(1))); ?>">
+                            <span class="title-shanchu">×</span>
+                        </a>
+                        <div class="yongtu-all" <?php if(count($shaixuan['ypgg'])>8): ?> style="width: 630px"
+                             <?php elseif(count($shaixuan['ypgg'])==2): ?> style="width: 100%"
+                             <?php else: ?> style="width: <?php echo e((count($shaixuan['jx'])-1)*80+30); ?>px" <?php endif; ?>>
+                            <?php if(count($shaixuan['ypgg'])>1): ?>
+                                <ul>
+                                    <?php foreach($shaixuan['ypgg'] as $v): ?>
+                                        <?php if($v!==$ypgg): ?>
+                                            <a href="<?php echo e($result->url(1)); ?>&ypgg=<?php echo e($v); ?>">
+                                                <li><?php echo e($v); ?></li>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($product)): ?>
+                <div class="shaixuan-none" style="display: inline-block;z-index: 2;">
+                    <?php if(!isset($ylfl)): ?>
+                        <img src="<?php echo e(get_img_path('images/new/shaixuan-right.png')); ?>" class="toright"/>
+                    <?php endif; ?>
+                    <div class="shaixuan-box">
+                        <div class="shaixuan-mingzi">
+                            <span class="choose-name"><?php echo e($product); ?></span>
+                        </div>
+                        <a href="<?php echo e(str_replace('product='.$product,'',$result->url(1))); ?>">
+                            <span class="title-shanchu">×</span>
+                        </a>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="shaixuan">
+                <ul class="shaixuan-ul-1">
+                    <?php if(count($fl_list)>0): ?>
+                        <li class="sx-li1 zhankai">
+                            <div class="title">
+                                药理分类：
+                            </div>
+                            <?php if(count($fl_list)>9): ?>
+                                <div class="more">
+                                    更多
+                                    <img src="<?php echo e(get_img_path('images/new/xia.jpg')); ?>"/>
+                                </div>
+                                <div class="more-1">
+                                    收起
+                                    <img src="<?php echo e(get_img_path('images/new/shang.jpg')); ?>"/>
+                                </div>
+                            <?php endif; ?>
+                            <ul class="shaixuan-ul-2 shaixuan-1">
+                                <?php foreach($fl_list as $k=>$v): ?>
+                                    <?php if(isset($ylfl1)): ?>
+                                        <a href="<?php echo e($result->url(1)); ?>&ylfl2=<?php echo e($v->cat_id); ?>">
+                                            <li><?php echo e($v->cat_name); ?></li>
+                                        </a>
+                                    <?php elseif(isset($ylfl)): ?>
+                                        <a href="<?php echo e($result->url(1)); ?>&ylfl1=<?php echo e($v->cat_id); ?>">
+                                            <li><?php echo e($v->cat_name); ?></li>
+                                        </a>
+                                    <?php else: ?>
+                                        <?php if($k=='l'): ?>
+                                            <a href="/zy">
+                                                <li><?php echo e($v); ?></li>
+                                            </a>
+                                        <?php else: ?>
+                                            <a href="<?php echo e($result->url(1)); ?>&ylfl=<?php echo e($k); ?>">
+                                                <li><?php echo e($v); ?></li>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(count($shaixuan['jx'])>0&&empty($xz_arr['jx'])): ?>
+                        <li class="sx-li2 zhankai">
+                            <div class="title">
+                                剂型：
+                            </div>
+                            <?php if(count($shaixuan['jx'])>9): ?>
+                                <div class="more">
+                                    更多
+                                    <img src="<?php echo e(get_img_path('images/new/xia.jpg')); ?>"/>
+                                </div>
+                                <div class="more-1">
+                                    收起
+                                    <img src="<?php echo e(get_img_path('images/new/shang.jpg')); ?>"/>
+                                </div>
+                            <?php endif; ?>
+                            <ul class="shaixuan-ul-2 shaixuan-2">
+                                <?php foreach($shaixuan['jx'] as $v): ?>
+                                    <a href="<?php echo e($result->url(1)); ?>&jx=<?php echo e($v); ?>">
+                                        <li><?php echo e($v); ?></li>
+                                    </a>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(count($shaixuan['ypgg'])>0&&empty($ypgg)): ?>
+                        <li class="sx-li4 zhankai">
+                            <div class="title">
+                                规格：
+                            </div>
+                            <?php if(count($shaixuan['ypgg'])>9): ?>
+                                <div class="more">
+                                    更多
+                                    <img src="<?php echo e(get_img_path('images/new/xia.jpg')); ?>"/>
+                                </div>
+                                <div class="more-1">
+                                    收起
+                                    <img src="<?php echo e(get_img_path('images/new/shang.jpg')); ?>"/>
+                                </div>
+                            <?php endif; ?>
+                            <ul class="shaixuan-ul-3 shaixuan-3">
+                                <?php foreach($shaixuan['ypgg'] as $v): ?>
+                                    <a href="<?php echo e($result->url(1)); ?>&ypgg=<?php echo e($v); ?>">
+                                        <li><?php echo e($v); ?></li>
+                                    </a>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                    <?php if(count($shaixuan['sccj'])>0&&empty($product)): ?>
+                        <li class="sx-li3">
+                            <div class="title">
+                                厂家首字母：
+                            </div>
+
+                            <ul class="shaixuan-ul-2 zimu">
+                                <?php foreach(range('A','Z') as $v): ?>
+                                    <li id="<?php echo e($v); ?>" <?php if(!isset($shaixuan['sccj'][$v])): ?> class="company-none"
+                                        <?php else: ?> class="xuanzhe" <?php endif; ?>>
+                                        <?php echo e($v); ?>
+
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <?php if(count($shaixuan['sccj'])>0&&empty($product)): ?>
+                <?php foreach(range('A','Z') as $k=>$v): ?>
+
+                    <?php if(isset($shaixuan['sccj'][$v])&&count($shaixuan['sccj'][$v])>0): ?>
+                        <div class="shaixuan-company-box" id="zm<?php echo e($v); ?>">
+                            <?php foreach($shaixuan['sccj'][$v] as $product): ?>
+                                <a href="<?php echo e($result->url(1)); ?>&product=<?php echo e($product); ?>">
+                                    <?php echo e($product); ?>
+
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <div class="content">
+                <?php if(count($result)==0): ?>
+                    <div id="none" class="container">
+                        <div class="container_box">
+                            <div class="none">
+                                <div class="img_box">
+                                    <img src="<?php echo e(get_img_path('images/goods/puyao_search_none.png')); ?>"/>
+                                </div>
+                                <div class="text">
+                                    <p>抱歉！没有找到<?php if(!empty($keywords)): ?>与“<span><?php echo e($keywords); ?></span>”<?php endif; ?>相关的药品</p>
+                                    <p>你可以发布求购意向，<?php echo e(config('services.web.name')); ?>网会尽快补货！</p>
+                                    <a target="_blank" href="/requirement" class="link">发布求购</a>
+                                </div>
+                            </div>
+                            <?php if(isset($cx_goods[6])): ?>
+                                <div id="wntj" class="container">
+                                    <div class="container_box">
+                                        <div id="ban3" class="ban">
+                                            <div class="section_title">
+                                                <i class="myicon wntj_icon"></i>
+                                                <span class="biaoti">为您推荐</span>
+                                            </div>
+                                            <div class="banner">
+                                                <ul class="img">
+                                                    <?php if(count($cx_goods[6])>0): ?>
+                                                        <li>
+                                                            <?php foreach($cx_goods[6] as $k=>$v): ?>
+                                                                <?php if($k<5): ?>
+                                                                    <a target="_blank"
+                                                                       href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                                                        <div class="wntj-cp">
+                                                                            <div class="img_box">
+                                                                                <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                                                            </div>
+                                                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                                                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                                                            <p class="money login"><?php echo e($v->format_price); ?></p>
+                                                                        </div>
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                            <?php endforeach; ?>
+                                                        </li>
+                                                    <?php endif; ?>
+                                                    <?php if(count($cx_goods[6])>5): ?>
+                                                        <li>
+                                                            <?php foreach($cx_goods[6] as $k=>$v): ?>
+                                                                <?php if($k>=5&$k<10): ?>
+                                                                    <a target="_blank"
+                                                                       href="<?php echo e(route('goods.index',['id'=>$v->goods_id])); ?>">
+                                                                        <div class="wntj-cp">
+                                                                            <div class="img_box">
+                                                                                <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                                                            </div>
+                                                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                                                            <p class="gg"><?php echo e($v->ypgg); ?></p>
+                                                                            <p class="money login"><?php echo e($v->format_price); ?></p>
+                                                                        </div>
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                            <?php endforeach; ?>
+                                                        </li>
+                                                    <?php endif; ?>
+                                                </ul>
+                                                <div class="btn btn_l">
+                                                    <i class="myicon lb_left_icon"></i>
+                                                </div>
+                                                <div class="btn btn_r">
+                                                    <i class="myicon lb_right_icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div id="puyao_sx" class="container">
+                        <div class="container_box">
+                            <div class="puyao_title">
+                                <ul class="puyao_title_list">
+                                    <?php if(!isset($sort)||(isset($sort)&&$sort=='sort_order')&&(!isset($step)||(isset($step)&&empty($step)))): ?>
+                                        <li class="active">
+                                            默认排序
+                                        </li>
+                                    <?php else: ?>
+                                        <li>
+                                            <a <?php echo $result->sort['sort_order']; ?>>
+                                                默认排序
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                    <li <?php if(isset($sort)&&$sort=='click_count'): ?> class="active" <?php endif; ?>>
+                                        <a <?php echo $result->sort['click_count']; ?>>
+                                            人气<span class="a-z">由低到高</span><span class="z-a">由高到低</span>
+                                        </a>
+                                    </li>
+                                    <li <?php if(isset($sort)&&$sort=='sales_volume'): ?> class="active" <?php endif; ?>>
+                                        <a <?php echo $result->sort['sales_volume']; ?>>
+                                            销量<span class="a-z">由低到高</span><span class="z-a">由高到低</span>
+                                        </a>
+                                    </li>
+                                    <li <?php if(isset($sort)&&$sort=='shop_price'): ?> class="active" <?php endif; ?>>
+                                        <a <?php echo $result->sort['shop_price']; ?>>
+                                            价格<span class="a-z">由低到高</span><span class="z-a">由高到低</span>
+                                        </a>
+                                    </li>
+                                    <li <?php if(isset($sort)&&$sort=='goods_name'): ?> class="active" <?php endif; ?>>
+                                        <a <?php echo $result->sort['goods_name']; ?>>
+                                            品名
+                                        </a>
+                                    </li>
+                                    <li <?php if(isset($sort)&&$sort=='product_name'): ?> class="active" <?php endif; ?>>
+                                        <a <?php echo $result->sort['product_name']; ?>>
+                                            厂家
+                                        </a>
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                                <div class="puyao_title_right">
+                                    <span>共<span class="red"><?php echo e($result->total()); ?></span>个商品 每页显示<?php echo e($result->perPage()); ?>
+
+                                        个商品</span>
+                                    <?php if($result->currentPage()==1): ?>
+                                        <input type="image" src="<?php echo e(get_img_path('images/goods/puyao_left.jpg')); ?>"
+                                               class="prev"/>
+                                    <?php else: ?>
+                                        <a href="<?php echo e($result->url($result->currentPage() - 1)); ?>">
+                                            <input type="image" src="<?php echo e(get_img_path('images/goods/puyao_left_1.jpg')); ?>"
+                                                   class="prev"/>
+                                        </a>
+                                    <?php endif; ?>
+                                    <span class="nu"><span
+                                                class="red"><?php echo e($result->currentPage()); ?></span> / <?php echo e($result->lastPage()); ?></span>
+                                    <?php if($result->currentPage()==$result->lastPage()): ?>
+                                        <input type="image" src="<?php echo e(get_img_path('images/goods/puyao_right_1.jpg')); ?>"
+                                               class="next"/>
+                                    <?php else: ?>
+                                        <a href="<?php echo e($result->url($result->currentPage() + 1)); ?>">
+                                            <input type="image" src="<?php echo e(get_img_path('images/goods/puyao_right.jpg')); ?>"
+                                                   class="next"/>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if($style=='l'): ?>
+                                        <span class="liebiao_icon">
+							            <img title="列表" src="<?php echo e(get_img_path('images/goods/puyao_liebiao.jpg')); ?>"/>
+						            </span>
+                                        <a href="<?php echo e($result->url(1)); ?>&step=<?php echo e(isset($step) ? $step : ''); ?>&style=g"><span
+                                                    class="datu_icon">
+							            <img title="大图" src="<?php echo e(get_img_path('images/goods/puyao_datu.jpg')); ?>"/>
+						            </span></a>
+                                    <?php else: ?>
+                                        <a href="<?php echo e($result->url(1)); ?>&step=<?php echo e(isset($step) ? $step : ''); ?>&style=l"><span
+                                                    class="liebiao_icon">
+							            <img title="列表" src="<?php echo e(get_img_path('images/goods/puyao_liebiao_1.jpg')); ?>"/>
+                                            </span></a>
+                                        <span class="datu_icon">
+							            <img title="大图" src="<?php echo e(get_img_path('images/goods/puyao_datu_1.jpg')); ?>"/>
+						            </span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php if($style=='l'): ?>
+                        <div id="liebiao" class="container">
+                            <div class="container_box">
+                                <table>
+                                    <tr>
+                                        <th class="cxbs">促销标识</th>
+                                        <th class="cpmc">产品名称</th>
+                                        <th class="gg">规格</th>
+                                        <th class="dw">单位</th>
+                                        <th class="sccj">生产厂家</th>
+                                        <th class="xq">效期</th>
+                                        <th class="jzl">件装量</th>
+                                        <th class="zbz">中包装</th>
+                                        <th class="sl">数量</th>
+                                        <th class="kc">库存</th>
+                                        <th class="hyj">会员价</th>
+                                        <th class="cz">操作</th>
+                                    </tr>
+                                    <?php foreach($result as $v): ?>
+                                        <tr>
+                                            <td class="cxbs">
+                                                        <span class="tj_bs layer_tips" id="1lb_tj<?php echo e($v->goods_id); ?>"
+                                                              data-msg="<?php echo e(trans('goods.tmpz')); ?>">特卖<i
+                                                                    class="jiantou xia_i"></i></span>
+                                                <?php if($v->is_xqpz==1): ?>
+                                                    <span class="tj_bs layer_tips" id="1lb_xq<?php echo e($v->goods_id); ?>"
+                                                          data-msg="此品种为效期品种">效期<i
+                                                                class="jiantou xia_i"></i></span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <div class="cpmc">
+                                                    <a target="_blank" href="<?php echo e($v->goods_url); ?>"
+                                                       title="<?php echo e($v->goods_name); ?>"><?php echo e(str_limit($v->goods_name,20)); ?></a>
+                                                    <div class="goods_hover_box">
+                                                        <a target="_blank" href="<?php echo e($v->goods_url); ?>">
+                                                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                                                        </a>
+                                                        <div class="img_box">
+                                                            <a target="_blank" href="<?php echo e($v->goods_url); ?>">
+                                                                <img class="lazy_show"
+                                                                     data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                                            </a>
+                                                        </div>
+                                                        <p class="xiaoqi">效期：<?php echo e($v->xq); ?></p>
+                                                        <?php /*<p class="xiaoliang">总销量：<span><?php echo e($v->sales_volume); ?></span></p>*/ ?>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="gg"><?php echo e($v->spgg); ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="dw"><?php echo e($v->dw); ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="sccj"><?php echo e($v->sccj); ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="xq"
+                                                   <?php if($v->is_xq_red==1): ?> style="color: #e70000" <?php endif; ?>><?php echo e($v->xq); ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="jzl"><?php if($v->is_zyyp==0): ?><?php echo e($v->jzl); ?><?php endif; ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="zbz"><?php echo e($v->zbz); ?></p>
+                                            </td>
+                                            <td class="sl">
+                                                <span class="jian min">-</span><input
+                                                        id="J_dgoods_num1_<?php echo e($v->goods_id); ?>"
+                                                        type="text"
+                                                        value="<?php echo e($v->zbz); ?>"
+                                                        class="input_val"
+                                                        data-zbz="<?php echo e($v->zbz); ?>"
+                                                        data-kc="<?php echo e($v->goods_number); ?>"
+                                                        data-jzl="<?php echo e($v->jzl); ?>"
+                                                        data-xl="<?php echo e($v->xg_num); ?>"
+                                                        data-isxl="<?php echo e($v->is_xg); ?>"/><span
+                                                        class="jia">+</span>
+                                            </td>
+                                            <td>
+                                                <p class="kc"><?php if($v->goods_number>=800): ?>充裕<?php elseif($v->goods_number==0): ?>
+                                                        缺货<?php else: ?><?php echo e($v->goods_number); ?><?php endif; ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="hyj"><?php if($v->is_can_see==0): ?> 会员可见 <?php else: ?>
+                                                        <?php echo e(formated_price($v->real_price)); ?>
+
+                                                    <?php endif; ?></p>
+                                            </td>
+                                            <td>
+                                                <p class="cz">
+                                                    <img title="加入购物车"
+                                                         src="<?php echo e(get_img_path('images/goods/jrgwc_btn.png')); ?>"
+                                                         data-img="<?php echo e($v->goods_thumb); ?>"
+                                                         class="jrgwc_btn fly_to_cart<?php echo e($v->goods_id); ?>"
+                                                         onclick="tocart('<?php echo e($v->goods_id); ?>',1)"/>
+                                                    <img title="加入收藏夹" src="<?php echo e(get_img_path('images/goods/sc_btn.png')); ?>"
+                                                         class="sc_btn" onclick="tocollect('<?php echo e($v->goods_id); ?>')"/>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </table>
+                                <?php if($result->hasPages()): ?>
+                                    <?php echo $pages_view; ?>
+
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <div id="datu" class="container">
+                            <div class="container_box">
+                                <ul class="datu">
+                                    <?php foreach($result as $k=>$v): ?>
+                                        <li>
+                                            <div class="datu-chanpin-img">
+                                                <a target="_blank" href="<?php echo e($v->goods_url); ?>">
+                                                    <?php if($k<5): ?>
+                                                        <img src="<?php echo e($v->goods_thumb); ?>"/>
+                                                    <?php else: ?>
+                                                        <img class="lazy" data-original="<?php echo e($v->goods_thumb); ?>"/>
+                                                    <?php endif; ?>
+                                                </a>
+                                                <img title="加入收藏夹" onclick="tocollect('<?php echo e($v->goods_id); ?>')"
+                                                     src="<?php echo e(get_img_path('images/goods/datu-shoucang.png')); ?>"
+                                                     class="datu-shoucang"/>
+                                                <div class="datu_bs">
+                                                    <div class="tj layer_tips" id="1dt_tj<?php echo e($v->goods_id); ?>"
+                                                         data-msg="<?php echo e(trans('goods.tmpz')); ?>">
+                                                        特卖<i class="jiantou xia_i"></i>
+                                                    </div>
+                                                    <?php if($v->is_xqpz==1): ?>
+                                                        <div class="tj layer_tips" id="1dt_xq<?php echo e($v->goods_id); ?>"
+                                                             data-msg="此品种为效期品种">
+                                                            效期<i class="jiantou xia_i"></i>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+
+                                            <?php if($v->is_can_see==0): ?>
+                                                <div class="datu-jiage-none">
+                                                    会员可见
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="datu-jiage">
+                                                    <?php echo e(formated_price($v->real_price)); ?>
+
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="datu-mingzi">
+                                                <?php echo e($v->goods_name); ?>
+
+                                            </div>
+                                            <div class="datu-compamy">
+                                                <?php echo e($v->sccj); ?>
+
+                                            </div>
+                                            <div class="datu-guige">
+                                                规格：<span><?php echo e($v->spgg); ?></span>
+                                            </div>
+                                            <div class="datu-xiaoqi">
+                                                效期：<span
+                                                        <?php if($v->is_xq_red==1): ?> class="daoqi" <?php endif; ?>><?php echo e($v->xq); ?></span>
+                                                <?php if($v->is_zyyp==0): ?>
+                                                    件装量：
+                                                    <span class="jianzhuang"><?php echo e($v->jzl); ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="datu-jianzhuang">
+                                                库存：<span><?php if($v->goods_number>=800): ?>充裕<?php elseif($v->goods_number==0): ?>
+                                                        缺货<?php else: ?><?php echo e($v->goods_number); ?><?php endif; ?></span> 中包装：
+                                                <span><?php echo e($v->zbz); ?></span>
+                                            </div>
+                                            <div class="btn_box">
+                                                <div class="datu-jrgwc fly_to_cart<?php echo e($v->goods_id); ?>"
+                                                     data-img="<?php echo e($v->goods_thumb); ?>"
+                                                     onclick="tocart('<?php echo e($v->goods_id); ?>',1)">
+                                                    <img src="<?php echo e(get_img_path('images/goods/datu_jrgwc.png')); ?>"/> 加入购物车
+                                                </div>
+                                                <div class="jiajian">
+                                                    <div class="jian min">
+                                                        -
+                                                    </div>
+                                                    <input id="J_dgoods_num1_<?php echo e($v->goods_id); ?>"
+                                                           type="text"
+                                                           value="<?php echo e($v->zbz); ?>" class="input_val"
+                                                           data-zbz="<?php echo e($v->zbz); ?>"
+                                                           data-kc="<?php echo e($v->goods_number); ?>"
+                                                           data-jzl="<?php echo e($v->jzl); ?>" data-xl="<?php echo e($v->xg_num); ?>"
+                                                           data-isxl="<?php echo e($v->is_xg); ?>"/>
+                                                    <div class="jia">
+                                                        +
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <?php if($result->hasPages()): ?>
+                                    <?php echo $pages_view; ?>
+
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="clear_both"></div>
+    </div>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript">
+        $('.cpmc').hover(function () {
+            $(this).find('.lazy_show').attr('src', $(this).find('.lazy_show').data('original'))
+        });
+        $("img.lazy").lazyload({
+            effect: "fadeIn",
+            threshold: 300,
+            placeholder: "http://app.hezongyy.com/images/small.gif"
+        });
+        $('.layer_tips').hover(function () {
+            var msg = $(this).data('msg');
+            var id = $(this).attr('id');
+            layer.tips(msg, '#' + id, {
+                tips: [3, '#fff'],
+                id: 'layer_tips'
+            });
+        }, function () {
+            layer.closeAll();
+        });
+
+        function last_page(url, lastPage) {
+            var currentPage = $('#currentPage').val();
+            if (parseInt(currentPage) > parseInt(lastPage)) {
+                alert('你要访问的页码不存在!');
+                $('#currentPage').val(lastPage);
+                return false;
+            }
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

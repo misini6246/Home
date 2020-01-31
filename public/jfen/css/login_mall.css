@@ -1,0 +1,43 @@
+
+
+.header{background: url("../images/head_bg1.png");height: 119px;overflow: hidden;_filter:alpha(opacity=48);
+        border-bottom: 1px solid #b1b8bf;border-top: 1px solid #f95706;margin-top: 0}
+.header_bottom{border: 0;}
+.header .header_search_logo{line-height: 100px}
+.header .header_search_logo img{ padding: 0;}
+.to_main_page img{margin-top: 10px;_margin-right: 20px}
+.float_right{line-height: 96px;padding: 0;height: 96px;margin: 7px 0}
+.float_right img{vertical-align: middle;margin-right: 10px}
+
+.content{background: url("../images/bg_login.jpg") center no-repeat;height: 490px;}
+.content_main{width: 1188px;margin: 0 auto;overflow: hidden;height: 490px}
+.login_window{width: 292px;height: 320px;margin: 95px 0 0 655px;padding: 0 50px;
+               ;position: relative}
+.login_modify{position: absolute;top: -50px;right: -1px;z-index: 10}
+.login_main{position: absolute;z-index: 2;width: 286px;}
+.bg48{background-color: #fff;opacity: 0.45;filter:alpha(opacity=45);width: 392px;height: 320px;z-index: 1;position: absolute;top: 0;left: 0}
+.login_window p{margin: 25px 0;line-height: 20px;font-size: 14px;font-weight: bold;color: #000}
+.login_window label{display: block;position: relative;*height: 48px;z-index: 0}
+.login_window label input{border: 1px solid #b7baba;padding: 8px 0;line-height: 20px;text-indent: 10px;font-size: 12px;outline: none;
+                             width: 285px;margin-bottom: 10px;background: none;*position: absolute;*z-index: 10}
+.login_window .rem{padding-bottom: 10px}
+.login_window .rem input{width: auto;vertical-align: middle;margin: -2px 10px 0 0;border: 0;outline: none}
+.login_window label span{position: absolute;left: 13px;height: 36px;line-height: 36px;color: #b3b3b3;*z-index: 5}
+
+.login_window .alert{height: 0;line-height: 30px;margin: 0;color: #333;font-weight: normal;font-size: 12px;
+                       font-family: "宋体", serif;overflow: hidden;background-color: #ffebeb}
+.login_window .alert img{margin: 0 5px;vertical-align: middle;_margin: 7px}
+.login_window .alert span{vertical-align: middle;}
+.login{background: url("../images/login_btn.png") center no-repeat;width: 286px;height: 37px;margin-top: 10px;
+        font-size: 16px;color: #fff;font-weight: bold}
+
+.login_main a{float: right;line-height: 30px;color: #4a4a4a}
+
+.login_other{margin-top: 15px;clear: both}
+.login_other ul{list-style: none;_height: 14px;_line-height: 14px}
+.login_other li{border-right: 1px solid #474747;float: left;padding: 0 10px}
+.login_other li a{line-height: 12px;float: none;color: #323232}
+.login_other li a:hover{color: #f00000}
+
+/*底部*/
+.footer{margin-top: 0;height: 34px;line-height: 34px;text-align: center;color: #595959;background: url("../images/bg_footer.png") repeat-x;}

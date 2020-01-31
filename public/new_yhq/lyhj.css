@@ -1,0 +1,114 @@
+/*普药筛选头部*/
+.site_content {
+	display: none;
+}
+#footer{
+	margin-top: 0;
+}
+#youhuiquan{
+	background: #f0f6fc;
+	padding-bottom: 40px;
+	overflow: hidden;
+}
+#tj_banner{
+	width: 100%;
+	max-width: 1920px;
+	height: 300px;
+	background: url(/images/mh/tejia.jpg) no-repeat scroll top center;
+	overflow: hidden;
+}
+#youhuiquan .title{
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-top: 20px;
+}
+#youhuiquan .title img{
+	vertical-align: top;
+}
+.yhj_list{
+	overflow: hidden;
+	text-align: center;
+}
+.yhj_list li{
+	text-align: left;
+	display: inline-block;
+	/* float: left; */
+	position: relative;
+	width: 380px;
+	height: 206px;
+	margin: 30px 0 0 13px;
+}
+.yhj_list li .juan_box{
+	width: 380px;
+	height: 140px;		
+}
+.yhj_list li .zi{
+
+	background:transparent url(/new_yhq/img/yhj_4.png) no-repeat;
+}
+.yhj_list li .huang{
+	background:transparent url(/new_yhq/img/yhj_3.png) no-repeat;
+}
+.yhj_list li .hong{
+	background:transparent url(/new_yhq/img/yhj_1.png) no-repeat;
+}
+.yhj_list li .lv{
+	background:transparent url(/new_yhq/img/yhj_2.png) no-repeat;
+}
+.yhj_list li .juan_box p.money{
+	height: 82px;
+	line-height: 82px;
+	color: #ff1919;
+	font-size: 48px;
+	padding-left: 48px;
+}
+.yhj_list li .juan_box p.money span{
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+	background: #ffe7e7;
+	color: #ff1919;
+	font-size: 14px;
+	margin-left: 10px;
+	position: relative;
+	top: -5px;
+}
+.yhj_list li .juan_box p.gz,.yhj_list li .juan_box p.time{
+	padding-left: 28px;
+	font-size: 12px;
+}
+.yhj_list li .juan_box p.gz{
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+}
+.yhj_list li .juan_box p.time{
+	font-family: "宋体";
+	color: #666;
+}
+.yhj_list li .juan_box p.lx{
+	line-height: normal;
+	color: #fff;
+	font-size: 24px;
+	position: absolute;
+	right: 34px;
+	top: 23px;
+	width: 24px;
+}
+.yhj_list li .quan_btn{
+	width: 200px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	background: #ff1919;
+	color: #fff;
+	font-size: 24px;
+	border-radius: 30px;
+	margin: 20px auto 0 auto;
+	cursor: pointer;
+}
+.yhj_list li .ylq{
+	background: #999999!important;
+}

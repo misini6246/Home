@@ -1,0 +1,158 @@
+.xiangqing{
+	width: 950px;
+	margin: 10px auto;
+}
+.xiangqing_zt{
+	padding: 20px;
+	background: #f8f9fb;
+	overflow: hidden;
+}
+.xiangqing_zt .ddbh{
+	width: 630px;
+	border-right: 1px dashed #cccccc;
+	float: left;
+}
+.xiangqing_zt .ddbh li{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 20px;
+	font-size: 14px;
+}
+.xiangqing_zt .ddbh li.or span{
+	color: #ff4700;
+}
+.xiangqing_zt .ddbh li span{
+	margin-left: 10px;
+}
+.ddzt{
+	width: 278px;
+	float: left;
+}
+.ddzt_title{
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	padding-left: 20px;
+}
+.ddzt_result{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ff4700;
+	font-size: 24px;
+}
+.shdz,.lpqd{
+	margin-top: 20px;
+}
+.shdz_title{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	font-weight: bold;
+	color: #666;
+	font-size: 14px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.shxx{
+	margin: 10px 0 30px 0;
+	width: 310px;
+	height: 160px;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+}
+.username,.user_phone,.user_add{
+	height: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+}
+
+.user_phone{
+	margin-top: 10px;
+}
+.username img,.user_phone img,.user_add img{
+	margin: 0 5px 0 20px;
+}
+.username img{
+	margin-left: 18px;
+}
+.user_add img{
+	vertical-align: top;
+}
+.username span,.user_phone span{
+	vertical-align: middle;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+.user_add span{
+	display: inline-block;
+	width: 260px;
+	font-size: 14px;
+	color: #333;
+}
+.lpqd table{
+	margin-top: 10px;
+}
+.lpqd table .lpxx{
+	width: 670px;
+}
+.lpqd table th{
+	height: 40px;
+	line-height: 40px;
+	background: #f8f9fb;
+}
+.lpqd table td{
+	height: 100px;
+	line-height: 100px;
+	border-bottom: 1px dashed #e5e5e5;
+}
+.lpqd table .sl,.lpqd table .xj{
+	width: 140px;
+}
+.lpqd table td.sl,.lpqd table td.xj{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.lpqd table td .img_box{
+	width: 110px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	float: left;
+}
+.lpqd table td .img_box img{
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: baseline;
+}
+.lpqd table td .text{
+	width: 550px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 16px;
+	float: left;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.heji{
+	height: 40px;
+	line-height: 40px;
+	background: #f8f9fb;
+	margin-top: 10px;
+	text-align: right;
+	padding-right: 30px;
+}
+.heji span{
+	font-size: 16px;
+}
+.heji span.lipin{
+	margin-right: 40px;
+}
+.heji span span{
+	color: red;
+	margin: 0 5px;
+	font-weight: bold;
+}

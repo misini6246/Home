@@ -1,0 +1,199 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    position:relative;
+    font-family: "Microsoft YaHei";
+    background-image:url(about:blank);
+    background-attachment:fixed;
+}
+.container{
+    height: 1300px;
+    overflow: hidden;
+    background-color: #ff8400;
+}
+/*背景的一些图片样式*/
+#top{
+    background:url("../images/top_01.jpg") no-repeat scroll center top;
+    height: 262px;
+    min-width: 1200px;
+    /*overflow:hidden;*/
+    width: 100%;
+}
+.bgimg{
+    background:url("../images/top_02.jpg") no-repeat scroll center top;
+    height: 255px;
+    min-width: 1200px;
+    overflow:hidden;
+    width: 100%;
+}
+.chongzhiImg{
+    background:url("../images/pic.jpg") no-repeat;
+    height: 285px;
+    width: 800px;
+    margin: 0 auto
+}
+/*背景的一些图片样式*/
+/*选择充值金额*/
+.choose{
+    width: 900px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+
+/*选择充值金额*/
+
+/*确认支付按钮*/
+.sure{
+    font-weight: bold;
+    width: 180px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    margin:auto;
+    border: none;
+    outline: none;
+    background-color: #fffc0c;
+}
+/*确认支付按钮*/
+
+/*支付方式*/
+.pay{
+    background:url("../images/pic2.jpg") no-repeat scroll center top;
+    height: 235px;
+    width: 800px;
+    margin: 0 auto;
+    /*position: relative;*/
+}
+
+.pay ul li{
+    list-style: none;
+    float: left;
+    margin-top: 95px;
+    margin-left:60px;
+    display: inline;
+    position: relative;
+}
+/*支付方式*/
+
+
+/*侧边栏fix导航*/
+#znq-daohang {
+    background:url('http://images.hezongyy.com/images/znq-jfdh04.png') no-repeat;
+    position:fixed;
+    _position:absolute;
+    bottom:0; right:10px;
+    _bottom:auto; _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+
+#znq-daohang a{
+    display:block;
+    width:90px;
+    height:35px;
+    margin-bottom:1px;
+    overflow:hidden;
+}
+
+#znq-daohang a#totop{
+    position:absolute;
+    bottom:0px;
+    cursor:pointer;
+}
+.lianjie{
+    width:124px;
+    height:330px;
+    margin:68px 0 0 30px
+}
+/*侧边栏fix导航*/
+
+/*提交订单后的弹框*/
+.Bombbox{
+    /*position: relative;*/
+    position:fixed;
+    _position:absolute;
+    top:30%; right:43%;
+    /*_bottom:auto;*/
+    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+    width:260px;
+    /*border:1px solid red;*/
+    /*zoom:1;*/
+    height: 140px;
+    background:#ffffff;
+    border-radius: 5px;
+    display:none;
+    box-shadow:5px 5px 40px #444;
+    -moz-box-shadow:5px 5px 40px #444;
+    -webkit-box-shadow:5px 5px 40px #444;
+    -o-box-shadow:5px 5px 40px #444;
+    background: url("../images/success.jpg") no-repeat;
+    font-size: 12px;
+
+}
+.Bombbox img{
+    display: inline;
+    margin-top: 10px;
+    margin-left: -5px;
+}
+.close{
+    width: 15px;
+    height: 15px;
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.suc{
+    position: absolute;
+    top:79px;
+    left: 150px;
+    color: #025aa2;
+}
+.err{
+    position: absolute;
+    left: 150px;
+    top: 106px;
+    color: #025aa2;
+}
+
+
+/*提交订单后的弹框*/
+
+/*修改input标签的样式,用图片代替*/
+
+/*这是充值金额的input样式*/
+.tihuan{
+    width: 150px;
+    height: 40px;
+	position: relative;
+    float: left;
+    display: inline;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+#tihuan1,#tihuan2,#tihuan3{
+    margin-left: 52px;
+}
+
+.gou{
+    position: absolute;
+    top: 11px;
+    left: 107px;
+    display: none;
+}
+
+/*这是充值金额的input样式*/
+
+/*这是支付方式的input样式*/
+.payimg{
+	position: absolute;
+    top:12px;
+    left: 130px;
+	display: none;
+}
+
+
+/*这是支付方式的input样式*/
+
+/*修改input标签的样式,用图片代替*/

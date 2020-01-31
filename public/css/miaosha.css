@@ -1,0 +1,44 @@
+.site-header{background: url(http://images.hezongyy.com/i/ms_04.jpg) no-repeat scroll center top;height: 620px; min-width: 1200px;overflow: hidden; width: 100%;}
+.site-content{background: url(http://images.hezongyy.com/i/ms.jpg) repeat; min-width: 1200px; width: 100%;max-width: 1800px;margin: 0 auto;}
+.site-header-ws .site-content{background: url(http://images.hezongyy.com/i/ms-ws-01.jpg) no-repeat scroll center top; }
+.content-box{width: 1200px;margin: 0 auto;}
+.content-top{height: 444px;position: relative;}
+.content-top img{width: 1200px;height: 444px;}
+.content-top a{width: 170px;height: 150px;position: absolute;top:225px;}
+.content-top .click-a1{left: 200px;}
+.content-top .click-a2{left: 407px;}
+.content-top .click-a3{left: 623px;}
+.content-top .click-a4{left: 840px;}
+.content-djs{background:url("http://images.hezongyy.com/i/ms_035.jpg") no-repeat;height: 56px;line-height: 56px;position: relative}
+.content-djs2{background:url("http://images.hezongyy.com/i/ms_005.jpg") no-repeat;height: 56px;line-height: 56px;position: relative}
+
+.content-tab{background-color: #f6f6f6;text-align: center;line-height: 56px;height: 56px;position: relative;}
+.content-tab p{font-size: 24px;color: #7e7e7e;}
+.content-tab .end-txt{display: block;}
+.content-tab .time-item{display: none;}
+
+.shopping-list li{height:320px;overflow: hidden;position: relative; }
+.shopping-list li img{height: 320px;width: 1200px;}
+
+.shopping-list li a.btn-a{width: 140px;height: 35px;position: absolute;bottom: 30px;background: url("http://images.hezongyy.com/i/ms_btn02.png") no-repeat;}
+.shopping-list li a.btn-w{width: 140px;height: 35px;position: absolute;bottom: 30px;background: url("http://images.hezongyy.com/i/ms_dd.png") no-repeat;}
+.shopping-list li a.btn-y{width: 140px;height: 35px;position: absolute;bottom: 30px;background: url("http://images.hezongyy.com/i/ms-yqw.png") no-repeat;}
+.shopping-list li .product1,.shopping-list li .product2{width: 180px;height: 180px;position: absolute;top:10px;}
+.shopping-list li .product1{left: 160px;}
+.shopping-list li .product2{left: 725px;}
+
+.shopping-tab li a.btn-a{width: 140px;height: 35px;position: absolute;bottom: 30px;background: url("http://images.hezongyy.com/i/ms_btn01.png") no-repeat;}
+.shopping-list li .goshopping-a1{left: 367px;}
+.shopping-list li .goshopping-a2{left: 926px;}
+.ad{height:153px; }
+.ad img{height:153px;width: 1200px; }
+.time-item{float: left;margin-left: 557px;}
+.time-item strong {letter-spacing: 16px;font-size: 34px;color: #fff;width: 60px;height: 40px;display: block;float: left;margin-right: 25px;font-weight: normal;*letter-spacing: 15px}
+
+.shopping-list .num1{font-size: 18px;color: #fff;position: absolute;left: 180px;bottom:35px;}
+.shopping-list .num2{font-size: 18px;color: #fff;position: absolute;left: 748px;bottom:35px;}
+
+.site-footer {width: 980px;margin: 0 auto;height: 170px;}
+.footer-left{width: 400px;float: left;padding: 30px;height: 110px;}
+.footer-left p{height: 55px;line-height: 55px;font-size: 24px;color: #0f0202;}
+.footer-right{width: 254px;height: 84px;float: right;margin: 40px 80px 0 0;}

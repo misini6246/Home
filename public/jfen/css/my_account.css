@@ -1,0 +1,11 @@
+.all_address{padding: 0 0 10px 0;border: 1px solid #c7c7c7;margin: 1px 0 0 0;_width: 931px}
+.all_address tr{height: 40px;text-align: center;line-height: 40px}
+.all_address table{width: 961px;margin: 0;}
+.all_address thead tr{border-bottom: 1px solid #c7c7c7;background-color: #efeeef;font-weight: bold;color: #323232;}
+.all_address tbody tr{border-bottom: 1px solid #f0f0f0;background-color: #f9f9f9;color: #4b4b4b}
+.orderid a{color: #4b4b4b;text-decoration: none}
+.e_record{color: #f95706}
+.operate{font-size: 12px;}
+.operate a{padding: 0 5px;color: #089aca;vertical-align: middle}
+.operate a:hover{color: #ec0000}
+

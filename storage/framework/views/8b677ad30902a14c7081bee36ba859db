@@ -1,0 +1,117 @@
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('css/jifen/common.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/jifen/dingdanxiangqing.css')); ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/jifen/lb.js')); ?>" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('jifen.layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('jifen.layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!--container-->
+    <div class="container content">
+        <div class="content_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/jf/address_03.png')); ?>"/>
+                <span>当前位置：<a href="<?php echo e(route('jifen.index')); ?>">积分首页</a> > <a
+                            href="<?php echo e(route('jifen.user.index')); ?>">个人中心</a>> 订单详情</span>
+            </div>
+            <div class="vip">
+                <?php echo $__env->make('jifen.layouts.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="vip_right">
+                    <div class="vip_right_title">
+                        <img src="<?php echo e(get_img_path('images/jf/dian_03.png')); ?>"/>
+                        <span>订单详情</span>
+                    </div>
+                    <div class="xiangqing">
+                        <div class="xiangqing_zt">
+                            <ul class="ddbh">
+                                <li>
+                                    订单编号：<span><?php echo e($info->order_sn); ?></span>
+                                </li>
+                                <li>
+                                    下单时间：<span><?php echo e(date('Y-m-d H:i:s',$info->add_time)); ?></span>
+                                </li>
+                                <?php /*<li class="or">*/ ?>
+                                <?php /*物流状态：<span>已发货</span><span>圆通快递</span><span>快递单号：24522123365413</span>*/ ?>
+                                <?php /*</li>*/ ?>
+                            </ul>
+                            <div class="ddzt">
+                                <p class="ddzt_title">
+                                    订单状态：
+                                </p>
+                                <p class="ddzt_result">
+                                    <?php echo $info->order_state; ?>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="shdz">
+                            <div class="shdz_title">
+                                收货地址
+                            </div>
+                            <div class="shxx">
+                                <div class="username">
+                                    <img src="<?php echo e(get_img_path('images/jf/user_icon.png')); ?>"/>
+                                    <span><?php echo e(isset($info->address->name) ? $info->address->name : ''); ?></span>
+                                </div>
+                                <div class="user_phone">
+                                    <img src="<?php echo e(get_img_path('images/jf/phone_icon.png')); ?>"/>
+                                    <span><?php echo e(isset($info->address->mob_phone) ? $info->address->mob_phone : ''); ?></span>
+                                </div>
+                                <div class="user_add">
+                                    <img src="<?php echo e(get_img_path('images/jf/add_icon.png')); ?>"/>
+                                    <span><?php echo e(isset($info->address->address) ? $info->address->address : ''); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lpqd">
+                            <div class="shdz_title">
+                                礼品清单
+                            </div>
+                            <table>
+                                <tr>
+                                    <th class="lpxx">礼品信息</th>
+                                    <th class="sl">数量</th>
+                                    <th class="xj">小计</th>
+                                </tr>
+                                <?php foreach($info->goods as $goods): ?>
+                                    <tr>
+                                        <td class="lpxx">
+                                            <div class="img_box">
+                                                <img src="<?php echo e(get_img_path('jf/'.substr($goods->goods_image,1))); ?>"/>
+                                            </div>
+                                            <div class="text">
+                                                <?php echo e($goods->goods_name); ?>
+
+                                            </div>
+                                        </td>
+                                        <td class="sl">
+                                            <?php echo e($goods->goods_num); ?>
+
+                                        </td>
+                                        <td class="xj">
+                                            <?php echo e($goods->jf); ?>
+
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </table>
+                            <div class="heji">
+									<span class="lipin">
+										共<span><?php echo e(count($info->goods)); ?></span>个礼品
+									</span>
+                                <span class="jifen">
+										积分合计：<span><?php echo e($info->goods_amount); ?></span>
+									</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php echo $__env->make('jifen.layouts.wntj', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+    </div>
+    <!--container-->
+    <?php echo $__env->make('jifen.layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('jifen.layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

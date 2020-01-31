@@ -1,0 +1,192 @@
+<?php $__env->startSection('links'); ?>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>物流配送</title>
+    <link rel="stylesheet" type="text/css" href="/index/common/css/com-css.css" />
+    <link rel="stylesheet" type="text/css" href="/user/huiyuancommon.css" />
+    <link rel="stylesheet" type="text/css" href="/user/huiyuanzhongxin.css" />
+    <link rel="stylesheet" type="text/css" href="/user/wuliu.css"/>
+    <!--layer-->
+    <link rel="stylesheet" type="text/css" href="common/layer/layer.css" />
+
+    <script src="/index/common/js/jQuery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/index/common/js/com-js.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/common_hyzx.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/user/huiyuancommon.js" type="text/javascript" charset="utf-8"></script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.youce', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="/user/img/详情页_01.png"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="/user/img/right_03.png"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的今瑜e药网</a><img
+                        src="/user/img/right_03.png" class="right_icon"/><span>配送物流</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_title">
+                    <img src="/new_gwc/jiesuan_img/椭圆.png"/>
+                    <span>配送物流</span>
+                </div>
+                <?php if(isset($shipping)&&$user->shipping_id==0): ?>
+                    <form action="<?php echo e(route('member.set_wl')); ?>" method="post" onsubmit="return check_sub()">
+                        <div class="choose_before">
+                            <div class="choose_title">
+                                请选择适合您的物流配送方式
+                            </div>
+                            <?php echo csrf_field(); ?>
+
+                            <input type="hidden" name="shipping_id" value="0">
+                            <ul class="wl">
+                                <?php foreach($shipping as $v): ?>
+                                    <?php if($v->shipping_id==9): ?>
+                                        <?php echo $__env->make('user.hzzp', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                    <?php elseif($v->shipping_id==13): ?>
+                                        <?php echo $__env->make('user.ziti', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                    <?php elseif($v->shipping_id==10): ?>
+                                        <?php echo $__env->make('user.ysdf', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                    <?php elseif($v->shipping_id==17): ?>
+                                        <?php echo $__env->make('user.zjs', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                    <?php else: ?>
+                                        <li id="shipping<?php echo e($v->shipping_id); ?>"
+                                            onclick="choose_shipping('<?php echo e($v->shipping_id); ?>')">
+                                            <p class="name"><?php echo e($v->shipping_name); ?></p>
+                                            <div class="choose_box"><img class="select_wl"
+                                                                         src="/user/img/select.png" style="display: none">
+                                            </div>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <?php /*<li id="shipping-1" class="other_wl" onclick="choose_shipping('-1')">*/ ?>
+                                    <?php /*<p class="name">其他物流</p>*/ ?>
+                                    <?php /*<div class="xx">*/ ?>
+                                        <?php /*<p id="shipping_name">填写物流名称及电话</p>*/ ?>
+                                        <?php /*<p id="wl_dh"></p>*/ ?>
+                                    <?php /*</div>*/ ?>
+                                    <?php /*<div class="choose_box"><img class="select_wl"*/ ?>
+                                                                 <?php /*src="/user/img/select.png" style="display: none;"></div>*/ ?>
+                                <?php /*</li>*/ ?>
+                                <?php /*<li id="alert_box">*/ ?>
+                                    <?php /*<div class="alert_box_title">*/ ?>
+                                        <?php /*其他物流*/ ?>
+                                    <?php /*</div>*/ ?>
+                                    <?php /*<div>*/ ?>
+                                        <?php /*物流名称：<input name="shipping_name" style="border: 1px solid #ccc"*/ ?>
+                                                    <?php /*type="text"/><span>*</span>*/ ?>
+                                    <?php /*</div>*/ ?>
+                                    <?php /*<div>*/ ?>
+                                        <?php /*联系电话：<input name="wl_dh" style="border: 1px solid #ccc"*/ ?>
+                                                    <?php /*type="text"/><span>*</span>*/ ?>
+                                    <?php /*</div>*/ ?>
+                                    <?php /*<div>*/ ?>
+                                        <?php /*<input onclick="set_wl()" type="button" name="" id="qr" value="确认"/><input*/ ?>
+                                                <?php /*type="button" name=""*/ ?>
+                                                <?php /*id="qx" value="取消"/>*/ ?>
+                                    <?php /*</div>*/ ?>
+                                <?php /*</li>*/ ?>
+                            </ul>
+                            <div class="tijiao">
+                                <input type="submit" name="" id="tj_btn" value="确定"/>
+                                <p>*请谨慎选择或填写，配送方式确定后如需更改需联系客服。</p>
+                            </div>
+                        </div>
+                    </form>
+                <?php elseif($user->shipping_id!=0): ?>
+                    <div class="choose_after">
+                        <div class="choose_title">
+                            您的物流配送方式
+                        </div>
+                        <div class="choose_wl">
+                            <p class="wl_name">
+                                物流名称：<span><?php echo e($user->shipping_name); ?></span>
+                            </p>
+                            <p class="wl_num">
+                                物流电话：<span><?php echo e($user->wl_dh); ?></span>
+                            </p>
+                        </div>
+                        <p style="color: #ff2929;
+    font-size: 14px;
+    margin: 15px 0 0 20px;">*配送方式如需更改请联系客服。</p>
+                    </div>
+                <?php else: ?>
+                    <div class="choose_after">
+                        <div class="choose_title">
+                            填写收货地址后才能选择物流。
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.other_wl').click(function (e) {
+                $('#alert_box').show();
+                $('#qr,#qx').click(function () {
+                    $('#alert_box').hide();
+                })
+            })
+
+        })
+        function choose_shipping(id) {
+            $('input[name=shipping_id]').val(id);
+            $('.select_wl').hide();
+            $('#shipping' + id).find('.select_wl').show();
+        }
+        function check_sub() {
+            var id = $('input[name=shipping_id]').val();
+            if (id == 0) {
+                layer.msg('请选择物流', {icon: 2});
+                return false;
+            }
+            if (id == 9) {
+                var area = $('select[name=area_name]').val();
+                if (area == '') {
+                    layer.msg('请选择直配区域', {icon: 2});
+                    return false;
+                }
+            }
+            if (id == 13) {
+                var kf = $('select[name=kf_name]').val();
+                if (kf == '') {
+                    layer.msg('请选择自提库房', {icon: 2});
+                    return false;
+                }
+            }
+            if (id == -1) {
+                var shipping_name = $('input[name=shipping_name]').val();
+                if (shipping_name == '') {
+                    layer.msg('请填写物流名称', {icon: 2});
+                    return false;
+                }
+            }
+            return true;
+        }
+        function set_wl() {
+            var shipping_name = $('input[name=shipping_name]').val();
+            var wl_dh = $('input[name=wl_dh]').val();
+            if (shipping_name != '') {
+                $('#shipping_name').text(shipping_name);
+            }
+            $('#wl_dh').text(wl_dh);
+        }
+        //返回顶部
+        $('.btn-top').click(function() {
+            $('html,body').animate({
+                'scrollTop': 0
+            })
+        });
+    </script>
+    <?php echo $__env->make('layouts.new_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

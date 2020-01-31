@@ -1,0 +1,21 @@
+
+/*主体部分样式*/
+
+
+
+/*主体部分样式结束*/
+
+
+/*只添加此部分样式*/
+.info_box2 {width: 960px;margin: 0 auto;margin-top: 200px;*margin-top: 0;}
+.info_box2 .info_txt{height: 40px;line-height: 40px;}
+.info_box2 ul{border: 1px solid #ccffcc;width: 960px;border-left: 0;border-bottom: 0;}
+.info_box2 ul li{width: 478px;height: 176px;border-left:1px solid #ccffcc;border-bottom:1px solid #ccffcc;float:left; text-align: center; }
+.info_box2 ul li img{margin: 14px auto 20px auto;}
+.info_box2 ul li p{text-align: left;height: 24px;line-height: 24px;text-indent: 115px;}
+.info_box2 ul li p .zhanghao {color: #ff5d5b;}
+/*抽奖*/
+.site-banner{width: 1200px;margin: 0 auto;height: 178px;background: url("../images/zhongjiang_banner.jpg") no-repeat;}
+.site-banner-bu{width: 1200px;margin: 0 auto;height: 178px;background: url("../images/zhongjiang_banner2.jpg") no-repeat;}
+.site-banner p{color: #ff5100;font-size: 24px;padding: 75px 0 0 660px;}
+

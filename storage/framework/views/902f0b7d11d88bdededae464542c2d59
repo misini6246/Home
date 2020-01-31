@@ -1,0 +1,66 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/common.css')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/auth/register.css')); ?>"/>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('auth.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="container">
+        <div class="border_b"></div>
+        <!--header-->
+        <form id="form" method="post" action="<?php echo e(route('xin.register.step2')); ?>">
+        <?php echo e(csrf_field()); ?>
+
+        <!--注册表单开始-->
+            <div class="body_box bgF0F6FC pad30_0_40">
+                <!--流程导航开始-->
+                <div class="form_box bgFFFFFF w1200 mgAuto pad20_0_40">
+                    <div class="nav box3">
+                        <div class="nav_bg_1">
+                            <span class="col3DBB2B number nav_cir">1</span>
+                            <span class="colFFFFFF text">验证手机号</span>
+                        </div>
+                        <div class="nav_bg_2">
+                            <span class="col666666 number nav_cir">2</span>
+                            <span class="col000000 text">填写帐户信息</span>
+                        </div>
+                        <div class="nav_bg_3">
+                            <span class="col666666 number nav_cir">3</span>
+                            <span class="col000000 text">注册成功</span>
+                        </div>
+                    </div>
+                    <!--流程导航结束-->
+                    <!--表单主体开始-->
+                    <div class="form">
+                        <div class="phone">
+                            <span class="ipt_name">手机号:</span>
+                            <input type="text" name="phone" id="phone" value="" placeholder="请输入您的手机号"/>
+                            <p>*此号码将作为您除用户名外的登录凭证,请务必填写您常用的手机号。</p>
+                        </div>
+
+                        <div class="code">
+                            <span class="ipt_name">验证码:</span>
+                            <input class="w140" type="text" name="" id="code" value="" placeholder="请输入4位数验证码"/>
+                            <input class="code_get pointer" type="button" name="" id="code_btn" value="发送短信验证码"/>
+                        </div>
+
+                        <!--下一步按钮开始-->
+                        <div class="form_foot">
+                            <div class="fs14 col000000" style="margin-left: 140px;">
+                                <div class="check"/>
+                            </div>
+                            <span style="float: left;">&nbsp;我已看过并接受《用户协议》</span>
+                        </div>
+                        <input class="form_btn fs18" type="button" name="" id="" value="下一步"/>
+                    </div>
+                    <!--下一步按钮结束-->
+                </div>
+            </div>
+            <!--表单主体结束-->
+        </form>
+    </div>
+    <?php echo $__env->make('auth.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/placeholderfriend.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/auth/register.js')); ?>1"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,167 @@
+
+<?php $__env->startSection('links'); ?>
+    <link href="<?php echo e(path('/css/base.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/member2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/order_msg2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/index2.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('css/new-common.css')); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(path('/css/pay.css')); ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<?php echo e(path('/js/common.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/member.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(path('/js/submit_order.js')); ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layout.page_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layout.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="main fn_clear">
+        <div class="top"><span class="title">我的药易购</span> <a>>　<span>交易管理</span> </a> <a href="<?php echo e(route('user.orderList')); ?>" class="end">>　<span><?php echo e($pages_top); ?></span></a> </div>
+        <?php echo $__env->make('layout.user_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="main_right_box">
+            <div class="top_title">
+                <h3><?php echo e($pages_top); ?></h3>
+                <span class="ico"></span>
+            </div>
+
+            <table class="table1">
+                <tr>
+                    <th  colspan="2">订单状态</th>
+
+                </tr>
+                <tr>
+                    <td class="tb1_td1 al_right">订单号：</td>
+                    <td><?php echo e($order->order_sn); ?>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tb1_td1 al_right">订单状态：</td>
+                    <td><?php echo e(oStatus($order->order_status)); ?>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="tb1_td1 al_right">付款状态：</td>
+                    <td>
+                        <div style="width: 150px; float: right; height: 50px;">
+                            <p style=""><a href="<?php echo e(route('articleInfo',['id'=>91])); ?>" class="payonline_notice" target="_blank" style="font-family: &quot;Microsoft yahei&quot;; font-size: 14px; color: #39a817; display: inline; line-height: 25px; margin-right: 20px;">银联在线支付说明</a></p>
+                            <p><a href="<?php echo e(route('articleInfo',['id'=>276])); ?>" class="payonline_notice" target="_blank" style="margin-right: 20px; display: inline; font-family: &quot;Microsoft yahei&quot;; font-size: 14px; color: #39a817; line-height: 20px;">农行在线支付说明</a></p></div>
+                        <div style='width:450px;float:left;height:50px;'>
+                            <span style="line-height: 50px;"><?php echo e(pStatus($order->pay_status)); ?></span>
+                            <?php echo isset($unionpay) ? $unionpay : ''; ?>
+
+                            <?php /*<?php echo isset($abcpay) ? $abcpay : ''; ?>*/ ?>
+                            <?php echo isset($xyyh) ? $xyyh : ''; ?>
+
+                            <?php echo isset($weixin) ? $weixin : ''; ?>
+
+                            <?php /*<?php echo isset($alipay) ? $alipay : ''; ?>*/ ?>
+                            <?php echo isset($tip) ? $tip : ''; ?>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+            <table class="table2">
+                <tr>
+                    <th class="case1" colspan="5">订单列表</th>
+                </tr>
+                <tr class="title">
+                    <td class="tb2_td1">订单编号</td>
+                    <td class="tb2_td2">下单时间</td>
+                    <td class="tb2_td3">订单总金额</td>
+                    <td class="tb2_td4">订单应付金额</td>
+                    <td class="tb2_td5">操作</td>
+                </tr>
+                <?php foreach($order->order_info as $v): ?>
+                <tr>
+                    <td class="tb2_td1">
+
+                        <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>" target="_blank" style="color: #FF6102"><?php echo e($v->order_sn); ?></a>
+
+                    </td>
+                    <td class="tb2_td3"><?php echo e(date('Y-m-d H:i:s',$v->add_time)); ?></td>
+                    <td class="tb2_td2"><?php echo e(formated_price($v->goods_amount)); ?></td>
+                    <td class="tb2_td4"><?php echo e(formated_price($v->order_amount)); ?></td>
+                    <td class="tb2_td5">
+                        <?php echo order_status($v->order_id,$v->order_status,$v->pay_status,$v->shipping_status,'handle'); ?>&nbsp;&nbsp;
+                        <a href="<?php echo e(route('user.orderInfo',['id'=>$v->order_id])); ?>" class="f6">查看订单</a>
+                    </td><!-- 2015-7-9 -->
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td class="al_right com" colspan="5">
+                        <form action="<?php echo e(route('user.sureShipping')); ?>" method="post" name="formFee" id="formFee" style="float: right;width: 80px;height: 39px;margin-left: 20px;<?php if($order->order_status==1&&$order->pay_status==2&&$order->shipping_status==4): ?>display: block;<?php else: ?> display: none; <?php endif; ?>">
+                            <input type="submit" name="Submit" class="submit_1" value="确认收货" style="margin-top: 5px;"/>
+                            <input type="hidden" name="id" value="<?php echo e($order->zq_id); ?>" />
+                            <?php echo csrf_field(); ?>
+
+                        </form>
+                        <span style="width: 200px;height: 39px;display: block;float:right;">
+                        商品总价:<span class="price"><?php echo e(formated_price($order->goods_amount)); ?></span>
+                        </span>
+
+
+                    </td>
+
+                </tr>
+            </table>
+
+            <table class="table3">
+                <tr>
+                    <th>费用总计</th>
+                </tr>
+                <tr>
+                    <td class="al_right com">
+                        商品总价:<?php echo e(formated_price($order->goods_amount)); ?>
+
+                        <?php if($order->discount>0): ?>
+                            - 折扣:<?php echo e(formated_price($order->discount)); ?>
+
+                        <?php endif; ?>
+                        <?php if($order->shipping_fee>0): ?>
+                            + 物流费用:<?php echo e(formated_price($order->shipping_fee)); ?>
+
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="al_right com">
+                        <?php if($order->money_paid>0): ?>
+                            - 已付款金额:<span class="price"><?php echo e(formated_price($order->money_paid)); ?></span>
+                        <?php endif; ?>
+                        <?php if($order->surplus>0): ?>
+                            - 使用余额:<span class="price"><?php echo e(formated_price($order->surplus)); ?></span>
+                        <?php endif; ?>
+                        <?php if($order->zyzk>0): ?>
+                            - 优惠金额:<span class="price"><?php echo e(formated_price($order->zyzk)); ?></span>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="al_right com">
+                        应付款金额: <span class="price"><?php echo e(formated_price($order->order_amount)); ?></span>
+					<?php /*<!-- {if $order.extension_code eq "group_buy"} --><br />*/ ?>
+						<?php /*{$lang.notice_gb_order_amount}*/ ?>
+					<?php /*<!-- {/if} --></span>*/ ?>
+                    </td>
+                </tr>
+                <?php /*<?php if($order->is_mhj==0&&$order->order_amount>0): ?>*/ ?>
+                <?php /*<tr>*/ ?>
+                    <?php /*<td class="al_right com">*/ ?>
+                        <?php /*<form action="<?php echo e(route('user.useSurplus')); ?>" method="post" name="formFee" id="formFee">追加使用余额:*/ ?>
+                            <?php /*<input name="surplus" type="text" size="8" value="0" style="border:1px solid #ccc;"/>（您的帐户余额：<?php echo e(formated_price($user->user_mongy)); ?>）*/ ?>
+                            <?php /*<input type="submit" name="Submit" class="submit_1" value="确定" />*/ ?>
+                            <?php /*<input type="hidden" name="orderId" value="<?php echo e($order->order_id); ?>" />*/ ?>
+                            <?php /*<?php echo csrf_field(); ?>*/ ?>
+                        <?php /*</form>*/ ?>
+                    <?php /*</td>*/ ?>
+                <?php /*</tr>*/ ?>
+                <?php /*<?php endif; ?>*/ ?>
+            </table>
+        </div>
+    </div>
+    <?php echo $__env->make('layout.weixin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layout.page_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

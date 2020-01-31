@@ -1,0 +1,112 @@
+
+
+
+
+
+
+.ico_cancel {
+    display:inline-block;
+    vertical-align:middle;
+    height: 8px;
+    width: 10px;
+    overflow: hidden;
+    background: url(./img/sprite_weixin.png) -24px -22px no-repeat;
+}
+
+
+
+
+
+/*å¼¹çª—*/
+.pop-wraper{position:fixed;top:0;left:0;right:0;bottom:0;display:table;height:100%;width:100%;
+    z-index: 10001;text-align: center;}
+.pop-outer{display:table-cell;vertical-align:middle;}
+.pop-inner{background:#FFFFFF;text-align:center;display:inline-block;}
+/*.pop-inner{background:#FFFFFF;text-align:center;display:inline-block;position:absolute;left: 44%;top: 30%;}*/
+.pop-inner .pop-content{border:1px solid #D3D3D3;padding:50px 25px 30px 25px;position: relative;}
+.pop-inner .pop-content h1{font-size:24px;margin-bottom:10px;color:#666666;font-weight:normal;}
+.pop-inner .pop-content .ico{margin-right:8px;}
+.pop-inner .pop-content .btn_blue{font-size:18px;padding:0 40px;margin-top:25px;}
+.pop-inner .btn_cancel{width:50px;height:20px;border:1px solid #D5D5D5;position:absolute;right:3px;top:0;}
+.pop-inner .btn_cancel .ico_cancel{position:absolute;top:50%;left:50%;margin-top:-4px;margin-left:-5px;position: absolute;}
+
+
+/*å›¾æ ‡+æ–‡å­—æ ‡é¢˜*/
+.ico_title{text-align:left;font-size:24px;color:#333333;border-bottom:1px solid #FFFFFF;position:relative;padding-bottom:5px;padding-left:10px;}
+.ico_title:after{content:"";width:100%;border-top:1px solid #E3E3E3;position:absolute;left:0;bottom:0;}
+.ico_title i{margin-right:10px;}
+
+.mask{
+    overflow:hidden;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:99999;
+    background:rgba(230,230,230,0.4) url(./img/loading_weixin.GIF) center center no-repeat;
+}
+.msg_default_box{
+    width:258px;
+    margin:0 auto;
+    padding:12px 0;
+    border:1px solid #2b4d69;
+    background-color:#445f85;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    letter-spacing:6px;
+    text-align:center;
+    color:#FFF;
+    margin-right:15px;
+}
+.msg_default_box p{
+    display:inline-block;
+    vertical-align:middle;
+    letter-spacing:normal;
+    text-align:left;
+    font-size:16px;
+    color:#FFF;
+}
+
+.icon60_qr{
+    width:60px;
+    height:60px;
+    display:inline-block;
+    vertical-align:middle;
+    background:transparent url(./img/icon_pay.png) no-repeat 0 0;
+    margin-right:20px;
+}
+
+.msg_default_box .icon60_qr{
+    background-position:0 -60px;
+}
+/*æ‰«ææˆåŠŸ*/
+.qr_succ{
+    border:1px solid #259483;
+    background-color:#4ca698;
+}
+/*è´­ä¹°æˆåŠŸ*/
+.pay_succ{
+    border:1px solid #148F64;
+    background-color:#20B481;
+}
+
+/*è´­ä¹°å¤±è´¥*/
+.pay_error{
+    border:1px solid #D13A03;
+    background-color:#f15a22;
+}
+
+.qr_succ .icon60_qr,.pay_succ .icon60_qr{
+    background-position:0 0;
+}
+
+.pay_error .icon60_qr{
+    background-position:0 -122px;
+}
+.refresh_time{
+    margin-top:20px;
+}
+
+

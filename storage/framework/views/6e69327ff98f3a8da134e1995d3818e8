@@ -1,0 +1,114 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/user/huiyuancommon.css')); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo e(path('css/user/wodedingdan.css')); ?>1" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/common.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('new/js/jquery.SuperSlide.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo e(path('js/user/huiyuancommon.js')); ?>"></script>
+    <!--[if lte IE 9]>
+    <style type="text/css">
+        .genzong {
+            border: 1px solid #e5e5e5;
+        }
+
+
+    </style>
+    <![endif]-->
+    <!--[if IE 8]>
+    <style type="text/css">
+        .right_top_search select {
+            padding: 5px 0;
+        }
+    </style>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="container" id="user_center">
+        <div class="container_box">
+            <div class="top_title">
+                <img src="<?php echo e(get_img_path('images/user/weizhi.png')); ?>"/><span>当前位置：</span>
+                <a href="<?php echo e(route('index')); ?>">首页</a><img src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>"
+                                                        class="right_icon"/><a
+                        href="<?php echo e(route('member.index')); ?>">我的太星医药网</a><img
+                        src="<?php echo e(get_img_path('images/user/right_1_03.png')); ?>" class="right_icon"/><span>积分金币变动记录</span>
+            </div>
+            <?php echo $__env->make('user.left', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="right">
+                <div class="right_top">
+                    <div class="right_top_title" style="width: 200px;">
+                        <img src="<?php echo e(get_img_path('images/user/dian_03.png')); ?>"/>
+                        <span>积分金币变动记录</span>
+                    </div>
+                </div>
+                <?php if(count($result)>0): ?>
+                    <form id="search_form" name="search_form" action="<?php echo e(route('member.zq_log')); ?>">
+                    </form>
+                    <table>
+                        <tr>
+                            <th class="ddh">操作时间</th>
+                            <th class="xdsj">类型</th>
+                            <th class="zje">
+                                <span>积分金币</span>
+                            </th>
+                            <th class="ddzt">
+                                操作备注
+                            </th>
+                        </tr>
+                        <?php foreach($result as $v): ?>
+                            <tr>
+                                <td class="ddh">
+                                    <?php echo e(date('Y-m-d H:i:s',$v->change_time)); ?>
+
+                                </td>
+                                <td><?php if($v->money>0): ?>增加<?php else: ?>减少<?php endif; ?></td>
+                                <td class="zje"><?php echo e(formated_price(abs($v->money))); ?></td>
+                                <td style="line-height: 25px;">
+                                    <?php echo e($v->change_desc); ?>
+
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <tr>
+                            <td colspan="4" style="text-align: right;"><p style="font-size: 16px;color: #f52547;">
+                                    您当前的可用积分金币为:<?php echo e(formated_price(collect($user->jf_money)->get('money',0))); ?></p></td>
+                        </tr>
+                    </table>
+                    <?php echo $__env->make('user.pages',['pages'=>$result], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <?php echo $__env->make('user.empty',['type'=>4,'emsg'=>'没有查询到记录，这里是空的'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#num').focus(function () {
+                $('.placeholder').hide();
+            });
+            $('#num').blur(function () {
+                if ($(this).val() != "") {
+                    $('.placeholder').hide();
+                } else {
+                    $('.placeholder').show();
+                }
+            });
+        })
+    </script>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,29 @@
+/*兑换区*/
+
+.exchange_things{width: 945px;margin-left: 25px;float: left;vertical-align: top}
+.exchange_things_class{margin-bottom: 20px}
+.etc_title{line-height: 30px;font-size: 16px;font-weight: bold;color: green;text-indent: 10px;border-bottom: 2px solid green}
+.etc_title span{color: #fff;background-color: red;margin-right: 10px;padding: 0 4px;border-radius: 20px;font-size: 15px;}
+.etc_title2 span{background-color: #b07000;}
+.etc_title3 span{background-color: orange;}
+.etc_title4 span{background-color: #ffe000;}
+.etc_class_list{margin-top: 20px;height: 258px;}
+/*10-9*/
+.etc_class_list li{float: left;margin-left: 11px;border: 1px solid #dfdfdf;width: 177px;_margin-left: 9px}
+.etc_class_list_img{position: relative;text-align: center;height: 189px;overflow: hidden;z-index: 0;padding: 8px 17px 0 17px}
+.etc_class_list_img a img{position: relative;}
+
+.etc_class_list_info{position: absolute;bottom: 0;left: 0;text-align: center;width: 100%;z-index: 10;_margin: 8px 17px 0 17px}
+/*end*/
+.etc_class_list p{text-align: center;color: #999;line-height: 25px;width: 120px;height: 25px;overflow: hidden;text-overflow: ellipsis;
+    white-space: nowrap;margin: 0 auto}
+.etc_class_list_info p span{text-decoration: line-through}
+
+.etc_class_list_info .things_name{color: #878787;}
+.etc_class_list_info .things_price{color: #575757}
+.etc_class_list_msg{background-color: #e6e6e6;text-align: center}
+.etc_class_list_msg a{line-height: 30px;text-align: center;color: #575757}
+.etc_class_list_msg a:hover{color: #f50000;}
+.etc_class_list_msg a img{margin-right: 5px;vertical-align: middle;margin-top: -6px;_margin-top: 0;_vertical-align: baseline;}
+.etc_class_list_msg .etc_realPrice{color: #f95706;margin: 0 5px;width: 169px;text-align: center}
+

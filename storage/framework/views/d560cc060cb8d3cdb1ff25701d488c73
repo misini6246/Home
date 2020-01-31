@@ -1,0 +1,269 @@
+<?php $__env->startSection('links'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/new_common.css')); ?>"/>
+    <link href="<?php echo e(path('css/new/cuxiaozhuanqu.css')); ?>1" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo e(path('js/index/remaintime.min.js')); ?>1" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/index/navigation.js')); ?>1" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php echo e(path('js/new/cuxiaozhuanqu.js')); ?>2" type="text/javascript" charset="utf-8"></script>
+    <!--IE兼容-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(path('css/index/iehack.css')); ?>"/>
+    <![endif]-->
+    <!--IE兼容-->
+    <!--[if lte IE 7]>
+    <script src="<?php echo e(path('js/index/IEhack.js')); ?>" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.search', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('layouts.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="cxzq_banner">
+        <img src="<?php echo e(get_img_path('images/hd/cxzq_banner_02.jpg')); ?>"/>
+    </div>
+    <div class="title_list_box">
+        <ul class="title_list">
+            <li class="active">
+                <a href="#mzjx">每周精选</a>
+            </li>
+            <li>
+                <a href="#xqpz">特卖专区</a>
+            </li>
+            <li>
+                <a href="#czhg">超值换购</a>
+            </li>
+            <li>
+                <a href="#jpmz">精品买赠</a>
+            </li>
+            <?php /*<li>*/ ?>
+            <?php /*<a href="#xqpz">效期品种</a>*/ ?>
+            <?php /*</li>*/ ?>
+        </ul>
+    </div>
+    <input type="hidden" id="daojs" value="<?php echo e($mzjx->time); ?>"/>
+    <div id="bgcolor_1" class="container">
+        <div class="container_box">
+            <div class="cxzq_section" id="mzjx">
+                <div class="section_title">
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                    <span>每周精选</span>
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                </div>
+                <div class="remaintime">
+                    当前场次
+                    <span class="day"></span><span class="mh">:</span><span class="hourse"></span><span
+                            class="mh">:</span><span class="minute"></span><span class="mh">:</span><span
+                            class="second"></span> 后结束
+                </div>
+                <ul class="mzjx_list">
+                    <?php foreach($mzjx as $v): ?>
+                        <li>
+                            <div class="img_box">
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>"><img
+                                            src="<?php echo e($v->goods_thumb); ?>"/></a>
+                            </div>
+                            <div class="text">
+                                <p class="name"><?php echo e($v->goods_name); ?></p>
+                                <p class="gg"><?php echo e($v->spgg); ?></p>
+                                <p class="company"><?php echo e($v->sccj); ?></p>
+                                <div class="btn">
+                                    <div class="money">
+                                        <?php if($user&&$user->ls_review==1): ?>
+                                            <?php echo e(formated_price($v->real_price)); ?>
+
+                                            <?php if($user->is_zhongduan==1): ?>
+                                                <span><?php echo e(formated_price($v->shop_price)); ?></span>
+                                            <?php endif; ?>
+                                        <?php else: ?>
+                                            会员可见
+                                        <?php endif; ?>
+                                    </div>
+                                    <a target="_blank" href="<?php echo e($v->goods_url); ?>">立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bgcolor_2" class="container">
+        <div class="container_box">
+            <div id="xqpz" class="cxzq_section">
+                <div class="section_title">
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                    <span>特卖专区</span>
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                </div>
+                <ul class="czhg_list">
+                    <?php foreach($xqpz as $v): ?>
+                        <li>
+                            <div class="img_box">
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>"><img
+                                            src="<?php echo e($v->goods_thumb); ?>"/></a>
+                            </div>
+                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                            <p class="gg"><?php echo e($v->spgg); ?></p>
+                            <p class="company"><?php echo e($v->sccj); ?></p>
+                            <div class="hd">
+                                <div class="fl" style="width: 50px;">效期：</div>
+                                <div class="fr" style="width: 190px;line-height: 20px;"><?php echo e($v->xq); ?></div>
+                            </div>
+                            <div class="btn">
+                                <div class="fl">
+                                    <?php if($user&&$user->ls_review==1): ?>
+                                        <?php echo e(formated_price($v->real_price)); ?>
+
+                                    <?php else: ?>
+                                        会员可见
+                                    <?php endif; ?>
+                                </div>
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>" class="fr">
+                                    立即抢购
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="readmore">
+                    <a target="_blank" href="<?php echo e(route('category.index',['step'=>'tjcl','style'=>'g'])); ?>">点击查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bgcolor_2" class="container">
+        <div class="container_box">
+            <div id="czhg" class="cxzq_section">
+                <div class="section_title">
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                    <span>超值换购</span>
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                </div>
+                <ul class="czhg_list">
+                    <?php foreach($czhg as $v): ?>
+                        <li>
+                            <div class="img_box">
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>"><img
+                                            src="<?php echo e($v->goods_thumb); ?>"/></a>
+                            </div>
+                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                            <p class="gg"><?php echo e($v->spgg); ?></p>
+                            <p class="company"><?php echo e($v->sccj); ?></p>
+                            <div class="hd">
+                                <div class="fl">活动</div>
+                                <div class="fr layer_tips" data-msg="<?php echo e($v->cxxx); ?>"
+                                     id="<?php echo e($v->goods_id); ?>"><?php echo e($v->cxxx); ?></div>
+                            </div>
+                            <div class="btn">
+                                <div class="fl">
+                                    <?php if($user&&$user->ls_review==1): ?>
+                                        <?php echo e(formated_price($v->real_price)); ?>
+
+                                    <?php else: ?>
+                                        会员可见
+                                    <?php endif; ?>
+                                </div>
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>" class="fr">
+                                    立即抢购
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="readmore">
+                    <a target="_blank" href="/cxhd/czhg">点击查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bgcolor_1" class="container">
+        <div class="container_box">
+            <div id="jpmz" class="cxzq_section">
+                <div class="section_title">
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                    <span>精品买赠</span>
+                    <img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>
+                </div>
+                <ul class="czhg_list">
+                    <?php foreach($jpmz as $v): ?>
+                        <li>
+                            <div class="img_box">
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>"><img
+                                            src="<?php echo e($v->goods_thumb); ?>"/></a>
+                            </div>
+                            <p class="name"><?php echo e($v->goods_name); ?></p>
+                            <p class="gg"><?php echo e($v->spgg); ?></p>
+                            <p class="company"><?php echo e($v->sccj); ?></p>
+                            <div class="hd">
+                                <div class="fl">活动</div>
+                                <div class="fr layer_tips" data-msg="<?php echo e($v->cxxx); ?>"
+                                     id="<?php echo e($v->goods_id); ?>"><?php echo e($v->cxxx); ?></div>
+                            </div>
+                            <div class="btn">
+                                <div class="fl">
+                                    <?php if($user&&$user->ls_review==1): ?>
+                                        <?php echo e(formated_price($v->real_price)); ?>
+
+                                    <?php else: ?>
+                                        会员可见
+                                    <?php endif; ?>
+                                </div>
+                                <a target="_blank" href="<?php echo e($v->goods_url); ?>" class="fr">
+                                    立即抢购
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="readmore">
+                    <a target="_blank" href="/cxhd/jpmz">点击查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php /*<div id="bgcolor_2" class="container">*/ ?>
+    <?php /*<div class="container_box">*/ ?>
+    <?php /*<div id="xqpz" class="cxzq_section">*/ ?>
+    <?php /*<div class="section_title">*/ ?>
+    <?php /*<img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>*/ ?>
+    <?php /*<span>效期品种</span>*/ ?>
+    <?php /*<img src="<?php echo e(get_img_path('images/hd/cxzq_title.png')); ?>"/>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<ul class="czhg_list">*/ ?>
+    <?php /*<?php foreach($xqpz as $v): ?>*/ ?>
+    <?php /*<li>*/ ?>
+    <?php /*<div class="img_box">*/ ?>
+    <?php /*<a target="_blank" href="<?php echo e($v->goods_url); ?>"><img*/ ?>
+    <?php /*src="<?php echo e($v->goods_thumb); ?>"/></a>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<p class="name"><?php echo e($v->goods_name); ?></p>*/ ?>
+    <?php /*<p class="gg"><?php echo e($v->spgg); ?></p>*/ ?>
+    <?php /*<p class="company"><?php echo e($v->sccj); ?></p>*/ ?>
+    <?php /*<div class="hd">*/ ?>
+    <?php /*<div class="fl">活动</div>*/ ?>
+    <?php /*<div class="fr">此商品的有效期到<?php echo e($v->xq); ?>止</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<div class="btn">*/ ?>
+    <?php /*<div class="fl">*/ ?>
+    <?php /*<?php if($user&&$user->ls_review==1): ?>*/ ?>
+    <?php /*<?php echo e(formated_price($v->real_price)); ?>*/ ?>
+    <?php /*<?php else: ?>*/ ?>
+    <?php /*会员可见*/ ?>
+    <?php /*<?php endif; ?>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<a target="_blank" href="<?php echo e($v->goods_url); ?>" class="fr">*/ ?>
+    <?php /*立即抢购*/ ?>
+    <?php /*</a>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</li>*/ ?>
+    <?php /*<?php endforeach; ?>*/ ?>
+    <?php /*</ul>*/ ?>
+    <?php /*<div class="readmore">*/ ?>
+    <?php /*<a target="_blank" href="<?php echo e(route('category.index',['dis'=>7])); ?>">点击查看更多</a>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php echo $__env->make('layouts.old_footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.body', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
